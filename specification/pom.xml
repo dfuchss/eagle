@@ -35,8 +35,8 @@
 	</dependencyManagement>
 
 	<modules>
-		<module>agent-analysis-specification-parse</module>
-		<module>agent-analysis-specification-platforms</module>
-		<module>agent-analysis-specification-indirect</module>
+		<module>parse</module>
+		<module>platforms</module>
+		<module>indirect</module>
 	</modules>
 </project>
