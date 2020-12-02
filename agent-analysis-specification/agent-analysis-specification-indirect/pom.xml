@@ -42,4 +42,5 @@
 			<version>0.0.5-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
+	<name>Agent Analysis (INDIRECT Specifications)</name>
 </project>

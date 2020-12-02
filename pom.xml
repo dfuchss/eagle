@@ -68,4 +68,5 @@
 		<module>port</module>
 		<module>agent-analysis-specification</module>
 	</modules>
+	<name>Agent Analysis (Root)</name>
 </project>

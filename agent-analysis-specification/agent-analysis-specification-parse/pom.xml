@@ -54,4 +54,5 @@
 			<version>0.0.2</version>
 		</dependency>
 	</dependencies>
+	<name>Agent Analysis (PARSE Specifications)</name>
 </project>
