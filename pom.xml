@@ -2,7 +2,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>edu.kit.ipd.are</groupId>
+	<groupId>edu.kit.ipd.are.agentanalysis</groupId>
 	<artifactId>agent-analysis</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
@@ -22,10 +22,6 @@
 			<id>ipdNexus-public-snapshots</id>
 			<name>IPD-Repository</name>
 			<url>http://bob.ipd.kit.edu/nexus/repository/maven-public-snapshots</url>
-		</repository>
-		<repository>
-			<id>maven-fuchss</id>
-			<url>https://raw.githubusercontent.com/dfuchss/maven/releases</url>
 		</repository>
 	</repositories>
 
@@ -53,10 +49,23 @@
 				<artifactId>jackson-annotations</artifactId>
 				<version>2.11.0</version>
 			</dependency>
+
+			<!-- Modules -->
+			<dependency>
+				<groupId>edu.kit.ipd.are.agentanalysis</groupId>
+				<artifactId>port</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>edu.kit.ipd.are.agentanalysis</groupId>
+				<artifactId>agent-analysis-specification</artifactId>
+				<version>${project.version}</version>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
 
 	<modules>
 		<module>port</module>
+		<module>agent-analysis-specification</module>
 	</modules>
 </project>

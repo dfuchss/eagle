@@ -1,0 +1,57 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>edu.kit.ipd.are.agentanalysis</groupId>
+		<artifactId>agent-analysis-specification</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<artifactId>agent-analysis-specification-parse</artifactId>
+
+	<dependencies>
+		<dependency>
+			<groupId>edu.kit.ipd.are.agentanalysis</groupId>
+			<artifactId>agent-analysis-specification-platforms</artifactId>
+		</dependency>
+
+		<!-- Agents -->
+		<dependency>
+			<groupId>edu.kit.ipd.parse</groupId>
+			<artifactId>wsd</artifactId>
+			<version>0.0.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>edu.kit.ipd.parse</groupId>
+			<artifactId>actionRecognizer</artifactId>
+			<version>0.0.1</version>
+		</dependency>
+		<dependency>
+			<groupId>edu.kit.ipd.parse</groupId>
+			<artifactId>concurrency_detection</artifactId>
+			<version>0.0.1</version>
+		</dependency>
+		<dependency>
+			<groupId>edu.kit.ipd.parse</groupId>
+			<artifactId>condition_detection</artifactId>
+			<version>0.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId>edu.kit.ipd.parse</groupId>
+			<artifactId>loop_detection</artifactId>
+			<version>0.0.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>edu.kit.ipd.parse</groupId>
+			<artifactId>context</artifactId>
+			<version>0.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId>edu.kit.ipd.parse</groupId>
+			<artifactId>coref</artifactId>
+			<version>0.0.2</version>
+		</dependency>
+	</dependencies>
+</project>

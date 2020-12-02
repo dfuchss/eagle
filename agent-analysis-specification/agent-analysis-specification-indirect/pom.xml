@@ -1,0 +1,45 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>edu.kit.ipd.are.agentanalysis</groupId>
+		<artifactId>agent-analysis-specification</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<artifactId>agent-analysis-specification-indirect</artifactId>
+
+	<dependencies>
+		<dependency>
+			<groupId>edu.kit.ipd.are.agentanalysis</groupId>
+			<artifactId>agent-analysis-specification-platforms</artifactId>
+		</dependency>
+
+		<!-- Agents -->
+		<dependency>
+			<groupId>edu.kit.ipd.indirect</groupId>
+			<artifactId>textNER</artifactId>
+			<version>0.0.5-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>edu.kit.ipd.indirect</groupId>
+			<artifactId>constParser</artifactId>
+			<version>0.0.5-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>edu.kit.ipd.indirect</groupId>
+			<artifactId>depParser</artifactId>
+			<version>0.0.5-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>edu.kit.ipd.indirect</groupId>
+			<artifactId>entityRecognizer</artifactId>
+			<version>0.0.6-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>edu.kit.ipd.indirect</groupId>
+			<artifactId>conceptualizer</artifactId>
+			<version>0.0.5-SNAPSHOT</version>
+		</dependency>
+	</dependencies>
+</project>
