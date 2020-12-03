@@ -16,5 +16,6 @@
 		<module>parse</module>
 		<module>platforms</module>
 		<module>indirect</module>
+		<module>hypotheses</module>
 	</modules>
 </project>

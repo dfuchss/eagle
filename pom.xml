@@ -33,6 +33,15 @@
 				<artifactId>luna</artifactId>
 				<version>0.5.10</version>
 			</dependency>
+			<!-- Junit -->
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>4.13</version>
+				<scope>test</scope>
+			</dependency>
+
+
 			<!-- Serializers -->
 			<dependency>
 				<groupId>com.fasterxml.jackson.core</groupId>
@@ -82,6 +91,11 @@
 			<dependency>
 				<groupId>edu.kit.ipd.are.agentanalysis</groupId>
 				<artifactId>specification-indirect</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>edu.kit.ipd.are.agentanalysis</groupId>
+				<artifactId>specification-hypotheses</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 		</dependencies>
