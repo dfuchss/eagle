@@ -1,0 +1,213 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/actor_base"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/actor_base">
+    <Prefix name="" IRI="http://www.semanticweb.org/actor_base"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="swrl" IRI="http://www.w3.org/2003/11/swrl"/>
+    <Declaration>
+        <NamedIndividual IRI="#long"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Method"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#String"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#changingMethod"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Object"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#changesStateTo"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#double"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Value"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#float"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#associatedState"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#integerRange"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="#ContainsObject"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#ofDataType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#State"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#char"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasMethod"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#boolean"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="#containsObject"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Integer_Min_Max"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#int"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasParameter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DataType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#System"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#short"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Parameter"/>
+    </Declaration>
+    <ClassAssertion>
+        <Class IRI="#Value"/>
+        <NamedIndividual IRI="#Integer_Min_Max"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DataType"/>
+        <NamedIndividual IRI="#Object"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DataType"/>
+        <NamedIndividual IRI="#String"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DataType"/>
+        <NamedIndividual IRI="#boolean"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DataType"/>
+        <NamedIndividual IRI="#char"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DataType"/>
+        <NamedIndividual IRI="#double"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DataType"/>
+        <NamedIndividual IRI="#float"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DataType"/>
+        <NamedIndividual IRI="#int"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DataType"/>
+        <NamedIndividual IRI="#long"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DataType"/>
+        <NamedIndividual IRI="#short"/>
+    </ClassAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#integerRange"/>
+        <NamedIndividual IRI="#Integer_Min_Max"/>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral"></Literal>
+    </DataPropertyAssertion>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#changesStateTo"/>
+        <ObjectProperty IRI="#changingMethod"/>
+    </InverseObjectProperties>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#associatedState"/>
+        <Class IRI="#State"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#changesStateTo"/>
+        <Class IRI="#Method"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#changingMethod"/>
+        <Class IRI="#State"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasMethod"/>
+        <Class IRI="#System"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasParameter"/>
+        <Class IRI="#Method"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#ofDataType"/>
+        <Class IRI="#Parameter"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#associatedState"/>
+        <Class IRI="#State"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#changesStateTo"/>
+        <Class IRI="#State"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#changingMethod"/>
+        <Class IRI="#Method"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasMethod"/>
+        <Class IRI="#Method"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasParameter"/>
+        <Class IRI="#Parameter"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#ofDataType"/>
+        <Class IRI="#DataType"/>
+    </ObjectPropertyRange>
+    <DataPropertyDomain>
+        <DataProperty IRI="#integerRange"/>
+        <Class IRI="#Value"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#integerRange"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <SubAnnotationPropertyOf>
+        <AnnotationProperty IRI="#containsObject"/>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+    </SubAnnotationPropertyOf>
+    <AnnotationPropertyRange>
+        <AnnotationProperty IRI="#ContainsObject"/>
+        <IRI>#Object</IRI>
+    </AnnotationPropertyRange>
+    <AnnotationPropertyDomain>
+        <AnnotationProperty IRI="#ContainsObject"/>
+        <IRI>#Object</IRI>
+    </AnnotationPropertyDomain>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi -->
+

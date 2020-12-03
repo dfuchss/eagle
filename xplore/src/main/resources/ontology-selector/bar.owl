@@ -1,0 +1,1196 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/environment_bar"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/environment_bar">
+    <Prefix name="" IRI="http://www.semanticweb.org/environment_bar"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="swrl" IRI="http://www.w3.org/2003/11/swrl"/>
+    <Declaration>
+        <NamedIndividual IRI="#Fridge.Door"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#IceCube"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#CocktailShaker"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#MultivitaminJuice"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="#containsObject"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Table"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Kahlua"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Openable"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Gin"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#associatedObject"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Glass"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Spoon"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Mint"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Grabbable"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Soda"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Vodka"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Water"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Decoratable"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Mixable"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Decoration"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Beer"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Straw"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Rum"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Basil"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Whiskey"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Korn"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#HighballGlass"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#CocktailUmbrella"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Olive"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#associatedState"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Syrup"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Milk"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Closeable"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#superObject"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Lemon"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Cola"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#GingerAle"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Orange"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#DrinkingStraw"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Usable"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#CocktailGlass"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Lime"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Value"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Drink"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Champagne"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Vermouth"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#TonicWater"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Fridge"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Consumable"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Nut"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Sprite"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Refrigerator"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Cocktail"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ChampagneGlass"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Nuts"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#LimeJuice"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ClubSoda"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Schnapps"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Tequila"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#RedBull"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#State"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasState"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Object"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Knife"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AppleJuice"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Coke"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#subObject"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Apollinaris"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Counter"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="#ContainsObject"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Integer_Min_Max"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#GingerBeer"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#OrangeJuice"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Cointreau"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#integerRange"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Whisky"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#Closeable"/>
+        <Class IRI="#Object"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Consumable"/>
+        <Class IRI="#Object"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Decoratable"/>
+        <Class IRI="#Object"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Decoration"/>
+        <Class IRI="#Object"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Grabbable"/>
+        <Class IRI="#Object"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Mixable"/>
+        <Class IRI="#Object"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Object"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Openable"/>
+        <Class IRI="#Object"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Usable"/>
+        <Class IRI="#Object"/>
+    </SubClassOf>
+    <ClassAssertion>
+        <Class IRI="#Consumable"/>
+        <NamedIndividual IRI="#Apollinaris"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Consumable"/>
+        <NamedIndividual IRI="#AppleJuice"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Consumable"/>
+        <NamedIndividual IRI="#Basil"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Decoration"/>
+        <NamedIndividual IRI="#Basil"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Value"/>
+        <NamedIndividual IRI="#Basil"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Consumable"/>
+        <NamedIndividual IRI="#Beer"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Consumable"/>
+        <NamedIndividual IRI="#Champagne"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mixable"/>
+        <NamedIndividual IRI="#Champagne"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Value"/>
+        <NamedIndividual IRI="#Champagne"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Decoratable"/>
+        <NamedIndividual IRI="#ChampagneGlass"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Grabbable"/>
+        <NamedIndividual IRI="#ChampagneGlass"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Value"/>
+        <NamedIndividual IRI="#ChampagneGlass"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Consumable"/>
+        <NamedIndividual IRI="#ClubSoda"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mixable"/>
+        <NamedIndividual IRI="#ClubSoda"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Value"/>
+        <NamedIndividual IRI="#ClubSoda"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Consumable"/>
+        <NamedIndividual IRI="#Cocktail"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Decoratable"/>
+        <NamedIndividual IRI="#CocktailGlass"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Grabbable"/>
+        <NamedIndividual IRI="#CocktailGlass"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Value"/>
+        <NamedIndividual IRI="#CocktailGlass"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Usable"/>
+        <NamedIndividual IRI="#CocktailShaker"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Value"/>
+        <NamedIndividual IRI="#CocktailShaker"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Decoration"/>
+        <NamedIndividual IRI="#CocktailUmbrella"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Value"/>
+        <NamedIndividual IRI="#CocktailUmbrella"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Consumable"/>
+        <NamedIndividual IRI="#Cointreau"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Consumable"/>
+        <NamedIndividual IRI="#Coke"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mixable"/>
+        <NamedIndividual IRI="#Coke"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Value"/>
+        <NamedIndividual IRI="#Coke"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Consumable"/>
+        <NamedIndividual IRI="#Cola"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mixable"/>
+        <NamedIndividual IRI="#Cola"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Value"/>
+        <NamedIndividual IRI="#Cola"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Object"/>
+        <NamedIndividual IRI="#Counter"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Value"/>
+        <NamedIndividual IRI="#Counter"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Consumable"/>
+        <NamedIndividual IRI="#Drink"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Decoration"/>
+        <NamedIndividual IRI="#DrinkingStraw"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Value"/>
+        <NamedIndividual IRI="#DrinkingStraw"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Closeable"/>
+        <NamedIndividual IRI="#Fridge"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Openable"/>
+        <NamedIndividual IRI="#Fridge"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Value"/>
+        <NamedIndividual IRI="#Fridge"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Closeable"/>
+        <NamedIndividual IRI="#Fridge.Door"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Openable"/>
+        <NamedIndividual IRI="#Fridge.Door"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Consumable"/>
+        <NamedIndividual IRI="#Gin"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mixable"/>
+        <NamedIndividual IRI="#Gin"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Value"/>
+        <NamedIndividual IRI="#Gin"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Consumable"/>
+        <NamedIndividual IRI="#GingerAle"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mixable"/>
+        <NamedIndividual IRI="#GingerAle"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Value"/>
+        <NamedIndividual IRI="#GingerAle"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Consumable"/>
+        <NamedIndividual IRI="#GingerBeer"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mixable"/>
+        <NamedIndividual IRI="#GingerBeer"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Value"/>
+        <NamedIndividual IRI="#GingerBeer"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Decoratable"/>
+        <NamedIndividual IRI="#Glass"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Grabbable"/>
+        <NamedIndividual IRI="#Glass"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Value"/>
+        <NamedIndividual IRI="#Glass"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Decoratable"/>
+        <NamedIndividual IRI="#HighballGlass"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Grabbable"/>
+        <NamedIndividual IRI="#HighballGlass"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Value"/>
+        <NamedIndividual IRI="#HighballGlass"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Consumable"/>
+        <NamedIndividual IRI="#IceCube"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Decoration"/>
+        <NamedIndividual IRI="#IceCube"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Value"/>
+        <NamedIndividual IRI="#IceCube"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Value"/>
+        <NamedIndividual IRI="#Integer_Min_Max"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Consumable"/>
+        <NamedIndividual IRI="#Kahlua"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mixable"/>
+        <NamedIndividual IRI="#Kahlua"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Value"/>
+        <NamedIndividual IRI="#Kahlua"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Usable"/>
+        <NamedIndividual IRI="#Knife"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Value"/>
+        <NamedIndividual IRI="#Knife"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Consumable"/>
+        <NamedIndividual IRI="#Korn"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mixable"/>
+        <NamedIndividual IRI="#Korn"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Value"/>
+        <NamedIndividual IRI="#Korn"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Consumable"/>
+        <NamedIndividual IRI="#Lemon"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mixable"/>
+        <NamedIndividual IRI="#Lemon"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Value"/>
+        <NamedIndividual IRI="#Lemon"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Consumable"/>
+        <NamedIndividual IRI="#Lime"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Consumable"/>
+        <NamedIndividual IRI="#LimeJuice"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Consumable"/>
+        <NamedIndividual IRI="#Milk"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mixable"/>
+        <NamedIndividual IRI="#Milk"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Value"/>
+        <NamedIndividual IRI="#Milk"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Consumable"/>
+        <NamedIndividual IRI="#Mint"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Decoration"/>
+        <NamedIndividual IRI="#Mint"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Value"/>
+        <NamedIndividual IRI="#Mint"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Consumable"/>
+        <NamedIndividual IRI="#MultivitaminJuice"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mixable"/>
+        <NamedIndividual IRI="#MultivitaminJuice"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Value"/>
+        <NamedIndividual IRI="#MultivitaminJuice"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Consumable"/>
+        <NamedIndividual IRI="#Nut"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Consumable"/>
+        <NamedIndividual IRI="#Nuts"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Decoration"/>
+        <NamedIndividual IRI="#Olive"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Value"/>
+        <NamedIndividual IRI="#Olive"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Consumable"/>
+        <NamedIndividual IRI="#Orange"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Consumable"/>
+        <NamedIndividual IRI="#OrangeJuice"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mixable"/>
+        <NamedIndividual IRI="#OrangeJuice"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Value"/>
+        <NamedIndividual IRI="#OrangeJuice"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Consumable"/>
+        <NamedIndividual IRI="#RedBull"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mixable"/>
+        <NamedIndividual IRI="#RedBull"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Value"/>
+        <NamedIndividual IRI="#RedBull"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Closeable"/>
+        <NamedIndividual IRI="#Refrigerator"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Openable"/>
+        <NamedIndividual IRI="#Refrigerator"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Value"/>
+        <NamedIndividual IRI="#Refrigerator"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Consumable"/>
+        <NamedIndividual IRI="#Rum"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mixable"/>
+        <NamedIndividual IRI="#Rum"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Value"/>
+        <NamedIndividual IRI="#Rum"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Consumable"/>
+        <NamedIndividual IRI="#Schnapps"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mixable"/>
+        <NamedIndividual IRI="#Schnapps"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Value"/>
+        <NamedIndividual IRI="#Schnapps"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Consumable"/>
+        <NamedIndividual IRI="#Soda"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mixable"/>
+        <NamedIndividual IRI="#Soda"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Value"/>
+        <NamedIndividual IRI="#Soda"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Usable"/>
+        <NamedIndividual IRI="#Spoon"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Value"/>
+        <NamedIndividual IRI="#Spoon"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Consumable"/>
+        <NamedIndividual IRI="#Sprite"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mixable"/>
+        <NamedIndividual IRI="#Sprite"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Value"/>
+        <NamedIndividual IRI="#Sprite"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Decoration"/>
+        <NamedIndividual IRI="#Straw"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Value"/>
+        <NamedIndividual IRI="#Straw"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Consumable"/>
+        <NamedIndividual IRI="#Syrup"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mixable"/>
+        <NamedIndividual IRI="#Syrup"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Value"/>
+        <NamedIndividual IRI="#Syrup"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Object"/>
+        <NamedIndividual IRI="#Table"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Value"/>
+        <NamedIndividual IRI="#Table"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Consumable"/>
+        <NamedIndividual IRI="#Tequila"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mixable"/>
+        <NamedIndividual IRI="#Tequila"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Value"/>
+        <NamedIndividual IRI="#Tequila"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Consumable"/>
+        <NamedIndividual IRI="#TonicWater"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mixable"/>
+        <NamedIndividual IRI="#TonicWater"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Value"/>
+        <NamedIndividual IRI="#TonicWater"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Consumable"/>
+        <NamedIndividual IRI="#Vermouth"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mixable"/>
+        <NamedIndividual IRI="#Vermouth"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Value"/>
+        <NamedIndividual IRI="#Vermouth"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Consumable"/>
+        <NamedIndividual IRI="#Vodka"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mixable"/>
+        <NamedIndividual IRI="#Vodka"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Value"/>
+        <NamedIndividual IRI="#Vodka"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Consumable"/>
+        <NamedIndividual IRI="#Water"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mixable"/>
+        <NamedIndividual IRI="#Water"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Value"/>
+        <NamedIndividual IRI="#Water"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Consumable"/>
+        <NamedIndividual IRI="#Whiskey"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mixable"/>
+        <NamedIndividual IRI="#Whiskey"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Value"/>
+        <NamedIndividual IRI="#Whiskey"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Consumable"/>
+        <NamedIndividual IRI="#Whisky"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mixable"/>
+        <NamedIndividual IRI="#Whisky"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Value"/>
+        <NamedIndividual IRI="#Whisky"/>
+    </ClassAssertion>
+    <SameIndividual>
+        <NamedIndividual IRI="#ClubSoda"/>
+        <NamedIndividual IRI="#Soda"/>
+    </SameIndividual>
+    <SameIndividual>
+        <NamedIndividual IRI="#Coke"/>
+        <NamedIndividual IRI="#Cola"/>
+    </SameIndividual>
+    <SameIndividual>
+        <NamedIndividual IRI="#DrinkingStraw"/>
+        <NamedIndividual IRI="#Straw"/>
+    </SameIndividual>
+    <SameIndividual>
+        <NamedIndividual IRI="#Fridge"/>
+        <NamedIndividual IRI="#Refrigerator"/>
+    </SameIndividual>
+    <SameIndividual>
+        <NamedIndividual IRI="#Nut"/>
+        <NamedIndividual IRI="#Nuts"/>
+    </SameIndividual>
+    <SameIndividual>
+        <NamedIndividual IRI="#Whiskey"/>
+        <NamedIndividual IRI="#Whisky"/>
+    </SameIndividual>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#integerRange"/>
+        <NamedIndividual IRI="#Integer_Min_Max"/>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral"></Literal>
+    </DataPropertyAssertion>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#subObject"/>
+        <ObjectProperty IRI="#superObject"/>
+    </InverseObjectProperties>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#associatedObject"/>
+        <Class IRI="#State"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#associatedState"/>
+        <Class IRI="#State"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasState"/>
+        <Class IRI="#Object"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#subObject"/>
+        <Class IRI="#Object"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#superObject"/>
+        <Class IRI="#Object"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#associatedObject"/>
+        <Class IRI="#Object"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#associatedState"/>
+        <Class IRI="#State"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasState"/>
+        <Class IRI="#State"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#subObject"/>
+        <Class IRI="#Object"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#superObject"/>
+        <Class IRI="#Object"/>
+    </ObjectPropertyRange>
+    <DataPropertyDomain>
+        <DataProperty IRI="#integerRange"/>
+        <Class IRI="#Value"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#integerRange"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Apollinaris</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Apollinaris (water)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#AppleJuice</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Apple juice</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Basil</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Basil</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Beer</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Beer</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Champagne</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Champagne</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ChampagneGlass</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Champagne glass</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ClubSoda</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Carbonated water</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Cocktail</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Cocktail</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#CocktailGlass</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Cocktail glass</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#CocktailShaker</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Cocktail shaker</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#CocktailUmbrella</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Cocktail umbrella</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Cointreau</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Cointreau</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Coke</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Cola</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Cola</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Cola</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Counter</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Counter (furniture)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Drink</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Drink</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#DrinkingStraw</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Drinking straw</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Fridge</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Refrigerator</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Gin</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Gin</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#GingerAle</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Ginger ale</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#GingerBeer</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Ginger beer</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Glass</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Glass (drinkware)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#HighballGlass</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Highball glass</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#IceCube</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Ice cube</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Kahlua</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Kahlúa</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Knife</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Knife</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Korn</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Korn (liquor)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Lemon</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Lemon</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Lime</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Lime (fruit)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#LimeJuice</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Lime juice</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Milk</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Milk</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Mint</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Peppermint</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Nut</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Nut (fruit)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Nuts</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Nut (fruit)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Olive</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Olive</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Orange</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Orange (fruit)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#OrangeJuice</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Orange juice</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#RedBull</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Red Bull</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Refrigerator</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Refrigerator</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Rum</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Rum</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Schnapps</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Schnapps</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Soda</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Carbonated water</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Spoon</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Spoon</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Sprite</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Sprite (drink)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Straw</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Drinking straw</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Syrup</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Syrup</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Table</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Table (furniture)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Tequila</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Tequila</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#TonicWater</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Tonic water</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Vermouth</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Vermouth</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Vodka</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Vodka</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Water</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Water</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Whiskey</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Whisky</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Whisky</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Whisky</Literal>
+    </AnnotationAssertion>
+    <SubAnnotationPropertyOf>
+        <AnnotationProperty IRI="#containsObject"/>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+    </SubAnnotationPropertyOf>
+    <AnnotationPropertyRange>
+        <AnnotationProperty IRI="#ContainsObject"/>
+        <IRI>#Object</IRI>
+    </AnnotationPropertyRange>
+    <AnnotationPropertyDomain>
+        <AnnotationProperty IRI="#ContainsObject"/>
+        <IRI>#Object</IRI>
+    </AnnotationPropertyDomain>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi -->
+

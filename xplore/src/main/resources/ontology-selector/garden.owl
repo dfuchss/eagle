@@ -1,0 +1,590 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/environment_garden"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/environment_garden">
+    <Prefix name="" IRI="http://www.semanticweb.org/environment_garden"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="swrl" IRI="http://www.w3.org/2003/11/swrl"/>
+    <Declaration>
+        <NamedIndividual IRI="#Hedge"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Chair"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Compost"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#GardenShed"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Lawnmower"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#associatedObject"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#WaterTank"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Openable"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#associatedState"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#superObject"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="#containsObject"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Pond"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Grabbable"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#GardenShed.Door"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Greenhouse"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#GardenTable"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Lawn"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Table"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Shed"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Rake"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#PatioHeater"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Usable"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasState"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Object"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Hedgerow"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Mower"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Saw"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="#ContainsObject"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Value"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Integer_Min_Max"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Tree"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Bench"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#subObject"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Cutable"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Tank"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Closeable"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Controllable"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#State"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Shears"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#integerRange"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Weed"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Gate"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#Closeable"/>
+        <Class IRI="#Object"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Controllable"/>
+        <Class IRI="#Object"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Cutable"/>
+        <Class IRI="#Object"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Grabbable"/>
+        <Class IRI="#Object"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Object"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Openable"/>
+        <Class IRI="#Object"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Usable"/>
+        <Class IRI="#Object"/>
+    </SubClassOf>
+    <ClassAssertion>
+        <Class IRI="#Object"/>
+        <NamedIndividual IRI="#Bench"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Grabbable"/>
+        <NamedIndividual IRI="#Chair"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Value"/>
+        <NamedIndividual IRI="#Chair"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Object"/>
+        <NamedIndividual IRI="#Compost"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Object"/>
+        <NamedIndividual IRI="#GardenShed"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Value"/>
+        <NamedIndividual IRI="#GardenShed"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Closeable"/>
+        <NamedIndividual IRI="#GardenShed.Door"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Openable"/>
+        <NamedIndividual IRI="#GardenShed.Door"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Value"/>
+        <NamedIndividual IRI="#GardenShed.Door"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Object"/>
+        <NamedIndividual IRI="#GardenTable"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Value"/>
+        <NamedIndividual IRI="#GardenTable"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Openable"/>
+        <NamedIndividual IRI="#Gate"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Object"/>
+        <NamedIndividual IRI="#Greenhouse"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Cutable"/>
+        <NamedIndividual IRI="#Hedge"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Value"/>
+        <NamedIndividual IRI="#Hedge"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Cutable"/>
+        <NamedIndividual IRI="#Hedgerow"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Value"/>
+        <NamedIndividual IRI="#Hedgerow"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Value"/>
+        <NamedIndividual IRI="#Integer_Min_Max"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Cutable"/>
+        <NamedIndividual IRI="#Lawn"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Controllable"/>
+        <NamedIndividual IRI="#Lawnmower"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Grabbable"/>
+        <NamedIndividual IRI="#Lawnmower"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Usable"/>
+        <NamedIndividual IRI="#Lawnmower"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Value"/>
+        <NamedIndividual IRI="#Lawnmower"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Controllable"/>
+        <NamedIndividual IRI="#Mower"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Grabbable"/>
+        <NamedIndividual IRI="#Mower"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Usable"/>
+        <NamedIndividual IRI="#Mower"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Value"/>
+        <NamedIndividual IRI="#Mower"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Controllable"/>
+        <NamedIndividual IRI="#PatioHeater"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Grabbable"/>
+        <NamedIndividual IRI="#PatioHeater"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Object"/>
+        <NamedIndividual IRI="#Pond"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Value"/>
+        <NamedIndividual IRI="#Pond"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Grabbable"/>
+        <NamedIndividual IRI="#Rake"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Usable"/>
+        <NamedIndividual IRI="#Rake"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Value"/>
+        <NamedIndividual IRI="#Rake"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Grabbable"/>
+        <NamedIndividual IRI="#Saw"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Usable"/>
+        <NamedIndividual IRI="#Saw"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Value"/>
+        <NamedIndividual IRI="#Saw"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Grabbable"/>
+        <NamedIndividual IRI="#Shears"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Usable"/>
+        <NamedIndividual IRI="#Shears"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Value"/>
+        <NamedIndividual IRI="#Shears"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Object"/>
+        <NamedIndividual IRI="#Shed"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Value"/>
+        <NamedIndividual IRI="#Shed"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Object"/>
+        <NamedIndividual IRI="#Table"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Value"/>
+        <NamedIndividual IRI="#Table"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Closeable"/>
+        <NamedIndividual IRI="#Tank"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Openable"/>
+        <NamedIndividual IRI="#Tank"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Value"/>
+        <NamedIndividual IRI="#Tank"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Cutable"/>
+        <NamedIndividual IRI="#Tree"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Value"/>
+        <NamedIndividual IRI="#Tree"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Closeable"/>
+        <NamedIndividual IRI="#WaterTank"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Openable"/>
+        <NamedIndividual IRI="#WaterTank"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Value"/>
+        <NamedIndividual IRI="#WaterTank"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Cutable"/>
+        <NamedIndividual IRI="#Weed"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Value"/>
+        <NamedIndividual IRI="#Weed"/>
+    </ClassAssertion>
+    <SameIndividual>
+        <NamedIndividual IRI="#GardenShed"/>
+        <NamedIndividual IRI="#Shed"/>
+    </SameIndividual>
+    <SameIndividual>
+        <NamedIndividual IRI="#GardenTable"/>
+        <NamedIndividual IRI="#Table"/>
+    </SameIndividual>
+    <SameIndividual>
+        <NamedIndividual IRI="#Hedge"/>
+        <NamedIndividual IRI="#Hedgerow"/>
+    </SameIndividual>
+    <SameIndividual>
+        <NamedIndividual IRI="#Lawnmower"/>
+        <NamedIndividual IRI="#Mower"/>
+    </SameIndividual>
+    <SameIndividual>
+        <NamedIndividual IRI="#Tank"/>
+        <NamedIndividual IRI="#WaterTank"/>
+    </SameIndividual>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#integerRange"/>
+        <NamedIndividual IRI="#Integer_Min_Max"/>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral"></Literal>
+    </DataPropertyAssertion>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#subObject"/>
+        <ObjectProperty IRI="#superObject"/>
+    </InverseObjectProperties>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#associatedObject"/>
+        <Class IRI="#State"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#associatedState"/>
+        <Class IRI="#State"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasState"/>
+        <Class IRI="#Object"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#subObject"/>
+        <Class IRI="#Object"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#superObject"/>
+        <Class IRI="#Object"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#associatedObject"/>
+        <Class IRI="#Object"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#associatedState"/>
+        <Class IRI="#State"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasState"/>
+        <Class IRI="#State"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#subObject"/>
+        <Class IRI="#Object"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#superObject"/>
+        <Class IRI="#Object"/>
+    </ObjectPropertyRange>
+    <DataPropertyDomain>
+        <DataProperty IRI="#integerRange"/>
+        <Class IRI="#Value"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#integerRange"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Bench</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Bench (furniture)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Chair</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Chair</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Compost</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Compost</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#GardenShed</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Shed</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#GardenTable</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Patio table</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Gate</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Gate</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Greenhouse</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Greenhouse</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Hedge</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Hedge</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Hedgerow</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Hedge</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Lawn</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Lawn</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Lawnmower</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Lawn mower</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Mower</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Lawn mower</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#PatioHeater</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Patio heater</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Pond</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Pond</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Rake</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Rake (tool)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Saw</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Saw</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Shears</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Pruning shears</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Shed</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Shed</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Tank</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Storage tank</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Tree</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Tree</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#WaterTank</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Water tank</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Weed</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Weed</Literal>
+    </AnnotationAssertion>
+    <SubAnnotationPropertyOf>
+        <AnnotationProperty IRI="#containsObject"/>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+    </SubAnnotationPropertyOf>
+    <AnnotationPropertyRange>
+        <AnnotationProperty IRI="#ContainsObject"/>
+        <IRI>#Object</IRI>
+    </AnnotationPropertyRange>
+    <AnnotationPropertyDomain>
+        <AnnotationProperty IRI="#ContainsObject"/>
+        <IRI>#Object</IRI>
+    </AnnotationPropertyDomain>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi -->
+

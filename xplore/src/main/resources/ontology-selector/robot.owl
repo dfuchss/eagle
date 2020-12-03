@@ -1,0 +1,781 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/roboapibase"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/roboapibase">
+    <Prefix name="" IRI="http://www.semanticweb.org/roboapibase"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="swrl" IRI="http://www.w3.org/2003/11/swrl"/>
+    <Declaration>
+        <ObjectProperty IRI="#hasParameter"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#warmed"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#go"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#System"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Parameter"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#turnOff"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="#ContainsObject"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Method"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#ofDataType"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Closeable"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#hand"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#changingMethod"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasMethod"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#opened"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Openable"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#full"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#show"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#fill"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#bring"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Controllable"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Object"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#changesStateTo"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#cold"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#closed"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#float"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Grabbable"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#grab.what"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#turnOn.what"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#State"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#turnOff.what"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#integerRange"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Integer_Min_Max"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#double"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#open"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#come"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#short"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DataType"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#dirty"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#move.howFar"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#turnOn"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Armar"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#grab"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#warm"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#empty"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#clean"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="#containsObject"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#boolean"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Robot"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#off"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#open.what"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#long"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#int"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#take"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#close.what"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#associatedState"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#close"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#cleaned"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#take.what"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#get"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#wash"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#pour"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Robo"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#String"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#char"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#put"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#move"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#on"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Value"/>
+    </Declaration>
+    <ClassAssertion>
+        <Class IRI="#System"/>
+        <NamedIndividual IRI="#Armar"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DataType"/>
+        <NamedIndividual IRI="#Closeable"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DataType"/>
+        <NamedIndividual IRI="#Controllable"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DataType"/>
+        <NamedIndividual IRI="#Grabbable"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Value"/>
+        <NamedIndividual IRI="#Integer_Min_Max"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DataType"/>
+        <NamedIndividual IRI="#Object"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DataType"/>
+        <NamedIndividual IRI="#Openable"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#System"/>
+        <NamedIndividual IRI="#Robo"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#System"/>
+        <NamedIndividual IRI="#Robot"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DataType"/>
+        <NamedIndividual IRI="#String"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DataType"/>
+        <NamedIndividual IRI="#boolean"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Method"/>
+        <NamedIndividual IRI="#bring"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DataType"/>
+        <NamedIndividual IRI="#char"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Method"/>
+        <NamedIndividual IRI="#clean"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#State"/>
+        <NamedIndividual IRI="#cleaned"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Method"/>
+        <NamedIndividual IRI="#close"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Parameter"/>
+        <NamedIndividual IRI="#close.what"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#State"/>
+        <NamedIndividual IRI="#closed"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#State"/>
+        <NamedIndividual IRI="#cold"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Method"/>
+        <NamedIndividual IRI="#come"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#State"/>
+        <NamedIndividual IRI="#dirty"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DataType"/>
+        <NamedIndividual IRI="#double"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#State"/>
+        <NamedIndividual IRI="#empty"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Method"/>
+        <NamedIndividual IRI="#fill"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DataType"/>
+        <NamedIndividual IRI="#float"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#State"/>
+        <NamedIndividual IRI="#full"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Method"/>
+        <NamedIndividual IRI="#get"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Method"/>
+        <NamedIndividual IRI="#go"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Method"/>
+        <NamedIndividual IRI="#grab"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Parameter"/>
+        <NamedIndividual IRI="#grab.what"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Method"/>
+        <NamedIndividual IRI="#hand"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DataType"/>
+        <NamedIndividual IRI="#int"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DataType"/>
+        <NamedIndividual IRI="#long"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Method"/>
+        <NamedIndividual IRI="#move"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Parameter"/>
+        <NamedIndividual IRI="#move.howFar"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#State"/>
+        <NamedIndividual IRI="#off"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#State"/>
+        <NamedIndividual IRI="#on"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Method"/>
+        <NamedIndividual IRI="#open"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Parameter"/>
+        <NamedIndividual IRI="#open.what"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#State"/>
+        <NamedIndividual IRI="#opened"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Method"/>
+        <NamedIndividual IRI="#pour"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Method"/>
+        <NamedIndividual IRI="#put"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DataType"/>
+        <NamedIndividual IRI="#short"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Method"/>
+        <NamedIndividual IRI="#show"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Method"/>
+        <NamedIndividual IRI="#take"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Parameter"/>
+        <NamedIndividual IRI="#take.what"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Method"/>
+        <NamedIndividual IRI="#turnOff"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Parameter"/>
+        <NamedIndividual IRI="#turnOff.what"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Method"/>
+        <NamedIndividual IRI="#turnOn"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Parameter"/>
+        <NamedIndividual IRI="#turnOn.what"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Method"/>
+        <NamedIndividual IRI="#warm"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#State"/>
+        <NamedIndividual IRI="#warmed"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Method"/>
+        <NamedIndividual IRI="#wash"/>
+    </ClassAssertion>
+    <SameIndividual>
+        <NamedIndividual IRI="#Armar"/>
+        <NamedIndividual IRI="#Robo"/>
+    </SameIndividual>
+    <SameIndividual>
+        <NamedIndividual IRI="#Armar"/>
+        <NamedIndividual IRI="#Robot"/>
+    </SameIndividual>
+    <SameIndividual>
+        <NamedIndividual IRI="#Robo"/>
+        <NamedIndividual IRI="#Robot"/>
+    </SameIndividual>
+    <SameIndividual>
+        <NamedIndividual IRI="#bring"/>
+        <NamedIndividual IRI="#get"/>
+    </SameIndividual>
+    <SameIndividual>
+        <NamedIndividual IRI="#clean"/>
+        <NamedIndividual IRI="#wash"/>
+    </SameIndividual>
+    <SameIndividual>
+        <NamedIndividual IRI="#go"/>
+        <NamedIndividual IRI="#move"/>
+    </SameIndividual>
+    <SameIndividual>
+        <NamedIndividual IRI="#grab"/>
+        <NamedIndividual IRI="#take"/>
+    </SameIndividual>
+    <SameIndividual>
+        <NamedIndividual IRI="#grab.what"/>
+        <NamedIndividual IRI="#take.what"/>
+    </SameIndividual>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMethod"/>
+        <NamedIndividual IRI="#Armar"/>
+        <NamedIndividual IRI="#bring"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMethod"/>
+        <NamedIndividual IRI="#Armar"/>
+        <NamedIndividual IRI="#close"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMethod"/>
+        <NamedIndividual IRI="#Armar"/>
+        <NamedIndividual IRI="#come"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMethod"/>
+        <NamedIndividual IRI="#Armar"/>
+        <NamedIndividual IRI="#fill"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMethod"/>
+        <NamedIndividual IRI="#Armar"/>
+        <NamedIndividual IRI="#get"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMethod"/>
+        <NamedIndividual IRI="#Armar"/>
+        <NamedIndividual IRI="#go"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMethod"/>
+        <NamedIndividual IRI="#Armar"/>
+        <NamedIndividual IRI="#hand"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMethod"/>
+        <NamedIndividual IRI="#Armar"/>
+        <NamedIndividual IRI="#open"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMethod"/>
+        <NamedIndividual IRI="#Armar"/>
+        <NamedIndividual IRI="#pour"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMethod"/>
+        <NamedIndividual IRI="#Armar"/>
+        <NamedIndividual IRI="#put"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMethod"/>
+        <NamedIndividual IRI="#Armar"/>
+        <NamedIndividual IRI="#show"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#changesStateTo"/>
+        <NamedIndividual IRI="#clean"/>
+        <NamedIndividual IRI="#cleaned"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#associatedState"/>
+        <NamedIndividual IRI="#cleaned"/>
+        <NamedIndividual IRI="#dirty"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#changesStateTo"/>
+        <NamedIndividual IRI="#close"/>
+        <NamedIndividual IRI="#closed"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasParameter"/>
+        <NamedIndividual IRI="#close"/>
+        <NamedIndividual IRI="#close.what"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#associatedState"/>
+        <NamedIndividual IRI="#closed"/>
+        <NamedIndividual IRI="#opened"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#changingMethod"/>
+        <NamedIndividual IRI="#closed"/>
+        <NamedIndividual IRI="#open"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#associatedState"/>
+        <NamedIndividual IRI="#cold"/>
+        <NamedIndividual IRI="#warmed"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#changingMethod"/>
+        <NamedIndividual IRI="#cold"/>
+        <NamedIndividual IRI="#warm"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#associatedState"/>
+        <NamedIndividual IRI="#dirty"/>
+        <NamedIndividual IRI="#cleaned"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#associatedState"/>
+        <NamedIndividual IRI="#empty"/>
+        <NamedIndividual IRI="#full"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#changingMethod"/>
+        <NamedIndividual IRI="#empty"/>
+        <NamedIndividual IRI="#fill"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#changesStateTo"/>
+        <NamedIndividual IRI="#fill"/>
+        <NamedIndividual IRI="#full"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#associatedState"/>
+        <NamedIndividual IRI="#full"/>
+        <NamedIndividual IRI="#empty"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#changingMethod"/>
+        <NamedIndividual IRI="#full"/>
+        <NamedIndividual IRI="#pour"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasParameter"/>
+        <NamedIndividual IRI="#grab"/>
+        <NamedIndividual IRI="#grab.what"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasParameter"/>
+        <NamedIndividual IRI="#move"/>
+        <NamedIndividual IRI="#move.howFar"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ofDataType"/>
+        <NamedIndividual IRI="#move.howFar"/>
+        <NamedIndividual IRI="#int"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#associatedState"/>
+        <NamedIndividual IRI="#off"/>
+        <NamedIndividual IRI="#on"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#changingMethod"/>
+        <NamedIndividual IRI="#off"/>
+        <NamedIndividual IRI="#turnOn"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#associatedState"/>
+        <NamedIndividual IRI="#on"/>
+        <NamedIndividual IRI="#off"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#changingMethod"/>
+        <NamedIndividual IRI="#on"/>
+        <NamedIndividual IRI="#turnOff"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#changesStateTo"/>
+        <NamedIndividual IRI="#open"/>
+        <NamedIndividual IRI="#opened"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasParameter"/>
+        <NamedIndividual IRI="#open"/>
+        <NamedIndividual IRI="#open.what"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#associatedState"/>
+        <NamedIndividual IRI="#opened"/>
+        <NamedIndividual IRI="#closed"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#changingMethod"/>
+        <NamedIndividual IRI="#opened"/>
+        <NamedIndividual IRI="#close"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#changesStateTo"/>
+        <NamedIndividual IRI="#pour"/>
+        <NamedIndividual IRI="#empty"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasParameter"/>
+        <NamedIndividual IRI="#take"/>
+        <NamedIndividual IRI="#take.what"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#changesStateTo"/>
+        <NamedIndividual IRI="#turnOff"/>
+        <NamedIndividual IRI="#off"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasParameter"/>
+        <NamedIndividual IRI="#turnOff"/>
+        <NamedIndividual IRI="#turnOff.what"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#changesStateTo"/>
+        <NamedIndividual IRI="#turnOn"/>
+        <NamedIndividual IRI="#on"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasParameter"/>
+        <NamedIndividual IRI="#turnOn"/>
+        <NamedIndividual IRI="#turnOn.what"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#changesStateTo"/>
+        <NamedIndividual IRI="#warm"/>
+        <NamedIndividual IRI="#warmed"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#associatedState"/>
+        <NamedIndividual IRI="#warmed"/>
+        <NamedIndividual IRI="#cold"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#changingMethod"/>
+        <NamedIndividual IRI="#warmed"/>
+        <NamedIndividual IRI="#warm"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#changesStateTo"/>
+        <NamedIndividual IRI="#wash"/>
+        <NamedIndividual IRI="#cleaned"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#integerRange"/>
+        <NamedIndividual IRI="#Integer_Min_Max"/>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral"></Literal>
+    </DataPropertyAssertion>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#changesStateTo"/>
+        <ObjectProperty IRI="#changingMethod"/>
+    </InverseObjectProperties>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#associatedState"/>
+        <Class IRI="#State"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#changesStateTo"/>
+        <Class IRI="#Method"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#changingMethod"/>
+        <Class IRI="#State"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasMethod"/>
+        <Class IRI="#System"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasParameter"/>
+        <Class IRI="#Method"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#ofDataType"/>
+        <Class IRI="#Parameter"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#associatedState"/>
+        <Class IRI="#State"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#changesStateTo"/>
+        <Class IRI="#State"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#changingMethod"/>
+        <Class IRI="#Method"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasMethod"/>
+        <Class IRI="#Method"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasParameter"/>
+        <Class IRI="#Parameter"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#ofDataType"/>
+        <Class IRI="#DataType"/>
+    </ObjectPropertyRange>
+    <DataPropertyDomain>
+        <DataProperty IRI="#integerRange"/>
+        <Class IRI="#Value"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#integerRange"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Robot</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Robot</Literal>
+    </AnnotationAssertion>
+    <SubAnnotationPropertyOf>
+        <AnnotationProperty IRI="#containsObject"/>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+    </SubAnnotationPropertyOf>
+    <AnnotationPropertyRange>
+        <AnnotationProperty IRI="#ContainsObject"/>
+        <IRI>#Object</IRI>
+    </AnnotationPropertyRange>
+    <AnnotationPropertyDomain>
+        <AnnotationProperty IRI="#ContainsObject"/>
+        <IRI>#Object</IRI>
+    </AnnotationPropertyDomain>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi -->
+

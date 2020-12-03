@@ -1,0 +1,485 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/environment_bedroom"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/environment_bedroom">
+    <Prefix name="" IRI="http://www.semanticweb.org/environment_bedroom"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="swrl" IRI="http://www.w3.org/2003/11/swrl"/>
+    <Declaration>
+        <NamedIndividual IRI="#Tee"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#State"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Object"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Bed"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Pillow"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Lamp"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#T-Shirt"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Value"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Sheet"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Table"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#superObject"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Closeable"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Cushion"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#BedsideTable"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Chair"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#BedSheet"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Shirt"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Closet"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Bedding"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Book"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Desktop"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Integer_Min_Max"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Grabbable"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#integerRange"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#BookShelf"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Clothes"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Trousers"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="#ContainsObject"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Pants"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Openable"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#associatedState"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#associatedObject"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Sweater"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Drawer"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Wardrobe"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Nightstand"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Underpants"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Desk"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#subObject"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="#containsObject"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasState"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#Closeable"/>
+        <Class IRI="#Object"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Grabbable"/>
+        <Class IRI="#Object"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Object"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Openable"/>
+        <Class IRI="#Object"/>
+    </SubClassOf>
+    <ClassAssertion>
+        <Class IRI="#Object"/>
+        <NamedIndividual IRI="#Bed"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Grabbable"/>
+        <NamedIndividual IRI="#BedSheet"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Grabbable"/>
+        <NamedIndividual IRI="#Bedding"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Closeable"/>
+        <NamedIndividual IRI="#BedsideTable"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Openable"/>
+        <NamedIndividual IRI="#BedsideTable"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Grabbable"/>
+        <NamedIndividual IRI="#Book"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Object"/>
+        <NamedIndividual IRI="#BookShelf"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Grabbable"/>
+        <NamedIndividual IRI="#Chair"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Closeable"/>
+        <NamedIndividual IRI="#Closet"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Openable"/>
+        <NamedIndividual IRI="#Closet"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Grabbable"/>
+        <NamedIndividual IRI="#Clothes"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Grabbable"/>
+        <NamedIndividual IRI="#Cushion"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Object"/>
+        <NamedIndividual IRI="#Desk"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Object"/>
+        <NamedIndividual IRI="#Desktop"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Closeable"/>
+        <NamedIndividual IRI="#Drawer"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Openable"/>
+        <NamedIndividual IRI="#Drawer"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Value"/>
+        <NamedIndividual IRI="#Integer_Min_Max"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Grabbable"/>
+        <NamedIndividual IRI="#Lamp"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Closeable"/>
+        <NamedIndividual IRI="#Nightstand"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Openable"/>
+        <NamedIndividual IRI="#Nightstand"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Grabbable"/>
+        <NamedIndividual IRI="#Pants"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Grabbable"/>
+        <NamedIndividual IRI="#Pillow"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Grabbable"/>
+        <NamedIndividual IRI="#Sheet"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Grabbable"/>
+        <NamedIndividual IRI="#Shirt"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Grabbable"/>
+        <NamedIndividual IRI="#Sweater"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Grabbable"/>
+        <NamedIndividual IRI="#T-Shirt"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Object"/>
+        <NamedIndividual IRI="#Table"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Grabbable"/>
+        <NamedIndividual IRI="#Tee"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Grabbable"/>
+        <NamedIndividual IRI="#Trousers"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Grabbable"/>
+        <NamedIndividual IRI="#Underpants"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Closeable"/>
+        <NamedIndividual IRI="#Wardrobe"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Openable"/>
+        <NamedIndividual IRI="#Wardrobe"/>
+    </ClassAssertion>
+    <SameIndividual>
+        <NamedIndividual IRI="#BedSheet"/>
+        <NamedIndividual IRI="#Sheet"/>
+    </SameIndividual>
+    <SameIndividual>
+        <NamedIndividual IRI="#BedsideTable"/>
+        <NamedIndividual IRI="#Nightstand"/>
+    </SameIndividual>
+    <SameIndividual>
+        <NamedIndividual IRI="#Closet"/>
+        <NamedIndividual IRI="#Wardrobe"/>
+    </SameIndividual>
+    <SameIndividual>
+        <NamedIndividual IRI="#Cushion"/>
+        <NamedIndividual IRI="#Pillow"/>
+    </SameIndividual>
+    <SameIndividual>
+        <NamedIndividual IRI="#Desk"/>
+        <NamedIndividual IRI="#Desktop"/>
+    </SameIndividual>
+    <SameIndividual>
+        <NamedIndividual IRI="#Pants"/>
+        <NamedIndividual IRI="#Trousers"/>
+    </SameIndividual>
+    <SameIndividual>
+        <NamedIndividual IRI="#T-Shirt"/>
+        <NamedIndividual IRI="#Tee"/>
+    </SameIndividual>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#integerRange"/>
+        <NamedIndividual IRI="#Integer_Min_Max"/>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral"></Literal>
+    </DataPropertyAssertion>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#subObject"/>
+        <ObjectProperty IRI="#superObject"/>
+    </InverseObjectProperties>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#associatedObject"/>
+        <Class IRI="#State"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#associatedState"/>
+        <Class IRI="#State"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasState"/>
+        <Class IRI="#Object"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#subObject"/>
+        <Class IRI="#Object"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#superObject"/>
+        <Class IRI="#Object"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#associatedObject"/>
+        <Class IRI="#Object"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#associatedState"/>
+        <Class IRI="#State"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasState"/>
+        <Class IRI="#State"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#subObject"/>
+        <Class IRI="#Object"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#superObject"/>
+        <Class IRI="#Object"/>
+    </ObjectPropertyRange>
+    <DataPropertyDomain>
+        <DataProperty IRI="#integerRange"/>
+        <Class IRI="#Value"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#integerRange"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Bed</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Bed</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#BedSheet</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Bed sheet</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Bedding</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Bedding</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Book</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Book</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#BookShelf</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Book shelf</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Chair</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Chair</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Closet</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Closet</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Clothes</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Clothing</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Cushion</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Cushion</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Desk</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Desk</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Lamp</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Light fixture</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Nightstand</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Nightstand</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Pillow</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Pillow</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Shirt</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Shirt</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Sweater</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Sweater</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#T-Shirt</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">T-shirt</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Table</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Table (furniture)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Trousers</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Trousers</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Underpants</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Underpants</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Wardrobe</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Wardrobe</Literal>
+    </AnnotationAssertion>
+    <SubAnnotationPropertyOf>
+        <AnnotationProperty IRI="#containsObject"/>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+    </SubAnnotationPropertyOf>
+    <AnnotationPropertyRange>
+        <AnnotationProperty IRI="#ContainsObject"/>
+        <IRI>#Object</IRI>
+    </AnnotationPropertyRange>
+    <AnnotationPropertyDomain>
+        <AnnotationProperty IRI="#ContainsObject"/>
+        <IRI>#Object</IRI>
+    </AnnotationPropertyDomain>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi -->
+

@@ -1,0 +1,438 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/environment_laundry"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/environment_laundry">
+    <Prefix name="" IRI="http://www.semanticweb.org/environment_laundry"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="swrl" IRI="http://www.w3.org/2003/11/swrl"/>
+    <Declaration>
+        <NamedIndividual IRI="#Laundry"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ClothesDryer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Value"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Object"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Closeable"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#changingMethod"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#associatedObject"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Detergent"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#superObject"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Handle"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ClothesHorse"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Grabbable"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Washable"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#DryingRack"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#LaundryDetergent"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#clean"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="#containsObject"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#DryingCabinet"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Integer_Min_Max"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#off"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#on"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Openable"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#changesStateTo"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Button"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#associatedState"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#integerRange"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#subObject"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="#ContainsObject"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasState"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#WashingMachine"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#dirty"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Dryer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Controllable"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#State"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Pushable"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#Closeable"/>
+        <Class IRI="#Object"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Controllable"/>
+        <Class IRI="#Object"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Grabbable"/>
+        <Class IRI="#Object"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Object"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Openable"/>
+        <Class IRI="#Object"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Pushable"/>
+        <Class IRI="#Object"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Washable"/>
+        <Class IRI="#Object"/>
+    </SubClassOf>
+    <ClassAssertion>
+        <Class IRI="#Pushable"/>
+        <NamedIndividual IRI="#Button"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Closeable"/>
+        <NamedIndividual IRI="#ClothesDryer"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Controllable"/>
+        <NamedIndividual IRI="#ClothesDryer"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Openable"/>
+        <NamedIndividual IRI="#ClothesDryer"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Object"/>
+        <NamedIndividual IRI="#ClothesHorse"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Grabbable"/>
+        <NamedIndividual IRI="#Detergent"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Closeable"/>
+        <NamedIndividual IRI="#Dryer"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Controllable"/>
+        <NamedIndividual IRI="#Dryer"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Openable"/>
+        <NamedIndividual IRI="#Dryer"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Closeable"/>
+        <NamedIndividual IRI="#DryingCabinet"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Controllable"/>
+        <NamedIndividual IRI="#DryingCabinet"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Openable"/>
+        <NamedIndividual IRI="#DryingCabinet"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Object"/>
+        <NamedIndividual IRI="#DryingRack"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Grabbable"/>
+        <NamedIndividual IRI="#Handle"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Value"/>
+        <NamedIndividual IRI="#Integer_Min_Max"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Grabbable"/>
+        <NamedIndividual IRI="#Laundry"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Washable"/>
+        <NamedIndividual IRI="#Laundry"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Grabbable"/>
+        <NamedIndividual IRI="#LaundryDetergent"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Closeable"/>
+        <NamedIndividual IRI="#WashingMachine"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Controllable"/>
+        <NamedIndividual IRI="#WashingMachine"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Openable"/>
+        <NamedIndividual IRI="#WashingMachine"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#State"/>
+        <NamedIndividual IRI="#clean"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#State"/>
+        <NamedIndividual IRI="#dirty"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#State"/>
+        <NamedIndividual IRI="#off"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#State"/>
+        <NamedIndividual IRI="#on"/>
+    </ClassAssertion>
+    <SameIndividual>
+        <NamedIndividual IRI="#ClothesDryer"/>
+        <NamedIndividual IRI="#Dryer"/>
+    </SameIndividual>
+    <SameIndividual>
+        <NamedIndividual IRI="#Detergent"/>
+        <NamedIndividual IRI="#LaundryDetergent"/>
+    </SameIndividual>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#associatedState"/>
+        <NamedIndividual IRI="#ClothesDryer"/>
+        <NamedIndividual IRI="#off"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#associatedState"/>
+        <NamedIndividual IRI="#ClothesDryer"/>
+        <NamedIndividual IRI="#on"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#associatedState"/>
+        <NamedIndividual IRI="#Dryer"/>
+        <NamedIndividual IRI="#off"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#associatedState"/>
+        <NamedIndividual IRI="#Dryer"/>
+        <NamedIndividual IRI="#on"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#associatedState"/>
+        <NamedIndividual IRI="#DryingCabinet"/>
+        <NamedIndividual IRI="#off"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#associatedState"/>
+        <NamedIndividual IRI="#DryingCabinet"/>
+        <NamedIndividual IRI="#on"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#associatedState"/>
+        <NamedIndividual IRI="#Laundry"/>
+        <NamedIndividual IRI="#clean"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#associatedState"/>
+        <NamedIndividual IRI="#Laundry"/>
+        <NamedIndividual IRI="#dirty"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#associatedState"/>
+        <NamedIndividual IRI="#WashingMachine"/>
+        <NamedIndividual IRI="#off"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#associatedState"/>
+        <NamedIndividual IRI="#WashingMachine"/>
+        <NamedIndividual IRI="#on"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#integerRange"/>
+        <NamedIndividual IRI="#Integer_Min_Max"/>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral"></Literal>
+    </DataPropertyAssertion>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#changesStateTo"/>
+        <ObjectProperty IRI="#changingMethod"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#subObject"/>
+        <ObjectProperty IRI="#superObject"/>
+    </InverseObjectProperties>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#associatedObject"/>
+        <Class IRI="#State"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#associatedState"/>
+        <Class IRI="#State"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#changingMethod"/>
+        <Class IRI="#State"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasState"/>
+        <Class IRI="#Object"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#subObject"/>
+        <Class IRI="#Object"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#superObject"/>
+        <Class IRI="#Object"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#associatedObject"/>
+        <Class IRI="#Object"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#associatedState"/>
+        <Class IRI="#State"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#changesStateTo"/>
+        <Class IRI="#State"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasState"/>
+        <Class IRI="#State"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#subObject"/>
+        <Class IRI="#Object"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#superObject"/>
+        <Class IRI="#Object"/>
+    </ObjectPropertyRange>
+    <DataPropertyDomain>
+        <DataProperty IRI="#integerRange"/>
+        <Class IRI="#Value"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#integerRange"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Button</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Push-button</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ClothesDryer</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Clothes dryer</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ClothesHorse</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Clothes horse</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#DryingCabinet</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Drying cabinet</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#DryingRack</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Drying rack</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Handle</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Handle</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Laundry</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Laundry</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#LaundryDetergent</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Laundry detergent</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#WashingMachine</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Washing machine</Literal>
+    </AnnotationAssertion>
+    <SubAnnotationPropertyOf>
+        <AnnotationProperty IRI="#containsObject"/>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+    </SubAnnotationPropertyOf>
+    <AnnotationPropertyRange>
+        <AnnotationProperty IRI="#ContainsObject"/>
+        <IRI>#Object</IRI>
+    </AnnotationPropertyRange>
+    <AnnotationPropertyDomain>
+        <AnnotationProperty IRI="#ContainsObject"/>
+        <IRI>#Object</IRI>
+    </AnnotationPropertyDomain>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi -->
+

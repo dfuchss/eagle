@@ -1,0 +1,1786 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/roboapibase"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/roboapibase">
+    <Prefix name="" IRI="http://www.semanticweb.org/roboapibase"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="swrl" IRI="http://www.w3.org/2003/11/swrl"/>
+    <Declaration>
+        <ObjectProperty IRI="#hasParameter"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#go"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Parameter"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Lemon"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="#ContainsObject"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#WaterBottle"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#opened"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasMethod"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Plate"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Fridge"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#fill"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#show"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#bring"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Microwave"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Object"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#cold"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#changesStateTo"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#associatedObject"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Apollinaris"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#MultivitaminJuice"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#float"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#grab.what"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#State"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Object"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#CerealBox"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Integer_Min_Max"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#come"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Dishwasher"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#OrangeJuice"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#short"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DataType"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Dishwasher.Door"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#dirty"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#move.howFar"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#subObject"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#grab"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#warm"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#empty"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#clean"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Water"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Roboter"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="#containsObject"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#open.what"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#long"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#int"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#InstantMeal"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#take"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Table"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#close"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Dishes"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#take.what"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#CocoaBox"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#wash"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#pour"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Fridge.Door"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#String"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#char"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#put"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#on"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#warmed"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#System"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#turnOff"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Method"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AppleJuice"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#ofDataType"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#hand"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#CookieBox"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#changingMethod"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Television"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#full"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#closed"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#VodkaBottle"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Cup"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#TV"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#integerRange"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#double"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#open"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Orange"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Microwave.Door"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Popcorn"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#turnOn"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Armar"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasState"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Ketchup"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#boolean"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Nesquik"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#off"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Cupboard.Door"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#close.what"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#superObject"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Milk"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#associatedState"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#cleaned"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#get"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Cupboard"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Robo"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#move"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Value"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#Object"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </SubClassOf>
+    <ClassAssertion>
+        <Class IRI="#Object"/>
+        <NamedIndividual IRI="#Apollinaris"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Object"/>
+        <NamedIndividual IRI="#AppleJuice"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Value"/>
+        <NamedIndividual IRI="#AppleJuice"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#System"/>
+        <NamedIndividual IRI="#Armar"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Object"/>
+        <NamedIndividual IRI="#CerealBox"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Value"/>
+        <NamedIndividual IRI="#CerealBox"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Object"/>
+        <NamedIndividual IRI="#CocoaBox"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Value"/>
+        <NamedIndividual IRI="#CocoaBox"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Object"/>
+        <NamedIndividual IRI="#CookieBox"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Value"/>
+        <NamedIndividual IRI="#CookieBox"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Object"/>
+        <NamedIndividual IRI="#Cup"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Value"/>
+        <NamedIndividual IRI="#Cup"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Object"/>
+        <NamedIndividual IRI="#Cupboard"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Value"/>
+        <NamedIndividual IRI="#Cupboard"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Object"/>
+        <NamedIndividual IRI="#Cupboard.Door"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Value"/>
+        <NamedIndividual IRI="#Cupboard.Door"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Object"/>
+        <NamedIndividual IRI="#Dishes"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Value"/>
+        <NamedIndividual IRI="#Dishes"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Object"/>
+        <NamedIndividual IRI="#Dishwasher"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Value"/>
+        <NamedIndividual IRI="#Dishwasher"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Object"/>
+        <NamedIndividual IRI="#Dishwasher.Door"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Value"/>
+        <NamedIndividual IRI="#Dishwasher.Door"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Object"/>
+        <NamedIndividual IRI="#Fridge"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Value"/>
+        <NamedIndividual IRI="#Fridge"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Object"/>
+        <NamedIndividual IRI="#Fridge.Door"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Value"/>
+        <NamedIndividual IRI="#Fridge.Door"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Object"/>
+        <NamedIndividual IRI="#InstantMeal"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Value"/>
+        <NamedIndividual IRI="#InstantMeal"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Value"/>
+        <NamedIndividual IRI="#Integer_Min_Max"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Object"/>
+        <NamedIndividual IRI="#Ketchup"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Object"/>
+        <NamedIndividual IRI="#Lemon"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Value"/>
+        <NamedIndividual IRI="#Lemon"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Object"/>
+        <NamedIndividual IRI="#Microwave"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Value"/>
+        <NamedIndividual IRI="#Microwave"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Object"/>
+        <NamedIndividual IRI="#Microwave.Door"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Value"/>
+        <NamedIndividual IRI="#Microwave.Door"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Object"/>
+        <NamedIndividual IRI="#Milk"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Value"/>
+        <NamedIndividual IRI="#Milk"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Object"/>
+        <NamedIndividual IRI="#MultivitaminJuice"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Value"/>
+        <NamedIndividual IRI="#MultivitaminJuice"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Object"/>
+        <NamedIndividual IRI="#Nesquik"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Value"/>
+        <NamedIndividual IRI="#Nesquik"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DataType"/>
+        <NamedIndividual IRI="#Object"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Object"/>
+        <NamedIndividual IRI="#Orange"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Value"/>
+        <NamedIndividual IRI="#Orange"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Object"/>
+        <NamedIndividual IRI="#OrangeJuice"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Value"/>
+        <NamedIndividual IRI="#OrangeJuice"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Object"/>
+        <NamedIndividual IRI="#Plate"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Object"/>
+        <NamedIndividual IRI="#Popcorn"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Value"/>
+        <NamedIndividual IRI="#Popcorn"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#System"/>
+        <NamedIndividual IRI="#Robo"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#System"/>
+        <NamedIndividual IRI="#Roboter"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DataType"/>
+        <NamedIndividual IRI="#String"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Object"/>
+        <NamedIndividual IRI="#TV"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Value"/>
+        <NamedIndividual IRI="#TV"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Object"/>
+        <NamedIndividual IRI="#Table"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Value"/>
+        <NamedIndividual IRI="#Table"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Object"/>
+        <NamedIndividual IRI="#Television"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Value"/>
+        <NamedIndividual IRI="#Television"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Object"/>
+        <NamedIndividual IRI="#VodkaBottle"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Value"/>
+        <NamedIndividual IRI="#VodkaBottle"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Object"/>
+        <NamedIndividual IRI="#Water"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Value"/>
+        <NamedIndividual IRI="#Water"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Object"/>
+        <NamedIndividual IRI="#WaterBottle"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DataType"/>
+        <NamedIndividual IRI="#boolean"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Method"/>
+        <NamedIndividual IRI="#bring"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DataType"/>
+        <NamedIndividual IRI="#char"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Method"/>
+        <NamedIndividual IRI="#clean"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#State"/>
+        <NamedIndividual IRI="#cleaned"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Method"/>
+        <NamedIndividual IRI="#close"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Parameter"/>
+        <NamedIndividual IRI="#close.what"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#State"/>
+        <NamedIndividual IRI="#closed"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#State"/>
+        <NamedIndividual IRI="#cold"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Method"/>
+        <NamedIndividual IRI="#come"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#State"/>
+        <NamedIndividual IRI="#dirty"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DataType"/>
+        <NamedIndividual IRI="#double"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#State"/>
+        <NamedIndividual IRI="#empty"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Method"/>
+        <NamedIndividual IRI="#fill"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DataType"/>
+        <NamedIndividual IRI="#float"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#State"/>
+        <NamedIndividual IRI="#full"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Method"/>
+        <NamedIndividual IRI="#get"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Method"/>
+        <NamedIndividual IRI="#go"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Method"/>
+        <NamedIndividual IRI="#grab"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Parameter"/>
+        <NamedIndividual IRI="#grab.what"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Method"/>
+        <NamedIndividual IRI="#hand"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DataType"/>
+        <NamedIndividual IRI="#int"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DataType"/>
+        <NamedIndividual IRI="#long"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Method"/>
+        <NamedIndividual IRI="#move"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Parameter"/>
+        <NamedIndividual IRI="#move.howFar"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#State"/>
+        <NamedIndividual IRI="#off"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#State"/>
+        <NamedIndividual IRI="#on"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Method"/>
+        <NamedIndividual IRI="#open"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Parameter"/>
+        <NamedIndividual IRI="#open.what"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#State"/>
+        <NamedIndividual IRI="#opened"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Method"/>
+        <NamedIndividual IRI="#pour"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Method"/>
+        <NamedIndividual IRI="#put"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DataType"/>
+        <NamedIndividual IRI="#short"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Method"/>
+        <NamedIndividual IRI="#show"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Method"/>
+        <NamedIndividual IRI="#take"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Parameter"/>
+        <NamedIndividual IRI="#take.what"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Method"/>
+        <NamedIndividual IRI="#turnOff"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Method"/>
+        <NamedIndividual IRI="#turnOn"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Method"/>
+        <NamedIndividual IRI="#warm"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#State"/>
+        <NamedIndividual IRI="#warmed"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Method"/>
+        <NamedIndividual IRI="#wash"/>
+    </ClassAssertion>
+    <SameIndividual>
+        <NamedIndividual IRI="#Apollinaris"/>
+        <NamedIndividual IRI="#WaterBottle"/>
+    </SameIndividual>
+    <SameIndividual>
+        <NamedIndividual IRI="#Armar"/>
+        <NamedIndividual IRI="#Robo"/>
+    </SameIndividual>
+    <SameIndividual>
+        <NamedIndividual IRI="#Armar"/>
+        <NamedIndividual IRI="#Roboter"/>
+    </SameIndividual>
+    <SameIndividual>
+        <NamedIndividual IRI="#CocoaBox"/>
+        <NamedIndividual IRI="#Nesquik"/>
+    </SameIndividual>
+    <SameIndividual>
+        <NamedIndividual IRI="#Robo"/>
+        <NamedIndividual IRI="#Roboter"/>
+    </SameIndividual>
+    <SameIndividual>
+        <NamedIndividual IRI="#TV"/>
+        <NamedIndividual IRI="#Television"/>
+    </SameIndividual>
+    <SameIndividual>
+        <NamedIndividual IRI="#bring"/>
+        <NamedIndividual IRI="#get"/>
+    </SameIndividual>
+    <SameIndividual>
+        <NamedIndividual IRI="#clean"/>
+        <NamedIndividual IRI="#wash"/>
+    </SameIndividual>
+    <SameIndividual>
+        <NamedIndividual IRI="#go"/>
+        <NamedIndividual IRI="#move"/>
+    </SameIndividual>
+    <SameIndividual>
+        <NamedIndividual IRI="#grab"/>
+        <NamedIndividual IRI="#take"/>
+    </SameIndividual>
+    <SameIndividual>
+        <NamedIndividual IRI="#grab.what"/>
+        <NamedIndividual IRI="#take.what"/>
+    </SameIndividual>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasState"/>
+        <NamedIndividual IRI="#Apollinaris"/>
+        <NamedIndividual IRI="#closed"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasState"/>
+        <NamedIndividual IRI="#Apollinaris"/>
+        <NamedIndividual IRI="#empty"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasState"/>
+        <NamedIndividual IRI="#Apollinaris"/>
+        <NamedIndividual IRI="#full"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasState"/>
+        <NamedIndividual IRI="#Apollinaris"/>
+        <NamedIndividual IRI="#opened"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#subObject"/>
+        <NamedIndividual IRI="#Apollinaris"/>
+        <NamedIndividual IRI="#Water"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMethod"/>
+        <NamedIndividual IRI="#Armar"/>
+        <NamedIndividual IRI="#bring"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMethod"/>
+        <NamedIndividual IRI="#Armar"/>
+        <NamedIndividual IRI="#close"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMethod"/>
+        <NamedIndividual IRI="#Armar"/>
+        <NamedIndividual IRI="#come"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMethod"/>
+        <NamedIndividual IRI="#Armar"/>
+        <NamedIndividual IRI="#fill"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMethod"/>
+        <NamedIndividual IRI="#Armar"/>
+        <NamedIndividual IRI="#get"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMethod"/>
+        <NamedIndividual IRI="#Armar"/>
+        <NamedIndividual IRI="#go"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMethod"/>
+        <NamedIndividual IRI="#Armar"/>
+        <NamedIndividual IRI="#hand"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMethod"/>
+        <NamedIndividual IRI="#Armar"/>
+        <NamedIndividual IRI="#open"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMethod"/>
+        <NamedIndividual IRI="#Armar"/>
+        <NamedIndividual IRI="#pour"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMethod"/>
+        <NamedIndividual IRI="#Armar"/>
+        <NamedIndividual IRI="#put"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMethod"/>
+        <NamedIndividual IRI="#Armar"/>
+        <NamedIndividual IRI="#show"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasState"/>
+        <NamedIndividual IRI="#CerealBox"/>
+        <NamedIndividual IRI="#empty"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasState"/>
+        <NamedIndividual IRI="#CerealBox"/>
+        <NamedIndividual IRI="#full"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasState"/>
+        <NamedIndividual IRI="#Cup"/>
+        <NamedIndividual IRI="#cleaned"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasState"/>
+        <NamedIndividual IRI="#Cup"/>
+        <NamedIndividual IRI="#dirty"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasState"/>
+        <NamedIndividual IRI="#Cup"/>
+        <NamedIndividual IRI="#empty"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasState"/>
+        <NamedIndividual IRI="#Cup"/>
+        <NamedIndividual IRI="#full"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasState"/>
+        <NamedIndividual IRI="#Cupboard"/>
+        <NamedIndividual IRI="#cleaned"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasState"/>
+        <NamedIndividual IRI="#Cupboard"/>
+        <NamedIndividual IRI="#dirty"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#subObject"/>
+        <NamedIndividual IRI="#Cupboard"/>
+        <NamedIndividual IRI="#Cupboard.Door"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasState"/>
+        <NamedIndividual IRI="#Cupboard.Door"/>
+        <NamedIndividual IRI="#cleaned"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasState"/>
+        <NamedIndividual IRI="#Cupboard.Door"/>
+        <NamedIndividual IRI="#closed"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasState"/>
+        <NamedIndividual IRI="#Cupboard.Door"/>
+        <NamedIndividual IRI="#dirty"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasState"/>
+        <NamedIndividual IRI="#Cupboard.Door"/>
+        <NamedIndividual IRI="#opened"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#superObject"/>
+        <NamedIndividual IRI="#Cupboard.Door"/>
+        <NamedIndividual IRI="#Cupboard"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasState"/>
+        <NamedIndividual IRI="#Dishes"/>
+        <NamedIndividual IRI="#cleaned"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasState"/>
+        <NamedIndividual IRI="#Dishes"/>
+        <NamedIndividual IRI="#dirty"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#subObject"/>
+        <NamedIndividual IRI="#Dishes"/>
+        <NamedIndividual IRI="#Plate"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasState"/>
+        <NamedIndividual IRI="#Dishwasher"/>
+        <NamedIndividual IRI="#cleaned"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasState"/>
+        <NamedIndividual IRI="#Dishwasher"/>
+        <NamedIndividual IRI="#dirty"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasState"/>
+        <NamedIndividual IRI="#Dishwasher"/>
+        <NamedIndividual IRI="#off"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasState"/>
+        <NamedIndividual IRI="#Dishwasher"/>
+        <NamedIndividual IRI="#on"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#subObject"/>
+        <NamedIndividual IRI="#Dishwasher"/>
+        <NamedIndividual IRI="#Dishwasher.Door"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasState"/>
+        <NamedIndividual IRI="#Dishwasher.Door"/>
+        <NamedIndividual IRI="#cleaned"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasState"/>
+        <NamedIndividual IRI="#Dishwasher.Door"/>
+        <NamedIndividual IRI="#closed"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasState"/>
+        <NamedIndividual IRI="#Dishwasher.Door"/>
+        <NamedIndividual IRI="#dirty"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasState"/>
+        <NamedIndividual IRI="#Dishwasher.Door"/>
+        <NamedIndividual IRI="#opened"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#superObject"/>
+        <NamedIndividual IRI="#Dishwasher.Door"/>
+        <NamedIndividual IRI="#Dishwasher"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasState"/>
+        <NamedIndividual IRI="#Fridge"/>
+        <NamedIndividual IRI="#cleaned"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasState"/>
+        <NamedIndividual IRI="#Fridge"/>
+        <NamedIndividual IRI="#dirty"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasState"/>
+        <NamedIndividual IRI="#Fridge"/>
+        <NamedIndividual IRI="#off"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasState"/>
+        <NamedIndividual IRI="#Fridge"/>
+        <NamedIndividual IRI="#on"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#subObject"/>
+        <NamedIndividual IRI="#Fridge"/>
+        <NamedIndividual IRI="#Fridge.Door"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasState"/>
+        <NamedIndividual IRI="#Fridge.Door"/>
+        <NamedIndividual IRI="#cleaned"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasState"/>
+        <NamedIndividual IRI="#Fridge.Door"/>
+        <NamedIndividual IRI="#closed"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasState"/>
+        <NamedIndividual IRI="#Fridge.Door"/>
+        <NamedIndividual IRI="#dirty"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasState"/>
+        <NamedIndividual IRI="#Fridge.Door"/>
+        <NamedIndividual IRI="#opened"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#superObject"/>
+        <NamedIndividual IRI="#Fridge.Door"/>
+        <NamedIndividual IRI="#Fridge"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasState"/>
+        <NamedIndividual IRI="#InstantMeal"/>
+        <NamedIndividual IRI="#cold"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasState"/>
+        <NamedIndividual IRI="#InstantMeal"/>
+        <NamedIndividual IRI="#warmed"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasState"/>
+        <NamedIndividual IRI="#Microwave"/>
+        <NamedIndividual IRI="#cleaned"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasState"/>
+        <NamedIndividual IRI="#Microwave"/>
+        <NamedIndividual IRI="#dirty"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasState"/>
+        <NamedIndividual IRI="#Microwave"/>
+        <NamedIndividual IRI="#off"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasState"/>
+        <NamedIndividual IRI="#Microwave"/>
+        <NamedIndividual IRI="#on"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#subObject"/>
+        <NamedIndividual IRI="#Microwave"/>
+        <NamedIndividual IRI="#Microwave.Door"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasState"/>
+        <NamedIndividual IRI="#Microwave.Door"/>
+        <NamedIndividual IRI="#cleaned"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasState"/>
+        <NamedIndividual IRI="#Microwave.Door"/>
+        <NamedIndividual IRI="#closed"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasState"/>
+        <NamedIndividual IRI="#Microwave.Door"/>
+        <NamedIndividual IRI="#dirty"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasState"/>
+        <NamedIndividual IRI="#Microwave.Door"/>
+        <NamedIndividual IRI="#opened"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#superObject"/>
+        <NamedIndividual IRI="#Microwave.Door"/>
+        <NamedIndividual IRI="#Microwave"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasState"/>
+        <NamedIndividual IRI="#Plate"/>
+        <NamedIndividual IRI="#cleaned"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasState"/>
+        <NamedIndividual IRI="#Plate"/>
+        <NamedIndividual IRI="#dirty"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasState"/>
+        <NamedIndividual IRI="#Plate"/>
+        <NamedIndividual IRI="#empty"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasState"/>
+        <NamedIndividual IRI="#Plate"/>
+        <NamedIndividual IRI="#full"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#superObject"/>
+        <NamedIndividual IRI="#Plate"/>
+        <NamedIndividual IRI="#Dishes"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasState"/>
+        <NamedIndividual IRI="#TV"/>
+        <NamedIndividual IRI="#off"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasState"/>
+        <NamedIndividual IRI="#TV"/>
+        <NamedIndividual IRI="#on"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasState"/>
+        <NamedIndividual IRI="#Table"/>
+        <NamedIndividual IRI="#cleaned"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasState"/>
+        <NamedIndividual IRI="#Table"/>
+        <NamedIndividual IRI="#dirty"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasState"/>
+        <NamedIndividual IRI="#Television"/>
+        <NamedIndividual IRI="#off"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasState"/>
+        <NamedIndividual IRI="#Television"/>
+        <NamedIndividual IRI="#on"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasState"/>
+        <NamedIndividual IRI="#VodkaBottle"/>
+        <NamedIndividual IRI="#empty"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasState"/>
+        <NamedIndividual IRI="#VodkaBottle"/>
+        <NamedIndividual IRI="#full"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasState"/>
+        <NamedIndividual IRI="#WaterBottle"/>
+        <NamedIndividual IRI="#closed"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasState"/>
+        <NamedIndividual IRI="#WaterBottle"/>
+        <NamedIndividual IRI="#empty"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasState"/>
+        <NamedIndividual IRI="#WaterBottle"/>
+        <NamedIndividual IRI="#full"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasState"/>
+        <NamedIndividual IRI="#WaterBottle"/>
+        <NamedIndividual IRI="#opened"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#changesStateTo"/>
+        <NamedIndividual IRI="#clean"/>
+        <NamedIndividual IRI="#cleaned"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#associatedObject"/>
+        <NamedIndividual IRI="#cleaned"/>
+        <NamedIndividual IRI="#Cup"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#associatedObject"/>
+        <NamedIndividual IRI="#cleaned"/>
+        <NamedIndividual IRI="#Cupboard"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#associatedObject"/>
+        <NamedIndividual IRI="#cleaned"/>
+        <NamedIndividual IRI="#Cupboard.Door"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#associatedObject"/>
+        <NamedIndividual IRI="#cleaned"/>
+        <NamedIndividual IRI="#Dishes"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#associatedObject"/>
+        <NamedIndividual IRI="#cleaned"/>
+        <NamedIndividual IRI="#Dishwasher"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#associatedObject"/>
+        <NamedIndividual IRI="#cleaned"/>
+        <NamedIndividual IRI="#Dishwasher.Door"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#associatedObject"/>
+        <NamedIndividual IRI="#cleaned"/>
+        <NamedIndividual IRI="#Fridge"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#associatedObject"/>
+        <NamedIndividual IRI="#cleaned"/>
+        <NamedIndividual IRI="#Fridge.Door"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#associatedObject"/>
+        <NamedIndividual IRI="#cleaned"/>
+        <NamedIndividual IRI="#Microwave"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#associatedObject"/>
+        <NamedIndividual IRI="#cleaned"/>
+        <NamedIndividual IRI="#Microwave.Door"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#associatedObject"/>
+        <NamedIndividual IRI="#cleaned"/>
+        <NamedIndividual IRI="#Plate"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#associatedObject"/>
+        <NamedIndividual IRI="#cleaned"/>
+        <NamedIndividual IRI="#Table"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#associatedState"/>
+        <NamedIndividual IRI="#cleaned"/>
+        <NamedIndividual IRI="#dirty"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#changesStateTo"/>
+        <NamedIndividual IRI="#close"/>
+        <NamedIndividual IRI="#closed"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasParameter"/>
+        <NamedIndividual IRI="#close"/>
+        <NamedIndividual IRI="#close.what"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ofDataType"/>
+        <NamedIndividual IRI="#close.what"/>
+        <NamedIndividual IRI="#Object"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#associatedObject"/>
+        <NamedIndividual IRI="#closed"/>
+        <NamedIndividual IRI="#Apollinaris"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#associatedObject"/>
+        <NamedIndividual IRI="#closed"/>
+        <NamedIndividual IRI="#Cupboard.Door"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#associatedObject"/>
+        <NamedIndividual IRI="#closed"/>
+        <NamedIndividual IRI="#Dishwasher.Door"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#associatedObject"/>
+        <NamedIndividual IRI="#closed"/>
+        <NamedIndividual IRI="#Fridge.Door"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#associatedObject"/>
+        <NamedIndividual IRI="#closed"/>
+        <NamedIndividual IRI="#Microwave.Door"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#associatedObject"/>
+        <NamedIndividual IRI="#closed"/>
+        <NamedIndividual IRI="#WaterBottle"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#associatedState"/>
+        <NamedIndividual IRI="#closed"/>
+        <NamedIndividual IRI="#opened"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#changingMethod"/>
+        <NamedIndividual IRI="#closed"/>
+        <NamedIndividual IRI="#open"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#associatedObject"/>
+        <NamedIndividual IRI="#cold"/>
+        <NamedIndividual IRI="#InstantMeal"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#associatedState"/>
+        <NamedIndividual IRI="#cold"/>
+        <NamedIndividual IRI="#warmed"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#changingMethod"/>
+        <NamedIndividual IRI="#cold"/>
+        <NamedIndividual IRI="#warm"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#associatedObject"/>
+        <NamedIndividual IRI="#dirty"/>
+        <NamedIndividual IRI="#Cup"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#associatedObject"/>
+        <NamedIndividual IRI="#dirty"/>
+        <NamedIndividual IRI="#Cupboard"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#associatedObject"/>
+        <NamedIndividual IRI="#dirty"/>
+        <NamedIndividual IRI="#Cupboard.Door"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#associatedObject"/>
+        <NamedIndividual IRI="#dirty"/>
+        <NamedIndividual IRI="#Dishes"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#associatedObject"/>
+        <NamedIndividual IRI="#dirty"/>
+        <NamedIndividual IRI="#Dishwasher.Door"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#associatedObject"/>
+        <NamedIndividual IRI="#dirty"/>
+        <NamedIndividual IRI="#Fridge"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#associatedObject"/>
+        <NamedIndividual IRI="#dirty"/>
+        <NamedIndividual IRI="#Fridge.Door"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#associatedObject"/>
+        <NamedIndividual IRI="#dirty"/>
+        <NamedIndividual IRI="#Microwave"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#associatedObject"/>
+        <NamedIndividual IRI="#dirty"/>
+        <NamedIndividual IRI="#Microwave.Door"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#associatedObject"/>
+        <NamedIndividual IRI="#dirty"/>
+        <NamedIndividual IRI="#Plate"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#associatedObject"/>
+        <NamedIndividual IRI="#dirty"/>
+        <NamedIndividual IRI="#Table"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#associatedState"/>
+        <NamedIndividual IRI="#dirty"/>
+        <NamedIndividual IRI="#cleaned"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#associatedObject"/>
+        <NamedIndividual IRI="#empty"/>
+        <NamedIndividual IRI="#Apollinaris"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#associatedObject"/>
+        <NamedIndividual IRI="#empty"/>
+        <NamedIndividual IRI="#CerealBox"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#associatedObject"/>
+        <NamedIndividual IRI="#empty"/>
+        <NamedIndividual IRI="#Cup"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#associatedObject"/>
+        <NamedIndividual IRI="#empty"/>
+        <NamedIndividual IRI="#Plate"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#associatedObject"/>
+        <NamedIndividual IRI="#empty"/>
+        <NamedIndividual IRI="#VodkaBottle"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#associatedObject"/>
+        <NamedIndividual IRI="#empty"/>
+        <NamedIndividual IRI="#WaterBottle"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#associatedState"/>
+        <NamedIndividual IRI="#empty"/>
+        <NamedIndividual IRI="#full"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#changingMethod"/>
+        <NamedIndividual IRI="#empty"/>
+        <NamedIndividual IRI="#fill"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#changesStateTo"/>
+        <NamedIndividual IRI="#fill"/>
+        <NamedIndividual IRI="#full"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#associatedObject"/>
+        <NamedIndividual IRI="#full"/>
+        <NamedIndividual IRI="#Apollinaris"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#associatedObject"/>
+        <NamedIndividual IRI="#full"/>
+        <NamedIndividual IRI="#CerealBox"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#associatedObject"/>
+        <NamedIndividual IRI="#full"/>
+        <NamedIndividual IRI="#Cup"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#associatedObject"/>
+        <NamedIndividual IRI="#full"/>
+        <NamedIndividual IRI="#Plate"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#associatedObject"/>
+        <NamedIndividual IRI="#full"/>
+        <NamedIndividual IRI="#VodkaBottle"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#associatedObject"/>
+        <NamedIndividual IRI="#full"/>
+        <NamedIndividual IRI="#WaterBottle"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#associatedState"/>
+        <NamedIndividual IRI="#full"/>
+        <NamedIndividual IRI="#empty"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#changingMethod"/>
+        <NamedIndividual IRI="#full"/>
+        <NamedIndividual IRI="#pour"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasParameter"/>
+        <NamedIndividual IRI="#grab"/>
+        <NamedIndividual IRI="#grab.what"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ofDataType"/>
+        <NamedIndividual IRI="#grab.what"/>
+        <NamedIndividual IRI="#Object"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasParameter"/>
+        <NamedIndividual IRI="#move"/>
+        <NamedIndividual IRI="#move.howFar"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ofDataType"/>
+        <NamedIndividual IRI="#move.howFar"/>
+        <NamedIndividual IRI="#int"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#associatedObject"/>
+        <NamedIndividual IRI="#off"/>
+        <NamedIndividual IRI="#Dishwasher"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#associatedObject"/>
+        <NamedIndividual IRI="#off"/>
+        <NamedIndividual IRI="#Fridge"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#associatedObject"/>
+        <NamedIndividual IRI="#off"/>
+        <NamedIndividual IRI="#Microwave"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#associatedObject"/>
+        <NamedIndividual IRI="#off"/>
+        <NamedIndividual IRI="#TV"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#associatedObject"/>
+        <NamedIndividual IRI="#off"/>
+        <NamedIndividual IRI="#Television"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#associatedState"/>
+        <NamedIndividual IRI="#off"/>
+        <NamedIndividual IRI="#on"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#changingMethod"/>
+        <NamedIndividual IRI="#off"/>
+        <NamedIndividual IRI="#turnOn"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#associatedObject"/>
+        <NamedIndividual IRI="#on"/>
+        <NamedIndividual IRI="#Dishwasher"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#associatedObject"/>
+        <NamedIndividual IRI="#on"/>
+        <NamedIndividual IRI="#Fridge"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#associatedObject"/>
+        <NamedIndividual IRI="#on"/>
+        <NamedIndividual IRI="#Microwave"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#associatedObject"/>
+        <NamedIndividual IRI="#on"/>
+        <NamedIndividual IRI="#TV"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#associatedObject"/>
+        <NamedIndividual IRI="#on"/>
+        <NamedIndividual IRI="#Television"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#associatedState"/>
+        <NamedIndividual IRI="#on"/>
+        <NamedIndividual IRI="#off"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#changingMethod"/>
+        <NamedIndividual IRI="#on"/>
+        <NamedIndividual IRI="#turnOff"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#changesStateTo"/>
+        <NamedIndividual IRI="#open"/>
+        <NamedIndividual IRI="#opened"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasParameter"/>
+        <NamedIndividual IRI="#open"/>
+        <NamedIndividual IRI="#open.what"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ofDataType"/>
+        <NamedIndividual IRI="#open.what"/>
+        <NamedIndividual IRI="#Object"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#associatedObject"/>
+        <NamedIndividual IRI="#opened"/>
+        <NamedIndividual IRI="#Apollinaris"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#associatedObject"/>
+        <NamedIndividual IRI="#opened"/>
+        <NamedIndividual IRI="#Cupboard.Door"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#associatedObject"/>
+        <NamedIndividual IRI="#opened"/>
+        <NamedIndividual IRI="#Dishwasher.Door"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#associatedObject"/>
+        <NamedIndividual IRI="#opened"/>
+        <NamedIndividual IRI="#Fridge.Door"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#associatedObject"/>
+        <NamedIndividual IRI="#opened"/>
+        <NamedIndividual IRI="#Microwave.Door"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#associatedObject"/>
+        <NamedIndividual IRI="#opened"/>
+        <NamedIndividual IRI="#WaterBottle"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#associatedState"/>
+        <NamedIndividual IRI="#opened"/>
+        <NamedIndividual IRI="#closed"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#changingMethod"/>
+        <NamedIndividual IRI="#opened"/>
+        <NamedIndividual IRI="#close"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#changesStateTo"/>
+        <NamedIndividual IRI="#pour"/>
+        <NamedIndividual IRI="#empty"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasParameter"/>
+        <NamedIndividual IRI="#take"/>
+        <NamedIndividual IRI="#take.what"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ofDataType"/>
+        <NamedIndividual IRI="#take.what"/>
+        <NamedIndividual IRI="#Object"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#changesStateTo"/>
+        <NamedIndividual IRI="#turnOff"/>
+        <NamedIndividual IRI="#off"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#changesStateTo"/>
+        <NamedIndividual IRI="#turnOn"/>
+        <NamedIndividual IRI="#on"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#changesStateTo"/>
+        <NamedIndividual IRI="#warm"/>
+        <NamedIndividual IRI="#warmed"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#associatedObject"/>
+        <NamedIndividual IRI="#warmed"/>
+        <NamedIndividual IRI="#InstantMeal"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#associatedState"/>
+        <NamedIndividual IRI="#warmed"/>
+        <NamedIndividual IRI="#cold"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#changingMethod"/>
+        <NamedIndividual IRI="#warmed"/>
+        <NamedIndividual IRI="#warm"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#changesStateTo"/>
+        <NamedIndividual IRI="#wash"/>
+        <NamedIndividual IRI="#cleaned"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#integerRange"/>
+        <NamedIndividual IRI="#Integer_Min_Max"/>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral"></Literal>
+    </DataPropertyAssertion>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#changesStateTo"/>
+        <ObjectProperty IRI="#changingMethod"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#subObject"/>
+        <ObjectProperty IRI="#superObject"/>
+    </InverseObjectProperties>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#associatedObject"/>
+        <Class IRI="#State"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#associatedState"/>
+        <Class IRI="#State"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#changesStateTo"/>
+        <Class IRI="#Method"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#changingMethod"/>
+        <Class IRI="#State"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasMethod"/>
+        <Class IRI="#System"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasParameter"/>
+        <Class IRI="#Method"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasState"/>
+        <Class IRI="#Object"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#ofDataType"/>
+        <Class IRI="#Parameter"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#subObject"/>
+        <Class IRI="#Object"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#superObject"/>
+        <Class IRI="#Object"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#associatedObject"/>
+        <Class IRI="#Object"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#associatedState"/>
+        <Class IRI="#State"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#changesStateTo"/>
+        <Class IRI="#State"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#changingMethod"/>
+        <Class IRI="#Method"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasMethod"/>
+        <Class IRI="#Method"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasParameter"/>
+        <Class IRI="#Parameter"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasState"/>
+        <Class IRI="#State"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#ofDataType"/>
+        <Class IRI="#DataType"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#subObject"/>
+        <Class IRI="#Object"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#superObject"/>
+        <Class IRI="#Object"/>
+    </ObjectPropertyRange>
+    <DataPropertyDomain>
+        <DataProperty IRI="#integerRange"/>
+        <Class IRI="#Value"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#integerRange"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <SubAnnotationPropertyOf>
+        <AnnotationProperty IRI="#containsObject"/>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+    </SubAnnotationPropertyOf>
+    <AnnotationPropertyRange>
+        <AnnotationProperty IRI="#ContainsObject"/>
+        <IRI>#Object</IRI>
+    </AnnotationPropertyRange>
+    <AnnotationPropertyDomain>
+        <AnnotationProperty IRI="#ContainsObject"/>
+        <IRI>#Object</IRI>
+    </AnnotationPropertyDomain>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi -->
+

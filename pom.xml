@@ -3,7 +3,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>edu.kit.ipd.are.agentanalysis</groupId>
-	<artifactId>agent-analysis</artifactId>
+	<artifactId>root</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
@@ -56,9 +56,32 @@
 				<artifactId>port</artifactId>
 				<version>${project.version}</version>
 			</dependency>
+
 			<dependency>
 				<groupId>edu.kit.ipd.are.agentanalysis</groupId>
-				<artifactId>agent-analysis-specification</artifactId>
+				<artifactId>xplore</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
+			<!-- Specifications -->
+			<dependency>
+				<groupId>edu.kit.ipd.are.agentanalysis</groupId>
+				<artifactId>specification</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>edu.kit.ipd.are.agentanalysis</groupId>
+				<artifactId>specification-parse</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>edu.kit.ipd.are.agentanalysis</groupId>
+				<artifactId>specification-platforms</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>edu.kit.ipd.are.agentanalysis</groupId>
+				<artifactId>specification-indirect</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 		</dependencies>
@@ -67,6 +90,7 @@
 	<modules>
 		<module>port</module>
 		<module>specification</module>
+		<module>xplore</module>
 	</modules>
 	<name>Agent Analysis (Root)</name>
 </project>

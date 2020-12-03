@@ -1,0 +1,704 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/virtual_assistent"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/virtual_assistent">
+    <Prefix name="" IRI="http://www.semanticweb.org/virtual_assistent"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="swrl" IRI="http://www.w3.org/2003/11/swrl"/>
+    <Declaration>
+        <Class IRI="#State"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#changingMethod"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#play.what"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Value"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#turnOff.what"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasParameter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Parameter"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#increase.what"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Method"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#setAlarmClock"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#search.what"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#char"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#repeat"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#lookUp"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#decrease"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#on"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#int"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#turnOff"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasMethod"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Increasable"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#off"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#query"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#System"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#deactivate"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#search"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#increase"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#activate"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#setTimer"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#associatedState"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Interpreter"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#decrease.what"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#long"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#MusicGenre"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Alexa"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#play"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#double"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#short"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#time.date"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DataType"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Playable"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Tellable"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#tell"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#String"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#turnOn"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#time.howLong"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Date"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Controllable"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#turnOn.what"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="#ContainsObject"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Integer_Min_Max"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#integerRange"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#boolean"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#changesStateTo"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Object"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#ofDataType"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#tell.what"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#float"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Echo"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Decreasable"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="#containsObject"/>
+    </Declaration>
+    <ClassAssertion>
+        <Class IRI="#System"/>
+        <NamedIndividual IRI="#Alexa"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DataType"/>
+        <NamedIndividual IRI="#Controllable"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DataType"/>
+        <NamedIndividual IRI="#Date"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DataType"/>
+        <NamedIndividual IRI="#Decreasable"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#System"/>
+        <NamedIndividual IRI="#Echo"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DataType"/>
+        <NamedIndividual IRI="#Increasable"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Value"/>
+        <NamedIndividual IRI="#Integer_Min_Max"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DataType"/>
+        <NamedIndividual IRI="#Interpreter"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DataType"/>
+        <NamedIndividual IRI="#MusicGenre"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DataType"/>
+        <NamedIndividual IRI="#Object"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DataType"/>
+        <NamedIndividual IRI="#Playable"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DataType"/>
+        <NamedIndividual IRI="#String"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DataType"/>
+        <NamedIndividual IRI="#Tellable"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Method"/>
+        <NamedIndividual IRI="#activate"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DataType"/>
+        <NamedIndividual IRI="#boolean"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DataType"/>
+        <NamedIndividual IRI="#char"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Method"/>
+        <NamedIndividual IRI="#deactivate"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Method"/>
+        <NamedIndividual IRI="#decrease"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Parameter"/>
+        <NamedIndividual IRI="#decrease.what"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DataType"/>
+        <NamedIndividual IRI="#double"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DataType"/>
+        <NamedIndividual IRI="#float"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Method"/>
+        <NamedIndividual IRI="#increase"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Parameter"/>
+        <NamedIndividual IRI="#increase.what"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DataType"/>
+        <NamedIndividual IRI="#int"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DataType"/>
+        <NamedIndividual IRI="#long"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Method"/>
+        <NamedIndividual IRI="#lookUp"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#State"/>
+        <NamedIndividual IRI="#off"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#State"/>
+        <NamedIndividual IRI="#on"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Method"/>
+        <NamedIndividual IRI="#play"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Parameter"/>
+        <NamedIndividual IRI="#play.what"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Method"/>
+        <NamedIndividual IRI="#query"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Method"/>
+        <NamedIndividual IRI="#repeat"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Method"/>
+        <NamedIndividual IRI="#search"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Parameter"/>
+        <NamedIndividual IRI="#search.what"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Method"/>
+        <NamedIndividual IRI="#setAlarmClock"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Method"/>
+        <NamedIndividual IRI="#setTimer"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DataType"/>
+        <NamedIndividual IRI="#short"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Method"/>
+        <NamedIndividual IRI="#tell"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Parameter"/>
+        <NamedIndividual IRI="#tell.what"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Parameter"/>
+        <NamedIndividual IRI="#time.date"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Parameter"/>
+        <NamedIndividual IRI="#time.howLong"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Method"/>
+        <NamedIndividual IRI="#turnOff"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Parameter"/>
+        <NamedIndividual IRI="#turnOff.what"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Method"/>
+        <NamedIndividual IRI="#turnOn"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Parameter"/>
+        <NamedIndividual IRI="#turnOn.what"/>
+    </ClassAssertion>
+    <SameIndividual>
+        <NamedIndividual IRI="#Alexa"/>
+        <NamedIndividual IRI="#Echo"/>
+    </SameIndividual>
+    <SameIndividual>
+        <NamedIndividual IRI="#activate"/>
+        <NamedIndividual IRI="#turnOn"/>
+    </SameIndividual>
+    <SameIndividual>
+        <NamedIndividual IRI="#deactivate"/>
+        <NamedIndividual IRI="#turnOff"/>
+    </SameIndividual>
+    <SameIndividual>
+        <NamedIndividual IRI="#query"/>
+        <NamedIndividual IRI="#search"/>
+    </SameIndividual>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMethod"/>
+        <NamedIndividual IRI="#Alexa"/>
+        <NamedIndividual IRI="#activate"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMethod"/>
+        <NamedIndividual IRI="#Alexa"/>
+        <NamedIndividual IRI="#deactivate"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMethod"/>
+        <NamedIndividual IRI="#Alexa"/>
+        <NamedIndividual IRI="#decrease"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMethod"/>
+        <NamedIndividual IRI="#Alexa"/>
+        <NamedIndividual IRI="#increase"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMethod"/>
+        <NamedIndividual IRI="#Alexa"/>
+        <NamedIndividual IRI="#lookUp"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMethod"/>
+        <NamedIndividual IRI="#Alexa"/>
+        <NamedIndividual IRI="#play"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMethod"/>
+        <NamedIndividual IRI="#Alexa"/>
+        <NamedIndividual IRI="#query"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMethod"/>
+        <NamedIndividual IRI="#Alexa"/>
+        <NamedIndividual IRI="#repeat"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMethod"/>
+        <NamedIndividual IRI="#Alexa"/>
+        <NamedIndividual IRI="#search"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMethod"/>
+        <NamedIndividual IRI="#Alexa"/>
+        <NamedIndividual IRI="#setAlarmClock"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMethod"/>
+        <NamedIndividual IRI="#Alexa"/>
+        <NamedIndividual IRI="#setTimer"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMethod"/>
+        <NamedIndividual IRI="#Alexa"/>
+        <NamedIndividual IRI="#tell"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMethod"/>
+        <NamedIndividual IRI="#Alexa"/>
+        <NamedIndividual IRI="#turnOff"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMethod"/>
+        <NamedIndividual IRI="#Alexa"/>
+        <NamedIndividual IRI="#turnOn"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasParameter"/>
+        <NamedIndividual IRI="#activate"/>
+        <NamedIndividual IRI="#turnOn.what"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasParameter"/>
+        <NamedIndividual IRI="#deactivate"/>
+        <NamedIndividual IRI="#turnOff.what"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasParameter"/>
+        <NamedIndividual IRI="#decrease"/>
+        <NamedIndividual IRI="#decrease.what"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ofDataType"/>
+        <NamedIndividual IRI="#decrease.what"/>
+        <NamedIndividual IRI="#Decreasable"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasParameter"/>
+        <NamedIndividual IRI="#increase"/>
+        <NamedIndividual IRI="#increase.what"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ofDataType"/>
+        <NamedIndividual IRI="#increase.what"/>
+        <NamedIndividual IRI="#Increasable"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasParameter"/>
+        <NamedIndividual IRI="#lookUp"/>
+        <NamedIndividual IRI="#search.what"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#associatedState"/>
+        <NamedIndividual IRI="#off"/>
+        <NamedIndividual IRI="#on"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#changingMethod"/>
+        <NamedIndividual IRI="#off"/>
+        <NamedIndividual IRI="#turnOn"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#associatedState"/>
+        <NamedIndividual IRI="#on"/>
+        <NamedIndividual IRI="#off"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#changingMethod"/>
+        <NamedIndividual IRI="#on"/>
+        <NamedIndividual IRI="#turnOff"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasParameter"/>
+        <NamedIndividual IRI="#play"/>
+        <NamedIndividual IRI="#play.what"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ofDataType"/>
+        <NamedIndividual IRI="#play.what"/>
+        <NamedIndividual IRI="#Interpreter"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ofDataType"/>
+        <NamedIndividual IRI="#play.what"/>
+        <NamedIndividual IRI="#MusicGenre"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ofDataType"/>
+        <NamedIndividual IRI="#play.what"/>
+        <NamedIndividual IRI="#Playable"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasParameter"/>
+        <NamedIndividual IRI="#query"/>
+        <NamedIndividual IRI="#search.what"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasParameter"/>
+        <NamedIndividual IRI="#search"/>
+        <NamedIndividual IRI="#search.what"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ofDataType"/>
+        <NamedIndividual IRI="#search.what"/>
+        <NamedIndividual IRI="#String"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasParameter"/>
+        <NamedIndividual IRI="#setAlarmClock"/>
+        <NamedIndividual IRI="#time.date"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasParameter"/>
+        <NamedIndividual IRI="#setTimer"/>
+        <NamedIndividual IRI="#time.howLong"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasParameter"/>
+        <NamedIndividual IRI="#tell"/>
+        <NamedIndividual IRI="#tell.what"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ofDataType"/>
+        <NamedIndividual IRI="#tell.what"/>
+        <NamedIndividual IRI="#Tellable"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ofDataType"/>
+        <NamedIndividual IRI="#time.date"/>
+        <NamedIndividual IRI="#Date"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ofDataType"/>
+        <NamedIndividual IRI="#time.howLong"/>
+        <NamedIndividual IRI="#int"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#changesStateTo"/>
+        <NamedIndividual IRI="#turnOff"/>
+        <NamedIndividual IRI="#on"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasParameter"/>
+        <NamedIndividual IRI="#turnOff"/>
+        <NamedIndividual IRI="#turnOff.what"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ofDataType"/>
+        <NamedIndividual IRI="#turnOff.what"/>
+        <NamedIndividual IRI="#Controllable"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#changesStateTo"/>
+        <NamedIndividual IRI="#turnOn"/>
+        <NamedIndividual IRI="#off"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasParameter"/>
+        <NamedIndividual IRI="#turnOn"/>
+        <NamedIndividual IRI="#turnOn.what"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ofDataType"/>
+        <NamedIndividual IRI="#turnOn.what"/>
+        <NamedIndividual IRI="#Controllable"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#integerRange"/>
+        <NamedIndividual IRI="#Integer_Min_Max"/>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral"></Literal>
+    </DataPropertyAssertion>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#changesStateTo"/>
+        <ObjectProperty IRI="#changingMethod"/>
+    </InverseObjectProperties>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#associatedState"/>
+        <Class IRI="#State"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#changesStateTo"/>
+        <Class IRI="#Method"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#changingMethod"/>
+        <Class IRI="#State"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasMethod"/>
+        <Class IRI="#System"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasParameter"/>
+        <Class IRI="#Method"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#ofDataType"/>
+        <Class IRI="#Parameter"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#associatedState"/>
+        <Class IRI="#State"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#changesStateTo"/>
+        <Class IRI="#State"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#changingMethod"/>
+        <Class IRI="#Method"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasMethod"/>
+        <Class IRI="#Method"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasParameter"/>
+        <Class IRI="#Parameter"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#ofDataType"/>
+        <Class IRI="#DataType"/>
+    </ObjectPropertyRange>
+    <DataPropertyDomain>
+        <DataProperty IRI="#integerRange"/>
+        <Class IRI="#Value"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#integerRange"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Alexa</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Amazon Alexa</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Echo</IRI>
+        <Literal xml:lang="wiki" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Amazon Echo</Literal>
+    </AnnotationAssertion>
+    <SubAnnotationPropertyOf>
+        <AnnotationProperty IRI="#containsObject"/>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+    </SubAnnotationPropertyOf>
+    <AnnotationPropertyRange>
+        <AnnotationProperty IRI="#ContainsObject"/>
+        <IRI>#Object</IRI>
+    </AnnotationPropertyRange>
+    <AnnotationPropertyDomain>
+        <AnnotationProperty IRI="#ContainsObject"/>
+        <IRI>#Object</IRI>
+    </AnnotationPropertyDomain>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi -->
+
