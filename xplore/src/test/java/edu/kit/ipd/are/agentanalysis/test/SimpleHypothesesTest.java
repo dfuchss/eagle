@@ -76,11 +76,9 @@ public class SimpleHypothesesTest extends TestBase {
 	}
 
 	private EnhancedGraph getNewGraph(IPrePipeline ppl) throws IOException {
-		var texts = TestBase.getTexts();
-		var text = texts.get(texts.firstKey());
-		// var text = "John, go to the fridge next to the cupboard. Then open the left
-		// dishwasher. Afterwards open the right dishwasher and close both again. Open
-		// the fridge and close the fridge.";
+//		var texts = TestBase.getTexts();
+//		var text = texts.get(texts.firstKey());
+		var text = "John, go to the fridge next to the cupboard.";
 		return new EnhancedGraph(text, ppl);
 	}
 
