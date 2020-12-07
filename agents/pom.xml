@@ -10,5 +10,6 @@
   <name>Agent Analysis (Modified Agents)</name>
   <modules>
   	<module>wikiwsd</module>
+  	<module>topic-extraction</module>
   </modules>
 </project>

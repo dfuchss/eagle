@@ -21,9 +21,8 @@
 			<artifactId>agents-wikiwsd</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>im.janke</groupId>
-			<artifactId>TopicExtraction</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<groupId>edu.kit.ipd.are.agentanalysis</groupId>
+			<artifactId>agents-topic-extraction</artifactId>
 		</dependency>
 		
 		<!-- Force HTTPClient 4.5.2 -->
