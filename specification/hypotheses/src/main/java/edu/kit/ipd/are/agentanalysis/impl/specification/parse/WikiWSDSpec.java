@@ -3,7 +3,7 @@ package edu.kit.ipd.are.agentanalysis.impl.specification.parse;
 import java.util.List;
 
 import edu.kit.ipd.are.agentanalysis.port.InformationId;
-import im.janke.wsdAgent.WordSenseDisambiguation;
+import edu.kit.ipd.parse.wikiWSD.WordSenseDisambiguation;
 
 /**
  * Defines the agent specification for the {@link WordSenseDisambiguation

@@ -20,7 +20,7 @@
 		<dependency>
 			<groupId>edu.kit.ipd.wikiwsd</groupId>
 			<artifactId>agent</artifactId>
-			<version>0.0.2</version>
+			<version>develop-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>edu.kit.ipd.are.agentanalysis</groupId>

@@ -1,18 +1,18 @@
 package edu.kit.ipd.are.agentanalysis.impl.specification.hypothesis;
 
+import edu.kit.ipd.are.agentanalysis.impl.agents.MultiHypothesesWikiWSD;
 import edu.kit.ipd.are.agentanalysis.impl.specification.parse.WikiWSDSpec;
 import edu.kit.ipd.are.agentanalysis.port.hypothesis.HypothesisRange;
 import edu.kit.ipd.are.agentanalysis.port.hypothesis.IHypothesesSet;
-import im.janke.wsdAgent.MultiHypothesisWSD;
 
 /**
- * Defines the agent specification for the {@link MultiHypothesisWSD}. This is
- * the hypotheses realization for {@link WikiWSDSpec}.
+ * Defines the agent specification for the {@link MultiHypothesesWikiWSD}. This
+ * is the hypotheses realization for {@link WikiWSDSpec}.
  *
  * @author Dominik Fuchss
  *
  */
-public class WikiWSDHypothesisSpec extends AbstractAgentHypothesisSpecification<MultiHypothesisWSD> {
+public class WikiWSDHypothesisSpec extends AbstractAgentHypothesisSpecification<MultiHypothesesWikiWSD> {
 	/**
 	 * Create the specification by using the default amount of hypotheses.
 	 */
@@ -27,7 +27,7 @@ public class WikiWSDHypothesisSpec extends AbstractAgentHypothesisSpecification<
 	 *                      {@link IHypothesesSet}
 	 */
 	public WikiWSDHypothesisSpec(int maxHypotheses) {
-		super(new WikiWSDSpec(), new MultiHypothesisWSD(maxHypotheses));
+		super(new WikiWSDSpec(), new MultiHypothesesWikiWSD(maxHypotheses));
 	}
 
 	@Override

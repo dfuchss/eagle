@@ -1,19 +1,19 @@
 package edu.kit.ipd.are.agentanalysis.impl.specification.hypothesis;
 
+import edu.kit.ipd.are.agentanalysis.impl.agents.MultiHypothesesTopicExtraction;
 import edu.kit.ipd.are.agentanalysis.impl.specification.parse.TopicExtractionSpec;
 import edu.kit.ipd.are.agentanalysis.port.hypothesis.HypothesisRange;
 import edu.kit.ipd.are.agentanalysis.port.hypothesis.IHypothesesSet;
-import im.janke.topicExtraction.MultiHypothesisTopicExtraction;
 
 /**
  * Defines the agent specification for the
- * {@link MultiHypothesisTopicExtraction}. This is the hypotheses realization
+ * {@link MultiHypothesesTopicExtraction}. This is the hypotheses realization
  * for {@link TopicExtractionSpec}.
  *
  * @author Dominik Fuchss
  *
  */
-public class TopicExtractionHypothesisSpec extends AbstractAgentHypothesisSpecification<MultiHypothesisTopicExtraction> {
+public class TopicExtractionHypothesisSpec extends AbstractAgentHypothesisSpecification<MultiHypothesesTopicExtraction> {
 	/**
 	 * Create the specification by using the default amount of hypotheses.
 	 */
@@ -28,7 +28,7 @@ public class TopicExtractionHypothesisSpec extends AbstractAgentHypothesisSpecif
 	 *                      {@link IHypothesesSet}
 	 */
 	public TopicExtractionHypothesisSpec(int maxHypotheses) {
-		super(new TopicExtractionSpec(), new MultiHypothesisTopicExtraction(maxHypotheses));
+		super(new TopicExtractionSpec(), new MultiHypothesesTopicExtraction(maxHypotheses));
 	}
 
 	@Override

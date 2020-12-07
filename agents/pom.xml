@@ -11,5 +11,6 @@
   <modules>
   	<module>wikiwsd</module>
   	<module>topic-extraction</module>
+  	<module>ontology-selector</module>
   </modules>
 </project>

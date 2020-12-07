@@ -8,7 +8,7 @@ import java.util.List;
 
 import edu.kit.ipd.are.agentanalysis.port.InformationId;
 import edu.kit.ipd.parse.luna.tools.ConfigManager;
-import im.janke.ontologySelector.OntologySelector;
+import edu.kit.ipd.parse.ontologyselector.OntologySelector;
 
 /**
  * Defines the agent specification for the {@link OntologySelector}.

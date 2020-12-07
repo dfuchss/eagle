@@ -1,19 +1,19 @@
 package edu.kit.ipd.are.agentanalysis.impl.specification.hypothesis;
 
+import edu.kit.ipd.are.agentanalysis.impl.specification.MultiHypothesesOntologySelector;
 import edu.kit.ipd.are.agentanalysis.impl.specification.parse.OntologySelectorSpec;
 import edu.kit.ipd.are.agentanalysis.port.hypothesis.HypothesisRange;
 import edu.kit.ipd.are.agentanalysis.port.hypothesis.IHypothesesSet;
-import im.janke.ontologySelector.MultiHypothesisOntologySelector;
 
 /**
  * Defines the agent specification for the
- * {@link MultiHypothesisOntologySelector}. This is the hypotheses realization
+ * {@link MultiHypothesesOntologySelector}. This is the hypotheses realization
  * for {@link OntologySelectorSpec}.
  *
  * @author Dominik Fuchss
  *
  */
-public class OntologySelectorHypothesisSpec extends AbstractAgentHypothesisSpecification<MultiHypothesisOntologySelector> {
+public class OntologySelectorHypothesisSpec extends AbstractAgentHypothesisSpecification<MultiHypothesesOntologySelector> {
 	/**
 	 * Create the specification by using the default amount of hypotheses.
 	 */
@@ -28,7 +28,7 @@ public class OntologySelectorHypothesisSpec extends AbstractAgentHypothesisSpeci
 	 *                      {@link IHypothesesSet}
 	 */
 	public OntologySelectorHypothesisSpec(int maxHypotheses) {
-		super(new OntologySelectorSpec(), new MultiHypothesisOntologySelector(maxHypotheses));
+		super(new OntologySelectorSpec(), new MultiHypothesesOntologySelector(maxHypotheses));
 	}
 
 	@Override
