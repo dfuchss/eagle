@@ -25,5 +25,5 @@
 			<artifactId>port</artifactId>
 		</dependency>
 	</dependencies>
-	<name>Agent Analysis (Wiki WSD Agent)</name>
+	<name>Agent Analysis (Topic Extraction)</name>
 </project>
