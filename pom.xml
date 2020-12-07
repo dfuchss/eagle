@@ -23,6 +23,11 @@
 			<name>IPD-Repository</name>
 			<url>http://bob.ipd.kit.edu/nexus/repository/maven-public-snapshots</url>
 		</repository>
+		<repository>
+			<id>github</id>
+			<name>Repository of Wiki WSD</name>
+			<url>https://maven.pkg.github.com/kit-sdq/PARSE-Wiki-WSD</url>
+		</repository>
 	</repositories>
 
 	<dependencyManagement>
@@ -98,6 +103,12 @@
 				<artifactId>specification-hypotheses</artifactId>
 				<version>${project.version}</version>
 			</dependency>
+			
+			<dependency>
+				<groupId>edu.kit.ipd.are.agentanalysis</groupId>
+				<artifactId>agents-wikiwsd</artifactId>
+				<version>${project.version}</version>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
 
@@ -105,6 +116,7 @@
 		<module>port</module>
 		<module>specification</module>
 		<module>xplore</module>
+		<module>agents</module>
 	</modules>
 	<name>Agent Analysis (Root)</name>
 </project>

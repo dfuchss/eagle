@@ -17,9 +17,8 @@
 
 		<dependency>
 			<!-- WIKI WSD -->
-			<groupId>im.janke</groupId>
-			<artifactId>wsdAgent</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<groupId>edu.kit.ipd.are.agentanalysis</groupId>
+			<artifactId>agents-wikiwsd</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>im.janke</groupId>
