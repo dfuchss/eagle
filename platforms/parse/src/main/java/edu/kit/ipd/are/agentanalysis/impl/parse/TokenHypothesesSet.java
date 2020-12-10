@@ -3,6 +3,8 @@ package edu.kit.ipd.are.agentanalysis.impl.parse;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import edu.kit.ipd.are.agentanalysis.port.hypothesis.HypothesisRange;
 import edu.kit.ipd.are.agentanalysis.port.hypothesis.IHypothesesSet;
 import edu.kit.ipd.are.agentanalysis.port.hypothesis.IHypothesis;
@@ -68,10 +70,12 @@ public class TokenHypothesesSet implements IHypothesesSet {
 		return this.getWordOfHypotheses();
 	}
 
+	@JsonIgnore
 	public IGraph getGraphOfHypotheses() {
 		return this.baseGraph;
 	}
 
+	@JsonIgnore
 	public INode getNodeOfHypotheses() {
 		return this.baseNode;
 	}
