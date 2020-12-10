@@ -1,12 +1,13 @@
-package edu.kit.ipd.are.agentanalysis.port;
+package edu.kit.ipd.are.agentanalysis.impl.parse.prepipeline;
+
+import edu.kit.ipd.are.agentanalysis.impl.parse.PARSEGraphWrapper;
 
 /**
  * Defines a pre pipeline which generates a data structure from an input text.
  *
  * @author Dominik Fuchss
- * @param <DS> data structure
  */
-public interface IPrePipeline<DS extends IDataStructure<DS>> {
+public interface IPrePipeline {
 	/**
 	 * Get the {@link PrePipelineMode} of this pipeline.
 	 *
@@ -20,5 +21,5 @@ public interface IPrePipeline<DS extends IDataStructure<DS>> {
 	 * @param text the text
 	 * @return the graph or {@code null} if prepipeline failed
 	 */
-	DS createGraph(String text);
+	PARSEGraphWrapper createGraph(String text);
 }

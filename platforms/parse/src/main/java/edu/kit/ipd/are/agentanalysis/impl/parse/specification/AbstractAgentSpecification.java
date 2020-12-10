@@ -2,6 +2,7 @@ package edu.kit.ipd.are.agentanalysis.impl.parse.specification;
 
 import edu.kit.ipd.are.agentanalysis.impl.parse.PARSEAgent;
 import edu.kit.ipd.are.agentanalysis.impl.parse.PARSEGraphWrapper;
+import edu.kit.ipd.are.agentanalysis.impl.parse.prepipeline.PrePipelineMode;
 import edu.kit.ipd.are.agentanalysis.port.IAgentSpecification;
 import edu.kit.ipd.parse.luna.agent.AbstractAgent;
 
@@ -29,6 +30,13 @@ public abstract class AbstractAgentSpecification<A extends AbstractAgent> implem
 	public final PARSEAgent getAgentInstance() {
 		return new PARSEAgent(this.agentInstance);
 	}
+
+	/**
+	 * Get the necessary type of PrePipeline.
+	 *
+	 * @return the type of prepipeline needed
+	 */
+	public abstract PrePipelineMode getMode();
 
 	/**
 	 * Set the agent instance.

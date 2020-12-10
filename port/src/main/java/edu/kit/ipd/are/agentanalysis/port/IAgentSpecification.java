@@ -20,13 +20,6 @@ public interface IAgentSpecification<A extends IAgent<DS>, DS extends IDataStruc
 	A getAgentInstance();
 
 	/**
-	 * Get the necessary type of PrePipeline.
-	 *
-	 * @return the type of prepipeline needed
-	 */
-	PrePipelineMode getMode();
-
-	/**
 	 * Get the type of provided information of the agent.
 	 *
 	 * @return the list of provided information types

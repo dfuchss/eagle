@@ -53,7 +53,7 @@ public class MultiHypothesesWikiWSD extends WordSenseDisambiguation implements I
 	}
 
 	@Override
-	public List<IHypothesesSet> getHypothesesFromGraph(PARSEGraphWrapper graph) {
+	public List<IHypothesesSet> getHypothesesFromDataStructure(PARSEGraphWrapper graph) {
 		List<IHypothesesSet> hyps = new ArrayList<>();
 		try {
 			for (INode node : WordSenseDisambiguation.getNodesInOrder(graph.getGraph())) {
@@ -87,7 +87,7 @@ public class MultiHypothesesWikiWSD extends WordSenseDisambiguation implements I
 	}
 
 	@Override
-	public void applyHypothesesToGraph(PARSEGraphWrapper graph, List<IHypothesesSelection> selection) {
+	public void applyHypothesesToDataStructure(PARSEGraphWrapper graph, List<IHypothesesSelection> selection) {
 		this.checkSelection(selection);
 
 		INodeType tokenType;

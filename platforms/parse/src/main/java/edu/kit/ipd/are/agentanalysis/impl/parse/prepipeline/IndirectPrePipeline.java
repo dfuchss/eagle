@@ -3,8 +3,6 @@ package edu.kit.ipd.are.agentanalysis.impl.parse.prepipeline;
 import java.util.Properties;
 
 import edu.kit.ipd.are.agentanalysis.impl.parse.PARSEGraphWrapper;
-import edu.kit.ipd.are.agentanalysis.port.IPrePipeline;
-import edu.kit.ipd.are.agentanalysis.port.PrePipelineMode;
 import edu.kit.ipd.indirect.graphBuilder.GraphBuilder;
 import edu.kit.ipd.indirect.textSNLP.Stanford;
 import edu.kit.ipd.indirect.textSNLP.TextSNLP;
@@ -18,7 +16,7 @@ import edu.kit.ipd.parse.luna.tools.ConfigManager;
  * @author Dominik Fuchss
  *
  */
-public final class IndirectPrePipeline implements IPrePipeline<PARSEGraphWrapper> {
+public final class IndirectPrePipeline implements IPrePipeline {
 	/**
 	 * Create the pipeline for INDIRECT.
 	 */
@@ -50,7 +48,7 @@ public final class IndirectPrePipeline implements IPrePipeline<PARSEGraphWrapper
 			tokenizer.exec(ppd);
 			snlp.exec(ppd);
 			graphBuilder.exec(ppd);
-			return new PARSEGraphWrapper(ppd.getGraph(), PrePipelineMode.INDIRECT);
+			return new PARSEGraphWrapper(ppd.getGraph(), text, PrePipelineMode.INDIRECT);
 		} catch (Exception e) {
 			e.printStackTrace();
 			return null;

@@ -33,7 +33,7 @@ public class MultiHypothesesTopicExtraction extends TopicExtraction implements I
 	public static final String MULTI_HYPOTHESIS_TOPIC_ATTRIBUTE = "MHTA-topic";
 
 	private ObjectMapper objectMapper = Serialize.getObjectMapper(false);
-	private static final TypeReference<List<Topic>> TOPIC_LIST = new TypeReference<List<Topic>>() {
+	private static final TypeReference<List<Topic>> TOPIC_LIST = new TypeReference<>() {
 	};
 
 	private final int maxHypothesis;
@@ -46,8 +46,8 @@ public class MultiHypothesesTopicExtraction extends TopicExtraction implements I
 	protected void prepareGraph() {
 		super.prepareGraph();
 		INodeType topicType = this.graph.getNodeType(TopicExtraction.TOPICS_NODE_TYPE);
-		if (!topicType.containsAttribute(MULTI_HYPOTHESIS_TOPIC_ATTRIBUTE, "String")) {
-			topicType.addAttributeToType("String", MULTI_HYPOTHESIS_TOPIC_ATTRIBUTE);
+		if (!topicType.containsAttribute(MultiHypothesesTopicExtraction.MULTI_HYPOTHESIS_TOPIC_ATTRIBUTE, "String")) {
+			topicType.addAttributeToType("String", MultiHypothesesTopicExtraction.MULTI_HYPOTHESIS_TOPIC_ATTRIBUTE);
 		}
 	}
 
@@ -61,12 +61,12 @@ public class MultiHypothesesTopicExtraction extends TopicExtraction implements I
 		}
 		INode topicNode = nodes.get(0);
 		String data = this.serializeTopics(topics);
-		topicNode.setAttributeValue(MULTI_HYPOTHESIS_TOPIC_ATTRIBUTE, data);
+		topicNode.setAttributeValue(MultiHypothesesTopicExtraction.MULTI_HYPOTHESIS_TOPIC_ATTRIBUTE, data);
 	}
 
 	private List<Topic> deserializeTopics(String data) {
 		try {
-			List<Topic> topics = this.objectMapper.readValue(data, TOPIC_LIST);
+			List<Topic> topics = this.objectMapper.readValue(data, MultiHypothesesTopicExtraction.TOPIC_LIST);
 			return topics;
 		} catch (JsonProcessingException e) {
 			e.printStackTrace();
@@ -85,7 +85,7 @@ public class MultiHypothesesTopicExtraction extends TopicExtraction implements I
 	}
 
 	@Override
-	public List<IHypothesesSet> getHypothesesFromGraph(PARSEGraphWrapper in) {
+	public List<IHypothesesSet> getHypothesesFromDataStructure(PARSEGraphWrapper in) {
 		IGraph graph = in.getGraph();
 		List<INode> nodes = graph.getNodesOfType(graph.getNodeType(TopicExtraction.TOPICS_NODE_TYPE));
 		if (nodes.size() != 1) {
@@ -93,7 +93,7 @@ public class MultiHypothesesTopicExtraction extends TopicExtraction implements I
 		}
 		INode topicNode = nodes.get(0);
 
-		List<Topic> topics = this.deserializeTopics((String) topicNode.getAttributeValue(MULTI_HYPOTHESIS_TOPIC_ATTRIBUTE));
+		List<Topic> topics = this.deserializeTopics((String) topicNode.getAttributeValue(MultiHypothesesTopicExtraction.MULTI_HYPOTHESIS_TOPIC_ATTRIBUTE));
 		topics.sort((t1, t2) -> -Double.compare(t1.getScore(), t2.getScore()));
 
 		List<TopicHypothesis> hyps = new ArrayList<>();
@@ -122,7 +122,7 @@ public class MultiHypothesesTopicExtraction extends TopicExtraction implements I
 	}
 
 	@Override
-	public void applyHypothesesToGraph(PARSEGraphWrapper in, List<IHypothesesSelection> hypotheses) {
+	public void applyHypothesesToDataStructure(PARSEGraphWrapper in, List<IHypothesesSelection> hypotheses) {
 		IGraph graph = in.getGraph();
 		this.checkSelection(hypotheses);
 		if (hypotheses.size() > 1) {

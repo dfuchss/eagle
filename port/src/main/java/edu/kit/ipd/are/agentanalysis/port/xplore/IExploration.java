@@ -18,7 +18,7 @@ public interface IExploration<DS extends IDataStructure<DS>> {
 	 *
 	 * @param initial the new initial data structure
 	 */
-	void restart(IInitialData<DS> initial);
+	void restart(DS initial);
 
 	/**
 	 * Explore the current graph.

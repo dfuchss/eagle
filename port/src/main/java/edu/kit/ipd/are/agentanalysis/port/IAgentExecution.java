@@ -9,12 +9,13 @@ import org.slf4j.LoggerFactory;
  * The main interface for the execution of agents. This interface provides
  * methods to load {@link IAgentSpecification IAgentSpecs} and execute them on a
  * data structure
- * 
+ *
  * @author Dominik Fuchss
  * @param <A>  the actual agent type
  * @param <DS> Data Structure for input and output
+ * @param <AS> the agent specification type
  */
-public interface IAgentExecution<A extends IAgent<DS>, DS extends IDataStructure<DS>> {
+public interface IAgentExecution<A extends IAgent<DS>, DS extends IDataStructure<DS>, AS extends IAgentSpecification<A, DS>> {
 
 	/**
 	 * The Logger for all instances of {@link IAgentExecution}.
@@ -26,14 +27,14 @@ public interface IAgentExecution<A extends IAgent<DS>, DS extends IDataStructure
 	 *
 	 * @param agentSpec the agent specification
 	 */
-	void loadAgent(IAgentSpecification<? extends A, DS> agentSpec);
+	void loadAgent(AS agentSpec);
 
 	/**
 	 * Load agents you want to use in the analysis.
 	 *
 	 * @param agentSpecs the agent specifications
 	 */
-	default void loadAgents(Collection<? extends IAgentSpecification<? extends A, DS>> agentSpecs) {
+	default void loadAgents(Collection<AS> agentSpecs) {
 		for (var spec : agentSpecs) {
 			this.loadAgent(spec);
 		}

@@ -15,7 +15,6 @@ import edu.kit.ipd.are.agentanalysis.port.IDataStructure;
 import edu.kit.ipd.are.agentanalysis.port.hypothesis.IAgentHypothesisSpecification;
 import edu.kit.ipd.are.agentanalysis.port.xplore.IExploration;
 import edu.kit.ipd.are.agentanalysis.port.xplore.IExplorationResult;
-import edu.kit.ipd.are.agentanalysis.port.xplore.IInitialData;
 import edu.kit.ipd.are.agentanalysis.port.xplore.layer.ILayer;
 import edu.kit.ipd.are.agentanalysis.port.xplore.layer.ILayerEntry;
 
@@ -23,13 +22,15 @@ import edu.kit.ipd.are.agentanalysis.port.xplore.layer.ILayerEntry;
  * The base class for all explorators which use {@link ILayer Layers}
  *
  * @author Dominik Fuchss
+ * @param <A>  the type of agent for exploration
+ * @param <DS> the type of data structure to use
  *
  */
 public abstract class LayeredExploration<A extends IAgent<DS>, DS extends IDataStructure<DS>> implements IExploration<DS> {
 	protected static final Logger logger = LoggerFactory.getLogger(LayeredExploration.class);
 
 	private String text;
-	private DS initialGraph;
+	private DS initialData;
 
 	private Layer<A, DS>[] layers;
 	private Set<IAgentSpecification<? extends A, DS>> agents;
@@ -40,7 +41,7 @@ public abstract class LayeredExploration<A extends IAgent<DS>, DS extends IDataS
 	 *
 	 * @param initial the initial graph
 	 */
-	protected LayeredExploration(IInitialData<DS> initial) {
+	protected LayeredExploration(DS initial) {
 		this.agents = new HashSet<>();
 		this.hypothesesAgents = new HashSet<>();
 
@@ -48,12 +49,12 @@ public abstract class LayeredExploration<A extends IAgent<DS>, DS extends IDataS
 	}
 
 	@Override
-	public final void restart(IInitialData<DS> initial) {
+	public final void restart(DS initial) {
 		this.layers = null;
 		this.agents.clear();
 		this.hypothesesAgents.clear();
 		this.text = initial.getText();
-		this.initialGraph = initial.getData();
+		this.initialData = initial;
 	}
 
 	@Override
@@ -87,7 +88,7 @@ public abstract class LayeredExploration<A extends IAgent<DS>, DS extends IDataS
 	}
 
 	private void createRoot() {
-		this.layers[0].createEntry(null, this.initialGraph);
+		this.layers[0].createEntry(null, this.initialData);
 	}
 
 	@SuppressWarnings("unchecked")

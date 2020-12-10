@@ -8,11 +8,12 @@ import edu.kit.ipd.are.agentanalysis.impl.parse.GraphUtils;
 import edu.kit.ipd.are.agentanalysis.impl.parse.PARSEAgent;
 import edu.kit.ipd.are.agentanalysis.impl.parse.PARSEAgentHelper;
 import edu.kit.ipd.are.agentanalysis.impl.parse.PARSEGraphWrapper;
+import edu.kit.ipd.are.agentanalysis.impl.parse.prepipeline.PrePipelineMode;
+import edu.kit.ipd.are.agentanalysis.impl.parse.specification.AbstractAgentSpecification;
 import edu.kit.ipd.are.agentanalysis.port.AgentHelper;
 import edu.kit.ipd.are.agentanalysis.port.IAgentExecution;
 import edu.kit.ipd.are.agentanalysis.port.IAgentSpecification;
-import edu.kit.ipd.are.agentanalysis.port.PrePipelineMode;
-import edu.kit.ipd.parse.luna.graph.IGraph;
+import edu.kit.ipd.parse.luna.agent.AbstractAgent;
 
 /**
  * Defines a basic realization of an {@link IAgentExecution}.
@@ -20,12 +21,12 @@ import edu.kit.ipd.parse.luna.graph.IGraph;
  * @author Dominik Fuchss
  *
  */
-public class AgentExecution implements IAgentExecution<PARSEAgent, PARSEGraphWrapper> {
+public class AgentExecution implements IAgentExecution<PARSEAgent, PARSEGraphWrapper, AbstractAgentSpecification<? extends AbstractAgent>> {
 
-	private Set<IAgentSpecification<? extends PARSEAgent, PARSEGraphWrapper>> agents = new HashSet<>();
+	private Set<AbstractAgentSpecification<? extends AbstractAgent>> agents = new HashSet<>();
 
 	@Override
-	public void loadAgent(IAgentSpecification<? extends PARSEAgent, PARSEGraphWrapper> agentSpec) {
+	public void loadAgent(AbstractAgentSpecification<? extends AbstractAgent> agentSpec) {
 		this.agents.add(agentSpec);
 	}
 
@@ -35,9 +36,9 @@ public class AgentExecution implements IAgentExecution<PARSEAgent, PARSEGraphWra
 	}
 
 	@Override
-	public PARSEGraphWrapper execute(PARSEGraphWrapper input) {
-		IGraph graph = input.getGraph();
-		PrePipelineMode ppm = input.getPrePipelineMode();
+	public PARSEGraphWrapper execute(PARSEGraphWrapper in) {
+
+		PrePipelineMode ppm = in.getPrePipelineMode();
 
 		// Check PPM
 		List<IAgentSpecification<? extends PARSEAgent, PARSEGraphWrapper>> invalidAgents = PARSEAgentHelper.findInvalidAgents(this.agents, ppm);
@@ -54,12 +55,14 @@ public class AgentExecution implements IAgentExecution<PARSEAgent, PARSEGraphWra
 			return null;
 		}
 
+		PARSEGraphWrapper graph = in;
+
 		for (IAgentSpecification<? extends PARSEAgent, PARSEGraphWrapper> next : specsToRun) {
 			if (IAgentExecution.logger.isDebugEnabled()) {
 				IAgentExecution.logger.debug("Executing " + next);
 			}
 
-			var nextGraph = PARSEAgentHelper.execute(graph, next.getAgentInstance().getAgent());
+			var nextGraph = next.getAgentInstance().execute(graph);
 			if (nextGraph == null) {
 				if (IAgentExecution.logger.isErrorEnabled()) {
 					IAgentExecution.logger.error("Failed to execute " + next);
@@ -69,10 +72,11 @@ public class AgentExecution implements IAgentExecution<PARSEAgent, PARSEGraphWra
 			graph = nextGraph;
 
 			if (IAgentExecution.logger.isDebugEnabled()) {
-				IAgentExecution.logger.debug("After " + next.getAgentInstance().getClass().getSimpleName() + " " + GraphUtils.getStats(graph));
+				IAgentExecution.logger.debug("After " + next.getAgentInstance().getClass().getSimpleName() + " " + GraphUtils.getStats(graph.getGraph()));
 			}
 		}
-		return new PARSEGraphWrapper(graph, ppm);
+
+		return graph;
 	}
 
 }

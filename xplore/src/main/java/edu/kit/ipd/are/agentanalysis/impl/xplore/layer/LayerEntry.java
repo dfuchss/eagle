@@ -17,8 +17,8 @@ final class LayerEntry<A extends IAgent<DS>, DS extends IDataStructure<DS>> impl
 
 	private transient Layer<A, DS> layer;
 	private transient int entryNo;
-	private transient DS inputGraph;
-	private transient DS evaluatedGraph;
+	private transient DS inputData;
+	private transient DS evaluatedData;
 
 	private transient LayerEntry<A, DS> parent;
 
@@ -29,15 +29,15 @@ final class LayerEntry<A extends IAgent<DS>, DS extends IDataStructure<DS>> impl
 	LayerEntry(Layer<A, DS> layer, int number, LayerEntry<A, DS> parent, DS input) {
 		this.layer = layer;
 		this.entryNo = number;
-		this.inputGraph = input;
+		this.inputData = input;
 		this.parent = parent;
 		var instance = this.layer.getAgent().getAgentInstance();
 		logger.debug("Run analysis for " + this.layer + ", " + this.layer.getAgent());
-		this.evaluatedGraph = instance.execute(inputGraph);
+		this.evaluatedData = instance.execute(inputData);
 		logger.debug("Finished analysis for " + this.layer + ", " + this.layer.getAgent());
 
 		if (this.layer.getAgentWithHypotheses() != null) {
-			this.hypotheses = this.layer.getAgentWithHypotheses().getHypothesesFromGraph(this.evaluatedGraph);
+			this.hypotheses = this.layer.getAgentWithHypotheses().getHypothesesFromDataStructure(this.evaluatedData);
 		}
 	}
 
@@ -85,15 +85,15 @@ final class LayerEntry<A extends IAgent<DS>, DS extends IDataStructure<DS>> impl
 		if (!this.nextLayerEntries.isEmpty()) {
 			throw new UnsupportedOperationException("NoHypotheses LayerEntry already explored.");
 		}
-		var newEntry = (LayerEntry<A, DS>) this.layer.getNext().createEntry(this, evaluatedGraph.clone());
+		var newEntry = (LayerEntry<A, DS>) this.layer.getNext().createEntry(this, evaluatedData.clone());
 		this.nextLayerEntries.put(null, newEntry);
 		return newEntry;
 	}
 
 	private LayerEntry<A, DS> createHypothesesNext(List<IHypothesesSelection> selection) {
 		logger.debug("Appling selection " + selection + " @ " + this.layer);
-		var resultGraph = this.inputGraph.clone();
-		this.layer.getAgentWithHypotheses().applyHypothesesToGraph(resultGraph, selection);
+		var resultGraph = this.inputData.clone();
+		this.layer.getAgentWithHypotheses().applyHypothesesToDataStructure(resultGraph, selection);
 
 		var newEntry = this.layer.getNext().createEntry(this, resultGraph);
 		this.nextLayerEntries.put(selection, newEntry);

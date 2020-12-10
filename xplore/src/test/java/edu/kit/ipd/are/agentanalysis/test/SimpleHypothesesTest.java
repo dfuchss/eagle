@@ -13,6 +13,7 @@ import org.junit.Test;
 import edu.kit.ipd.are.agentanalysis.impl.parse.PARSEAgent;
 import edu.kit.ipd.are.agentanalysis.impl.parse.PARSEGraphWrapper;
 import edu.kit.ipd.are.agentanalysis.impl.parse.execution.AgentExecution;
+import edu.kit.ipd.are.agentanalysis.impl.parse.prepipeline.IPrePipeline;
 import edu.kit.ipd.are.agentanalysis.impl.parse.prepipeline.PARSEPrePipeline;
 import edu.kit.ipd.are.agentanalysis.impl.specification.hypothesis.OntologySelectorHypothesisSpec;
 import edu.kit.ipd.are.agentanalysis.impl.specification.hypothesis.TopicExtractionHypothesisSpec;
@@ -23,10 +24,8 @@ import edu.kit.ipd.are.agentanalysis.impl.xplore.SimpleExploration;
 import edu.kit.ipd.are.agentanalysis.impl.xplore.SpecificExploration;
 import edu.kit.ipd.are.agentanalysis.impl.xplore.selection.SameWordSameDecision;
 import edu.kit.ipd.are.agentanalysis.impl.xplore.selection.TopXConfidence;
-import edu.kit.ipd.are.agentanalysis.port.IPrePipeline;
 import edu.kit.ipd.are.agentanalysis.port.util.Serialize;
 import edu.kit.ipd.are.agentanalysis.port.xplore.IExplorationResult;
-import edu.kit.ipd.are.agentanalysis.port.xplore.InitialData;
 import edu.kit.ipd.indirect.constparser.ConstParser;
 import edu.kit.ipd.indirect.depparser.DepParser;
 import edu.kit.ipd.indirect.textSNLP.Stanford;
@@ -75,7 +74,7 @@ public class SimpleHypothesesTest extends TestBase {
 		this.graph = this.getNewGraph(new PARSEPrePipeline());
 	}
 
-	private PARSEGraphWrapper getNewGraph(IPrePipeline<PARSEGraphWrapper> ppl) throws IOException {
+	private PARSEGraphWrapper getNewGraph(IPrePipeline ppl) throws IOException {
 //		var texts = TestBase.getTexts();
 //		var text = texts.get(texts.firstKey());
 		var text = "John, go to the fridge next to the cupboard.";
@@ -94,7 +93,7 @@ public class SimpleHypothesesTest extends TestBase {
 		Assert.assertNotNull(wsdAnalyzed);
 		Assert.assertNotSame(this.graph, wsdAnalyzed);
 
-		var hyps = wwhs.getHypothesesFromGraph(wsdAnalyzed);
+		var hyps = wwhs.getHypothesesFromDataStructure(wsdAnalyzed);
 		Assert.assertNotNull(hyps);
 		Assert.assertFalse(hyps.isEmpty());
 	}
@@ -113,7 +112,7 @@ public class SimpleHypothesesTest extends TestBase {
 		Assert.assertNotNull(topicAnalyzed);
 		Assert.assertNotSame(this.graph, topicAnalyzed);
 
-		var hyps = tehs.getHypothesesFromGraph(topicAnalyzed);
+		var hyps = tehs.getHypothesesFromDataStructure(topicAnalyzed);
 		Assert.assertNotNull(hyps);
 		Assert.assertFalse(hyps.isEmpty());
 	}
@@ -128,7 +127,7 @@ public class SimpleHypothesesTest extends TestBase {
 	public void testHypothesisCombinationSimpleExploration() throws Exception {
 		WikiWSDHypothesisSpec wwhs = new WikiWSDHypothesisSpec();
 		TopicExtractionHypothesisSpec tehs = new TopicExtractionHypothesisSpec();
-		SimpleExploration<PARSEAgent, PARSEGraphWrapper> explorer = new SimpleExploration<>(new InitialData<>("testA", this.graph), 3);
+		SimpleExploration<PARSEAgent, PARSEGraphWrapper> explorer = new SimpleExploration<>(this.graph, 3);
 
 		explorer.loadHypothesisAgent(wwhs);
 		explorer.loadHypothesisAgent(tehs);
@@ -159,7 +158,7 @@ public class SimpleHypothesesTest extends TestBase {
 		WikiWSDHypothesisSpec wwhs = new WikiWSDHypothesisSpec();
 		TopicExtractionHypothesisSpec tehs = new TopicExtractionHypothesisSpec();
 
-		SpecificExploration<PARSEAgent, PARSEGraphWrapper> explorer = new SpecificExploration<>(new InitialData<>("testA", this.graph), 3);
+		SpecificExploration<PARSEAgent, PARSEGraphWrapper> explorer = new SpecificExploration<>(this.graph, 3);
 		explorer.loadHypothesisAgent(wwhs, new SameWordSameDecision(new TopXConfidence(3)));
 		explorer.loadHypothesisAgent(tehs);
 
@@ -187,7 +186,7 @@ public class SimpleHypothesesTest extends TestBase {
 		WikiWSDHypothesisSpec wwhs = new WikiWSDHypothesisSpec();
 		TopicExtractionHypothesisSpec tehs = new TopicExtractionHypothesisSpec();
 		OntologySelectorHypothesisSpec oshs = new OntologySelectorHypothesisSpec();
-		SimpleExploration<PARSEAgent, PARSEGraphWrapper> explorer = new SimpleExploration<>(new InitialData<>("testA", this.graph), 3);
+		SimpleExploration<PARSEAgent, PARSEGraphWrapper> explorer = new SimpleExploration<>(this.graph, 3);
 
 		explorer.loadHypothesisAgent(wwhs);
 		explorer.loadHypothesisAgent(tehs);
@@ -212,7 +211,7 @@ public class SimpleHypothesesTest extends TestBase {
 		WikiWSDSpec wwhs = new WikiWSDSpec();
 		TopicExtractionHypothesisSpec tehs = new TopicExtractionHypothesisSpec();
 		OntologySelectorHypothesisSpec oshs = new OntologySelectorHypothesisSpec();
-		SimpleExploration<PARSEAgent, PARSEGraphWrapper> explorer = new SimpleExploration<>(new InitialData<>("testA", this.graph), 3);
+		SimpleExploration<PARSEAgent, PARSEGraphWrapper> explorer = new SimpleExploration<>(this.graph, 3);
 
 		explorer.loadAgent(wwhs);
 		explorer.loadHypothesisAgent(tehs);

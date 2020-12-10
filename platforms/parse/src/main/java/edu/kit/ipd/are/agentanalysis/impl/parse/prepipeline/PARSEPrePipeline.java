@@ -2,8 +2,6 @@ package edu.kit.ipd.are.agentanalysis.impl.parse.prepipeline;
 
 import edu.kit.ipd.are.agentanalysis.impl.parse.GraphUtils;
 import edu.kit.ipd.are.agentanalysis.impl.parse.PARSEGraphWrapper;
-import edu.kit.ipd.are.agentanalysis.port.IPrePipeline;
-import edu.kit.ipd.are.agentanalysis.port.PrePipelineMode;
 import edu.kit.ipd.parse.graphBuilder.GraphBuilder;
 import edu.kit.ipd.parse.luna.data.PrePipelineData;
 import edu.kit.ipd.parse.luna.tools.ConfigManager;
@@ -19,7 +17,7 @@ import edu.kit.ipd.parse.srlabeler.SRLabeler;
  * @author Dominik Fuchss
  *
  */
-public final class PARSEPrePipeline implements IPrePipeline<PARSEGraphWrapper> {
+public final class PARSEPrePipeline implements IPrePipeline {
 	/**
 	 * Create the pipeline for PARSE.
 	 */
@@ -73,7 +71,7 @@ public final class PARSEPrePipeline implements IPrePipeline<PARSEGraphWrapper> {
 			nerTagger.exec(ppd);
 			srLabeler.exec(ppd);
 			graphBuilder.exec(ppd);
-			return new PARSEGraphWrapper(ppd.getGraph(), PrePipelineMode.PARSE);
+			return new PARSEGraphWrapper(ppd.getGraph(), text, PrePipelineMode.PARSE);
 		} catch (Exception e) {
 			e.printStackTrace();
 			return null;

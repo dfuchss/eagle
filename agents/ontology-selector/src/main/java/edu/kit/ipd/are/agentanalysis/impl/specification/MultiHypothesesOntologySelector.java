@@ -51,7 +51,7 @@ public class MultiHypothesesOntologySelector extends OntologySelector implements
 
 	private ObjectMapper objectMapper = Serialize.getObjectMapper(false);
 
-	private static final TypeReference<List<OntologySelectionData>> ONTOLOGY_LIST = new TypeReference<List<OntologySelectionData>>() {
+	private static final TypeReference<List<OntologySelectionData>> ONTOLOGY_LIST = new TypeReference<>() {
 	};
 
 	private List<OntologySelectionData> actorOntos;
@@ -68,11 +68,11 @@ public class MultiHypothesesOntologySelector extends OntologySelector implements
 	protected void prepareGraph() {
 		super.prepareGraph();
 		INodeType topicType = this.graph.getNodeType(OntologySelector.ONTOLOGY_NODE_TYPE);
-		if (!topicType.containsAttribute(MULTI_HYPOTHESIS_ACTOR_ONTOLOGY_ATTRIBUTE, "String")) {
-			topicType.addAttributeToType("String", MULTI_HYPOTHESIS_ACTOR_ONTOLOGY_ATTRIBUTE);
+		if (!topicType.containsAttribute(MultiHypothesesOntologySelector.MULTI_HYPOTHESIS_ACTOR_ONTOLOGY_ATTRIBUTE, "String")) {
+			topicType.addAttributeToType("String", MultiHypothesesOntologySelector.MULTI_HYPOTHESIS_ACTOR_ONTOLOGY_ATTRIBUTE);
 		}
-		if (!topicType.containsAttribute(MULTI_HYPOTHESIS_ENV_ONTOLOGY_ATTRIBUTE, "String")) {
-			topicType.addAttributeToType("String", MULTI_HYPOTHESIS_ENV_ONTOLOGY_ATTRIBUTE);
+		if (!topicType.containsAttribute(MultiHypothesesOntologySelector.MULTI_HYPOTHESIS_ENV_ONTOLOGY_ATTRIBUTE, "String")) {
+			topicType.addAttributeToType("String", MultiHypothesesOntologySelector.MULTI_HYPOTHESIS_ENV_ONTOLOGY_ATTRIBUTE);
 		}
 	}
 
@@ -116,8 +116,8 @@ public class MultiHypothesesOntologySelector extends OntologySelector implements
 			return;
 		}
 		INode ontologyNode = nodes.get(0);
-		ontologyNode.setAttributeValue(MULTI_HYPOTHESIS_ACTOR_ONTOLOGY_ATTRIBUTE, this.serializeOntologySelectionData(this.actorOntos));
-		ontologyNode.setAttributeValue(MULTI_HYPOTHESIS_ENV_ONTOLOGY_ATTRIBUTE, this.serializeOntologySelectionData(this.envOntos));
+		ontologyNode.setAttributeValue(MultiHypothesesOntologySelector.MULTI_HYPOTHESIS_ACTOR_ONTOLOGY_ATTRIBUTE, this.serializeOntologySelectionData(this.actorOntos));
+		ontologyNode.setAttributeValue(MultiHypothesesOntologySelector.MULTI_HYPOTHESIS_ENV_ONTOLOGY_ATTRIBUTE, this.serializeOntologySelectionData(this.envOntos));
 		this.actorOntos = null;
 		this.envOntos = null;
 	}
@@ -129,7 +129,7 @@ public class MultiHypothesesOntologySelector extends OntologySelector implements
 	}
 
 	@Override
-	public List<IHypothesesSet> getHypothesesFromGraph(PARSEGraphWrapper graph) {
+	public List<IHypothesesSet> getHypothesesFromDataStructure(PARSEGraphWrapper graph) {
 		List<INode> nodes = graph.getGraph().getNodesOfType(graph.getGraph().getNodeType(OntologySelector.ONTOLOGY_NODE_TYPE));
 		if (nodes.size() != 1) {
 			return new ArrayList<>();
@@ -137,9 +137,9 @@ public class MultiHypothesesOntologySelector extends OntologySelector implements
 		INode ontologyNode = nodes.get(0);
 
 		// Create Hypotheses.
-		List<OntologySelectionData> actors = this.deserializeOntologySelectionData((String) ontologyNode.getAttributeValue(MULTI_HYPOTHESIS_ACTOR_ONTOLOGY_ATTRIBUTE));
+		List<OntologySelectionData> actors = this.deserializeOntologySelectionData((String) ontologyNode.getAttributeValue(MultiHypothesesOntologySelector.MULTI_HYPOTHESIS_ACTOR_ONTOLOGY_ATTRIBUTE));
 		actors.sort((t1, t2) -> -Double.compare(t1.getConfidence(), t2.getConfidence()));
-		List<OntologySelectionData> envs = this.deserializeOntologySelectionData((String) ontologyNode.getAttributeValue(MULTI_HYPOTHESIS_ENV_ONTOLOGY_ATTRIBUTE));
+		List<OntologySelectionData> envs = this.deserializeOntologySelectionData((String) ontologyNode.getAttributeValue(MultiHypothesesOntologySelector.MULTI_HYPOTHESIS_ENV_ONTOLOGY_ATTRIBUTE));
 		envs.sort((t1, t2) -> -Double.compare(t1.getConfidence(), t2.getConfidence()));
 
 		while (actors.size() > this.maxHypothesis && !actors.isEmpty()) {
@@ -167,7 +167,7 @@ public class MultiHypothesesOntologySelector extends OntologySelector implements
 	}
 
 	@Override
-	public void applyHypothesesToGraph(PARSEGraphWrapper graph, List<IHypothesesSelection> hypotheses) {
+	public void applyHypothesesToDataStructure(PARSEGraphWrapper graph, List<IHypothesesSelection> hypotheses) {
 		this.checkSelection(hypotheses);
 		if (hypotheses.size() > 2) {
 			throw new IllegalArgumentException("Invalid amount of HypothesesGroups are selected ..");
@@ -214,7 +214,7 @@ public class MultiHypothesesOntologySelector extends OntologySelector implements
 
 	private OWLOntology mergeOntologies(OWLOntologyManager owlManager, List<OntologySelectionData> ontologies, String mergeId) {
 		// Copied from base class.
-		OWLOntology merged = mergeSelection(owlManager, ontologies, IRI.create("http://www.semanticweb.com/mergedOntology_" + mergeId));
+		OWLOntology merged = this.mergeSelection(owlManager, ontologies, IRI.create("http://www.semanticweb.com/mergedOntology_" + mergeId));
 		return merged;
 	}
 
@@ -252,7 +252,7 @@ public class MultiHypothesesOntologySelector extends OntologySelector implements
 
 	private List<OntologySelectionData> deserializeOntologySelectionData(String data) {
 		try {
-			List<OntologySelectionData> ontologies = this.objectMapper.readValue(data, ONTOLOGY_LIST);
+			List<OntologySelectionData> ontologies = this.objectMapper.readValue(data, MultiHypothesesOntologySelector.ONTOLOGY_LIST);
 			return ontologies;
 		} catch (JsonProcessingException e) {
 			e.printStackTrace();
@@ -328,7 +328,7 @@ public class MultiHypothesesOntologySelector extends OntologySelector implements
 		SimpleOntologyMerger som = new SimpleOntologyMerger();
 
 		// rename everything to use the merged ontology's IRI
-		renameAllSelections(owlManager, ontologies, iri);
+		this.renameAllSelections(owlManager, ontologies, iri);
 		// add the properties to connect dataTypes to Objects
 		som.connectTypesToObjects(owlManager, merged, iri);
 		return merged;
@@ -339,8 +339,8 @@ public class MultiHypothesesOntologySelector extends OntologySelector implements
 		// Copied from #renameAll in ontology merger..
 		OWLEntityRenamer renamer = new OWLEntityRenamer(owlManager, owlManager.ontologies().collect(Collectors.toList()));
 		for (OntologySelectionData selection : ontologies) {
-			OWLOntology ontology = loadOntology(selection.getOntologyPath());
-			ontology.axioms().flatMap(a -> a.components()).filter(c -> c instanceof OWLNamedObject).map(c -> (OWLNamedObject) c)
+			OWLOntology ontology = this.loadOntology(selection.getOntologyPath());
+			ontology.axioms().flatMap(OWLAxiom::components).filter(c -> c instanceof OWLNamedObject).map(c -> (OWLNamedObject) c)
 					.filter(no -> !no.getIRI().toString().contains("w3.org") && !no.getIRI().toString().contains("Thing")).forEach(obj -> {
 						IRI individualName = IRI.create(obj.getIRI().toString().replaceFirst("[^*]+(?=#|;)", iri.toString()));
 						owlManager.applyChanges(renamer.changeIRI(obj.getIRI(), individualName));

@@ -70,11 +70,21 @@ public class TokenHypothesesSet implements IHypothesesSet {
 		return this.getWordOfHypotheses();
 	}
 
+	/**
+	 * Get the graph that was used to access the hypotheses.
+	 *
+	 * @return the original graph
+	 */
 	@JsonIgnore
 	public IGraph getGraphOfHypotheses() {
 		return this.baseGraph;
 	}
 
+	/**
+	 * Get the node that was used to access the hypotheses.
+	 *
+	 * @return the original node
+	 */
 	@JsonIgnore
 	public INode getNodeOfHypotheses() {
 		return this.baseNode;

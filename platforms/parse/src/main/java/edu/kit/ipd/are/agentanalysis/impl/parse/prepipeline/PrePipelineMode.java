@@ -1,4 +1,4 @@
-package edu.kit.ipd.are.agentanalysis.port;
+package edu.kit.ipd.are.agentanalysis.impl.parse.prepipeline;
 
 /**
  * Defines a specific PrePipeline.
@@ -7,7 +7,6 @@ package edu.kit.ipd.are.agentanalysis.port;
  *
  */
 public enum PrePipelineMode {
-	// TODO Delete Enum in Port?
 	/**
 	 * This represents the Prepipeline from PARSE.
 	 */

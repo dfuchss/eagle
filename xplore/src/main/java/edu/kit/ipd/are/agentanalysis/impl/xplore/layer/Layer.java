@@ -17,7 +17,8 @@ import edu.kit.ipd.are.agentanalysis.port.xplore.selection.ISelectionProvider;
  * Defines the realization of an {@link ILayer}.
  *
  * @author Dominik Fuchss
- *
+ * @param <A>  the type of agent to use
+ * @param <DS> the type of data structure to use
  */
 public final class Layer<A extends IAgent<DS>, DS extends IDataStructure<DS>> implements ILayer {
 
@@ -32,6 +33,8 @@ public final class Layer<A extends IAgent<DS>, DS extends IDataStructure<DS>> im
 	 * Create a new layer for a non hypothesis agent (these are normal
 	 * {@link IAgentSpecification IAgentSpecifications})
 	 *
+	 * @param <A>   the type of agent to use
+	 * @param <DS>  the type of data structure to use
 	 * @param agent the agent specification
 	 * @return the created layer
 	 */
@@ -43,6 +46,8 @@ public final class Layer<A extends IAgent<DS>, DS extends IDataStructure<DS>> im
 	 * Create a new layer for a hypothesis agent (these are
 	 * {@link IAgentHypothesisSpecification IAgentHypothesisSpecifications})
 	 *
+	 * @param <A>   the type of agent to use
+	 * @param <DS>  the type of data structure to use
 	 * @param agent the agent specification
 	 * @return the created layer
 	 */
@@ -95,12 +100,12 @@ public final class Layer<A extends IAgent<DS>, DS extends IDataStructure<DS>> im
 	 * the agent of this layer.</b>
 	 *
 	 * @param parent the parent layer entry
-	 * @param graph  the associated input graph
+	 * @param data   the associated input graph
 	 * @return the new layer entry
 	 */
-	public LayerEntry<A, DS> createEntry(LayerEntry<A, DS> parent, DS graph) {
-		LayerEntry<A, DS> entry = new LayerEntry<>(this, this.entries.size(), parent, graph);
-		logger.info("Created LayerEntry " + entry);
+	public LayerEntry<A, DS> createEntry(LayerEntry<A, DS> parent, DS data) {
+		LayerEntry<A, DS> entry = new LayerEntry<>(this, this.entries.size(), parent, data);
+		ILayer.logger.info("Created LayerEntry " + entry);
 		this.entries.add(entry);
 		return entry;
 	}

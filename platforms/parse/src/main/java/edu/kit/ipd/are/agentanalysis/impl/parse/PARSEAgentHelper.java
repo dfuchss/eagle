@@ -6,8 +6,9 @@ import java.util.List;
 import java.util.function.Consumer;
 import java.util.stream.Collectors;
 
+import edu.kit.ipd.are.agentanalysis.impl.parse.prepipeline.PrePipelineMode;
+import edu.kit.ipd.are.agentanalysis.impl.parse.specification.AbstractAgentSpecification;
 import edu.kit.ipd.are.agentanalysis.port.IAgentSpecification;
-import edu.kit.ipd.are.agentanalysis.port.PrePipelineMode;
 import edu.kit.ipd.parse.luna.agent.AbstractAgent;
 import edu.kit.ipd.parse.luna.graph.IGraph;
 
@@ -83,8 +84,8 @@ public final class PARSEAgentHelper {
 	 * @param ppm    the mode of pre pipeline
 	 * @return a list of all invalid agents
 	 */
-	public static List<IAgentSpecification<? extends PARSEAgent, PARSEGraphWrapper>> findInvalidAgents(Collection<? extends IAgentSpecification<? extends PARSEAgent, PARSEGraphWrapper>> agents,
-			PrePipelineMode ppm) {
+	public static List<IAgentSpecification<? extends PARSEAgent, PARSEGraphWrapper>> findInvalidAgents(//
+			Collection<? extends AbstractAgentSpecification<? extends AbstractAgent>> agents, PrePipelineMode ppm) {
 		return agents.stream().filter(a -> a.getMode() != ppm).collect(Collectors.toList());
 	}
 

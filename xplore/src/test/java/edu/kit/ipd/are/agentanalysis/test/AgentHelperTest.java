@@ -9,12 +9,12 @@ import org.junit.Test;
 import edu.kit.ipd.are.agentanalysis.impl.parse.PARSEAgentHelper;
 import edu.kit.ipd.are.agentanalysis.impl.parse.prepipeline.IndirectPrePipeline;
 import edu.kit.ipd.are.agentanalysis.impl.parse.prepipeline.PARSEPrePipeline;
+import edu.kit.ipd.are.agentanalysis.impl.parse.prepipeline.PrePipelineMode;
 import edu.kit.ipd.are.agentanalysis.impl.parse.specification.parse.ParseAgentSpecification;
 import edu.kit.ipd.are.agentanalysis.impl.specification.parse.OntologySelectorSpec;
 import edu.kit.ipd.are.agentanalysis.impl.specification.parse.TopicExtractionSpec;
 import edu.kit.ipd.are.agentanalysis.impl.specification.parse.WikiWSDSpec;
 import edu.kit.ipd.are.agentanalysis.port.AgentHelper;
-import edu.kit.ipd.are.agentanalysis.port.PrePipelineMode;
 import edu.kit.ipd.parse.luna.agent.AbstractAgent;
 
 /**

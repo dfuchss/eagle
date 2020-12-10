@@ -29,7 +29,7 @@ public interface IHypothesesManager<DS extends IDataStructure<DS>> {
 	 * @param data the data structure
 	 * @return a list of found hypotheses groups
 	 */
-	List<IHypothesesSet> getHypothesesFromGraph(DS data);
+	List<IHypothesesSet> getHypothesesFromDataStructure(DS data);
 
 	/**
 	 * Apply a selection of hypotheses to a data structure.
@@ -37,6 +37,6 @@ public interface IHypothesesManager<DS extends IDataStructure<DS>> {
 	 * @param data       the data structure
 	 * @param hypotheses the selected hypotheses
 	 */
-	void applyHypothesesToGraph(DS data, List<IHypothesesSelection> hypotheses);
+	void applyHypothesesToDataStructure(DS data, List<IHypothesesSelection> hypotheses);
 
 }

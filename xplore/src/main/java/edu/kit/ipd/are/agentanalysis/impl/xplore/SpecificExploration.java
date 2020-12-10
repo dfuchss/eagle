@@ -7,7 +7,6 @@ import edu.kit.ipd.are.agentanalysis.impl.xplore.layer.Layer;
 import edu.kit.ipd.are.agentanalysis.port.IAgent;
 import edu.kit.ipd.are.agentanalysis.port.IDataStructure;
 import edu.kit.ipd.are.agentanalysis.port.hypothesis.IAgentHypothesisSpecification;
-import edu.kit.ipd.are.agentanalysis.port.xplore.IInitialData;
 import edu.kit.ipd.are.agentanalysis.port.xplore.selection.ISelectionProvider;
 
 /**
@@ -15,7 +14,8 @@ import edu.kit.ipd.are.agentanalysis.port.xplore.selection.ISelectionProvider;
  * provider of an {@link IAgentHypothesisSpecification}.
  *
  * @author Dominik Fuchss
- *
+ * @param <A>  the type of agent for exploration
+ * @param <DS> the type of data structure to use
  */
 public class SpecificExploration<A extends IAgent<DS>, DS extends IDataStructure<DS>> extends SimpleExploration<A, DS> {
 
@@ -26,12 +26,12 @@ public class SpecificExploration<A extends IAgent<DS>, DS extends IDataStructure
 	 * hypotheses of the {@link IAgentHypothesisSpecification
 	 * IAgentHypothesisSpecifications}.
 	 *
-	 * @param initial the initial graph
+	 * @param initial the initial data
 	 * @param maxHyps the maximum amount of hypotheses for the
 	 *                {@link IAgentHypothesisSpecification
 	 *                IAgentHypothesisSpecifications}
 	 */
-	public SpecificExploration(IInitialData<DS> initial, int maxHyps) {
+	public SpecificExploration(DS initial, int maxHyps) {
 		super(initial, maxHyps);
 		this.selectors = new HashMap<>();
 	}
