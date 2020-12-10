@@ -1,14 +1,12 @@
 package edu.kit.ipd.are.agentanalysis.port;
 
-import edu.kit.ipd.parse.luna.graph.IGraph;
-
 /**
- * Defines a pre pipeline which generates an {@link IGraph} from an input text.
+ * Defines a pre pipeline which generates a data structure from an input text.
  *
  * @author Dominik Fuchss
- *
+ * @param <DS> data structure
  */
-public interface IPrePipeline {
+public interface IPrePipeline<DS extends IDataStructure<DS>> {
 	/**
 	 * Get the {@link PrePipelineMode} of this pipeline.
 	 *
@@ -22,5 +20,5 @@ public interface IPrePipeline {
 	 * @param text the text
 	 * @return the graph or {@code null} if prepipeline failed
 	 */
-	IGraph createGraph(String text);
+	DS createGraph(String text);
 }

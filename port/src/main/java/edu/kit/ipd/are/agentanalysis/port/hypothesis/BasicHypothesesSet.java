@@ -4,9 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-import edu.kit.ipd.parse.luna.graph.IGraph;
-import edu.kit.ipd.parse.luna.graph.INode;
-
 /**
  * A very basic implementation of a {@link IHypothesesSet HypothesesSet}. It
  * simply stores a list of hypotheses and the indicator whether only one of them
@@ -59,16 +56,6 @@ public class BasicHypothesesSet implements IHypothesesSet {
 	@Override
 	public boolean isOnlyOneHypothesisValid() {
 		return this.onlyOneValidHypothesis;
-	}
-
-	@Override
-	public IGraph getGraphOfHypotheses() {
-		return null;
-	}
-
-	@Override
-	public INode getNodeOfHypotheses() {
-		return null;
 	}
 
 	@Override

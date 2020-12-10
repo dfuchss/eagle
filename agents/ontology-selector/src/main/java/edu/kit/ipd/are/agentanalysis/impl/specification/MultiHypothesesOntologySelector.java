@@ -29,6 +29,7 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import edu.kit.ipd.are.agentanalysis.impl.agents.MultiHypothesesTopicExtraction;
+import edu.kit.ipd.are.agentanalysis.impl.parse.PARSEGraphWrapper;
 import edu.kit.ipd.are.agentanalysis.port.hypothesis.BasicHypothesesSet;
 import edu.kit.ipd.are.agentanalysis.port.hypothesis.HypothesisRange;
 import edu.kit.ipd.are.agentanalysis.port.hypothesis.IHypothesesManager;
@@ -36,7 +37,6 @@ import edu.kit.ipd.are.agentanalysis.port.hypothesis.IHypothesesSelection;
 import edu.kit.ipd.are.agentanalysis.port.hypothesis.IHypothesesSet;
 import edu.kit.ipd.are.agentanalysis.port.hypothesis.IHypothesis;
 import edu.kit.ipd.are.agentanalysis.port.util.Serialize;
-import edu.kit.ipd.parse.luna.graph.IGraph;
 import edu.kit.ipd.parse.luna.graph.INode;
 import edu.kit.ipd.parse.luna.graph.INodeType;
 import edu.kit.ipd.parse.luna.graph.Pair;
@@ -45,7 +45,7 @@ import edu.kit.ipd.parse.ontologyselector.SelectionMethod;
 import edu.kit.ipd.parse.ontologyselector.TopicOntology;
 import edu.kit.ipd.parse.ontologyselector.merger.SimpleOntologyMerger;
 
-public class MultiHypothesesOntologySelector extends OntologySelector implements IHypothesesManager {
+public class MultiHypothesesOntologySelector extends OntologySelector implements IHypothesesManager<PARSEGraphWrapper> {
 	public static final String MULTI_HYPOTHESIS_ACTOR_ONTOLOGY_ATTRIBUTE = "MHOA-actor";
 	public static final String MULTI_HYPOTHESIS_ENV_ONTOLOGY_ATTRIBUTE = "MHOA-env";
 
@@ -129,8 +129,8 @@ public class MultiHypothesesOntologySelector extends OntologySelector implements
 	}
 
 	@Override
-	public List<IHypothesesSet> getHypothesesFromGraph(IGraph graph) {
-		List<INode> nodes = this.graph.getNodesOfType(this.graph.getNodeType(OntologySelector.ONTOLOGY_NODE_TYPE));
+	public List<IHypothesesSet> getHypothesesFromGraph(PARSEGraphWrapper graph) {
+		List<INode> nodes = graph.getGraph().getNodesOfType(graph.getGraph().getNodeType(OntologySelector.ONTOLOGY_NODE_TYPE));
 		if (nodes.size() != 1) {
 			return new ArrayList<>();
 		}
@@ -154,8 +154,8 @@ public class MultiHypothesesOntologySelector extends OntologySelector implements
 	}
 
 	@Override
-	public List<IHypothesesSet> getHypothesesForNonHypothesesExecution(IGraph graph) {
-		INode node = graph.getNodesOfType(graph.getNodeType(OntologySelector.ONTOLOGY_NODE_TYPE)).get(0);
+	public List<IHypothesesSet> getHypothesesForNonHypothesesExecution(PARSEGraphWrapper graph) {
+		INode node = graph.getGraph().getNodesOfType(graph.getGraph().getNodeType(OntologySelector.ONTOLOGY_NODE_TYPE)).get(0);
 		@SuppressWarnings("unchecked")
 		List<String> selected = (List<String>) node.getAttributeValue(OntologySelector.ONTOLOGY_SELECTED_ATTRIBUTE);
 		List<OntologySelectionData> osds = new ArrayList<>();
@@ -167,17 +167,17 @@ public class MultiHypothesesOntologySelector extends OntologySelector implements
 	}
 
 	@Override
-	public void applyHypothesesToGraph(IGraph graph, List<IHypothesesSelection> hypotheses) {
+	public void applyHypothesesToGraph(PARSEGraphWrapper graph, List<IHypothesesSelection> hypotheses) {
 		this.checkSelection(hypotheses);
 		if (hypotheses.size() > 2) {
 			throw new IllegalArgumentException("Invalid amount of HypothesesGroups are selected ..");
 		}
 
 		INodeType tokenType;
-		if (graph.hasNodeType(OntologySelector.ONTOLOGY_NODE_TYPE)) {
-			tokenType = graph.getNodeType(OntologySelector.ONTOLOGY_NODE_TYPE);
+		if (graph.getGraph().hasNodeType(OntologySelector.ONTOLOGY_NODE_TYPE)) {
+			tokenType = graph.getGraph().getNodeType(OntologySelector.ONTOLOGY_NODE_TYPE);
 		} else {
-			tokenType = graph.createNodeType(OntologySelector.ONTOLOGY_NODE_TYPE);
+			tokenType = graph.getGraph().createNodeType(OntologySelector.ONTOLOGY_NODE_TYPE);
 		}
 		if (!tokenType.containsAttribute(OntologySelector.ONTOLOGY_ATTRIBUTE, "org.semanticweb.owlapi.model.OWLOntology")) {
 			tokenType.addAttributeToType("org.semanticweb.owlapi.model.OWLOntology", OntologySelector.ONTOLOGY_ATTRIBUTE);
@@ -196,8 +196,8 @@ public class MultiHypothesesOntologySelector extends OntologySelector implements
 		this.saveOntologyToFile(owlManager, merged, file);
 
 		// From Annotate to Graph:
-		INodeType type = graph.getNodeType(OntologySelector.ONTOLOGY_NODE_TYPE);
-		INode node = graph.getNodesOfType(type).isEmpty() ? graph.createNode(type) : graph.getNodesOfType(type).get(0);
+		INodeType type = graph.getGraph().getNodeType(OntologySelector.ONTOLOGY_NODE_TYPE);
+		INode node = graph.getGraph().getNodesOfType(type).isEmpty() ? graph.getGraph().createNode(type) : graph.getGraph().getNodesOfType(type).get(0);
 		node.setAttributeValue(OntologySelector.ONTOLOGY_ATTRIBUTE, merged);
 	}
 

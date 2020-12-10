@@ -24,6 +24,10 @@
 			<groupId>edu.kit.ipd.are.agentanalysis</groupId>
 			<artifactId>agents-topic-extraction</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>edu.kit.ipd.are.agentanalysis</groupId>
+			<artifactId>platforms-parse</artifactId>
+		</dependency>
 
 		<!-- Force specific HTTP Client version -->
 		<dependency>

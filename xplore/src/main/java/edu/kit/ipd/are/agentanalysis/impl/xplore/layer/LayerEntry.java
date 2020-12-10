@@ -5,34 +5,35 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import edu.kit.ipd.are.agentanalysis.impl.execution.AgentHelper;
+import edu.kit.ipd.are.agentanalysis.port.IAgent;
+import edu.kit.ipd.are.agentanalysis.port.IDataStructure;
 import edu.kit.ipd.are.agentanalysis.port.hypothesis.IHypothesesSelection;
 import edu.kit.ipd.are.agentanalysis.port.hypothesis.IHypothesesSet;
 import edu.kit.ipd.are.agentanalysis.port.xplore.layer.ILayerEntry;
 import edu.kit.ipd.are.agentanalysis.port.xplore.selection.ISelectionProvider;
-import edu.kit.ipd.parse.luna.graph.IGraph;
 
-final class LayerEntry implements ILayerEntry {
+final class LayerEntry<A extends IAgent<DS>, DS extends IDataStructure<DS>> implements ILayerEntry {
 	private static final long serialVersionUID = -349086188573289109L;
 
-	private transient Layer layer;
+	private transient Layer<A, DS> layer;
 	private transient int entryNo;
-	private transient IGraph inputGraph;
-	private transient IGraph evaluatedGraph;
+	private transient DS inputGraph;
+	private transient DS evaluatedGraph;
 
-	private transient LayerEntry parent;
+	private transient LayerEntry<A, DS> parent;
 
 	private List<IHypothesesSet> hypotheses;
-	private transient Map<List<IHypothesesSelection>, LayerEntry> nextLayerEntries = new HashMap<>();
 
-	LayerEntry(Layer layer, int number, LayerEntry parent, IGraph input) {
+	private transient Map<List<IHypothesesSelection>, LayerEntry<A, DS>> nextLayerEntries = new HashMap<>();
+
+	LayerEntry(Layer<A, DS> layer, int number, LayerEntry<A, DS> parent, DS input) {
 		this.layer = layer;
 		this.entryNo = number;
 		this.inputGraph = input;
 		this.parent = parent;
 		var instance = this.layer.getAgent().getAgentInstance();
 		logger.debug("Run analysis for " + this.layer + ", " + this.layer.getAgent());
-		this.evaluatedGraph = AgentHelper.execute(this.inputGraph, instance);
+		this.evaluatedGraph = instance.execute(inputGraph);
 		logger.debug("Finished analysis for " + this.layer + ", " + this.layer.getAgent());
 
 		if (this.layer.getAgentWithHypotheses() != null) {
@@ -63,7 +64,7 @@ final class LayerEntry implements ILayerEntry {
 		return this.hypotheses == null ? List.of() : new ArrayList<>(this.hypotheses);
 	}
 
-	public LayerEntry createNextBySelection(List<IHypothesesSelection> selection) {
+	public LayerEntry<A, DS> createNextBySelection(List<IHypothesesSelection> selection) {
 		if (this.layer.getNext() == null) {
 			throw new UnsupportedOperationException("This is a leaf ..");
 		}
@@ -80,26 +81,26 @@ final class LayerEntry implements ILayerEntry {
 
 	}
 
-	private LayerEntry createNoHypothesesNext() {
+	private LayerEntry<A, DS> createNoHypothesesNext() {
 		if (!this.nextLayerEntries.isEmpty()) {
 			throw new UnsupportedOperationException("NoHypotheses LayerEntry already explored.");
 		}
-		var newEntry = (LayerEntry) this.layer.getNext().createEntry(this, this.evaluatedGraph.clone());
+		var newEntry = (LayerEntry<A, DS>) this.layer.getNext().createEntry(this, evaluatedGraph.clone());
 		this.nextLayerEntries.put(null, newEntry);
 		return newEntry;
 	}
 
-	private LayerEntry createHypothesesNext(List<IHypothesesSelection> selection) {
+	private LayerEntry<A, DS> createHypothesesNext(List<IHypothesesSelection> selection) {
 		logger.debug("Appling selection " + selection + " @ " + this.layer);
 		var resultGraph = this.inputGraph.clone();
 		this.layer.getAgentWithHypotheses().applyHypothesesToGraph(resultGraph, selection);
 
-		var newEntry = (LayerEntry) this.layer.getNext().createEntry(this, resultGraph);
+		var newEntry = this.layer.getNext().createEntry(this, resultGraph);
 		this.nextLayerEntries.put(selection, newEntry);
 		return newEntry;
 	}
 
-	private List<IHypothesesSelection> findSelection(LayerEntry layerEntry) {
+	private List<IHypothesesSelection> findSelection(LayerEntry<A, DS> layerEntry) {
 		for (var entry : this.nextLayerEntries.entrySet()) {
 			if (entry.getValue() == layerEntry) {
 				return entry.getKey() == null ? null : new ArrayList<>(entry.getKey());
@@ -128,7 +129,7 @@ final class LayerEntry implements ILayerEntry {
 		List<ILayerEntry> pathToRoot = new ArrayList<>();
 		pathToRoot.add(this);
 
-		LayerEntry before = this.parent;
+		LayerEntry<A, DS> before = this.parent;
 		while (before != null) {
 			pathToRoot.add(before);
 			before = before.parent;

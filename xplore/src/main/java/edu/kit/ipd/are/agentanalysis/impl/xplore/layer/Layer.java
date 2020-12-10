@@ -4,13 +4,14 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import edu.kit.ipd.are.agentanalysis.port.IAgent;
 import edu.kit.ipd.are.agentanalysis.port.IAgentSpecification;
+import edu.kit.ipd.are.agentanalysis.port.IDataStructure;
 import edu.kit.ipd.are.agentanalysis.port.hypothesis.HypothesisRange;
 import edu.kit.ipd.are.agentanalysis.port.hypothesis.IAgentHypothesisSpecification;
 import edu.kit.ipd.are.agentanalysis.port.xplore.layer.ILayer;
 import edu.kit.ipd.are.agentanalysis.port.xplore.layer.ILayerEntry;
 import edu.kit.ipd.are.agentanalysis.port.xplore.selection.ISelectionProvider;
-import edu.kit.ipd.parse.luna.graph.IGraph;
 
 /**
  * Defines the realization of an {@link ILayer}.
@@ -18,14 +19,14 @@ import edu.kit.ipd.parse.luna.graph.IGraph;
  * @author Dominik Fuchss
  *
  */
-public final class Layer implements ILayer {
+public final class Layer<A extends IAgent<DS>, DS extends IDataStructure<DS>> implements ILayer {
 
-	private IAgentSpecification<?> agent;
-	private IAgentHypothesisSpecification<?> agentWithHypotheses;
+	private IAgentSpecification<? extends A, DS> agent;
+	private IAgentHypothesisSpecification<? extends A, DS> agentWithHypotheses;
 
-	private Layer next;
+	private Layer<A, DS> next;
 
-	private List<LayerEntry> entries;
+	private List<LayerEntry<A, DS>> entries;
 
 	/**
 	 * Create a new layer for a non hypothesis agent (these are normal
@@ -34,8 +35,8 @@ public final class Layer implements ILayer {
 	 * @param agent the agent specification
 	 * @return the created layer
 	 */
-	public static Layer createLayerByNoHypAgent(IAgentSpecification<?> agent) {
-		return new Layer(agent);
+	public static <A extends IAgent<DS>, DS extends IDataStructure<DS>> Layer<A, DS> createLayerByNoHypAgent(IAgentSpecification<? extends A, DS> agent) {
+		return new Layer<>(agent);
 	}
 
 	/**
@@ -45,17 +46,17 @@ public final class Layer implements ILayer {
 	 * @param agent the agent specification
 	 * @return the created layer
 	 */
-	public static Layer createLayerByHypAgent(IAgentHypothesisSpecification<?> agent) {
-		return new Layer(agent);
+	public static <A extends IAgent<DS>, DS extends IDataStructure<DS>> Layer<A, DS> createLayerByHypAgent(IAgentHypothesisSpecification<? extends A, DS> agent) {
+		return new Layer<>(agent);
 	}
 
-	private Layer(IAgentSpecification<?> agent) {
+	private Layer(IAgentSpecification<? extends A, DS> agent) {
 		this.agent = agent;
 		this.agentWithHypotheses = null;
 		this.entries = new ArrayList<>();
 	}
 
-	private Layer(IAgentHypothesisSpecification<?> agent) {
+	private Layer(IAgentHypothesisSpecification<? extends A, DS> agent) {
 		this.agent = agent;
 		this.agentWithHypotheses = agent;
 		this.entries = new ArrayList<>();
@@ -76,7 +77,7 @@ public final class Layer implements ILayer {
 	 *
 	 * @return the agent
 	 */
-	public IAgentSpecification<?> getAgent() {
+	public IAgentSpecification<? extends A, DS> getAgent() {
 		return this.agent;
 	}
 
@@ -85,7 +86,7 @@ public final class Layer implements ILayer {
 	 *
 	 * @param next the next layer
 	 */
-	public void setNext(Layer next) {
+	public void setNext(Layer<A, DS> next) {
 		this.next = next;
 	}
 
@@ -97,8 +98,8 @@ public final class Layer implements ILayer {
 	 * @param graph  the associated input graph
 	 * @return the new layer entry
 	 */
-	public ILayerEntry createEntry(LayerEntry parent, IGraph graph) {
-		LayerEntry entry = new LayerEntry(this, this.entries.size(), parent, graph);
+	public LayerEntry<A, DS> createEntry(LayerEntry<A, DS> parent, DS graph) {
+		LayerEntry<A, DS> entry = new LayerEntry<>(this, this.entries.size(), parent, graph);
 		logger.info("Created LayerEntry " + entry);
 		this.entries.add(entry);
 		return entry;
@@ -111,16 +112,16 @@ public final class Layer implements ILayer {
 
 	@Override
 	public void explore(ISelectionProvider selectionProvider) {
-		for (LayerEntry entry : this.entries) {
+		for (LayerEntry<A, DS> entry : this.entries) {
 			entry.explore(selectionProvider);
 		}
 	}
 
-	Layer getNext() {
+	Layer<A, DS> getNext() {
 		return this.next;
 	}
 
-	IAgentHypothesisSpecification<?> getAgentWithHypotheses() {
+	IAgentHypothesisSpecification<? extends A, DS> getAgentWithHypotheses() {
 		return this.agentWithHypotheses;
 	}
 }

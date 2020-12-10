@@ -1,6 +1,7 @@
 package edu.kit.ipd.are.agentanalysis.impl.specification.hypothesis;
 
 import edu.kit.ipd.are.agentanalysis.impl.agents.MultiHypothesesTopicExtraction;
+import edu.kit.ipd.are.agentanalysis.impl.parse.specification.hypothesis.AbstractAgentHypothesisSpecification;
 import edu.kit.ipd.are.agentanalysis.impl.specification.parse.TopicExtractionSpec;
 import edu.kit.ipd.are.agentanalysis.port.hypothesis.HypothesisRange;
 import edu.kit.ipd.are.agentanalysis.port.hypothesis.IHypothesesSet;

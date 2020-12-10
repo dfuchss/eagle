@@ -12,11 +12,11 @@
 	<description>This project contains the interfaces for the agent analysis project.</description>
 
 	<dependencies>
-		<!-- PARSE -->
 		<dependency>
-			<groupId>edu.kit.ipd.parse</groupId>
-			<artifactId>luna</artifactId>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
 		</dependency>
+
 		<!-- Serializers -->
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>

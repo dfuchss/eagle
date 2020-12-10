@@ -3,14 +3,14 @@ package edu.kit.ipd.are.agentanalysis.impl.agents;
 import java.util.ArrayList;
 import java.util.List;
 
+import edu.kit.ipd.are.agentanalysis.impl.parse.GraphUtils;
+import edu.kit.ipd.are.agentanalysis.impl.parse.PARSEGraphWrapper;
+import edu.kit.ipd.are.agentanalysis.impl.parse.TokenHypothesesSet;
 import edu.kit.ipd.are.agentanalysis.port.hypothesis.IHypothesesManager;
 import edu.kit.ipd.are.agentanalysis.port.hypothesis.IHypothesesSelection;
 import edu.kit.ipd.are.agentanalysis.port.hypothesis.IHypothesesSet;
 import edu.kit.ipd.are.agentanalysis.port.hypothesis.IHypothesis;
-import edu.kit.ipd.are.agentanalysis.port.hypothesis.TokenHypothesesSet;
-import edu.kit.ipd.are.agentanalysis.port.util.GraphUtils;
 import edu.kit.ipd.parse.luna.data.MissingDataException;
-import edu.kit.ipd.parse.luna.graph.IGraph;
 import edu.kit.ipd.parse.luna.graph.INode;
 import edu.kit.ipd.parse.luna.graph.INodeType;
 import edu.kit.ipd.parse.wikiWSD.WordSenseDisambiguation;
@@ -24,7 +24,7 @@ import weka.core.Instance;
  * @author Dominik Fuchss
  *
  */
-public class MultiHypothesesWikiWSD extends WordSenseDisambiguation implements IHypothesesManager {
+public class MultiHypothesesWikiWSD extends WordSenseDisambiguation implements IHypothesesManager<PARSEGraphWrapper> {
 	private final int maxHypothesis;
 	public static final String MULTI_HYPOTHESIS_WSD_NODE_ATTR = "MHWN-Attr";
 
@@ -53,10 +53,10 @@ public class MultiHypothesesWikiWSD extends WordSenseDisambiguation implements I
 	}
 
 	@Override
-	public List<IHypothesesSet> getHypothesesFromGraph(IGraph graph) {
+	public List<IHypothesesSet> getHypothesesFromGraph(PARSEGraphWrapper graph) {
 		List<IHypothesesSet> hyps = new ArrayList<>();
 		try {
-			for (INode node : WordSenseDisambiguation.getNodesInOrder(graph)) {
+			for (INode node : WordSenseDisambiguation.getNodesInOrder(graph.getGraph())) {
 				String obj = (String) node.getAttributeValue(MultiHypothesesWikiWSD.MULTI_HYPOTHESIS_WSD_NODE_ATTR);
 				if (obj == null) {
 					continue;
@@ -70,10 +70,10 @@ public class MultiHypothesesWikiWSD extends WordSenseDisambiguation implements I
 	}
 
 	@Override
-	public List<IHypothesesSet> getHypothesesForNonHypothesesExecution(IGraph graph) {
+	public List<IHypothesesSet> getHypothesesForNonHypothesesExecution(PARSEGraphWrapper graph) {
 		List<IHypothesesSet> hyps = new ArrayList<>();
 		try {
-			for (INode node : WordSenseDisambiguation.getNodesInOrder(graph)) {
+			for (INode node : WordSenseDisambiguation.getNodesInOrder(graph.getGraph())) {
 				String hypothesis = (String) node.getAttributeValue(WordSenseDisambiguation.WSD_ATTRIBUTE_NAME);
 				if (hypothesis == null) {
 					continue;
@@ -87,14 +87,14 @@ public class MultiHypothesesWikiWSD extends WordSenseDisambiguation implements I
 	}
 
 	@Override
-	public void applyHypothesesToGraph(IGraph graph, List<IHypothesesSelection> selection) {
+	public void applyHypothesesToGraph(PARSEGraphWrapper graph, List<IHypothesesSelection> selection) {
 		this.checkSelection(selection);
 
 		INodeType tokenType;
-		if (graph.hasNodeType(WordSenseDisambiguation.TOKEN_NODE_TYPE)) {
-			tokenType = graph.getNodeType(WordSenseDisambiguation.TOKEN_NODE_TYPE);
+		if (graph.getGraph().hasNodeType(WordSenseDisambiguation.TOKEN_NODE_TYPE)) {
+			tokenType = graph.getGraph().getNodeType(WordSenseDisambiguation.TOKEN_NODE_TYPE);
 		} else {
-			tokenType = graph.createNodeType(WordSenseDisambiguation.TOKEN_NODE_TYPE);
+			tokenType = graph.getGraph().createNodeType(WordSenseDisambiguation.TOKEN_NODE_TYPE);
 		}
 		if (!tokenType.containsAttribute(WordSenseDisambiguation.WSD_ATTRIBUTE_NAME, "String")) {
 			tokenType.addAttributeToType("String", WordSenseDisambiguation.WSD_ATTRIBUTE_NAME);
@@ -103,7 +103,7 @@ public class MultiHypothesesWikiWSD extends WordSenseDisambiguation implements I
 		for (IHypothesesSelection s : selection) {
 			TokenHypothesesSet g = (TokenHypothesesSet) s.getAllHypotheses();
 			WSDHypothesis h = (WSDHypothesis) s.getSelectedHypotheses().get(0);
-			INode node = GraphUtils.getNodeFromClonedGraph(graph, g.getGraphOfHypotheses(), g.getNodeOfHypotheses());
+			INode node = GraphUtils.getNodeFromClonedGraph(graph.getGraph(), g.getGraphOfHypotheses(), g.getNodeOfHypotheses());
 			node.setAttributeValue(WordSenseDisambiguation.WSD_ATTRIBUTE_NAME, h.toClassificationString());
 		}
 	}
@@ -126,7 +126,7 @@ public class MultiHypothesesWikiWSD extends WordSenseDisambiguation implements I
 
 	}
 
-	private TokenHypothesesSet parseHyps(IGraph graph, INode node, String data) {
+	private TokenHypothesesSet parseHyps(PARSEGraphWrapper graph, INode node, String data) {
 		List<WSDHypothesis> hyps = new ArrayList<>();
 		data = data.substring(1, data.length() - 1); // Remove '[',']'
 		for (String h : data.trim().split(",")) {

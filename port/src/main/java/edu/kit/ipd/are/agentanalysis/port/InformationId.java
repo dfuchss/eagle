@@ -1,16 +1,16 @@
 package edu.kit.ipd.are.agentanalysis.port;
 
-import edu.kit.ipd.parse.luna.agent.AbstractAgent;
-
 /**
  * This enum defines the different information that are needed or provided by
- * {@link AbstractAgent Agents}.
+ * {@link IAgent Agents}.
  *
  * @author Dominik Fuchss
  * @see IAgentSpecification#getRequiresIds()
  * @see IAgentSpecification#getProvideIds()
  */
 public enum InformationId {
+	// TODO Delete Enum in Port?
+
 	/////////////// PARSE ///////////////////
 	/**
 	 * Actions in a text. e.g the results of ActionRecognizer.

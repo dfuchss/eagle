@@ -6,6 +6,7 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
+import edu.kit.ipd.are.agentanalysis.impl.parse.specification.parse.ParseAgentSpecification;
 import edu.kit.ipd.are.agentanalysis.port.InformationId;
 import edu.kit.ipd.parse.luna.tools.ConfigManager;
 import edu.kit.ipd.parse.ontologyselector.OntologySelector;

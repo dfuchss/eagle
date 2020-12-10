@@ -2,6 +2,7 @@ package edu.kit.ipd.are.agentanalysis.impl.specification.parse;
 
 import java.util.List;
 
+import edu.kit.ipd.are.agentanalysis.impl.parse.specification.parse.ParseAgentSpecification;
 import edu.kit.ipd.are.agentanalysis.port.InformationId;
 import edu.kit.ipd.parse.wsd.Wsd;
 

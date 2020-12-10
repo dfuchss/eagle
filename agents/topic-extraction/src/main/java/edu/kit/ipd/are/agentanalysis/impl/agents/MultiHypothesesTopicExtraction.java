@@ -9,6 +9,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import edu.kit.ipd.are.agentanalysis.impl.parse.PARSEGraphWrapper;
 import edu.kit.ipd.are.agentanalysis.port.hypothesis.BasicHypothesesSet;
 import edu.kit.ipd.are.agentanalysis.port.hypothesis.HypothesisRange;
 import edu.kit.ipd.are.agentanalysis.port.hypothesis.IHypothesesManager;
@@ -28,7 +29,7 @@ import edu.kit.ipd.parse.topicextraction.TopicExtraction;
  * @author Dominik Fuchss
  *
  */
-public class MultiHypothesesTopicExtraction extends TopicExtraction implements IHypothesesManager {
+public class MultiHypothesesTopicExtraction extends TopicExtraction implements IHypothesesManager<PARSEGraphWrapper> {
 	public static final String MULTI_HYPOTHESIS_TOPIC_ATTRIBUTE = "MHTA-topic";
 
 	private ObjectMapper objectMapper = Serialize.getObjectMapper(false);
@@ -84,7 +85,8 @@ public class MultiHypothesesTopicExtraction extends TopicExtraction implements I
 	}
 
 	@Override
-	public List<IHypothesesSet> getHypothesesFromGraph(IGraph graph) {
+	public List<IHypothesesSet> getHypothesesFromGraph(PARSEGraphWrapper in) {
+		IGraph graph = in.getGraph();
 		List<INode> nodes = graph.getNodesOfType(graph.getNodeType(TopicExtraction.TOPICS_NODE_TYPE));
 		if (nodes.size() != 1) {
 			return new ArrayList<>();
@@ -108,7 +110,8 @@ public class MultiHypothesesTopicExtraction extends TopicExtraction implements I
 	}
 
 	@Override
-	public List<IHypothesesSet> getHypothesesForNonHypothesesExecution(IGraph graph) {
+	public List<IHypothesesSet> getHypothesesForNonHypothesesExecution(PARSEGraphWrapper in) {
+		IGraph graph = in.getGraph();
 		List<Topic> topics = TopicExtraction.getTopicsFromIGraph(graph);
 
 		List<TopicHypothesis> hyps = new ArrayList<>();
@@ -119,7 +122,8 @@ public class MultiHypothesesTopicExtraction extends TopicExtraction implements I
 	}
 
 	@Override
-	public void applyHypothesesToGraph(IGraph graph, List<IHypothesesSelection> hypotheses) {
+	public void applyHypothesesToGraph(PARSEGraphWrapper in, List<IHypothesesSelection> hypotheses) {
+		IGraph graph = in.getGraph();
 		this.checkSelection(hypotheses);
 		if (hypotheses.size() > 1) {
 			throw new IllegalArgumentException("Too many HypothesesGroups are selected ..");

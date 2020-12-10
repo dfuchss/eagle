@@ -12,7 +12,7 @@
 	<dependencies>
 		<dependency>
 			<groupId>edu.kit.ipd.are.agentanalysis</groupId>
-			<artifactId>specification-platforms</artifactId>
+			<artifactId>platforms-parse</artifactId>
 		</dependency>
 
 		<!-- Agents -->

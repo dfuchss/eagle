@@ -2,16 +2,18 @@ package edu.kit.ipd.are.agentanalysis.test;
 
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.List;
 import java.util.Properties;
 
-import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import edu.kit.ipd.are.agentanalysis.impl.execution.AgentExecution;
-import edu.kit.ipd.are.agentanalysis.impl.prepipeline.PARSEPrePipeline;
+import edu.kit.ipd.are.agentanalysis.impl.parse.PARSEAgent;
+import edu.kit.ipd.are.agentanalysis.impl.parse.PARSEGraphWrapper;
+import edu.kit.ipd.are.agentanalysis.impl.parse.execution.AgentExecution;
+import edu.kit.ipd.are.agentanalysis.impl.parse.prepipeline.PARSEPrePipeline;
 import edu.kit.ipd.are.agentanalysis.impl.specification.hypothesis.OntologySelectorHypothesisSpec;
 import edu.kit.ipd.are.agentanalysis.impl.specification.hypothesis.TopicExtractionHypothesisSpec;
 import edu.kit.ipd.are.agentanalysis.impl.specification.hypothesis.WikiWSDHypothesisSpec;
@@ -21,16 +23,14 @@ import edu.kit.ipd.are.agentanalysis.impl.xplore.SimpleExploration;
 import edu.kit.ipd.are.agentanalysis.impl.xplore.SpecificExploration;
 import edu.kit.ipd.are.agentanalysis.impl.xplore.selection.SameWordSameDecision;
 import edu.kit.ipd.are.agentanalysis.impl.xplore.selection.TopXConfidence;
-import edu.kit.ipd.are.agentanalysis.port.AgentAnalysisConfiguration;
-import edu.kit.ipd.are.agentanalysis.port.EnhancedGraph;
 import edu.kit.ipd.are.agentanalysis.port.IPrePipeline;
 import edu.kit.ipd.are.agentanalysis.port.util.Serialize;
 import edu.kit.ipd.are.agentanalysis.port.xplore.IExplorationResult;
+import edu.kit.ipd.are.agentanalysis.port.xplore.InitialData;
 import edu.kit.ipd.indirect.constparser.ConstParser;
 import edu.kit.ipd.indirect.depparser.DepParser;
 import edu.kit.ipd.indirect.textSNLP.Stanford;
 import edu.kit.ipd.indirect.textner.TextNERTagger;
-import edu.kit.ipd.parse.luna.graph.IGraph;
 import edu.kit.ipd.parse.luna.tools.ConfigManager;
 
 /**
@@ -42,7 +42,7 @@ import edu.kit.ipd.parse.luna.tools.ConfigManager;
  */
 public class SimpleHypothesesTest extends TestBase {
 	private AgentExecution analysis;
-	private EnhancedGraph graph;
+	private PARSEGraphWrapper graph;
 
 	/**
 	 * Configure PARSE & INDIRECT.
@@ -75,11 +75,11 @@ public class SimpleHypothesesTest extends TestBase {
 		this.graph = this.getNewGraph(new PARSEPrePipeline());
 	}
 
-	private EnhancedGraph getNewGraph(IPrePipeline ppl) throws IOException {
+	private PARSEGraphWrapper getNewGraph(IPrePipeline<PARSEGraphWrapper> ppl) throws IOException {
 //		var texts = TestBase.getTexts();
 //		var text = texts.get(texts.firstKey());
 		var text = "John, go to the fridge next to the cupboard.";
-		return new EnhancedGraph(text, ppl);
+		return ppl.createGraph(text);
 	}
 
 	/**
@@ -88,9 +88,9 @@ public class SimpleHypothesesTest extends TestBase {
 	@Test
 	public void testHypothesisOfWikiWSD() {
 		WikiWSDHypothesisSpec wwhs = new WikiWSDHypothesisSpec();
-		this.analysis.loadAgents(wwhs);
+		this.analysis.loadAgent(wwhs);
 
-		IGraph wsdAnalyzed = this.analysis.execute(this.graph);
+		PARSEGraphWrapper wsdAnalyzed = this.analysis.execute(this.graph);
 		Assert.assertNotNull(wsdAnalyzed);
 		Assert.assertNotSame(this.graph, wsdAnalyzed);
 
@@ -107,9 +107,9 @@ public class SimpleHypothesesTest extends TestBase {
 	public void testHypothesisOfTopicExtractor() {
 		WikiWSDHypothesisSpec wwhs = new WikiWSDHypothesisSpec();
 		TopicExtractionHypothesisSpec tehs = new TopicExtractionHypothesisSpec();
-		this.analysis.loadAgents(wwhs, tehs);
+		this.analysis.loadAgents(List.of(wwhs, tehs));
 
-		IGraph topicAnalyzed = this.analysis.execute(this.graph);
+		PARSEGraphWrapper topicAnalyzed = this.analysis.execute(this.graph);
 		Assert.assertNotNull(topicAnalyzed);
 		Assert.assertNotSame(this.graph, topicAnalyzed);
 
@@ -128,7 +128,7 @@ public class SimpleHypothesesTest extends TestBase {
 	public void testHypothesisCombinationSimpleExploration() throws Exception {
 		WikiWSDHypothesisSpec wwhs = new WikiWSDHypothesisSpec();
 		TopicExtractionHypothesisSpec tehs = new TopicExtractionHypothesisSpec();
-		SimpleExploration explorer = new SimpleExploration(this.graph, 3);
+		SimpleExploration<PARSEAgent, PARSEGraphWrapper> explorer = new SimpleExploration<>(new InitialData<>("testA", this.graph), 3);
 
 		explorer.loadHypothesisAgent(wwhs);
 		explorer.loadHypothesisAgent(tehs);
@@ -159,7 +159,7 @@ public class SimpleHypothesesTest extends TestBase {
 		WikiWSDHypothesisSpec wwhs = new WikiWSDHypothesisSpec();
 		TopicExtractionHypothesisSpec tehs = new TopicExtractionHypothesisSpec();
 
-		SpecificExploration explorer = new SpecificExploration(this.graph, 3);
+		SpecificExploration<PARSEAgent, PARSEGraphWrapper> explorer = new SpecificExploration<>(new InitialData<>("testA", this.graph), 3);
 		explorer.loadHypothesisAgent(wwhs, new SameWordSameDecision(new TopXConfidence(3)));
 		explorer.loadHypothesisAgent(tehs);
 
@@ -187,7 +187,7 @@ public class SimpleHypothesesTest extends TestBase {
 		WikiWSDHypothesisSpec wwhs = new WikiWSDHypothesisSpec();
 		TopicExtractionHypothesisSpec tehs = new TopicExtractionHypothesisSpec();
 		OntologySelectorHypothesisSpec oshs = new OntologySelectorHypothesisSpec();
-		SimpleExploration explorer = new SimpleExploration(this.graph, 3);
+		SimpleExploration<PARSEAgent, PARSEGraphWrapper> explorer = new SimpleExploration<>(new InitialData<>("testA", this.graph), 3);
 
 		explorer.loadHypothesisAgent(wwhs);
 		explorer.loadHypothesisAgent(tehs);
@@ -212,7 +212,7 @@ public class SimpleHypothesesTest extends TestBase {
 		WikiWSDSpec wwhs = new WikiWSDSpec();
 		TopicExtractionHypothesisSpec tehs = new TopicExtractionHypothesisSpec();
 		OntologySelectorHypothesisSpec oshs = new OntologySelectorHypothesisSpec();
-		SimpleExploration explorer = new SimpleExploration(this.graph, 3);
+		SimpleExploration<PARSEAgent, PARSEGraphWrapper> explorer = new SimpleExploration<>(new InitialData<>("testA", this.graph), 3);
 
 		explorer.loadAgent(wwhs);
 		explorer.loadHypothesisAgent(tehs);
@@ -223,14 +223,6 @@ public class SimpleHypothesesTest extends TestBase {
 		// No of paths should be 3 (split exploration at Topics)
 		Assert.assertEquals(3, paths.size());
 
-	}
-
-	/**
-	 * Reset configuration to default.
-	 */
-	@After
-	public void tearDown() {
-		AgentAnalysisConfiguration.setOverridePrePipelineRestrictions(false);
 	}
 
 }

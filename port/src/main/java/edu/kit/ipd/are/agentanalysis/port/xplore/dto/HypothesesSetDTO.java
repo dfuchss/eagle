@@ -7,8 +7,6 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import edu.kit.ipd.are.agentanalysis.port.hypothesis.HypothesisRange;
 import edu.kit.ipd.are.agentanalysis.port.hypothesis.IHypothesesSet;
 import edu.kit.ipd.are.agentanalysis.port.hypothesis.IHypothesis;
-import edu.kit.ipd.parse.luna.graph.IGraph;
-import edu.kit.ipd.parse.luna.graph.INode;
 
 /**
  * Defines the data transfer object for {@link IHypothesesSet}.
@@ -68,16 +66,6 @@ public final class HypothesesSetDTO implements IHypothesesSet {
 	 */
 	public void setShortInfo(String shortInfo) {
 		this.shortInfo = shortInfo;
-	}
-
-	@Override
-	public IGraph getGraphOfHypotheses() {
-		return null;
-	}
-
-	@Override
-	public INode getNodeOfHypotheses() {
-		return null;
 	}
 
 	@Override

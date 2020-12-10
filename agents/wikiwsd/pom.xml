@@ -26,6 +26,10 @@
 			<groupId>edu.kit.ipd.are.agentanalysis</groupId>
 			<artifactId>port</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>edu.kit.ipd.are.agentanalysis</groupId>
+			<artifactId>platforms-parse</artifactId>
+		</dependency>
 	</dependencies>
 	<name>Agent Analysis (Wiki WSD Agent)</name>
 </project>

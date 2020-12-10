@@ -34,11 +34,7 @@
 			<groupId>edu.kit.ipd.are.agentanalysis</groupId>
 			<artifactId>port</artifactId>
 		</dependency>
-		<!-- PARSE -->
-		<dependency>
-			<groupId>edu.kit.ipd.parse</groupId>
-			<artifactId>luna</artifactId>
-		</dependency>
+		
 		<!-- Analysis Specifications -->
 		<dependency>
 			<groupId>edu.kit.ipd.are.agentanalysis</groupId>
@@ -57,10 +53,17 @@
 		</dependency>
 
 		<dependency>
+			<groupId>edu.kit.ipd.are.agentanalysis</groupId>
+			<artifactId>platforms-parse</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
 			<groupId>org.fuchss</groupId>
 			<artifactId>java-tools</artifactId>
 			<version>0.2</version>
 		</dependency>
+
 	</dependencies>
 	<description>This project is the main project of the agent analysis. It contains the execution and exploration algorithms for the agents.</description>
 </project>

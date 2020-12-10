@@ -1,5 +1,6 @@
 package edu.kit.ipd.are.agentanalysis.impl.specification.hypothesis;
 
+import edu.kit.ipd.are.agentanalysis.impl.parse.specification.hypothesis.AbstractAgentHypothesisSpecification;
 import edu.kit.ipd.are.agentanalysis.impl.specification.MultiHypothesesOntologySelector;
 import edu.kit.ipd.are.agentanalysis.impl.specification.parse.OntologySelectorSpec;
 import edu.kit.ipd.are.agentanalysis.port.hypothesis.HypothesisRange;

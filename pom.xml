@@ -32,6 +32,12 @@
 
 	<dependencyManagement>
 		<dependencies>
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-api</artifactId>
+				<version>1.7.10</version>
+			</dependency>
+
 			<!-- PARSE -->
 			<dependency>
 				<groupId>edu.kit.ipd.parse</groupId>
@@ -77,6 +83,19 @@
 				<version>${project.version}</version>
 			</dependency>
 
+			<dependency>
+				<groupId>edu.kit.ipd.are.agentanalysis</groupId>
+				<artifactId>platforms</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
+			<!-- Platforms -->
+			<dependency>
+				<groupId>edu.kit.ipd.are.agentanalysis</groupId>
+				<artifactId>platforms-parse</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
 			<!-- Specifications -->
 			<dependency>
 				<groupId>edu.kit.ipd.are.agentanalysis</groupId>
@@ -90,11 +109,6 @@
 			</dependency>
 			<dependency>
 				<groupId>edu.kit.ipd.are.agentanalysis</groupId>
-				<artifactId>specification-platforms</artifactId>
-				<version>${project.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>edu.kit.ipd.are.agentanalysis</groupId>
 				<artifactId>specification-indirect</artifactId>
 				<version>${project.version}</version>
 			</dependency>
@@ -103,7 +117,7 @@
 				<artifactId>specification-hypotheses</artifactId>
 				<version>${project.version}</version>
 			</dependency>
-			
+
 			<dependency>
 				<groupId>edu.kit.ipd.are.agentanalysis</groupId>
 				<artifactId>agents-wikiwsd</artifactId>
@@ -127,6 +141,7 @@
 		<module>specification</module>
 		<module>xplore</module>
 		<module>agents</module>
+		<module>platforms</module>
 	</modules>
 	<name>Agent Analysis (Root)</name>
 </project>

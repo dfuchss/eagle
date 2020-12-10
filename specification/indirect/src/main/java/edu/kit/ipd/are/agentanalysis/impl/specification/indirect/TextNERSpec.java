@@ -2,6 +2,7 @@ package edu.kit.ipd.are.agentanalysis.impl.specification.indirect;
 
 import java.util.List;
 
+import edu.kit.ipd.are.agentanalysis.impl.parse.specification.indirect.IndirectAgentSpecification;
 import edu.kit.ipd.are.agentanalysis.port.InformationId;
 import edu.kit.ipd.indirect.textner.TextNERTagger;
 

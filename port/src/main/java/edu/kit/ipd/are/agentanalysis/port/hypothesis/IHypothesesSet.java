@@ -3,11 +3,6 @@ package edu.kit.ipd.are.agentanalysis.port.hypothesis;
 import java.io.Serializable;
 import java.util.List;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
-import edu.kit.ipd.parse.luna.graph.IGraph;
-import edu.kit.ipd.parse.luna.graph.INode;
-
 /**
  * This interface defines a set of {@link IHypothesis Hypotheses}.
  *
@@ -36,26 +31,6 @@ public interface IHypothesesSet extends Serializable {
 	 * @return some pretty printed information
 	 */
 	String getShortInfo();
-
-	/**
-	 * Get the node used for these hypotheses. May be {@code null} if no single node
-	 * is related to these hypotheses
-	 *
-	 * @return the node or {@code null}
-	 * @see #getHypothesesRange()
-	 */
-	@JsonIgnore
-	INode getNodeOfHypotheses();
-
-	/**
-	 * Get the graph used for these hypotheses. May be {@code null} if no single
-	 * node is related to these hypotheses
-	 *
-	 * @return the node or {@code null}
-	 * @see #getHypothesesRange()
-	 */
-	@JsonIgnore
-	IGraph getGraphOfHypotheses();
 
 	/**
 	 * Use {@link #getNodeOfHypotheses()} to identify the word (iff existing) which
