@@ -47,8 +47,8 @@ public interface IAgentExecution<A extends IAgent<DS>, DS extends IDataStructure
 
 	/**
 	 * Execute agents on an input. The agents specified in
-	 * {@link #loadAgents(IAgentSpecification...)} will be executed on the data
-	 * structure.
+	 * {@link #loadAgent(IAgentSpecification)} or {@link #loadAgents(Collection)}
+	 * will be executed on the data structure.
 	 *
 	 * @param input the input data structure
 	 * @return the output data structure (original will not be modified)

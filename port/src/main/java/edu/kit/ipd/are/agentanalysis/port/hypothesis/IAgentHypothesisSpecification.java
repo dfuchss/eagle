@@ -7,8 +7,7 @@ import edu.kit.ipd.are.agentanalysis.port.IDataStructure;
 /**
  * Defines the combination of an {@link IAgentSpecification} and an
  * {@link IHypothesesManager}. Also provides
- * {@link #getHypothesesForNonHypothesesExecution(Object)
- * getHypothesesForNonHypothesesExecution(DS)} for an
+ * {@link #getHypothesesForNonHypothesesExecution(IDataStructure)} for an
  * {@link IAgentSpecification}.
  *
  * @param <A>  the actual agent
