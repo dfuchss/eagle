@@ -15,6 +15,6 @@
 	<modules>
 		<module>parse</module>
 		<module>indirect</module>
-		<module>hypotheses</module>
+		<module>parse-hypotheses</module>
 	</modules>
 </project>

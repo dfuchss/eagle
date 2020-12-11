@@ -43,7 +43,7 @@
 		</dependency>
 		<dependency>
 			<groupId>edu.kit.ipd.agentanalysis</groupId>
-			<artifactId>specification-hypotheses</artifactId>
+			<artifactId>specification-parse-hypotheses</artifactId>
 			<scope>test</scope>
 		</dependency>
 		<dependency>

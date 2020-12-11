@@ -1,0 +1,42 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>edu.kit.ipd.agentanalysis</groupId>
+		<artifactId>specification</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<artifactId>specification-parse-hypotheses</artifactId>
+
+	<dependencies>
+		<dependency>
+			<groupId>edu.kit.ipd.agentanalysis</groupId>
+			<artifactId>platforms-parse</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>edu.kit.ipd.parse.wikiwsd</groupId>
+			<artifactId>agent</artifactId>
+			<version>develop-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>edu.kit.ipd.parse</groupId>
+			<artifactId>topicextraction</artifactId>
+			<version>develop-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>edu.kit.ipd.parse</groupId>
+			<artifactId>ontologyselector</artifactId>
+			<version>develop-SNAPSHOT</version>
+		</dependency>
+		<!-- Force specific HTTP Client version -->
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+			<version>4.5.2</version>
+		</dependency>
+	</dependencies>
+
+	<name>Agent Analysis (PARSE Hypotheses Specifications)</name>
+</project>

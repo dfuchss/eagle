@@ -116,23 +116,7 @@
 			</dependency>
 			<dependency>
 				<groupId>edu.kit.ipd.agentanalysis</groupId>
-				<artifactId>specification-hypotheses</artifactId>
-				<version>${project.version}</version>
-			</dependency>
-
-			<dependency>
-				<groupId>edu.kit.ipd.agentanalysis</groupId>
-				<artifactId>agents-wikiwsd</artifactId>
-				<version>${project.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>edu.kit.ipd.agentanalysis</groupId>
-				<artifactId>agents-topic-extraction</artifactId>
-				<version>${project.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>edu.kit.ipd.agentanalysis</groupId>
-				<artifactId>agents-ontology-selector</artifactId>
+				<artifactId>specification-parse-hypotheses</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 		</dependencies>
@@ -142,7 +126,6 @@
 		<module>port</module>
 		<module>specification</module>
 		<module>xplore</module>
-		<module>agents</module>
 		<module>platforms</module>
 		<module>tests</module>
 	</modules>
