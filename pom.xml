@@ -2,7 +2,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>edu.kit.ipd.are.agentanalysis</groupId>
+	<groupId>edu.kit.ipd.agentanalysis</groupId>
 	<artifactId>root</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
@@ -68,70 +68,70 @@
 
 			<!-- Modules -->
 			<dependency>
-				<groupId>edu.kit.ipd.are.agentanalysis</groupId>
+				<groupId>edu.kit.ipd.agentanalysis</groupId>
 				<artifactId>port</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 
 			<dependency>
-				<groupId>edu.kit.ipd.are.agentanalysis</groupId>
+				<groupId>edu.kit.ipd.agentanalysis</groupId>
 				<artifactId>xplore</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 
 			<dependency>
-				<groupId>edu.kit.ipd.are.agentanalysis</groupId>
+				<groupId>edu.kit.ipd.agentanalysis</groupId>
 				<artifactId>platforms</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 
 			<dependency>
-				<groupId>edu.kit.ipd.are.agentanalysis</groupId>
+				<groupId>edu.kit.ipd.agentanalysis</groupId>
 				<artifactId>tests</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 
 			<!-- Platforms -->
 			<dependency>
-				<groupId>edu.kit.ipd.are.agentanalysis</groupId>
+				<groupId>edu.kit.ipd.agentanalysis</groupId>
 				<artifactId>platforms-parse</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 
 			<!-- Specifications -->
 			<dependency>
-				<groupId>edu.kit.ipd.are.agentanalysis</groupId>
+				<groupId>edu.kit.ipd.agentanalysis</groupId>
 				<artifactId>specification</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>edu.kit.ipd.are.agentanalysis</groupId>
+				<groupId>edu.kit.ipd.agentanalysis</groupId>
 				<artifactId>specification-parse</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>edu.kit.ipd.are.agentanalysis</groupId>
+				<groupId>edu.kit.ipd.agentanalysis</groupId>
 				<artifactId>specification-indirect</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>edu.kit.ipd.are.agentanalysis</groupId>
+				<groupId>edu.kit.ipd.agentanalysis</groupId>
 				<artifactId>specification-hypotheses</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 
 			<dependency>
-				<groupId>edu.kit.ipd.are.agentanalysis</groupId>
+				<groupId>edu.kit.ipd.agentanalysis</groupId>
 				<artifactId>agents-wikiwsd</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>edu.kit.ipd.are.agentanalysis</groupId>
+				<groupId>edu.kit.ipd.agentanalysis</groupId>
 				<artifactId>agents-topic-extraction</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>edu.kit.ipd.are.agentanalysis</groupId>
+				<groupId>edu.kit.ipd.agentanalysis</groupId>
 				<artifactId>agents-ontology-selector</artifactId>
 				<version>${project.version}</version>
 			</dependency>
