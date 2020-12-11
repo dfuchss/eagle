@@ -12,6 +12,7 @@ import org.junit.Before;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import edu.kit.ipd.are.agentanalysis.impl.parse.specification.parse.OntologySelectorSpec;
 import edu.kit.ipd.are.agentanalysis.port.util.Serialize;
 
 /**
@@ -93,5 +94,15 @@ public class TestBase {
 	 */
 	protected static final void skipIfCI() {
 		Assume.assumeTrue("Running in CI", System.getenv("CI_JOB_ID") == null);
+	}
+
+	protected final String loadActorOntologies() {
+		return OntologySelectorSpec.loadOntologies("src/test/resources/ontology-selector/", //
+				"robot.owl", "virtual_assistant.owl", "drone.owl", "lego_mindstorm.owl");
+	}
+
+	protected final String loadEnvOntologies() {
+		return OntologySelectorSpec.loadOntologies("src/test/resources/ontology-selector/", //
+				"kitchen.owl", "bedroom.owl", "bar.owl", "laundry.owl", "garden.owl", "childrens_room.owl", "heating.owl", "music.owl");
 	}
 }

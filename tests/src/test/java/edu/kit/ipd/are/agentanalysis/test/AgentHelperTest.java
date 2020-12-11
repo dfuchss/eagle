@@ -31,7 +31,8 @@ public class AgentHelperTest extends TestBase {
 	 */
 	@Test
 	public void testFindAgentOrderValid() {
-		List<ParseAgentSpecification<? extends AbstractAgent>> agents = Arrays.asList(new TopicExtractionSpec(), new WikiWSDSpec(), new OntologySelectorSpec());
+		List<ParseAgentSpecification<? extends AbstractAgent>> agents = Arrays.asList(new TopicExtractionSpec(), new WikiWSDSpec(),
+				new OntologySelectorSpec(this.loadActorOntologies(), this.loadEnvOntologies()));
 
 		var ordered = AgentHelper.findAgentOrder(agents);
 		Assert.assertNotNull(ordered);
@@ -49,7 +50,7 @@ public class AgentHelperTest extends TestBase {
 	 */
 	@Test
 	public void testFindAgentOrderInValid() {
-		List<ParseAgentSpecification<? extends AbstractAgent>> agents = Arrays.asList(new WikiWSDSpec(), new OntologySelectorSpec());
+		List<ParseAgentSpecification<? extends AbstractAgent>> agents = Arrays.asList(new WikiWSDSpec(), new OntologySelectorSpec(this.loadActorOntologies(), this.loadEnvOntologies()));
 		var ordered = AgentHelper.findAgentOrder(agents);
 		Assert.assertNull(ordered);
 	}

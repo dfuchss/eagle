@@ -185,7 +185,7 @@ public class SimpleHypothesesTest extends TestBase {
 	public void testPathGeneration() {
 		WikiWSDHypothesisSpec wwhs = new WikiWSDHypothesisSpec();
 		TopicExtractionHypothesisSpec tehs = new TopicExtractionHypothesisSpec();
-		OntologySelectorHypothesisSpec oshs = new OntologySelectorHypothesisSpec();
+		OntologySelectorHypothesisSpec oshs = new OntologySelectorHypothesisSpec(this.loadActorOntologies(), this.loadEnvOntologies());
 		SimpleExploration<PARSEAgent, PARSEGraphWrapper> explorer = new SimpleExploration<>(this.graph, 3);
 
 		explorer.loadHypothesisAgent(wwhs);
@@ -210,7 +210,7 @@ public class SimpleHypothesesTest extends TestBase {
 	public void testPathGenerationNoHypothesesSplit() {
 		WikiWSDSpec wwhs = new WikiWSDSpec();
 		TopicExtractionHypothesisSpec tehs = new TopicExtractionHypothesisSpec();
-		OntologySelectorHypothesisSpec oshs = new OntologySelectorHypothesisSpec();
+		OntologySelectorHypothesisSpec oshs = new OntologySelectorHypothesisSpec(this.loadActorOntologies(), this.loadEnvOntologies());
 		SimpleExploration<PARSEAgent, PARSEGraphWrapper> explorer = new SimpleExploration<>(this.graph, 3);
 
 		explorer.loadAgent(wwhs);

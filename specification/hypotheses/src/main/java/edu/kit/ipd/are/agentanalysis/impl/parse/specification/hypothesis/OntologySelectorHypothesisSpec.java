@@ -15,18 +15,27 @@ import edu.kit.ipd.are.agentanalysis.port.hypothesis.IHypothesesSet;
 public class OntologySelectorHypothesisSpec extends AbstractAgentHypothesisSpecification<MultiHypothesesOntologySelector> {
 	/**
 	 * Create the specification by using the default amount of hypotheses.
+	 *
+	 * @param actorOntologies the actor ontologies see
+	 *                        {@link OntologySelectorSpec#loadOntologies(String, String, String...)}
+	 * @param envOntologies   the environment ontologies see
+	 *                        {@link OntologySelectorSpec#loadOntologies(String, String, String...)}
 	 */
-	public OntologySelectorHypothesisSpec() {
-		this(AbstractAgentHypothesisSpecification.DEFAULT_HYPOTHESES);
+	public OntologySelectorHypothesisSpec(String actorOntologies, String envOntologies) {
+		this(AbstractAgentHypothesisSpecification.DEFAULT_HYPOTHESES, actorOntologies, envOntologies);
 	}
 
 	/**
 	 * Create the specification by using a specific amount of hypotheses.
 	 *
-	 * @param maxHypotheses the specific maximum of generated hypotheses per
-	 *                      {@link IHypothesesSet}
+	 * @param maxHypotheses   the specific maximum of generated hypotheses per
+	 *                        {@link IHypothesesSet}
+	 * @param actorOntologies the actor ontologies see
+	 *                        {@link OntologySelectorSpec#loadOntologies(String, String, String...)}
+	 * @param envOntologies   the environment ontologies see
+	 *                        {@link OntologySelectorSpec#loadOntologies(String, String, String...)}
 	 */
-	public OntologySelectorHypothesisSpec(int maxHypotheses) {
-		super(new OntologySelectorSpec(), new MultiHypothesesOntologySelector(maxHypotheses));
+	public OntologySelectorHypothesisSpec(int maxHypotheses, String actorOntologies, String envOntologies) {
+		super(new OntologySelectorSpec(actorOntologies, envOntologies), new MultiHypothesesOntologySelector(maxHypotheses));
 	}
 }
