@@ -8,8 +8,10 @@
 	<packaging>pom</packaging>
 
 	<properties>
-		<maven.compiler.source>14</maven.compiler.source>
-		<maven.compiler.target>14</maven.compiler.target>
+		<java.version>14</java.version>
+		<maven.compiler.source>${java.version}</maven.compiler.source>
+		<maven.compiler.target>${java.version}</maven.compiler.target>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
 	<repositories>
@@ -82,7 +84,7 @@
 				<artifactId>platforms</artifactId>
 				<version>${project.version}</version>
 			</dependency>
-			
+
 			<dependency>
 				<groupId>edu.kit.ipd.are.agentanalysis</groupId>
 				<artifactId>tests</artifactId>
@@ -145,4 +147,5 @@
 		<module>tests</module>
 	</modules>
 	<name>Agent Analysis (Root)</name>
+	<description>The Agent Analysis Framework of Dominik Fuchß based on his Master Thesis (https://publikationen.bibliothek.kit.edu/1000126806)</description>
 </project>
