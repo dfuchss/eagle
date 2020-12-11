@@ -88,6 +88,12 @@
 				<artifactId>platforms</artifactId>
 				<version>${project.version}</version>
 			</dependency>
+			
+			<dependency>
+				<groupId>edu.kit.ipd.are.agentanalysis</groupId>
+				<artifactId>tests</artifactId>
+				<version>${project.version}</version>
+			</dependency>
 
 			<!-- Platforms -->
 			<dependency>
@@ -136,24 +142,13 @@
 		</dependencies>
 	</dependencyManagement>
 
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-surefire-plugin</artifactId>
-				<configuration>
-					<argLine>-Xmx10g -Xms2G</argLine>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
-
 	<modules>
 		<module>port</module>
 		<module>specification</module>
 		<module>xplore</module>
 		<module>agents</module>
 		<module>platforms</module>
+		<module>tests</module>
 	</modules>
 	<name>Agent Analysis (Root)</name>
 </project>

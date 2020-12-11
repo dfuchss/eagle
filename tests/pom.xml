@@ -1,0 +1,60 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>edu.kit.ipd.are.agentanalysis</groupId>
+		<artifactId>root</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<artifactId>tests</artifactId>
+
+	<name>Agent Analysis (Tests)</name>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<configuration>
+					<argLine>-Xmx10g -Xms2G</argLine>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-deploy-plugin</artifactId>
+				<configuration>
+					<skip>true</skip>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	<dependencies>
+		<!-- Analysis Specifications -->
+		<dependency>
+			<groupId>edu.kit.ipd.are.agentanalysis</groupId>
+			<artifactId>specification-parse</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>edu.kit.ipd.are.agentanalysis</groupId>
+			<artifactId>specification-indirect</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>edu.kit.ipd.are.agentanalysis</groupId>
+			<artifactId>specification-hypotheses</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>edu.kit.ipd.are.agentanalysis</groupId>
+			<artifactId>platforms-parse</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>edu.kit.ipd.are.agentanalysis</groupId>
+			<artifactId>xplore</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+</project>
