@@ -26,18 +26,19 @@ public final class AgentHelper {
 	 *
 	 * @param <A>         the type of agent
 	 * @param <DS>        the type of data structure
+	 * @param <AS>        the agent specification
 	 * @param agentsToRun a collection of agents
 	 * @return a ordered list of the agents or {@code null} if no valid order exists
 	 */
-	public static <A extends IAgent<DS>, DS extends IDataStructure<DS>> List<IAgentSpecification<? extends A, DS>> //
-			findAgentOrder(Collection<? extends IAgentSpecification<? extends A, DS>> agentsToRun) {
-		List<IAgentSpecification<? extends A, DS>> order = new ArrayList<>();
+	public static <A extends IAgent<DS>, DS extends IDataStructure<DS>, AS extends IAgentSpecification<? extends A, DS>> //
+	List<AS> findAgentOrder(Collection<? extends AS> agentsToRun) {
+		List<AS> order = new ArrayList<>();
 
 		List<IInformationId> provided = new ArrayList<>();
-		List<IAgentSpecification<? extends A, DS>> specsToRun = new ArrayList<>(agentsToRun);
+		List<AS> specsToRun = new ArrayList<>(agentsToRun);
 
 		while (!specsToRun.isEmpty()) {
-			IAgentSpecification<? extends A, DS> next = AgentHelper.findNext(specsToRun, provided);
+			AS next = AgentHelper.findNext(specsToRun, provided);
 			if (next == null) {
 				if (AgentHelper.logger.isErrorEnabled()) {
 					AgentHelper.logger.error("Provided Information: " + provided + " | Remaining Agents: " + specsToRun);
@@ -51,9 +52,9 @@ public final class AgentHelper {
 		return order;
 	}
 
-	private static <A extends IAgent<DS>, DS extends IDataStructure<DS>> IAgentSpecification<? extends A, DS> findNext(//
-			List<IAgentSpecification<? extends A, DS>> specsToRun, List<IInformationId> alreadyRun) {
-		for (IAgentSpecification<? extends A, DS> a : specsToRun) {
+	private static <A extends IAgent<DS>, DS extends IDataStructure<DS>, AS extends IAgentSpecification<? extends A, DS>> AS findNext(//
+			List<AS> specsToRun, List<IInformationId> alreadyRun) {
+		for (AS a : specsToRun) {
 			if (alreadyRun.containsAll(a.getRequiresIds())) {
 				return a;
 			}

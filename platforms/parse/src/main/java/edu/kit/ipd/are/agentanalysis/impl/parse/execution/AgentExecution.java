@@ -12,7 +12,6 @@ import edu.kit.ipd.are.agentanalysis.impl.parse.prepipeline.PrePipelineMode;
 import edu.kit.ipd.are.agentanalysis.impl.parse.specification.AbstractAgentSpecification;
 import edu.kit.ipd.are.agentanalysis.port.AgentHelper;
 import edu.kit.ipd.are.agentanalysis.port.IAgentExecution;
-import edu.kit.ipd.are.agentanalysis.port.IAgentSpecification;
 import edu.kit.ipd.parse.luna.agent.AbstractAgent;
 
 /**
@@ -41,7 +40,7 @@ public class AgentExecution implements IAgentExecution<PARSEAgent, PARSEGraphWra
 		PrePipelineMode ppm = in.getPrePipelineMode();
 
 		// Check PPM
-		List<IAgentSpecification<? extends PARSEAgent, PARSEGraphWrapper>> invalidAgents = PARSEAgentHelper.findInvalidAgents(this.agents, ppm);
+		List<AbstractAgentSpecification<? extends AbstractAgent>> invalidAgents = PARSEAgentHelper.findInvalidAgents(this.agents, ppm);
 		if (!invalidAgents.isEmpty()) {
 			if (IAgentExecution.logger.isErrorEnabled()) {
 				IAgentExecution.logger.error("Agent(s) " + invalidAgents + " are no valid agents for PrePipeline " + ppm);
@@ -50,14 +49,14 @@ public class AgentExecution implements IAgentExecution<PARSEAgent, PARSEGraphWra
 		}
 
 		// Execute Agents ..
-		List<IAgentSpecification<? extends PARSEAgent, PARSEGraphWrapper>> specsToRun = AgentHelper.findAgentOrder(this.agents);
+		List<AbstractAgentSpecification<? extends AbstractAgent>> specsToRun = AgentHelper.findAgentOrder(this.agents);
 		if (specsToRun == null) {
 			return null;
 		}
 
 		PARSEGraphWrapper graph = in;
 
-		for (IAgentSpecification<? extends PARSEAgent, PARSEGraphWrapper> next : specsToRun) {
+		for (AbstractAgentSpecification<? extends AbstractAgent> next : specsToRun) {
 			if (IAgentExecution.logger.isDebugEnabled()) {
 				IAgentExecution.logger.debug("Executing " + next);
 			}
