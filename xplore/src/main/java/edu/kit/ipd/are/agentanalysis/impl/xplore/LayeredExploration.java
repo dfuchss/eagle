@@ -1,47 +1,47 @@
 package edu.kit.ipd.are.agentanalysis.impl.xplore;
 
+import java.lang.reflect.Array;
 import java.util.HashSet;
 import java.util.Set;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import edu.kit.ipd.are.agentanalysis.impl.execution.AgentHelper;
 import edu.kit.ipd.are.agentanalysis.impl.xplore.layer.Layer;
-import edu.kit.ipd.are.agentanalysis.port.AgentAnalysisConfiguration;
-import edu.kit.ipd.are.agentanalysis.port.EnhancedGraph;
+import edu.kit.ipd.are.agentanalysis.port.AgentHelper;
+import edu.kit.ipd.are.agentanalysis.port.IAgent;
 import edu.kit.ipd.are.agentanalysis.port.IAgentSpecification;
-import edu.kit.ipd.are.agentanalysis.port.PrePipelineMode;
+import edu.kit.ipd.are.agentanalysis.port.IDataStructure;
 import edu.kit.ipd.are.agentanalysis.port.hypothesis.IAgentHypothesisSpecification;
 import edu.kit.ipd.are.agentanalysis.port.xplore.IExploration;
 import edu.kit.ipd.are.agentanalysis.port.xplore.IExplorationResult;
 import edu.kit.ipd.are.agentanalysis.port.xplore.layer.ILayer;
 import edu.kit.ipd.are.agentanalysis.port.xplore.layer.ILayerEntry;
-import edu.kit.ipd.parse.luna.graph.IGraph;
 
 /**
  * The base class for all explorators which use {@link ILayer Layers}
  *
  * @author Dominik Fuchss
+ * @param <A>  the type of agent for exploration
+ * @param <DS> the type of data structure to use
  *
  */
-public abstract class LayeredExploration implements IExploration {
+public abstract class LayeredExploration<A extends IAgent<DS>, DS extends IDataStructure<DS>> implements IExploration<DS> {
 	protected static final Logger logger = LoggerFactory.getLogger(LayeredExploration.class);
 
 	private String text;
-	private IGraph initialGraph;
-	private PrePipelineMode mode;
+	private DS initialData;
 
-	private Layer[] layers;
-	private Set<IAgentSpecification<?>> agents;
-	private Set<IAgentHypothesisSpecification<?>> hypothesesAgents;
+	private Layer<A, DS>[] layers;
+	private Set<IAgentSpecification<? extends A, DS>> agents;
+	private Set<IAgentHypothesisSpecification<? extends A, DS>> hypothesesAgents;
 
 	/**
 	 * Create the exploration by an inital graph.
 	 *
 	 * @param initial the initial graph
 	 */
-	protected LayeredExploration(EnhancedGraph initial) {
+	protected LayeredExploration(DS initial) {
 		this.agents = new HashSet<>();
 		this.hypothesesAgents = new HashSet<>();
 
@@ -49,13 +49,12 @@ public abstract class LayeredExploration implements IExploration {
 	}
 
 	@Override
-	public final void restart(EnhancedGraph initial) {
+	public final void restart(DS initial) {
 		this.layers = null;
 		this.agents.clear();
 		this.hypothesesAgents.clear();
-		this.mode = initial.getPrePipelineMode();
 		this.text = initial.getText();
-		this.initialGraph = initial.getGraph();
+		this.initialData = initial;
 	}
 
 	@Override
@@ -71,7 +70,7 @@ public abstract class LayeredExploration implements IExploration {
 	 *
 	 * @param layers the layers
 	 */
-	protected abstract void exploreLayers(Layer[] layers);
+	protected abstract void exploreLayers(Layer<A, DS>[] layers);
 
 	/**
 	 * Get the root entry.
@@ -89,19 +88,20 @@ public abstract class LayeredExploration implements IExploration {
 	}
 
 	private void createRoot() {
-		this.layers[0].createEntry(null, this.initialGraph);
+		this.layers[0].createEntry(null, this.initialData);
 	}
 
+	@SuppressWarnings("unchecked")
 	private void createLayers() {
-		this.layers = new Layer[this.agents.size()];
+		this.layers = (Layer<A, DS>[]) Array.newInstance(Layer.class, this.agents.size());
 		var orderedAgents = AgentHelper.findAgentOrder(this.agents);
 		if (orderedAgents == null) {
 			throw new IllegalArgumentException("No valid order of agents possible");
 		}
 		for (int i = 0; i < this.layers.length; i++) {
-			IAgentSpecification<?> agent = orderedAgents.get(i);
+			IAgentSpecification<? extends A, DS> agent = orderedAgents.get(i);
 			this.layers[i] = this.hypothesesAgents.contains(agent) //
-					? Layer.createLayerByHypAgent((IAgentHypothesisSpecification<?>) agent)
+					? Layer.createLayerByHypAgent((IAgentHypothesisSpecification<? extends A, DS>) agent)
 					: Layer.createLayerByNoHypAgent(agent);
 			if (i != 0) {
 				this.layers[i - 1].setNext(this.layers[i]);
@@ -114,12 +114,9 @@ public abstract class LayeredExploration implements IExploration {
 	 *
 	 * @param agent the agent
 	 */
-	protected void loadAgent(IAgentSpecification<?> agent) {
+	protected void loadAgent(IAgentSpecification<? extends A, DS> agent) {
 		if (agent == null) {
 			throw new IllegalArgumentException("Agent cannot be null!");
-		}
-		if (!AgentAnalysisConfiguration.isOverridePrePiplineRestricitions() && agent.getMode() != this.mode) {
-			throw new IllegalArgumentException("Agent " + agent + " does not support Mode " + this.mode);
 		}
 
 		this.agents.add(agent);
@@ -130,7 +127,7 @@ public abstract class LayeredExploration implements IExploration {
 	 *
 	 * @param agent the agent
 	 */
-	protected void loadHypothesisAgent(IAgentHypothesisSpecification<?> agent) {
+	protected void loadHypothesisAgent(IAgentHypothesisSpecification<? extends A, DS> agent) {
 		this.loadAgent(agent);
 		this.hypothesesAgents.add(agent);
 	}

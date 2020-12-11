@@ -92,6 +92,9 @@ public class SameWordSameDecision extends FilterDecoratorBase {
 		for (IHypothesesSelection selection : selections) {
 			IHypothesis someHypothesis = selection.getAllHypotheses().getHypotheses().get(0);
 			var groupEntry = grouped.entrySet().stream().filter(e -> e.getValue().stream().anyMatch(hs -> hs.getHypotheses().contains(someHypothesis))).findFirst().orElse(null);
+			if (groupEntry == null) {
+				continue;
+			}
 			if (groupEntry.getKey() == null) {
 				result.add(selection);
 			} else {

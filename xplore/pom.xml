@@ -34,28 +34,6 @@
 			<groupId>edu.kit.ipd.are.agentanalysis</groupId>
 			<artifactId>port</artifactId>
 		</dependency>
-		<!-- PARSE -->
-		<dependency>
-			<groupId>edu.kit.ipd.parse</groupId>
-			<artifactId>luna</artifactId>
-		</dependency>
-		<!-- Analysis Specifications -->
-		<dependency>
-			<groupId>edu.kit.ipd.are.agentanalysis</groupId>
-			<artifactId>specification-parse</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>edu.kit.ipd.are.agentanalysis</groupId>
-			<artifactId>specification-indirect</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>edu.kit.ipd.are.agentanalysis</groupId>
-			<artifactId>specification-hypotheses</artifactId>
-			<scope>test</scope>
-		</dependency>
-
 		<dependency>
 			<groupId>org.fuchss</groupId>
 			<artifactId>java-tools</artifactId>

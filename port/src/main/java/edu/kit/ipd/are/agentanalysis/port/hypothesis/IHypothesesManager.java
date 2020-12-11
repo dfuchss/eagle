@@ -3,41 +3,47 @@ package edu.kit.ipd.are.agentanalysis.port.hypothesis;
 import java.util.List;
 
 import edu.kit.ipd.are.agentanalysis.port.IAgentSpecification;
-import edu.kit.ipd.parse.luna.agent.AbstractAgent;
-import edu.kit.ipd.parse.luna.graph.IGraph;
+import edu.kit.ipd.are.agentanalysis.port.IDataStructure;
 
 /**
  * Defines a manager for {@link IHypothesis hypothesis}. Normally that would be
- * the {@link AbstractAgent} which generates.
+ * the agent which generates.
  *
  * @author Dominik Fuchss
- *
+ * @param <DS> data structure
  */
-public interface IHypothesesManager {
+public interface IHypothesesManager<DS extends IDataStructure<DS>> {
 
 	/**
 	 * Retrieve the "normal" results of an {@link IAgentSpecification} as pseudo
 	 * hypotheses.
 	 *
-	 * @param graph the graph
+	 * @param data the data structure
 	 * @return a list of found pseudo hypotheses groups
 	 */
-	List<IHypothesesSet> getHypothesesForNonHypothesesExecution(IGraph graph);
+	List<IHypothesesSet> getHypothesesForNonHypothesesExecution(DS data);
 
 	/**
-	 * Retrieve the hypotheses stored in a {@link IGraph ParseGraph}
+	 * Retrieve the hypotheses stored in a data structure
 	 *
-	 * @param graph the graph
+	 * @param data the data structure
 	 * @return a list of found hypotheses groups
 	 */
-	List<IHypothesesSet> getHypothesesFromGraph(IGraph graph);
+	List<IHypothesesSet> getHypothesesFromDataStructure(DS data);
 
 	/**
-	 * Apply a selection of hypotheses to a graph.
+	 * Apply a selection of hypotheses to a data structure.
 	 *
-	 * @param graph      the graph
+	 * @param data       the data structure
 	 * @param hypotheses the selected hypotheses
 	 */
-	void applyHypothesesToGraph(IGraph graph, List<IHypothesesSelection> hypotheses);
+	void applyHypothesesToDataStructure(DS data, List<IHypothesesSelection> hypotheses);
+
+	/**
+	 * Get the hypotheses range for this agent.
+	 *
+	 * @return the hypotheses range
+	 */
+	HypothesisRange getHypothesesRange();
 
 }

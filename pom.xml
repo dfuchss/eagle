@@ -8,8 +8,10 @@
 	<packaging>pom</packaging>
 
 	<properties>
-		<maven.compiler.source>14</maven.compiler.source>
-		<maven.compiler.target>14</maven.compiler.target>
+		<java.version>14</java.version>
+		<maven.compiler.source>${java.version}</maven.compiler.source>
+		<maven.compiler.target>${java.version}</maven.compiler.target>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
 	<repositories>
@@ -32,12 +34,12 @@
 
 	<dependencyManagement>
 		<dependencies>
-			<!-- PARSE -->
 			<dependency>
-				<groupId>edu.kit.ipd.parse</groupId>
-				<artifactId>luna</artifactId>
-				<version>0.5.10</version>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-api</artifactId>
+				<version>1.7.10</version>
 			</dependency>
+
 			<!-- Junit -->
 			<dependency>
 				<groupId>junit</groupId>
@@ -77,6 +79,25 @@
 				<version>${project.version}</version>
 			</dependency>
 
+			<dependency>
+				<groupId>edu.kit.ipd.are.agentanalysis</groupId>
+				<artifactId>platforms</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>edu.kit.ipd.are.agentanalysis</groupId>
+				<artifactId>tests</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
+			<!-- Platforms -->
+			<dependency>
+				<groupId>edu.kit.ipd.are.agentanalysis</groupId>
+				<artifactId>platforms-parse</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
 			<!-- Specifications -->
 			<dependency>
 				<groupId>edu.kit.ipd.are.agentanalysis</groupId>
@@ -90,11 +111,6 @@
 			</dependency>
 			<dependency>
 				<groupId>edu.kit.ipd.are.agentanalysis</groupId>
-				<artifactId>specification-platforms</artifactId>
-				<version>${project.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>edu.kit.ipd.are.agentanalysis</groupId>
 				<artifactId>specification-indirect</artifactId>
 				<version>${project.version}</version>
 			</dependency>
@@ -103,7 +119,7 @@
 				<artifactId>specification-hypotheses</artifactId>
 				<version>${project.version}</version>
 			</dependency>
-			
+
 			<dependency>
 				<groupId>edu.kit.ipd.are.agentanalysis</groupId>
 				<artifactId>agents-wikiwsd</artifactId>
@@ -127,6 +143,9 @@
 		<module>specification</module>
 		<module>xplore</module>
 		<module>agents</module>
+		<module>platforms</module>
+		<module>tests</module>
 	</modules>
 	<name>Agent Analysis (Root)</name>
+	<description>The Agent Analysis Framework of Dominik Fuchß based on his Master Thesis (https://publikationen.bibliothek.kit.edu/1000126806)</description>
 </project>

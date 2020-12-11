@@ -1,0 +1,88 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>edu.kit.ipd.are.agentanalysis</groupId>
+		<artifactId>platforms</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<artifactId>platforms-parse</artifactId>
+	<name>Agent Analysis (Platforms: PARSE)</name>
+	<dependencies>
+		<!-- PARSE -->
+		<dependency>
+			<groupId>edu.kit.ipd.parse</groupId>
+			<artifactId>luna</artifactId>
+			<version>0.5.10</version>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>edu.kit.ipd.are.agentanalysis</groupId>
+			<artifactId>port</artifactId>
+		</dependency>
+
+		<!-- PrePipelines -->
+		<!-- PARSE -->
+		<dependency>
+			<groupId>edu.kit.ipd.parse</groupId>
+			<artifactId>ontology_connection</artifactId>
+			<version>0.0.1</version>
+		</dependency>
+		<!-- PPL -->
+		<dependency>
+			<groupId>edu.kit.ipd.parse</groupId>
+			<artifactId>ShallowNLP</artifactId>
+			<version>0.0.4</version>
+		</dependency>
+		<dependency>
+			<groupId>edu.stanford.nlp</groupId>
+			<artifactId>stanford-corenlp</artifactId>
+			<version>3.9.2</version>
+		</dependency>
+		<dependency>
+			<groupId>edu.stanford.nlp</groupId>
+			<artifactId>stanford-corenlp</artifactId>
+			<version>3.9.2</version>
+			<classifier>models</classifier>
+		</dependency>
+		<dependency>
+			<groupId>edu.kit.ipd.parse</groupId>
+			<artifactId>ner</artifactId>
+			<version>0.0.1</version>
+		</dependency>
+		<dependency>
+			<groupId>edu.kit.ipd.parse</groupId>
+			<artifactId>graphBuilder</artifactId>
+			<version>0.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId>edu.kit.ipd.parse</groupId>
+			<artifactId>SRLabeler</artifactId>
+			<version>0.1.1</version>
+		</dependency>
+
+		<!-- INDIRECT -->
+		<!-- PPL -->
+		<dependency>
+			<groupId>edu.kit.ipd.indirect</groupId>
+			<artifactId>tokenizer</artifactId>
+			<version>0.0.4-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>edu.kit.ipd.indirect</groupId>
+			<artifactId>textSNLP</artifactId>
+			<version>0.0.5-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>edu.kit.ipd.indirect</groupId>
+			<artifactId>graphBuilder</artifactId>
+			<version>0.0.4-SNAPSHOT</version>
+		</dependency>
+	</dependencies>
+</project>

@@ -1,24 +1,21 @@
 package edu.kit.ipd.are.agentanalysis.port.hypothesis;
 
+import edu.kit.ipd.are.agentanalysis.port.IAgent;
 import edu.kit.ipd.are.agentanalysis.port.IAgentSpecification;
-import edu.kit.ipd.parse.luna.agent.AbstractAgent;
+import edu.kit.ipd.are.agentanalysis.port.IDataStructure;
 
 /**
  * Defines the combination of an {@link IAgentSpecification} and an
  * {@link IHypothesesManager}. Also provides
- * {@link #getHypothesesForNonHypothesesExecution(edu.kit.ipd.parse.luna.graph.IGraph)
- * getHypothesesForNonHypothesesExecution(IGraph)} for an
+ * {@link #getHypothesesForNonHypothesesExecution(Object)
+ * getHypothesesForNonHypothesesExecution(DS)} for an
  * {@link IAgentSpecification}.
  *
- * @param <A> the actual {@link AbstractAgent}
+ * @param <A>  the actual agent
+ * @param <DS> the actual data structure
  * @author Dominik Fuchss
  *
  */
-public interface IAgentHypothesisSpecification<A extends AbstractAgent> extends IAgentSpecification<A>, IHypothesesManager {
-	/**
-	 * Get the hypotheses range for this agent.
-	 *
-	 * @return the hypotheses range
-	 */
-	HypothesisRange getHypothesesRange();
+public interface IAgentHypothesisSpecification<A extends IAgent<DS>, DS extends IDataStructure<DS>> extends IAgentSpecification<A, DS>, IHypothesesManager<DS> {
+
 }
