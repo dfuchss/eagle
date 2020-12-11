@@ -38,12 +38,6 @@
 				<version>1.7.10</version>
 			</dependency>
 
-			<!-- PARSE -->
-			<dependency>
-				<groupId>edu.kit.ipd.parse</groupId>
-				<artifactId>luna</artifactId>
-				<version>0.5.10</version>
-			</dependency>
 			<!-- Junit -->
 			<dependency>
 				<groupId>junit</groupId>

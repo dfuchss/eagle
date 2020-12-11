@@ -10,16 +10,18 @@
 	<artifactId>platforms-parse</artifactId>
 	<name>Agent Analysis (Platforms: PARSE)</name>
 	<dependencies>
+		<!-- PARSE -->
 		<dependency>
 			<groupId>edu.kit.ipd.parse</groupId>
 			<artifactId>luna</artifactId>
+			<version>0.5.10</version>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<scope>test</scope>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>edu.kit.ipd.are.agentanalysis</groupId>
 			<artifactId>port</artifactId>
