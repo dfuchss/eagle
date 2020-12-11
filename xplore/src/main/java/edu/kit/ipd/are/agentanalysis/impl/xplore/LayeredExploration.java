@@ -37,9 +37,9 @@ public abstract class LayeredExploration<A extends IAgent<DS>, DS extends IDataS
 	private Set<IAgentHypothesisSpecification<? extends A, DS>> hypothesesAgents;
 
 	/**
-	 * Create the exploration by an inital graph.
+	 * Create the exploration by an initial data structure.
 	 *
-	 * @param initial the initial graph
+	 * @param initial the initial data structure
 	 */
 	protected LayeredExploration(DS initial) {
 		this.agents = new HashSet<>();

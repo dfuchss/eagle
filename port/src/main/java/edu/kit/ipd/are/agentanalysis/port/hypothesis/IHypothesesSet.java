@@ -33,8 +33,8 @@ public interface IHypothesesSet extends Serializable {
 	String getShortInfo();
 
 	/**
-	 * Use {@link #getNodeOfHypotheses()} to identify the word (iff existing) which
-	 * is related to theses hypotheses. May be {@code null} iff no such word exists.
+	 * Identify the word (iff existing) which is related to theses hypotheses. May
+	 * be {@code null} iff no such word exists.
 	 *
 	 * @return the word which belong to the hypotheses
 	 * @see #getHypothesesRange()

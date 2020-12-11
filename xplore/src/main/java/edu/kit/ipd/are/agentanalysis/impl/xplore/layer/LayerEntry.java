@@ -92,10 +92,10 @@ final class LayerEntry<A extends IAgent<DS>, DS extends IDataStructure<DS>> impl
 
 	private LayerEntry<A, DS> createHypothesesNext(List<IHypothesesSelection> selection) {
 		ILayerEntry.logger.debug("Appling selection " + selection + " @ " + this.layer);
-		var resultGraph = this.inputData.createCopy();
-		this.layer.getAgentWithHypotheses().applyHypothesesToDataStructure(resultGraph, selection);
+		var resultData = this.inputData.createCopy();
+		this.layer.getAgentWithHypotheses().applyHypothesesToDataStructure(resultData, selection);
 
-		var newEntry = this.layer.getNext().createEntry(this, resultGraph);
+		var newEntry = this.layer.getNext().createEntry(this, resultData);
 		this.nextLayerEntries.put(selection, newEntry);
 		return newEntry;
 	}

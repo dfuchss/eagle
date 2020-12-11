@@ -29,7 +29,7 @@ public interface IExploration<DS extends IDataStructure<DS>> {
 	void restart(DS initial);
 
 	/**
-	 * Explore the current graph.
+	 * Explore the current data structure.
 	 *
 	 * @return the exploration result
 	 */

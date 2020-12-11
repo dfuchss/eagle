@@ -22,8 +22,8 @@ public class SpecificExploration<A extends IAgent<DS>, DS extends IDataStructure
 	private Map<IAgentHypothesisSpecification<? extends A, DS>, ISelectionProvider> selectors;
 
 	/**
-	 * Create a new exploration by an initial graph and a maximum for the generated
-	 * hypotheses of the {@link IAgentHypothesisSpecification
+	 * Create a new exploration by an initial data structure and a maximum for the
+	 * generated hypotheses of the {@link IAgentHypothesisSpecification
 	 * IAgentHypothesisSpecifications}.
 	 *
 	 * @param initial the initial data

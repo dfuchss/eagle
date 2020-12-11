@@ -17,5 +17,4 @@ import edu.kit.ipd.are.agentanalysis.port.IDataStructure;
  *
  */
 public interface IAgentHypothesisSpecification<A extends IAgent<DS>, DS extends IDataStructure<DS>> extends IAgentSpecification<A, DS>, IHypothesesManager<DS> {
-
 }

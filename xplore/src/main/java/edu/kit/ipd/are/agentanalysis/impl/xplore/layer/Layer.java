@@ -100,7 +100,7 @@ public final class Layer<A extends IAgent<DS>, DS extends IDataStructure<DS>> im
 	 * the agent of this layer.</b>
 	 *
 	 * @param parent the parent layer entry
-	 * @param data   the associated input graph
+	 * @param data   the associated input data
 	 * @return the new layer entry
 	 */
 	public LayerEntry<A, DS> createEntry(LayerEntry<A, DS> parent, DS data) {
