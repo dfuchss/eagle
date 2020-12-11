@@ -51,7 +51,7 @@ public class PARSEGraphWrapper implements IDataStructure<PARSEGraphWrapper> {
 	}
 
 	@Override
-	public PARSEGraphWrapper clone() {
+	public PARSEGraphWrapper createCopy() {
 		return new PARSEGraphWrapper(this.graph.clone(), this.text, this.ppm);
 	}
 

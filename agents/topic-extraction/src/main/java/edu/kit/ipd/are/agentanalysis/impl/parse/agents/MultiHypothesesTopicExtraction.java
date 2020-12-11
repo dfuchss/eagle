@@ -75,7 +75,7 @@ public class MultiHypothesesTopicExtraction extends TopicExtraction implements I
 			return topics;
 		} catch (JsonProcessingException e) {
 			e.printStackTrace();
-			return null;
+			return List.of();
 		}
 	}
 

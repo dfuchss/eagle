@@ -190,7 +190,7 @@ public class MultiHypothesesOntologySelector extends OntologySelector implements
 		List<OntologySelectionData> allData = new ArrayList<>();
 		this.loadOntologies(allData, hypotheses);
 
-		// TODO: Copied from exec ..
+		// Copied from exec ..
 		OWLOntologyManager owlManager = OWLManager.createOWLOntologyManager();
 		String mergeId = this.getMergedOntoIdentificator(allData);
 
@@ -210,7 +210,7 @@ public class MultiHypothesesOntologySelector extends OntologySelector implements
 		List<String> names = new ArrayList<>();
 		for (OntologySelectionData to : ontologies) {
 			String desc = to.getDescription();
-			desc = desc.replaceAll("http://www.semanticweb.org/", "").replaceAll("environment_", "").replaceAll("_", "").replaceAll("actor_", "");
+			desc = desc.replace("http://www.semanticweb.org/", "").replace("environment_", "").replace("_", "").replace("actor_", "");
 			names.add(WordUtils.capitalize(desc));
 		}
 		return names.stream().sorted().collect(Collectors.joining());
@@ -260,7 +260,7 @@ public class MultiHypothesesOntologySelector extends OntologySelector implements
 			return ontologies;
 		} catch (JsonProcessingException e) {
 			e.printStackTrace();
-			return null;
+			return List.of();
 		}
 	}
 
@@ -310,12 +310,8 @@ public class MultiHypothesesOntologySelector extends OntologySelector implements
 			for (OntologySelectionData ontology : ontologies) {
 				IRI t_iri = IRI.create(new File(ontology.getOntologyPath()).toURI());
 				OWLOntology onto = owlManager.loadOntologyFromOntologyDocument(t_iri);
-				onto.axioms().forEach(axiom -> {
-					axioms.add(axiom);
-				});
-				onto.importsDeclarations().forEach(impDecl -> {
-					imports.add(impDecl);
-				});
+				onto.axioms().forEach(axioms::add);
+				onto.importsDeclarations().forEach(imports::add);
 				owlManager.removeOntology(onto);
 			}
 
@@ -344,11 +340,13 @@ public class MultiHypothesesOntologySelector extends OntologySelector implements
 		OWLEntityRenamer renamer = new OWLEntityRenamer(owlManager, owlManager.ontologies().collect(Collectors.toList()));
 		for (OntologySelectionData selection : ontologies) {
 			OWLOntology ontology = this.loadOntology(selection.getOntologyPath());
-			ontology.axioms().flatMap(OWLAxiom::components).filter(c -> c instanceof OWLNamedObject).map(c -> (OWLNamedObject) c)
-					.filter(no -> !no.getIRI().toString().contains("w3.org") && !no.getIRI().toString().contains("Thing")).forEach(obj -> {
-						IRI individualName = IRI.create(obj.getIRI().toString().replaceFirst("[^*]+(?=#|;)", iri.toString()));
-						owlManager.applyChanges(renamer.changeIRI(obj.getIRI(), individualName));
-					});
+			if (ontology != null) {
+				ontology.axioms().flatMap(OWLAxiom::components).filter(c -> c instanceof OWLNamedObject).map(c -> (OWLNamedObject) c)
+						.filter(no -> !no.getIRI().toString().contains("w3.org") && !no.getIRI().toString().contains("Thing")).forEach(obj -> {
+							IRI individualName = IRI.create(obj.getIRI().toString().replaceFirst("[^*]+(?=#|;)", iri.toString()));
+							owlManager.applyChanges(renamer.changeIRI(obj.getIRI(), individualName));
+						});
+			}
 		}
 	}
 

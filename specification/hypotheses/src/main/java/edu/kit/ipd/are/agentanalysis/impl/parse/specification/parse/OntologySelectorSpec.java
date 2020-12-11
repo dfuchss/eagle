@@ -49,11 +49,12 @@ public class OntologySelectorSpec extends ParseAgentSpecification<OntologySelect
 
 		Iterator<String> iter = ontologies.iterator();
 
-		String result = base + iter.next();
+		StringBuilder result = new StringBuilder();
+		result.append(base).append(iter.next());
 		while (iter.hasNext()) {
-			result += "," + base + iter.next();
+			result.append(",").append(base).append(iter.next());
 		}
-		return result;
+		return result.toString();
 	}
 
 	@Override
