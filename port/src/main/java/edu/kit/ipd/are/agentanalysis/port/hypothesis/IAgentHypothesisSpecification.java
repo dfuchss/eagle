@@ -14,13 +14,8 @@ import edu.kit.ipd.are.agentanalysis.port.IDataStructure;
  * @param <A>  the actual agent
  * @param <DS> the actual data structure
  * @author Dominik Fuchss
- * 
+ *
  */
 public interface IAgentHypothesisSpecification<A extends IAgent<DS>, DS extends IDataStructure<DS>> extends IAgentSpecification<A, DS>, IHypothesesManager<DS> {
-	/**
-	 * Get the hypotheses range for this agent.
-	 *
-	 * @return the hypotheses range
-	 */
-	HypothesisRange getHypothesesRange();
+
 }

@@ -6,7 +6,8 @@ import edu.kit.ipd.are.agentanalysis.impl.parse.PARSEAgent;
 import edu.kit.ipd.are.agentanalysis.impl.parse.PARSEGraphWrapper;
 import edu.kit.ipd.are.agentanalysis.impl.parse.prepipeline.PrePipelineMode;
 import edu.kit.ipd.are.agentanalysis.impl.parse.specification.AbstractAgentSpecification;
-import edu.kit.ipd.are.agentanalysis.port.InformationId;
+import edu.kit.ipd.are.agentanalysis.port.IInformationId;
+import edu.kit.ipd.are.agentanalysis.port.hypothesis.HypothesisRange;
 import edu.kit.ipd.are.agentanalysis.port.hypothesis.IAgentHypothesisSpecification;
 import edu.kit.ipd.are.agentanalysis.port.hypothesis.IHypothesesManager;
 import edu.kit.ipd.are.agentanalysis.port.hypothesis.IHypothesesSelection;
@@ -55,13 +56,18 @@ public abstract class AbstractAgentHypothesisSpecification<A extends AbstractAge
 	}
 
 	@Override
-	public final List<InformationId> getProvideIds() {
+	public final List<? extends IInformationId> getProvideIds() {
 		return this.agentSpec.getProvideIds();
 	}
 
 	@Override
-	public final List<InformationId> getRequiresIds() {
+	public final List<? extends IInformationId> getRequiresIds() {
 		return this.agentSpec.getRequiresIds();
+	}
+
+	@Override
+	public final HypothesisRange getHypothesesRange() {
+		return this.agentInstance.getHypothesesRange();
 	}
 
 	@Override

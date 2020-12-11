@@ -1,5 +1,8 @@
 package edu.kit.ipd.are.agentanalysis.port.xplore;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import edu.kit.ipd.are.agentanalysis.port.IAgentSpecification;
 import edu.kit.ipd.are.agentanalysis.port.IDataStructure;
 import edu.kit.ipd.are.agentanalysis.port.hypothesis.IAgentHypothesisSpecification;
@@ -13,6 +16,11 @@ import edu.kit.ipd.are.agentanalysis.port.hypothesis.IAgentHypothesisSpecificati
  * @author Dominik Fuchss
  */
 public interface IExploration<DS extends IDataStructure<DS>> {
+	/**
+	 * The default logger for the exploration.
+	 */
+	Logger logger = LoggerFactory.getLogger(IExploration.class);
+
 	/**
 	 * Restart the exploration with a new data structure.
 	 *

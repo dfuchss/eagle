@@ -20,6 +20,7 @@ public class BasicHypothesesSet implements IHypothesesSet {
 	private boolean onlyOneValidHypothesis;
 	private String shortInfo;
 	private HypothesisRange range;
+	private String word;
 
 	// For deserialize
 	@SuppressWarnings("unused")
@@ -35,10 +36,24 @@ public class BasicHypothesesSet implements IHypothesesSet {
 	 * @param onlyOne    indicator for {@link #isOnlyOneHypothesisValid()}
 	 */
 	public BasicHypothesesSet(String shortInfo, HypothesisRange range, List<? extends IHypothesis> hypotheses, boolean onlyOne) {
+		this(shortInfo, range, hypotheses, onlyOne, null);
+	}
+
+	/**
+	 * Create a simple group of hypotheses.
+	 *
+	 * @param shortInfo        some short info
+	 * @param range            the range of the set of hypotheses
+	 * @param hypotheses       the hypotheses
+	 * @param onlyOne          indicator for {@link #isOnlyOneHypothesisValid()}
+	 * @param wordOfHypotheses the word that belongs to the hypotheses
+	 */
+	public BasicHypothesesSet(String shortInfo, HypothesisRange range, List<? extends IHypothesis> hypotheses, boolean onlyOne, String wordOfHypotheses) {
 		this.shortInfo = shortInfo;
 		this.range = Objects.requireNonNull(range);
 		this.hypotheses = new ArrayList<>(hypotheses);
 		this.onlyOneValidHypothesis = onlyOne;
+		this.word = wordOfHypotheses;
 	}
 
 	@Override
@@ -60,7 +75,7 @@ public class BasicHypothesesSet implements IHypothesesSet {
 
 	@Override
 	public String getWordOfHypotheses() {
-		return null;
+		return this.word;
 	}
 
 	@Override

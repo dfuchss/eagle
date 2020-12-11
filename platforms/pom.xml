@@ -12,7 +12,7 @@
 	<modules>
 		<module>parse</module>
 	</modules>
-	<name>Agent Analyis (Platforms)</name>
+	<name>Agent Analysis (Platforms)</name>
 	<dependencies>
 		<dependency>
 			<groupId>edu.kit.ipd.are.agentanalysis</groupId>

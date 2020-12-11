@@ -24,7 +24,7 @@ public interface IAgentSpecification<A extends IAgent<DS>, DS extends IDataStruc
 	 *
 	 * @return the list of provided information types
 	 */
-	List<InformationId> getProvideIds();
+	List<? extends IInformationId> getProvideIds();
 
 	/**
 	 * Get the type of required information of the agent. Iff empty the agent only
@@ -32,5 +32,5 @@ public interface IAgentSpecification<A extends IAgent<DS>, DS extends IDataStruc
 	 *
 	 * @return the list of required information types
 	 */
-	List<InformationId> getRequiresIds();
+	List<? extends IInformationId> getRequiresIds();
 }

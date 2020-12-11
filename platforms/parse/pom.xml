@@ -8,7 +8,7 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<artifactId>platforms-parse</artifactId>
-	<name>Agent Analyis (Platforms: PARSE)</name>
+	<name>Agent Analysis (Platforms: PARSE)</name>
 	<dependencies>
 		<dependency>
 			<groupId>edu.kit.ipd.parse</groupId>

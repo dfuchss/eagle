@@ -39,4 +39,11 @@ public interface IHypothesesManager<DS extends IDataStructure<DS>> {
 	 */
 	void applyHypothesesToDataStructure(DS data, List<IHypothesesSelection> hypotheses);
 
+	/**
+	 * Get the hypotheses range for this agent.
+	 *
+	 * @return the hypotheses range
+	 */
+	HypothesisRange getHypothesesRange();
+
 }
