@@ -30,6 +30,14 @@
 		</plugins>
 	</build>
 	<dependencies>
+
+		<dependency>
+			<groupId>edu.kit.ipd.parse</groupId>
+			<artifactId>wiki_wsd_models</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<scope>test</scope>
+		</dependency>
+
 		<!-- Analysis Specifications -->
 		<dependency>
 			<groupId>edu.kit.ipd.agentanalysis</groupId>

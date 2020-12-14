@@ -16,4 +16,8 @@ import edu.kit.ipd.are.agentanalysis.port.IDataStructure;
  *
  */
 public interface IAgentHypothesisSpecification<A extends IAgent<DS>, DS extends IDataStructure<DS>> extends IAgentSpecification<A, DS>, IHypothesesManager<DS> {
+	/**
+	 * Just some default number for the amount of hypotheses to be generated.
+	 */
+	int DEFAULT_HYPOTHESES = 3;
 }

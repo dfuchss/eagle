@@ -38,15 +38,6 @@ public abstract class AbstractAgentSpecification<A extends AbstractAgent> implem
 	 */
 	public abstract PrePipelineMode getMode();
 
-	/**
-	 * Set the agent instance.
-	 *
-	 * @param agent the agent instance
-	 */
-	public void setAgentInstance(A agent) {
-		this.agentInstance = agent;
-	}
-
 	@Override
 	public String toString() {
 		return "Agent[" + this.agentInstance.getClass().getSimpleName() + "], Requires: " + this.getRequiresIds() + ", Provides: " + this.getProvideIds();
