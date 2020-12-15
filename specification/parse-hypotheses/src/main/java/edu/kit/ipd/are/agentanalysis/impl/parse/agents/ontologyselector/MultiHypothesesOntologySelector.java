@@ -29,7 +29,6 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import edu.kit.ipd.are.agentanalysis.impl.parse.PARSEGraphWrapper;
-import edu.kit.ipd.are.agentanalysis.impl.parse.agents.MultiHypothesesTopicExtraction;
 import edu.kit.ipd.are.agentanalysis.port.hypothesis.BasicHypothesesSet;
 import edu.kit.ipd.are.agentanalysis.port.hypothesis.HypothesisRange;
 import edu.kit.ipd.are.agentanalysis.port.hypothesis.IHypothesesManager;
@@ -44,6 +43,7 @@ import edu.kit.ipd.parse.ontologyselector.OntologySelector;
 import edu.kit.ipd.parse.ontologyselector.SelectionMethod;
 import edu.kit.ipd.parse.ontologyselector.TopicOntology;
 import edu.kit.ipd.parse.ontologyselector.merger.SimpleOntologyMerger;
+import edu.kit.ipd.parse.topicextraction.TopicExtraction;
 
 /**
  * A {@link OntologySelector} with {@link IHypothesesManager}.
@@ -73,7 +73,9 @@ public final class MultiHypothesesOntologySelector extends OntologySelector impl
 	 */
 	public MultiHypothesesOntologySelector(int maxHypothesis) {
 		this.maxHypothesis = Math.max(maxHypothesis, 1);
-		this.setTopicExtraction(new MultiHypothesesTopicExtraction(maxHypothesis));
+		TopicExtraction te = new TopicExtraction();
+		te.setMaxNumTopics(this.maxHypothesis);
+		this.setTopicExtraction(te);
 	}
 
 	@Override

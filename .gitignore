@@ -3,3 +3,4 @@
 *.project
 *.classpath
 *.pmd
+tests/test-results/SimpleHypothesesTest/output.json
