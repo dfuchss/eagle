@@ -31,7 +31,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import edu.kit.ipd.are.agentanalysis.impl.parse.PARSEGraphWrapper;
 import edu.kit.ipd.are.agentanalysis.port.hypothesis.BasicHypothesesSet;
 import edu.kit.ipd.are.agentanalysis.port.hypothesis.HypothesisRange;
-import edu.kit.ipd.are.agentanalysis.port.hypothesis.IHypothesesManager;
 import edu.kit.ipd.are.agentanalysis.port.hypothesis.IHypothesesSelection;
 import edu.kit.ipd.are.agentanalysis.port.hypothesis.IHypothesesSet;
 import edu.kit.ipd.are.agentanalysis.port.hypothesis.IHypothesis;
@@ -43,7 +42,7 @@ import edu.kit.ipd.parse.ontologyselector.OntologySelector;
 import edu.kit.ipd.parse.ontologyselector.SelectionMethod;
 import edu.kit.ipd.parse.ontologyselector.TopicOntology;
 import edu.kit.ipd.parse.ontologyselector.merger.SimpleOntologyMerger;
-import edu.kit.ipd.parse.topicextraction.TopicExtraction;
+import edu.kit.ipd.parse.topicExtraction.TopicExtraction;
 
 /**
  * A {@link OntologySelector} with {@link IHypothesesManager}.
@@ -51,7 +50,7 @@ import edu.kit.ipd.parse.topicextraction.TopicExtraction;
  * @author Dominik Fuchss
  *
  */
-public final class MultiHypothesesOntologySelector extends OntologySelector implements IHypothesesManager<PARSEGraphWrapper> {
+public final class MultiHypothesesOntologySelector extends OntologySelector {
 
 	private static final String MULTI_HYPOTHESIS_ACTOR_ONTOLOGY_ATTRIBUTE = "MHOA-actor";
 	private static final String MULTI_HYPOTHESIS_ENV_ONTOLOGY_ATTRIBUTE = "MHOA-env";
@@ -78,7 +77,6 @@ public final class MultiHypothesesOntologySelector extends OntologySelector impl
 		this.setTopicExtraction(te);
 	}
 
-	@Override
 	public HypothesisRange getHypothesesRange() {
 		return HypothesisRange.SENTENCE;
 	}
@@ -147,7 +145,6 @@ public final class MultiHypothesesOntologySelector extends OntologySelector impl
 		return new Pair<>(null, null);
 	}
 
-	@Override
 	public List<IHypothesesSet> getHypothesesFromDataStructure(PARSEGraphWrapper graph) {
 		List<INode> nodes = graph.getGraph().getNodesOfType(graph.getGraph().getNodeType(OntologySelector.ONTOLOGY_NODE_TYPE));
 		if (nodes.size() != 1) {
@@ -172,7 +169,6 @@ public final class MultiHypothesesOntologySelector extends OntologySelector impl
 		return Arrays.asList(new OntologyHypothesesSet(actors, OntologyType.ACTOR), new OntologyHypothesesSet(envs, OntologyType.ENVIRONMENT));
 	}
 
-	@Override
 	public List<IHypothesesSet> getHypothesesForNonHypothesesExecution(PARSEGraphWrapper graph) {
 		INode node = graph.getGraph().getNodesOfType(graph.getGraph().getNodeType(OntologySelector.ONTOLOGY_NODE_TYPE)).get(0);
 		@SuppressWarnings("unchecked")
@@ -185,7 +181,6 @@ public final class MultiHypothesesOntologySelector extends OntologySelector impl
 		return Arrays.asList(new OntologyHypothesesSet(osds, null));
 	}
 
-	@Override
 	public void applyHypothesesToDataStructure(PARSEGraphWrapper graph, List<IHypothesesSelection> hypotheses) {
 		this.checkSelection(hypotheses);
 		if (hypotheses.size() > 2) {

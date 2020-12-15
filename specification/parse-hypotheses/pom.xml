@@ -22,8 +22,8 @@
 		</dependency>
 		<dependency>
 			<groupId>edu.kit.ipd.parse</groupId>
-			<artifactId>topicextraction</artifactId>
-			<version>develop-SNAPSHOT</version>
+			<artifactId>topic_extraction</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>edu.kit.ipd.parse</groupId>

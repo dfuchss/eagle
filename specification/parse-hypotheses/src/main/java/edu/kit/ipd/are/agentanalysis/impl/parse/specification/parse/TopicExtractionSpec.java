@@ -3,7 +3,7 @@ package edu.kit.ipd.are.agentanalysis.impl.parse.specification.parse;
 import java.util.List;
 
 import edu.kit.ipd.are.agentanalysis.impl.parse.PARSEInformationId;
-import edu.kit.ipd.parse.topicextraction.TopicExtraction;
+import edu.kit.ipd.parse.topicExtraction.TopicExtraction;
 
 /**
  * Defines the agent specification for the {@link TopicExtraction}.

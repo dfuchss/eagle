@@ -19,8 +19,8 @@ import edu.kit.ipd.parse.luna.graph.IGraph;
 import edu.kit.ipd.parse.luna.graph.INode;
 import edu.kit.ipd.parse.luna.graph.INodeType;
 import edu.kit.ipd.parse.luna.tools.ConfigManager;
-import edu.kit.ipd.parse.topicextraction.Topic;
-import edu.kit.ipd.parse.topicextraction.TopicExtraction;
+import edu.kit.ipd.parse.topicExtraction.Topic;
+import edu.kit.ipd.parse.topicExtraction.TopicExtraction;
 
 /**
  * Defines the agent specification for the {@link TopicExtraction}. This is the
