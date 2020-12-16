@@ -27,14 +27,8 @@
 		</dependency>
 		<dependency>
 			<groupId>edu.kit.ipd.parse</groupId>
-			<artifactId>ontologyselector</artifactId>
-			<version>develop-SNAPSHOT</version>
-		</dependency>
-		<!-- Force specific HTTP Client version -->
-		<dependency>
-			<groupId>org.apache.httpcomponents</groupId>
-			<artifactId>httpclient</artifactId>
-			<version>4.5.2</version>
+			<artifactId>ontology_selection</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
 

@@ -96,14 +96,7 @@ public class TopicExtractionHypothesisSpec extends TopicExtractionSpec implement
 
 		List<IHypothesis> hyps = hypotheses.get(0).getSelectedHypotheses();
 		List<Topic> topics = hyps.stream().map(h -> ((TopicHypothesis) h).topic).collect(Collectors.toList());
-
-		// Delete possible Topic Nodes
-		List<INode> nodes = graph.getNodesOfType(graph.getNodeType(TopicExtractionHypothesisSpec.TOPICS_NODE_TYPE));
-		if (!nodes.isEmpty()) {
-			nodes.forEach(graph::deleteNode);
-		}
-
-		TopicExtractionCore.addTopicsToInputGraph(topics, graph);
+		TopicExtractionCore.setTopicsToInputGraph(topics, graph);
 	}
 
 	private void checkSelection(List<IHypothesesSelection> selection) {
