@@ -17,10 +17,10 @@ import edu.kit.ipd.are.agentanalysis.port.hypothesis.IHypothesesSet;
 import edu.kit.ipd.are.agentanalysis.port.hypothesis.IHypothesis;
 import edu.kit.ipd.parse.luna.graph.IGraph;
 import edu.kit.ipd.parse.luna.graph.INode;
-import edu.kit.ipd.parse.luna.graph.INodeType;
 import edu.kit.ipd.parse.luna.tools.ConfigManager;
-import edu.kit.ipd.parse.topicExtraction.Topic;
-import edu.kit.ipd.parse.topicExtraction.TopicExtraction;
+import edu.kit.ipd.parse.topic_extraction.TopicExtraction;
+import edu.kit.ipd.parse.topic_extraction_common.Topic;
+import edu.kit.ipd.parse.topic_extraction_common.TopicExtractionCore;
 
 /**
  * Defines the agent specification for the {@link TopicExtraction}. This is the
@@ -31,7 +31,6 @@ import edu.kit.ipd.parse.topicExtraction.TopicExtraction;
  */
 public class TopicExtractionHypothesisSpec extends TopicExtractionSpec implements IAgentHypothesisSpecification<PARSEAgent, PARSEGraphWrapper> {
 
-	private static final String TOPIC_ATTRIBUTE = "topic";
 	private static final String TOPICS_NODE_TYPE = "topics";
 
 	/**
@@ -57,7 +56,7 @@ public class TopicExtractionHypothesisSpec extends TopicExtractionSpec implement
 	@Override
 	public List<IHypothesesSet> getHypothesesForNonHypothesesExecution(PARSEGraphWrapper data) {
 		IGraph graph = data.getGraph();
-		List<Topic> topics = TopicExtraction.getTopicsFromIGraph(graph);
+		List<Topic> topics = TopicExtractionCore.getTopicsFromIGraph(graph);
 
 		List<TopicHypothesis> hyps = new ArrayList<>();
 		for (Topic t : topics) {
@@ -74,7 +73,7 @@ public class TopicExtractionHypothesisSpec extends TopicExtractionSpec implement
 			return new ArrayList<>();
 		}
 
-		List<Topic> topics = TopicExtraction.getTopicsFromIGraph(graph);
+		List<Topic> topics = TopicExtractionCore.getTopicsFromIGraph(graph);
 		topics.sort((t1, t2) -> -Double.compare(t1.getScore(), t2.getScore()));
 
 		List<TopicHypothesis> hyps = new ArrayList<>();
@@ -95,27 +94,16 @@ public class TopicExtractionHypothesisSpec extends TopicExtractionSpec implement
 			throw new IllegalArgumentException("Too many HypothesesGroups are selected ..");
 		}
 
-		INodeType tokenType;
-		if (graph.hasNodeType(TopicExtractionHypothesisSpec.TOPICS_NODE_TYPE)) {
-			tokenType = graph.getNodeType(TopicExtractionHypothesisSpec.TOPICS_NODE_TYPE);
-		} else {
-			tokenType = graph.createNodeType(TopicExtractionHypothesisSpec.TOPICS_NODE_TYPE);
-		}
-		if (!tokenType.containsAttribute(TopicExtractionHypothesisSpec.TOPIC_ATTRIBUTE, "java.util.List")) {
-			tokenType.addAttributeToType("java.util.List", TopicExtractionHypothesisSpec.TOPIC_ATTRIBUTE);
-		}
-
 		List<IHypothesis> hyps = hypotheses.get(0).getSelectedHypotheses();
 		List<Topic> topics = hyps.stream().map(h -> ((TopicHypothesis) h).topic).collect(Collectors.toList());
 
+		// Delete possible Topic Nodes
 		List<INode> nodes = graph.getNodesOfType(graph.getNodeType(TopicExtractionHypothesisSpec.TOPICS_NODE_TYPE));
-		INode node;
-		if (nodes.isEmpty()) {
-			node = graph.createNode(graph.getNodeType(TopicExtractionHypothesisSpec.TOPICS_NODE_TYPE));
-		} else {
-			node = nodes.get(0);
+		if (!nodes.isEmpty()) {
+			nodes.forEach(graph::deleteNode);
 		}
-		node.setAttributeValue(TopicExtractionHypothesisSpec.TOPIC_ATTRIBUTE, topics);
+
+		TopicExtractionCore.addTopicsToInputGraph(topics, graph);
 	}
 
 	private void checkSelection(List<IHypothesesSelection> selection) {
