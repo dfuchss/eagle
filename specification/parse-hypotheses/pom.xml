@@ -30,6 +30,12 @@
 			<artifactId>ontology_selection</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
+		<!-- FORCE CORRECT VERSION -->
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+			<version>4.5.2</version>
+		</dependency>
 	</dependencies>
 
 	<name>Agent Analysis (PARSE Hypotheses Specifications)</name>

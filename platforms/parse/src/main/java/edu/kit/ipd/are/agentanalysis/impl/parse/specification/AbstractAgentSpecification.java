@@ -1,5 +1,8 @@
 package edu.kit.ipd.are.agentanalysis.impl.parse.specification;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import edu.kit.ipd.are.agentanalysis.impl.parse.PARSEAgent;
 import edu.kit.ipd.are.agentanalysis.impl.parse.PARSEGraphWrapper;
 import edu.kit.ipd.are.agentanalysis.impl.parse.prepipeline.PrePipelineMode;
@@ -15,6 +18,11 @@ import edu.kit.ipd.parse.luna.agent.AbstractAgent;
  * @param <A> the actual {@link AbstractAgent} of this specification
  */
 public abstract class AbstractAgentSpecification<A extends AbstractAgent> implements IAgentSpecification<PARSEAgent, PARSEGraphWrapper> {
+	/**
+	 * The Logger for all instances of {@link AbstractAgentSpecification}.
+	 */
+	protected final Logger logger = LoggerFactory.getLogger(AbstractAgentSpecification.class);
+
 	protected A agentInstance;
 
 	/**

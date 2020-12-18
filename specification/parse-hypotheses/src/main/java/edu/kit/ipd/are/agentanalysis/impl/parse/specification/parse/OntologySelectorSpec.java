@@ -9,7 +9,7 @@ import java.util.Objects;
 
 import edu.kit.ipd.are.agentanalysis.impl.parse.PARSEInformationId;
 import edu.kit.ipd.parse.luna.tools.ConfigManager;
-import edu.kit.ipd.parse.ontologyselector.OntologySelector;
+import edu.kit.ipd.parse.ontology_selector.OntologySelector;
 
 /**
  * Defines the agent specification for the {@link OntologySelector}.
@@ -27,11 +27,15 @@ public class OntologySelectorSpec extends ParseAgentSpecification<OntologySelect
 	 *                        {@link #loadOntologies(String, String, String...)}
 	 */
 	public OntologySelectorSpec(String actorOntologies, String envOntologies) {
-		super(new OntologySelector());
+		super(OntologySelectorSpec.loadOntologySelector(actorOntologies, envOntologies));
+	}
+
+	private static OntologySelector loadOntologySelector(String actorOntologies, String envOntologies) {
 		var props = ConfigManager.getConfiguration(OntologySelector.class);
 		props.setProperty("ACTOR_ONTOLOGIES", Objects.requireNonNull(actorOntologies));
 		props.setProperty("ENVIRONMENT_ONTOLOGIES", Objects.requireNonNull(envOntologies));
 		props.setProperty("OUTPUT", "target/");
+		return new OntologySelector();
 	}
 
 	/**

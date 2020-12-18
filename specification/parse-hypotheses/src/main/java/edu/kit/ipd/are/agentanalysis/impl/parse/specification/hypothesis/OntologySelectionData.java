@@ -1,7 +1,8 @@
-package edu.kit.ipd.are.agentanalysis.impl.parse.agents.ontologyselector;
+package edu.kit.ipd.are.agentanalysis.impl.parse.specification.hypothesis;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import edu.kit.ipd.are.agentanalysis.port.hypothesis.IHypothesis;
-import edu.kit.ipd.parse.ontologyselector.TopicOntology;
 
 final class OntologySelectionData implements IHypothesis {
 
@@ -11,23 +12,9 @@ final class OntologySelectionData implements IHypothesis {
 	private String description;
 	private double score;
 
-	/**
-	 * For JSON Serializer
-	 *
-	 * @author Dominik Fuchss
-	 */
-	OntologySelectionData() {
-	}
-
-	OntologySelectionData(String description, double score) {
-		this.ontologyPath = null;
+	OntologySelectionData(String description, String path, double score) {
+		this.ontologyPath = path;
 		this.description = description;
-		this.score = score;
-	}
-
-	OntologySelectionData(TopicOntology ontology, double score) {
-		this.ontologyPath = ontology.getOntologyPath();
-		this.description = ontology.getDescription();
 		this.score = score;
 	}
 
@@ -41,17 +28,19 @@ final class OntologySelectionData implements IHypothesis {
 		return this.score;
 	}
 
-	public String getDescription() {
-		return this.description;
-	}
-
-	public String getOntologyPath() {
-		return this.ontologyPath;
-	}
-
 	@Override
 	public String getValue() {
 		return this.description;
+	}
+
+	@JsonIgnore
+	String getDescription() {
+		return this.description;
+	}
+
+	@JsonIgnore
+	String getOntologyPath() {
+		return this.ontologyPath;
 	}
 
 	@Override
