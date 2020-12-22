@@ -28,7 +28,7 @@ public interface IAgentSpecification<A extends IAgent<DS>, DS extends IDataStruc
 
 	/**
 	 * Get the type of required information of the agent. Iff empty the agent only
-	 * needs the information from the PrePipeline of PARSE.
+	 * needs the data structure.
 	 *
 	 * @return the list of required information types
 	 */

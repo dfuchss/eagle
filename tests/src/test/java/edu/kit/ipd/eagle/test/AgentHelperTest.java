@@ -6,14 +6,14 @@ import java.util.List;
 import org.junit.Assert;
 import org.junit.Test;
 
-import edu.kit.ipd.eagle.impl.parse.PARSEAgentHelper;
-import edu.kit.ipd.eagle.impl.parse.prepipeline.IndirectPrePipeline;
-import edu.kit.ipd.eagle.impl.parse.prepipeline.PARSEPrePipeline;
-import edu.kit.ipd.eagle.impl.parse.prepipeline.PrePipelineMode;
-import edu.kit.ipd.eagle.impl.parse.specification.parse.OntologySelectorSpec;
-import edu.kit.ipd.eagle.impl.parse.specification.parse.ParseAgentSpecification;
-import edu.kit.ipd.eagle.impl.parse.specification.parse.TopicExtractionSpec;
-import edu.kit.ipd.eagle.impl.parse.specification.parse.WikiWSDSpec;
+import edu.kit.ipd.eagle.impl.platforms.parse.PARSEAgentHelper;
+import edu.kit.ipd.eagle.impl.platforms.parse.prepipeline.IndirectPrePipeline;
+import edu.kit.ipd.eagle.impl.platforms.parse.prepipeline.PARSEPrePipeline;
+import edu.kit.ipd.eagle.impl.platforms.parse.prepipeline.PrePipelineMode;
+import edu.kit.ipd.eagle.impl.platforms.parse.specification.parse.ParseAgentSpecification;
+import edu.kit.ipd.eagle.impl.specification.parse.OntologySelectorSpec;
+import edu.kit.ipd.eagle.impl.specification.parse.TopicExtractionSpec;
+import edu.kit.ipd.eagle.impl.specification.parse.WikiWSDSpec;
 import edu.kit.ipd.eagle.port.AgentHelper;
 import edu.kit.ipd.parse.luna.agent.AbstractAgent;
 

@@ -12,7 +12,7 @@ import org.junit.Before;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import edu.kit.ipd.eagle.impl.parse.specification.parse.OntologySelectorSpec;
+import edu.kit.ipd.eagle.impl.specification.parse.OntologySelectorSpec;
 import edu.kit.ipd.eagle.port.util.Serialize;
 
 /**
