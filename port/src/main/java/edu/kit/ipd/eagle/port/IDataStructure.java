@@ -5,7 +5,7 @@ package edu.kit.ipd.eagle.port;
  *
  * @author Dominik Fuchss
  *
- * @param <DS> just use {@code class Data implements IDataStructure<DS>}
+ * @param <DS> just use {@code class Data implements IDataStructure<Data>}
  */
 public interface IDataStructure<DS extends IDataStructure<DS>> {
 	/**
