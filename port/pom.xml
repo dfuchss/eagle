@@ -3,13 +3,13 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>edu.kit.ipd.agentanalysis</groupId>
-		<artifactId>root</artifactId>
+		<groupId>edu.kit.ipd.eagle</groupId>
+		<artifactId>base</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<artifactId>port</artifactId>
-	<name>Agent Analysis (Port)</name>
-	<description>This project contains the interfaces for the agent analysis project.</description>
+	<name>EAGLE (Port)</name>
+	<description>This project contains the interfaces for the project.</description>
 
 
 	<build>

@@ -3,13 +3,13 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>edu.kit.ipd.agentanalysis</groupId>
-		<artifactId>root</artifactId>
+		<groupId>edu.kit.ipd.eagle</groupId>
+		<artifactId>base</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<artifactId>tests</artifactId>
 
-	<name>Agent Analysis (Tests)</name>
+	<name>EAGLE (Tests)</name>
 
 	<build>
 		<plugins>
@@ -17,7 +17,7 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
 				<configuration>
-					<argLine>-Xmx10g -Xms2G</argLine>
+					<argLine>-Xmx8g -Xms2g</argLine>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -40,27 +40,27 @@
 
 		<!-- Analysis Specifications -->
 		<dependency>
-			<groupId>edu.kit.ipd.agentanalysis</groupId>
-			<artifactId>specification-parse</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>edu.kit.ipd.agentanalysis</groupId>
-			<artifactId>specification-indirect</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>edu.kit.ipd.agentanalysis</groupId>
+			<groupId>edu.kit.ipd.eagle</groupId>
 			<artifactId>specification-parse-hypotheses</artifactId>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-			<groupId>edu.kit.ipd.agentanalysis</groupId>
+			<groupId>edu.kit.ipd.eagle</groupId>
+			<artifactId>specification-parse</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>edu.kit.ipd.eagle</groupId>
+			<artifactId>specification-indirect</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>edu.kit.ipd.eagle</groupId>
 			<artifactId>platforms-parse</artifactId>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-			<groupId>edu.kit.ipd.agentanalysis</groupId>
+			<groupId>edu.kit.ipd.eagle</groupId>
 			<artifactId>xplore</artifactId>
 			<scope>test</scope>
 		</dependency>

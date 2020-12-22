@@ -2,8 +2,8 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>edu.kit.ipd.agentanalysis</groupId>
-	<artifactId>root</artifactId>
+	<groupId>edu.kit.ipd.eagle</groupId>
+	<artifactId>base</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
@@ -111,54 +111,54 @@
 
 			<!-- Modules -->
 			<dependency>
-				<groupId>edu.kit.ipd.agentanalysis</groupId>
+				<groupId>edu.kit.ipd.eagle</groupId>
 				<artifactId>port</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 
 			<dependency>
-				<groupId>edu.kit.ipd.agentanalysis</groupId>
+				<groupId>edu.kit.ipd.eagle</groupId>
 				<artifactId>xplore</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 
 			<dependency>
-				<groupId>edu.kit.ipd.agentanalysis</groupId>
+				<groupId>edu.kit.ipd.eagle</groupId>
 				<artifactId>platforms</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 
 			<dependency>
-				<groupId>edu.kit.ipd.agentanalysis</groupId>
+				<groupId>edu.kit.ipd.eagle</groupId>
 				<artifactId>tests</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 
 			<!-- Platforms -->
 			<dependency>
-				<groupId>edu.kit.ipd.agentanalysis</groupId>
+				<groupId>edu.kit.ipd.eagle</groupId>
 				<artifactId>platforms-parse</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 
 			<!-- Specifications -->
 			<dependency>
-				<groupId>edu.kit.ipd.agentanalysis</groupId>
+				<groupId>edu.kit.ipd.eagle</groupId>
 				<artifactId>specification</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>edu.kit.ipd.agentanalysis</groupId>
+				<groupId>edu.kit.ipd.eagle</groupId>
 				<artifactId>specification-parse</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>edu.kit.ipd.agentanalysis</groupId>
+				<groupId>edu.kit.ipd.eagle</groupId>
 				<artifactId>specification-indirect</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>edu.kit.ipd.agentanalysis</groupId>
+				<groupId>edu.kit.ipd.eagle</groupId>
 				<artifactId>specification-parse-hypotheses</artifactId>
 				<version>${project.version}</version>
 			</dependency>
@@ -172,6 +172,6 @@
 		<module>platforms</module>
 		<module>tests</module>
 	</modules>
-	<name>Agent Analysis (Root)</name>
-	<description>The Agent Analysis Framework of Dominik Fuchß based on his Master Thesis (https://publikationen.bibliothek.kit.edu/1000126806)</description>
+	<name>EAGLE (Base)</name>
+	<description>The Environment for Analysis of AGents based on Led Exploration (a.k.a. Agent Analysis Framework) of Dominik Fuchss based on his Master Thesis (https://publikationen.bibliothek.kit.edu/1000126806)</description>
 </project>

@@ -3,14 +3,14 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>edu.kit.ipd.agentanalysis</groupId>
-		<artifactId>root</artifactId>
+		<groupId>edu.kit.ipd.eagle</groupId>
+		<artifactId>base</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<artifactId>specification</artifactId>
 	<packaging>pom</packaging>
-	<name>Agent Analysis (Specifications)</name>
-	<description>This project contains all agent specification divided into different submodules.</description>
+	<name>EAGLE (Specifications)</name>
+	<description>This project contains all agent specifications divided into different submodules.</description>
 
 	<modules>
 		<module>parse</module>
