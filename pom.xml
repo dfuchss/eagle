@@ -25,11 +25,6 @@
 			<name>IPD-Repository</name>
 			<url>http://bob.ipd.kit.edu/nexus/repository/maven-public-snapshots</url>
 		</repository>
-		<repository>
-			<id>github</id>
-			<name>Repository of Wiki WSD</name>
-			<url>https://maven.pkg.github.com/kit-sdq/PARSE-Wiki-WSD</url>
-		</repository>
 	</repositories>
 
 
