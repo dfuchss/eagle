@@ -3,6 +3,20 @@ This project contains an environment to explore the search space defined by hypo
 The EAGLE is mainly based on the Master Thesis of Dominik Fuchss (cf. [Thesis](https://doi.org/10.5445/IR/1000126806)).
 Therefore, this work can give you insight into the actual usage of this project.
 
+# Table of Contents
+* [Structure of EAGLE](#structure-of-eagle)
+  * [Port](#port)
+  * [Platforms](#platforms)
+  * [Specifications](#specifications)
+  * [Exploration (eXplore)](#exploration-explore)
+  * [Tests](#tests)
+* [Explorer](#explorer)
+* [Evaluator](#evaluator)
+* [Example (PARSE)](#example-parse)
+  * [PARSE Platform (Example)](#parse-platform-example)
+  * [PARSE Specifications (Example)](#parse-specifications-example)
+
+
 ## Structure of EAGLE
 This project is structured using maven modules. In the following the structure is explained.
 
@@ -80,7 +94,7 @@ In order to evaluate the exploration, the [evaluator project](../eagle-evaluator
 
 ![Evaluator](../eagle-evaluator/.github/img/Evaluator.png)
 
-## Example
+## Example (PARSE)
 This repository implements the approach for the PARSE Platform and some PARSE agents.
 They can be seen as an example, how to work with EAGLE.
 In the following, the needed steps to adopt this framework to other platforms or agents will be stated.
