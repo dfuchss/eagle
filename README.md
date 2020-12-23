@@ -10,10 +10,10 @@ This project is structured using maven modules. In the following the structure i
 The port module defines all necessary modules to work with EAGLE.
 Furthermore, common classes are defined as well.
 Especially the following interfaces and classes are important:
-* [IAgentSpecification](port/src/main/java/edu/kit/ipd/eagle/port/IAgentSpecification.java): Defines a "normal" agent of a multi-agent system
-* [IAgentHypothesisSpecification](port/src/main/java/edu/kit/ipd/eagle/port/hypothesis/IAgentHypothesisSpecification.java): Defines an agent that can deal with hypotheses. Such an agent is able to read and write hypotheses to a data structure. Thereby, a hypothesis is defined by a value and a confidence.
-* [IHypothesis](port/src/main/java/edu/kit/ipd/eagle/port/hypothesis/IHypothesis.java): Defines a hypothesis that can be created and/or used by agents
-* [IInformationId](port/src/main/java/edu/kit/ipd/eagle/port/IInformationId.java): In order to execute the agents of an MAS in the right order, you have to define the provided and required information of an agent. See [Example](#Example) for further information.
+* [IAgentSpecification](port/src/main/java/edu/kit/ipd/eagle/port/IAgentSpecification.java): Specifies the dependencies of a "normal" agent of a multi-agent system.
+* [IAgentHypothesisSpecification](port/src/main/java/edu/kit/ipd/eagle/port/hypothesis/IAgentHypothesisSpecification.java): Specifies the dependencies of an agent that can deal with hypotheses. Such an agent is able to read and write hypotheses to a data structure. A hypothesis is defined by a value and a confidence.
+* [IHypothesis](port/src/main/java/edu/kit/ipd/eagle/port/hypothesis/IHypothesis.java): Defines a hypothesis that can be created and/or used by agents.
+* [IInformationId](port/src/main/java/edu/kit/ipd/eagle/port/IInformationId.java): In order to execute the agents of an MAS in the right order, you have to define the provided and required information of an agent. See [Example](#example) for further information.
 
 For the exploration of hypotheses, the following interfaces are important (a picture of what is described is included for illustration):
 ![Layers](.github/img/Layers.png)
@@ -28,10 +28,41 @@ For the exploration of hypotheses, the following interfaces are important (a pic
 All agents depend on a certain platform that defines their operating data structures and the way they are executed.
 Therefore, you need to define the platform of the agents you want to evaluate.
 As an example the platform for [PARSE agents](https://code.ipd.kit.edu/weigelt/parse) is defined in this project (see [platforms/parse](platforms/parse/src/main/java/edu/kit/ipd/eagle/impl/platforms/parse)).
+In order to work with agents in a certain platform, you have to implement at least the following interfaces:
+* [IAgent](port/src/main/java/edu/kit/ipd/eagle/port/IAgent.java): The definition of an agent that operates on a certain data structure.
+* [IDataStructure](port/src/main/java/edu/kit/ipd/eagle/port/IDataStructure.java): The definition of the data structure.
+* [IAgentSpecification](port/src/main/java/edu/kit/ipd/eagle/port/IAgentSpecification.java) resp. [IAgentHypothesisSpecification](port/src/main/java/edu/kit/ipd/eagle/port/hypothesis/IAgentHypothesisSpecification.java) for certain agents you want to evaluate. The specifications of the example (PARSE) are described in [Specifications](#specifications).
 
 ### Specifications
+Every agent that shall be executed by the EAGLE System needs a specification.
+Some example specifications are provided in certain modules of the [Specification Module](specification/):
+* [indirect](specification/indirect/src/main/java/edu/kit/ipd/eagle/impl/specification/indirect): Specifications of some [INDIRECT](https://code.ipd.kit.edu/hey/indirect) agents that operate on the PARSE Platform. No agent provides hypotheses. Therefore, you will only find `IAgentSpecification` in the module.
+
+
+* [parse](specification/parse/src/main/java/edu/kit/ipd/eagle/impl/specification/parse): Specifications of some [PARSE](https://code.ipd.kit.edu/weigelt/parse) agents that operate on the PARSE Platform. No agent provides hypotheses. Therefore, you will only find `IAgentSpecification` in the module.
+
+
+* [parse-hypotheses](specification/parse-hypotheses/src/main/java/edu/kit/ipd/eagle/impl/specification/parse): Specifications of some [PARSE](https://code.ipd.kit.edu/weigelt/parse) agents that operate on the PARSE Platform and are able to generate hypotheses. Therefore, you will find `IAgentSpecification` in the module as well as `IAgentHypothesisSpecification` in a subdirectory.
 
 ### Exploration (eXplore)
+The [xplore](xplore/src/main/java/edu/kit/ipd/eagle/impl/xplore) module contains the necessary implementations to explore the search space of hypotheses.
+
+Important classes and/or packages are:
+
+* [Selection Providers](xplore/src/main/java/edu/kit/ipd/eagle/impl/xplore/selection): Some basic realizations of `ISelectionProvider` ..
+  * `AllHypothesesOnlyOneValid`
+  * `RandomSelectionIfOnlyOneValid`
+  * `TopXConfidence`
+  * `SameWordSameDecision` (decorator that ensures that equal words have equal hypotheses selections)
+
+
+* [Rating Functions](xplore/src/main/java/edu/kit/ipd/eagle/impl/xplore/rating): Some basic realizations of `IRatingFunction` ..
+  * `NormalizedAggregate`: Configurable Rating function that normalizes hypotheses per Layer and determine the final scores of path by aggregation of scores of layer entries.
+
+
+* `LayeredExploration` basic implementation of an exploration. Also take a look at the following subclasses:
+  * `SimpleExploration`: out of the box exploration
+  * `SpecificExploration`: exploration that has to be configured to use a certain selection provider per layer.
 
 ### Tests
 
@@ -43,3 +74,7 @@ As an example the platform for [PARSE agents](https://code.ipd.kit.edu/weigelt/p
 This repository implements the approach for the PARSE Platform and some PARSE agents.
 They can be seen as an example, how to work with EAGLE.
 In the following, the needed steps to adopt this framework to other platforms or agents will be stated.
+
+### PARSE Platform (Example)
+
+### PARSE Specifications (Example)
