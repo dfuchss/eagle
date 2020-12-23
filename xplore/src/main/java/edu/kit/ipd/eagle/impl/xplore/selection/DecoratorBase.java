@@ -15,7 +15,7 @@ import edu.kit.ipd.eagle.port.xplore.selection.ISelectionProvider;
  * @author Dominik Fuchss
  *
  */
-public abstract class FilterDecoratorBase implements ISelectionProvider {
+public abstract class DecoratorBase implements ISelectionProvider {
 
 	private ISelectionProvider provider;
 
@@ -24,7 +24,7 @@ public abstract class FilterDecoratorBase implements ISelectionProvider {
 	 *
 	 * @param provider the selection provider
 	 */
-	protected FilterDecoratorBase(ISelectionProvider provider) {
+	protected DecoratorBase(ISelectionProvider provider) {
 		this.provider = provider;
 	}
 

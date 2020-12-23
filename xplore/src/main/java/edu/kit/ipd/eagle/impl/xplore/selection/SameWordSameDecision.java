@@ -22,7 +22,7 @@ import edu.kit.ipd.eagle.port.xplore.selection.ISelectionProvider;
  * @author Dominik Fuchss
  *
  */
-public class SameWordSameDecision extends FilterDecoratorBase {
+public class SameWordSameDecision extends DecoratorBase {
 	/**
 	 * Create the decorator.
 	 *

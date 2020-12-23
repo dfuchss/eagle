@@ -18,7 +18,7 @@ import edu.kit.ipd.eagle.port.xplore.selection.ISelectionProvider;
  * @author Dominik Fuchss
  *
  */
-public class AllCombinationsIfOnlyOneValid implements ISelectionProvider {
+public class FullExploration implements ISelectionProvider {
 
 	@Override
 	public List<List<IHypothesesSelection>> findSelection(List<IHypothesesSet> hypotheses) {
@@ -28,10 +28,10 @@ public class AllCombinationsIfOnlyOneValid implements ISelectionProvider {
 		// Current Indices
 		int[] idx = new int[sizes.size()];
 
-		while (!AllCombinationsIfOnlyOneValid.isLastIteration(sizes, idx)) {
+		while (!FullExploration.isLastIteration(sizes, idx)) {
 			List<IHypothesesSelection> selection = this.generate(hypotheses, idx);
 			result.add(selection);
-			AllCombinationsIfOnlyOneValid.nextIteration(sizes, idx);
+			FullExploration.nextIteration(sizes, idx);
 		}
 
 		// Last Iteration

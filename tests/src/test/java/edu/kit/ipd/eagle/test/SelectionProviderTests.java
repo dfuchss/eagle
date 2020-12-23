@@ -6,8 +6,8 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import edu.kit.ipd.eagle.impl.xplore.selection.AllCombinationsIfOnlyOneValid;
-import edu.kit.ipd.eagle.impl.xplore.selection.RandomSelectionIfOnlyOneValid;
+import edu.kit.ipd.eagle.impl.xplore.selection.FullExploration;
+import edu.kit.ipd.eagle.impl.xplore.selection.RandomHypothesis;
 import edu.kit.ipd.eagle.port.hypothesis.HypothesisRange;
 import edu.kit.ipd.eagle.port.hypothesis.IHypothesesSelection;
 import edu.kit.ipd.eagle.port.xplore.dto.HypothesesSetDTO;
@@ -51,11 +51,11 @@ public class SelectionProviderTests {
 	}
 
 	/**
-	 * Check selection mechanisms of {@link AllCombinationsIfOnlyOneValid}.
+	 * Check selection mechanisms of {@link FullExploration}.
 	 */
 	@Test
 	public void checkAllCombinationsIfOnlyOneValid() {
-		AllCombinationsIfOnlyOneValid acioov = new AllCombinationsIfOnlyOneValid();
+		FullExploration acioov = new FullExploration();
 		var selections = acioov.findSelection(List.of(this.set1, this.set2));
 		this.checkSelectionValid(selections);
 		Assert.assertEquals(2, selections.size());
@@ -70,21 +70,21 @@ public class SelectionProviderTests {
 	}
 
 	/**
-	 * Check selection mechanisms of {@link RandomSelectionIfOnlyOneValid}.
+	 * Check selection mechanisms of {@link RandomHypothesis}.
 	 */
 	@Test
 	public void checkRandomSelectionIfOnlyOneValid() {
-		RandomSelectionIfOnlyOneValid rsioov = new RandomSelectionIfOnlyOneValid(-1); // Default full exploration ..
+		RandomHypothesis rsioov = new RandomHypothesis(-1); // Default full exploration ..
 		var selections = rsioov.findSelection(List.of(this.set2, this.set2, this.set2));
 		this.checkSelectionValid(selections);
 		Assert.assertEquals(8, selections.size());
 
-		rsioov = new RandomSelectionIfOnlyOneValid(0.5); // 50 % of paths
+		rsioov = new RandomHypothesis(0.5); // 50 % of paths
 		selections = rsioov.findSelection(List.of(this.set2, this.set2, this.set2));
 		this.checkSelectionValid(selections);
 		Assert.assertEquals(4, selections.size());
 
-		rsioov = new RandomSelectionIfOnlyOneValid(3); // 3 max
+		rsioov = new RandomHypothesis(3); // 3 max
 		selections = rsioov.findSelection(List.of(this.set2, this.set2, this.set2));
 		this.checkSelectionValid(selections);
 		Assert.assertEquals(3, selections.size());

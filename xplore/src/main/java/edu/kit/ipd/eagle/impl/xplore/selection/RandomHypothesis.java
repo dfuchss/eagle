@@ -7,14 +7,14 @@ import edu.kit.ipd.eagle.port.hypothesis.IHypothesesSelection;
 import edu.kit.ipd.eagle.port.hypothesis.IHypothesesSet;
 
 /**
- * Randomly selects a certain amount from {@link AllCombinationsIfOnlyOneValid}.
+ * Randomly selects a certain amount from {@link FullExploration}.
  * <b>Randomness is fixed by default! Use {@link #realPseudoRandom()} to unlock
  * real pseudo randomness!</b>
  *
  * @author Dominik Fuchss
  *
  */
-public class RandomSelectionIfOnlyOneValid extends AllCombinationsIfOnlyOneValid {
+public class RandomHypothesis extends FullExploration {
 	private Random random = new Random(42);
 
 	private int maxHypothesesSelections;
@@ -26,7 +26,7 @@ public class RandomSelectionIfOnlyOneValid extends AllCombinationsIfOnlyOneValid
 	 * @param maxHypothesesSelections the max amount (all values less than 1
 	 *                                indicate no limit)
 	 */
-	public RandomSelectionIfOnlyOneValid(int maxHypothesesSelections) {
+	public RandomHypothesis(int maxHypothesesSelections) {
 		this(maxHypothesesSelections, -1);
 	}
 
@@ -36,7 +36,7 @@ public class RandomSelectionIfOnlyOneValid extends AllCombinationsIfOnlyOneValid
 	 * @param maxRatioOfSelectedHypotheses the ratio within (0,1] (all values less
 	 *                                     equal 0 indicates no limit)
 	 */
-	public RandomSelectionIfOnlyOneValid(double maxRatioOfSelectedHypotheses) {
+	public RandomHypothesis(double maxRatioOfSelectedHypotheses) {
 		this(-1, maxRatioOfSelectedHypotheses);
 	}
 
@@ -49,7 +49,7 @@ public class RandomSelectionIfOnlyOneValid extends AllCombinationsIfOnlyOneValid
 	 * @param maxRatioOfSelectedHypotheses the ratio within (0,1] (all values less
 	 *                                     equal 0 indicates no limit for ratio)
 	 */
-	public RandomSelectionIfOnlyOneValid(int maxHypothesesSelections, double maxRatioOfSelectedHypotheses) {
+	public RandomHypothesis(int maxHypothesesSelections, double maxRatioOfSelectedHypotheses) {
 		if (maxHypothesesSelections < 1) {
 			this.maxHypothesesSelections = -1;
 		} else {

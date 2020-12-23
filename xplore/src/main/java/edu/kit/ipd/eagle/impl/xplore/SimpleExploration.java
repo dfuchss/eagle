@@ -2,7 +2,7 @@ package edu.kit.ipd.eagle.impl.xplore;
 
 import edu.kit.ipd.eagle.impl.xplore.layer.Layer;
 import edu.kit.ipd.eagle.impl.xplore.selection.SameWordSameDecision;
-import edu.kit.ipd.eagle.impl.xplore.selection.SimpleUseConfidence;
+import edu.kit.ipd.eagle.impl.xplore.selection.TopXSlidingWindow;
 import edu.kit.ipd.eagle.impl.xplore.selection.TopXConfidence;
 import edu.kit.ipd.eagle.port.IAgent;
 import edu.kit.ipd.eagle.port.IAgentSpecification;
@@ -57,7 +57,7 @@ public class SimpleExploration<A extends IAgent<DS>, DS extends IDataStructure<D
 			return null;
 		}
 		return switch (range) {
-		case SENTENCE -> new SimpleUseConfidence(this.maxHyps, this.maxHyps);
+		case SENTENCE -> new TopXSlidingWindow(this.maxHyps, this.maxHyps);
 		case NODE -> new SameWordSameDecision(new TopXConfidence(this.maxHyps));
 		default -> throw new UnsupportedOperationException("Unknown Range .. please add case for " + range);
 		};

@@ -20,7 +20,7 @@ import edu.kit.ipd.eagle.port.xplore.selection.ISelectionProvider;
  * @author Dominik Fuchss
  *
  */
-public class SimpleUseConfidence implements ISelectionProvider {
+public class TopXSlidingWindow implements ISelectionProvider {
 
 	private int maxHypothesesPerSet;
 	private int maxGenerations;
@@ -33,7 +33,7 @@ public class SimpleUseConfidence implements ISelectionProvider {
 	 * @param maxGenerations      the maximum number of selections for a hypotheses
 	 *                            set
 	 */
-	public SimpleUseConfidence(int maxHypothesesPerSet, int maxGenerations) {
+	public TopXSlidingWindow(int maxHypothesesPerSet, int maxGenerations) {
 		this.maxHypothesesPerSet = Math.max(1, maxHypothesesPerSet);
 		this.maxGenerations = Math.max(1, maxGenerations);
 	}

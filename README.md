@@ -49,10 +49,11 @@ The [xplore](xplore/src/main/java/edu/kit/ipd/eagle/impl/xplore) module contains
 
 Important classes and/or packages are:
 
-* [Selection Providers](xplore/src/main/java/edu/kit/ipd/eagle/impl/xplore/selection): Some basic realizations of `ISelectionProvider` ..
-  * `AllHypothesesOnlyOneValid`
-  * `RandomSelectionIfOnlyOneValid`
+* [Selection Providers](xplore/src/main/java/edu/kit/ipd/eagle/impl/xplore/selection): Some basic realizations of `ISelectionProvider` (cf. section 6.3 in [Thesis](https://doi.org/10.5445/IR/1000126806))
+  * `FullExploration`
+  * `RandomHypothesis`
   * `TopXConfidence`
+  * `TopXSlidingWindow`
   * `SameWordSameDecision` (decorator that ensures that equal words have equal hypotheses selections)
 
 
