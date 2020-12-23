@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import edu.kit.ipd.eagle.port.hypothesis.HypothesesSelection;
 import edu.kit.ipd.eagle.port.hypothesis.IHypothesesSelection;
 import edu.kit.ipd.eagle.port.hypothesis.IHypothesesSet;
 import edu.kit.ipd.eagle.port.hypothesis.IHypothesis;

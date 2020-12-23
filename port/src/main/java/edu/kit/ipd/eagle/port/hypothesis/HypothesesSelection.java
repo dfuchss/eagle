@@ -1,11 +1,7 @@
-package edu.kit.ipd.eagle.impl.xplore.selection;
+package edu.kit.ipd.eagle.port.hypothesis;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import edu.kit.ipd.eagle.port.hypothesis.IHypothesesSelection;
-import edu.kit.ipd.eagle.port.hypothesis.IHypothesesSet;
-import edu.kit.ipd.eagle.port.hypothesis.IHypothesis;
 
 /**
  * Defines a simple {@link IHypothesesSelection}.

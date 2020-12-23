@@ -7,6 +7,7 @@ import java.util.Objects;
 import java.util.stream.Collectors;
 
 import edu.kit.ipd.eagle.port.hypothesis.BasicHypothesesSet;
+import edu.kit.ipd.eagle.port.hypothesis.HypothesesSelection;
 import edu.kit.ipd.eagle.port.hypothesis.HypothesisRange;
 import edu.kit.ipd.eagle.port.hypothesis.IHypothesesSelection;
 import edu.kit.ipd.eagle.port.hypothesis.IHypothesesSet;

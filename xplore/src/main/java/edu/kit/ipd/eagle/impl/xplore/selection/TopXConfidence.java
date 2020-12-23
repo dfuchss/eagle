@@ -3,6 +3,7 @@ package edu.kit.ipd.eagle.impl.xplore.selection;
 import java.util.ArrayList;
 import java.util.List;
 
+import edu.kit.ipd.eagle.port.hypothesis.HypothesesSelection;
 import edu.kit.ipd.eagle.port.hypothesis.HypothesisRange;
 import edu.kit.ipd.eagle.port.hypothesis.IHypothesesSelection;
 import edu.kit.ipd.eagle.port.hypothesis.IHypothesesSet;
