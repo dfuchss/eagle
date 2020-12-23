@@ -66,10 +66,19 @@ Important classes and/or packages are:
   * `SpecificExploration`: exploration that has to be configured to use a certain selection provider per layer.
 
 ### Tests
+The last module contains some integration tests.
+Especially take a look at [SimpleHypothesesTest](tests/src/test/java/edu/kit/ipd/eagle/test/SimpleHypothesesTest.java).
+This class may help you understanding how to use the project.
 
 ## Explorer
+In order to visualize the exploration, the [explorer project](../eagle-explorer) has been realized. This explorer provides an overview on an `IExplorationResult`.
+
+![Explorer](../eagle-explorer/.github/img/Explorer.png)
 
 ## Evaluator
+In order to evaluate the exploration, the [evaluator project](../eagle-evaluator) has been realized. This evaluator provides an graphical (or textual) interface to perform a manual classification of all found hypotheses. After classification, you can use the classification to evaluate the actual exploration in terms of precision, recall, f1 score, and/or other classification metrics.
+
+![Evaluator](../eagle-evaluator/.github/img/Evaluator.png)
 
 ## Example
 This repository implements the approach for the PARSE Platform and some PARSE agents.
