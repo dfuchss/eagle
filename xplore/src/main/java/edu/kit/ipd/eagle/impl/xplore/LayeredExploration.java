@@ -88,7 +88,7 @@ public abstract class LayeredExploration<A extends IAgent<DS>, DS extends IDataS
 	}
 
 	private void createRoot() {
-		this.layers[0].createEntry(null, this.initialData);
+		this.layers[0].addEmptyEntry(null, this.initialData).create();
 	}
 
 	@SuppressWarnings("unchecked")

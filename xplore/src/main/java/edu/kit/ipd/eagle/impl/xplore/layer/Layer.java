@@ -96,16 +96,15 @@ public final class Layer<A extends IAgent<DS>, DS extends IDataStructure<DS>> im
 	}
 
 	/**
-	 * Create a new layer entry in this layer. <b>This will invoke the execution of
-	 * the agent of this layer.</b>
+	 * Create a new layer entry in this layer. <b>This will not invoke the execution
+	 * of the agent of this layer.</b> Use {@link LayerEntry#create()}
 	 *
 	 * @param parent the parent layer entry
 	 * @param data   the associated input data
 	 * @return the new layer entry
 	 */
-	public LayerEntry<A, DS> createEntry(LayerEntry<A, DS> parent, DS data) {
+	public LayerEntry<A, DS> addEmptyEntry(LayerEntry<A, DS> parent, DS data) {
 		LayerEntry<A, DS> entry = new LayerEntry<>(this, this.entries.size(), parent, data);
-		ILayer.logger.info("Created LayerEntry " + entry);
 		this.entries.add(entry);
 		return entry;
 	}

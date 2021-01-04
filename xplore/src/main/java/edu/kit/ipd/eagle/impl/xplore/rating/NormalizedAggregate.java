@@ -92,14 +92,18 @@ public class NormalizedAggregate implements IRatingFunction {
 		List<Double> normalizedValues = new ArrayList<>();
 		for (ILayerEntry[] path : paths) {
 			if (path.length != pathLength) {
-				logger.error("Could not evaluate path as length is " + path.length + " instead of " + pathLength + ": " + Arrays.toString(path));
+				if (IRatingFunction.logger.isErrorEnabled()) {
+					IRatingFunction.logger.error("Could not evaluate path as length is " + path.length + " instead of " + pathLength + ": " + Arrays.toString(path));
+				}
 				normalizedValues.add(NormalizedAggregate.NO_EVAL);
 				continue;
 			}
 
 			double[] normalizedEntry = this.calculateNormalizedEntry(path, mins, maxs);
 			double combined = this.layerCombination.applyAsDouble(Arrays.stream(normalizedEntry));
-			logger.info("Evaluated Path " + Arrays.toString(path) + ": " + combined);
+			if (IRatingFunction.logger.isInfoEnabled()) {
+				IRatingFunction.logger.info("Evaluated Path " + Arrays.toString(path) + ": " + combined);
+			}
 			normalizedValues.add(combined);
 		}
 

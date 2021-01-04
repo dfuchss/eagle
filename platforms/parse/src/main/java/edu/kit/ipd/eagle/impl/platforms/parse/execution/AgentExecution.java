@@ -35,9 +35,9 @@ public class AgentExecution implements IAgentExecution<PARSEAgent, PARSEGraphWra
 	}
 
 	@Override
-	public PARSEGraphWrapper execute(PARSEGraphWrapper in) {
+	public PARSEGraphWrapper execute(PARSEGraphWrapper inputGraph) {
 
-		PrePipelineMode ppm = in.getPrePipelineMode();
+		PrePipelineMode ppm = inputGraph.getPrePipelineMode();
 
 		// Check PPM
 		List<AbstractAgentSpecification<? extends AbstractAgent>> invalidAgents = PARSEAgentHelper.findInvalidAgents(this.agents, ppm);
@@ -54,7 +54,7 @@ public class AgentExecution implements IAgentExecution<PARSEAgent, PARSEGraphWra
 			return null;
 		}
 
-		PARSEGraphWrapper graph = in;
+		PARSEGraphWrapper graph = inputGraph;
 
 		for (AbstractAgentSpecification<? extends AbstractAgent> next : specsToRun) {
 			if (IAgentExecution.logger.isDebugEnabled()) {

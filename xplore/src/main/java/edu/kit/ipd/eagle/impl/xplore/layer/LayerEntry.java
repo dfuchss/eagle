@@ -12,7 +12,14 @@ import edu.kit.ipd.eagle.port.hypothesis.IHypothesesSet;
 import edu.kit.ipd.eagle.port.xplore.layer.ILayerEntry;
 import edu.kit.ipd.eagle.port.xplore.selection.ISelectionProvider;
 
-final class LayerEntry<A extends IAgent<DS>, DS extends IDataStructure<DS>> implements ILayerEntry {
+/**
+ * Defines the realization of an {@link ILayerEntry}.
+ *
+ * @author Dominik Fuchss
+ * @param <A>  the type of agent to use
+ * @param <DS> the type of data structure to use
+ */
+public final class LayerEntry<A extends IAgent<DS>, DS extends IDataStructure<DS>> implements ILayerEntry {
 	private static final long serialVersionUID = -349086188573289109L;
 
 	private transient Layer<A, DS> layer;
@@ -31,17 +38,30 @@ final class LayerEntry<A extends IAgent<DS>, DS extends IDataStructure<DS>> impl
 		this.entryNo = number;
 		this.inputData = input;
 		this.parent = parent;
+	}
+
+	/**
+	 * Create the internal data of the layer entry by invoke of agent.
+	 */
+	public void create() {
 		var instance = this.layer.getAgent().getAgentInstance();
-		ILayerEntry.logger.debug("Run analysis for " + this.layer + ", " + this.layer.getAgent());
+
+		if (ILayerEntry.logger.isDebugEnabled()) {
+			ILayerEntry.logger.debug("Run analysis for " + this.layer + ", " + this.layer.getAgent());
+		}
+
 		this.evaluatedData = instance.execute(this.inputData);
-		ILayerEntry.logger.debug("Finished analysis for " + this.layer + ", " + this.layer.getAgent());
+
+		if (ILayerEntry.logger.isDebugEnabled()) {
+			ILayerEntry.logger.debug("Finished analysis for " + this.layer + ", " + this.layer.getAgent());
+		}
 
 		if (this.layer.getAgentWithHypotheses() != null) {
 			this.hypotheses = this.layer.getAgentWithHypotheses().getHypothesesFromDataStructure(this.evaluatedData);
 		}
 	}
 
-	public void explore(ISelectionProvider selectionProvider) {
+	void explore(ISelectionProvider selectionProvider) {
 		if (this.hypotheses == null && selectionProvider != null) {
 			throw new UnsupportedOperationException("No hypotheses for " + this);
 		}
@@ -64,7 +84,7 @@ final class LayerEntry<A extends IAgent<DS>, DS extends IDataStructure<DS>> impl
 		return this.hypotheses == null ? List.of() : new ArrayList<>(this.hypotheses);
 	}
 
-	public LayerEntry<A, DS> createNextBySelection(List<IHypothesesSelection> selection) {
+	LayerEntry<A, DS> createNextBySelection(List<IHypothesesSelection> selection) {
 		if (this.layer.getNext() == null) {
 			throw new UnsupportedOperationException("This is a leaf ..");
 		}
@@ -85,8 +105,9 @@ final class LayerEntry<A extends IAgent<DS>, DS extends IDataStructure<DS>> impl
 		if (!this.nextLayerEntries.isEmpty()) {
 			throw new UnsupportedOperationException("NoHypotheses LayerEntry already explored.");
 		}
-		var newEntry = this.layer.getNext().createEntry(this, this.evaluatedData.createCopy());
+		var newEntry = this.layer.getNext().addEmptyEntry(this, this.evaluatedData.createCopy());
 		this.nextLayerEntries.put(null, newEntry);
+		newEntry.create();
 		return newEntry;
 	}
 
@@ -95,8 +116,15 @@ final class LayerEntry<A extends IAgent<DS>, DS extends IDataStructure<DS>> impl
 		var resultData = this.inputData.createCopy();
 		this.layer.getAgentWithHypotheses().applyHypothesesToDataStructure(resultData, selection);
 
-		var newEntry = this.layer.getNext().createEntry(this, resultData);
+		var newEntry = this.layer.getNext().addEmptyEntry(this, resultData);
 		this.nextLayerEntries.put(selection, newEntry);
+		if (ILayerEntry.logger.isDebugEnabled()) {
+			ILayerEntry.logger.debug("Created empty layer entry " + newEntry);
+		}
+		newEntry.create();
+		if (ILayerEntry.logger.isInfoEnabled()) {
+			ILayerEntry.logger.info("Created layer entry " + newEntry);
+		}
 		return newEntry;
 	}
 
@@ -155,4 +183,5 @@ final class LayerEntry<A extends IAgent<DS>, DS extends IDataStructure<DS>> impl
 	public String getAgent() {
 		return this.layer.getAgent().getClass().getSimpleName();
 	}
+
 }

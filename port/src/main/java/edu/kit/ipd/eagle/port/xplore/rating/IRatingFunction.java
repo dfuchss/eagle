@@ -13,6 +13,7 @@ import edu.kit.ipd.eagle.port.xplore.IPath;
  * @author Dominik Fuchss
  *
  */
+@FunctionalInterface
 public interface IRatingFunction {
 	/**
 	 * The default logger for the rating functions.

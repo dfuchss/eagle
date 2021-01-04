@@ -116,7 +116,7 @@ public class OntologySelectorHypothesisSpec extends OntologySelectorSpec impleme
 	}
 
 	private String toOntologyIds(String ontologyString) {
-		String result = "";
+		StringBuilder result = new StringBuilder();
 		for (final String ontologyPath : ontologyString.split(",")) {
 			String path = OntologySelectorHelper.checkPathAndAttemptFixing(ontologyPath);
 			OWLOntology onto = OntologySelectorHelper.loadOntology(path).orElse(null);
@@ -128,10 +128,11 @@ public class OntologySelectorHypothesisSpec extends OntologySelectorSpec impleme
 				} else {
 					id = onto.getOntologyID().toString();
 				}
-				result += id + "|";
+				result.append(id).append("|");
 			}
 		}
-		return result.isBlank() ? result : result.substring(0, result.length() - 1);
+		String resultString = result.toString();
+		return resultString.isBlank() ? resultString : resultString.substring(0, resultString.length() - 1);
 	}
 
 	@Override

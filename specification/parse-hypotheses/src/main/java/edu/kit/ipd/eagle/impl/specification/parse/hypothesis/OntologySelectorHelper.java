@@ -1,9 +1,10 @@
 package edu.kit.ipd.eagle.impl.specification.parse.hypothesis;
 
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -82,8 +83,8 @@ final class OntologySelectorHelper {
 		final OWLOntologyManager manager = OWLManager.createOWLOntologyManager();
 
 		try {
-			onto = manager.loadOntologyFromOntologyDocument(new FileInputStream(path));
-		} catch (OWLOntologyCreationException | FileNotFoundException e) {
+			onto = manager.loadOntologyFromOntologyDocument(Files.newInputStream(Paths.get(path)));
+		} catch (OWLOntologyCreationException | IOException e) {
 			e.printStackTrace();
 		}
 		return Optional.ofNullable(onto);

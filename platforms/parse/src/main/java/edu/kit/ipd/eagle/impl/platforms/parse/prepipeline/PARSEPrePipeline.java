@@ -51,8 +51,8 @@ public final class PARSEPrePipeline implements IPrePipeline {
 	}
 
 	@Override
-	public PARSEGraphWrapper createGraph(String in) {
-		String text = GraphUtils.normalize(in);
+	public PARSEGraphWrapper createGraph(String inputText) {
+		String text = GraphUtils.normalize(inputText);
 
 		GraphBuilder graphBuilder = new GraphBuilder();
 		graphBuilder.init();

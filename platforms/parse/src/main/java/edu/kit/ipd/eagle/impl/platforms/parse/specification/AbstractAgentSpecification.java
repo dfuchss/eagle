@@ -21,7 +21,7 @@ public abstract class AbstractAgentSpecification<A extends AbstractAgent> implem
 	/**
 	 * The Logger for all instances of {@link AbstractAgentSpecification}.
 	 */
-	protected final Logger logger = LoggerFactory.getLogger(AbstractAgentSpecification.class);
+	protected final Logger logger = LoggerFactory.getLogger(this.getClass());
 
 	protected A agentInstance;
 

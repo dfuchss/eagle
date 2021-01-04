@@ -16,6 +16,7 @@ import edu.kit.ipd.eagle.port.hypothesis.IHypothesesSet;
  * @author Dominik Fuchss
  *
  */
+@FunctionalInterface
 public interface ISelectionProvider {
 	/**
 	 * The default logger for the selection providers.
