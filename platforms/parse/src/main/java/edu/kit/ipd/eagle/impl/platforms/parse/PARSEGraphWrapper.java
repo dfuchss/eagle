@@ -26,7 +26,7 @@ public class PARSEGraphWrapper implements IDataStructure<PARSEGraphWrapper> {
 	 * @param ppm   the {@link PrePipelineMode}
 	 */
 	public PARSEGraphWrapper(IGraph graph, String text, PrePipelineMode ppm) {
-		this.text = text;
+		this.text = Objects.requireNonNull(text);
 		this.graph = Objects.requireNonNull(graph);
 		this.ppm = Objects.requireNonNull(ppm);
 	}
