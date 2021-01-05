@@ -9,6 +9,19 @@
 	</parent>
 	<artifactId>specification-parse</artifactId>
 
+	<repositories>
+		<repository>
+			<id>ipdNexus-public-releases</id>
+			<name>IPD-Repository</name>
+			<url>http://bob.ipd.kit.edu/nexus/repository/maven-public-releases</url>
+		</repository>
+		<repository>
+			<id>ipdNexus-public-snapshots</id>
+			<name>IPD-Repository</name>
+			<url>http://bob.ipd.kit.edu/nexus/repository/maven-public-snapshots</url>
+		</repository>
+	</repositories>
+
 	<dependencies>
 		<dependency>
 			<groupId>edu.kit.ipd.eagle</groupId>
