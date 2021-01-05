@@ -63,7 +63,7 @@ public final class ExplorationResultDTO implements IExplorationResult {
 	}
 
 	@Override
-	public String getInputText() {
+	public String getId() {
 		return this.inputText;
 	}
 

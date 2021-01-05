@@ -24,9 +24,12 @@ public interface IExploration<DS extends IDataStructure<DS>> {
 	/**
 	 * Restart the exploration with a new data structure.
 	 *
-	 * @param initial the new initial data structure
+	 * @param initial         the new initial data structure
+	 * @param id the value for
+	 *                        {@link IExplorationResult#getId()}. May be an
+	 *                        identifier for the current exploration.
 	 */
-	void restart(DS initial);
+	void restart(DS initial, String id);
 
 	/**
 	 * Explore the current data structure.

@@ -54,7 +54,7 @@ AgentSpec specA = new AgentSpecA();
 AgentSpec specB = new AgentSpecB();
 
 // Define the exploration strategy
-SimpleExploration<AgentSpec, DataStructure> explorer = new SimpleExploration<>(myDataStructure, maxHypotheses);
+SimpleExploration<AgentSpec, DataStructure> explorer = new SimpleExploration<>(myDataStructure, id, maxHypotheses);
 explorer.loadHypothesisAgent(specA);
 explorer.loadHypothesisAgent(specB);
 

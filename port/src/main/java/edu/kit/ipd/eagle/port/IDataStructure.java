@@ -15,10 +15,4 @@ public interface IDataStructure<DS extends IDataStructure<DS>> {
 	 */
 	DS createCopy();
 
-	/**
-	 * Get the original input text.
-	 *
-	 * @return the original input text
-	 */
-	String getText();
 }

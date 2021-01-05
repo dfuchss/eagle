@@ -2,12 +2,13 @@ package edu.kit.ipd.eagle.impl.xplore;
 
 import edu.kit.ipd.eagle.impl.xplore.layer.Layer;
 import edu.kit.ipd.eagle.impl.xplore.selection.SameWordSameDecision;
-import edu.kit.ipd.eagle.impl.xplore.selection.TopXSlidingWindow;
 import edu.kit.ipd.eagle.impl.xplore.selection.TopXConfidence;
+import edu.kit.ipd.eagle.impl.xplore.selection.TopXSlidingWindow;
 import edu.kit.ipd.eagle.port.IAgent;
 import edu.kit.ipd.eagle.port.IAgentSpecification;
 import edu.kit.ipd.eagle.port.IDataStructure;
 import edu.kit.ipd.eagle.port.hypothesis.IAgentHypothesisSpecification;
+import edu.kit.ipd.eagle.port.xplore.IExplorationResult;
 import edu.kit.ipd.eagle.port.xplore.selection.ISelectionProvider;
 
 /**
@@ -27,12 +28,14 @@ public class SimpleExploration<A extends IAgent<DS>, DS extends IDataStructure<D
 	 * IAgentHypothesisSpecifications}.
 	 *
 	 * @param initial the initial data
+	 * @param id    the value for {@link IExplorationResult#getId()}. May
+	 *                be an identifier for the current exploration.
 	 * @param maxHyps the maximum amount of hypotheses for the
 	 *                {@link IAgentHypothesisSpecification
 	 *                IAgentHypothesisSpecifications}
 	 */
-	public SimpleExploration(DS initial, int maxHyps) {
-		super(initial);
+	public SimpleExploration(DS initial, String id, int maxHyps) {
+		super(initial, id);
 		this.maxHyps = maxHyps;
 	}
 

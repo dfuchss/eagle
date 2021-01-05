@@ -28,7 +28,7 @@ public interface IPath extends Serializable {
 	/**
 	 * Convert the path to {@link IExplorationResult}.
 	 *
-	 * @param text the text to use for {@link IExplorationResult#getInputText()}
+	 * @param text the text to use for {@link IExplorationResult#getId()}
 	 * @return the {@link IExplorationResult} which only contains the path
 	 */
 	IExplorationResult toExplorationResult(String text);

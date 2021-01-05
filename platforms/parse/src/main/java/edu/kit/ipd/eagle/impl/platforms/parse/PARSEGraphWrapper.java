@@ -64,7 +64,11 @@ public class PARSEGraphWrapper implements IDataStructure<PARSEGraphWrapper> {
 		return this.ppm;
 	}
 
-	@Override
+	/**
+	 * Get the original input text.
+	 *
+	 * @return the input text
+	 */
 	public String getText() {
 		return this.text;
 	}

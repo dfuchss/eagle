@@ -42,7 +42,7 @@ public final class ExplorationResult implements IExplorationResult {
 	}
 
 	@Override
-	public String getInputText() {
+	public String getId() {
 		return this.inputText;
 	}
 

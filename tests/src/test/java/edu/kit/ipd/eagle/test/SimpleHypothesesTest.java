@@ -127,7 +127,7 @@ public class SimpleHypothesesTest extends TestBase {
 	public void testHypothesisCombinationSimpleExploration() throws Exception {
 		WikiWSDHypothesisSpec wwhs = new WikiWSDHypothesisSpec();
 		TopicExtractionHypothesisSpec tehs = new TopicExtractionHypothesisSpec();
-		SimpleExploration<PARSEAgent, PARSEGraphWrapper> explorer = new SimpleExploration<>(this.graph, 3);
+		SimpleExploration<PARSEAgent, PARSEGraphWrapper> explorer = new SimpleExploration<>(this.graph, this.graph.getText(), 3);
 
 		explorer.loadHypothesisAgent(wwhs);
 		explorer.loadHypothesisAgent(tehs);
@@ -158,7 +158,7 @@ public class SimpleHypothesesTest extends TestBase {
 		WikiWSDHypothesisSpec wwhs = new WikiWSDHypothesisSpec();
 		TopicExtractionHypothesisSpec tehs = new TopicExtractionHypothesisSpec();
 
-		SpecificExploration<PARSEAgent, PARSEGraphWrapper> explorer = new SpecificExploration<>(this.graph, 3);
+		SpecificExploration<PARSEAgent, PARSEGraphWrapper> explorer = new SpecificExploration<>(this.graph, this.graph.getText(), 3);
 		explorer.loadHypothesisAgent(wwhs, new SameWordSameDecision(new TopXConfidence(3)));
 		explorer.loadHypothesisAgent(tehs);
 
@@ -186,7 +186,7 @@ public class SimpleHypothesesTest extends TestBase {
 		WikiWSDHypothesisSpec wwhs = new WikiWSDHypothesisSpec();
 		TopicExtractionHypothesisSpec tehs = new TopicExtractionHypothesisSpec();
 		OntologySelectorHypothesisSpec oshs = new OntologySelectorHypothesisSpec(this.loadActorOntologies(), this.loadEnvOntologies());
-		SimpleExploration<PARSEAgent, PARSEGraphWrapper> explorer = new SimpleExploration<>(this.graph, 3);
+		SimpleExploration<PARSEAgent, PARSEGraphWrapper> explorer = new SimpleExploration<>(this.graph, this.graph.getText(), 3);
 
 		explorer.loadHypothesisAgent(wwhs);
 		explorer.loadHypothesisAgent(tehs);
@@ -211,7 +211,7 @@ public class SimpleHypothesesTest extends TestBase {
 		WikiWSDSpec wwhs = new WikiWSDSpec();
 		TopicExtractionHypothesisSpec tehs = new TopicExtractionHypothesisSpec();
 		OntologySelectorHypothesisSpec oshs = new OntologySelectorHypothesisSpec(this.loadActorOntologies(), this.loadEnvOntologies());
-		SimpleExploration<PARSEAgent, PARSEGraphWrapper> explorer = new SimpleExploration<>(this.graph, 3);
+		SimpleExploration<PARSEAgent, PARSEGraphWrapper> explorer = new SimpleExploration<>(this.graph, this.graph.getText(), 3);
 
 		explorer.loadAgent(wwhs);
 		explorer.loadHypothesisAgent(tehs);

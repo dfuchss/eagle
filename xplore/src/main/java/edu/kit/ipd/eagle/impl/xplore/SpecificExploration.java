@@ -7,6 +7,7 @@ import edu.kit.ipd.eagle.impl.xplore.layer.Layer;
 import edu.kit.ipd.eagle.port.IAgent;
 import edu.kit.ipd.eagle.port.IDataStructure;
 import edu.kit.ipd.eagle.port.hypothesis.IAgentHypothesisSpecification;
+import edu.kit.ipd.eagle.port.xplore.IExplorationResult;
 import edu.kit.ipd.eagle.port.xplore.selection.ISelectionProvider;
 
 /**
@@ -27,12 +28,14 @@ public class SpecificExploration<A extends IAgent<DS>, DS extends IDataStructure
 	 * IAgentHypothesisSpecifications}.
 	 *
 	 * @param initial the initial data
+	 * @param text    the value for {@link IExplorationResult#getId()}. May
+	 *                be an identifier for the current exploration.
 	 * @param maxHyps the maximum amount of hypotheses for the
 	 *                {@link IAgentHypothesisSpecification
 	 *                IAgentHypothesisSpecifications}
 	 */
-	public SpecificExploration(DS initial, int maxHyps) {
-		super(initial, maxHyps);
+	public SpecificExploration(DS initial, String text, int maxHyps) {
+		super(initial, text, maxHyps);
 		this.selectors = new HashMap<>();
 	}
 

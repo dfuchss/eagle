@@ -29,32 +29,35 @@ import edu.kit.ipd.eagle.port.xplore.layer.ILayerEntry;
 public abstract class LayeredExploration<A extends IAgent<DS>, DS extends IDataStructure<DS>> implements IExploration<DS> {
 	protected static final Logger logger = LoggerFactory.getLogger(LayeredExploration.class);
 
-	private String text;
 	private DS initialData;
 
 	private Layer<A, DS>[] layers;
 	private Set<IAgentSpecification<? extends A, DS>> agents;
 	private Set<IAgentHypothesisSpecification<? extends A, DS>> hypothesesAgents;
 
+	private String text;
+
 	/**
 	 * Create the exploration by an initial data structure.
 	 *
-	 * @param initial the initial data structure
+	 * @param initial         the initial data structure
+	 * @param id the value for
+	 *                        {@link IExplorationResult#getId()}. May be an
+	 *                        identifier for the current exploration.
 	 */
-	protected LayeredExploration(DS initial) {
+	protected LayeredExploration(DS initial, String id) {
 		this.agents = new HashSet<>();
 		this.hypothesesAgents = new HashSet<>();
-
-		this.restart(initial);
+		this.restart(initial, id);
 	}
 
 	@Override
-	public final void restart(DS initial) {
+	public final void restart(DS initial, String text) {
 		this.layers = null;
 		this.agents.clear();
 		this.hypothesesAgents.clear();
-		this.text = initial.getText();
 		this.initialData = initial;
+		this.text = text;
 	}
 
 	@Override
