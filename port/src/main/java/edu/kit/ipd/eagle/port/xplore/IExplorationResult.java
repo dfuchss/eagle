@@ -16,9 +16,9 @@ import edu.kit.ipd.eagle.port.xplore.layer.ILayerEntry;
 public interface IExplorationResult extends Serializable {
 
 	/**
-	 * Get the input text resp. id for exploration.
+	 * Get an identifier for exploration (may be the input text).
 	 *
-	 * @return the input text or id
+	 * @return the id of the exploration
 	 */
 	String getId();
 

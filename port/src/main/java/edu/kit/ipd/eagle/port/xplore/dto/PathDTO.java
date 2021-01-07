@@ -58,7 +58,7 @@ public class PathDTO implements IPath {
 			step = es;
 		}
 		ExplorationResultDTO result = new ExplorationResultDTO();
-		result.setInputText(text);
+		result.setId(text);
 		result.setExplorationRoot(step);
 		return result;
 	}

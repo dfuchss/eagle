@@ -45,7 +45,7 @@ public final class ExplorationResultDTO implements IExplorationResult {
 
 	private static final long serialVersionUID = 5459294884116324175L;
 	private ILayerEntry root;
-	private String inputText;
+	private String id;
 
 	/**
 	 * Setter of the exploration root.
@@ -64,16 +64,16 @@ public final class ExplorationResultDTO implements IExplorationResult {
 
 	@Override
 	public String getId() {
-		return this.inputText;
+		return this.id;
 	}
 
 	/**
 	 * Setter of the input text.
 	 *
-	 * @param inputText the input text
+	 * @param id the input text
 	 */
-	public void setInputText(String inputText) {
-		this.inputText = inputText;
+	public void setId(String id) {
+		this.id = id;
 	}
 
 	@Override

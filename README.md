@@ -85,7 +85,7 @@ Especially the following interfaces and classes are important:
 * [IAgentSpecification](port/src/main/java/edu/kit/ipd/eagle/port/IAgentSpecification.java): Specifies the dependencies of a "normal" agent of a multi-agent system.
 * [IAgentHypothesisSpecification](port/src/main/java/edu/kit/ipd/eagle/port/hypothesis/IAgentHypothesisSpecification.java): Specifies the dependencies of an agent that can deal with hypotheses. Such an agent is able to read and write hypotheses to a data structure. A hypothesis is defined by a value and a confidence.
 * [IHypothesis](port/src/main/java/edu/kit/ipd/eagle/port/hypothesis/IHypothesis.java): Defines a hypothesis that can be created and/or used by agents.
-* [IInformationId](port/src/main/java/edu/kit/ipd/eagle/port/IInformationId.java): In order to execute the agents of an MAS in the right order, you have to define the provided and required information of an agent. See [Example](#example) for further information.
+* [IInformationId](port/src/main/java/edu/kit/ipd/eagle/port/IInformationId.java): In order to execute the agents of an MAS in the right order, you have to define the provided and required information of an agent. See [Example](#example-parse) for further information.
 
 For the exploration of hypotheses, the following interfaces are important (a picture of what is described is included for illustration):
 ![Layers](.github/img/Layers.png)
