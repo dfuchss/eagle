@@ -74,7 +74,7 @@ public class BasicHypothesesSet implements IHypothesesSet {
 	}
 
 	@Override
-	public String getWordOfHypotheses() {
+	public String getElementOfHypotheses() {
 		return this.word;
 	}
 

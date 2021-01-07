@@ -67,7 +67,7 @@ public class TokenHypothesesSet implements IHypothesesSet {
 
 	@Override
 	public String getShortInfo() {
-		return this.getWordOfHypotheses();
+		return this.getElementOfHypotheses();
 	}
 
 	/**
@@ -91,7 +91,7 @@ public class TokenHypothesesSet implements IHypothesesSet {
 	}
 
 	@Override
-	public String getWordOfHypotheses() {
+	public String getElementOfHypotheses() {
 		return this.baseNode == null ? null : (String) this.baseNode.getAttributeValue("value");
 	}
 
@@ -102,6 +102,6 @@ public class TokenHypothesesSet implements IHypothesesSet {
 
 	@Override
 	public String toString() {
-		return "Hypotheses: {" + this.getWordOfHypotheses() + "}@" + HypothesisRange.ELEMENT + " -- " + this.hypotheses;
+		return "Hypotheses: {" + this.getElementOfHypotheses() + "}@" + HypothesisRange.ELEMENT + " -- " + this.hypotheses;
 	}
 }

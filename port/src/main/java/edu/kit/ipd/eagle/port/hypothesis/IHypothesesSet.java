@@ -39,7 +39,7 @@ public interface IHypothesesSet extends Serializable {
 	 * @return the word which belong to the hypotheses
 	 * @see #getHypothesesRange()
 	 */
-	String getWordOfHypotheses();
+	String getElementOfHypotheses();
 
 	/**
 	 * Get the range of these hypotheses.

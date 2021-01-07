@@ -21,7 +21,7 @@ public final class HypothesesSetDTO implements IHypothesesSet {
 	private List<IHypothesis> hypotheses;
 	private boolean onlyOneHypothesisValid;
 	private String shortInfo;
-	private String wordOfHypotheses;
+	private String elementOfHypotheses;
 	private HypothesisRange range;
 
 	@Override
@@ -69,17 +69,17 @@ public final class HypothesesSetDTO implements IHypothesesSet {
 	}
 
 	@Override
-	public String getWordOfHypotheses() {
-		return this.wordOfHypotheses;
+	public String getElementOfHypotheses() {
+		return this.elementOfHypotheses;
 	}
 
 	/**
-	 * Setter for {@link #getWordOfHypotheses()}.
+	 * Setter for {@link #getElementOfHypotheses()}.
 	 *
-	 * @param wordOfHypotheses the word wich belong to that set of hypotheses
+	 * @param elementOfHypotheses the word which belong to that set of hypotheses
 	 */
-	public void setWordOfHypotheses(String wordOfHypotheses) {
-		this.wordOfHypotheses = wordOfHypotheses;
+	public void setElementOfHypotheses(String elementOfHypotheses) {
+		this.elementOfHypotheses = elementOfHypotheses;
 	}
 
 	@Override

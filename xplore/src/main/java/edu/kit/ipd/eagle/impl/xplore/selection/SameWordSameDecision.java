@@ -34,7 +34,7 @@ public class SameWordSameDecision extends DecoratorBase {
 
 	@Override
 	protected List<IHypothesesSet> filterHypotheses(List<IHypothesesSet> hypotheses) {
-		var grouped = hypotheses.stream().collect(Collectors.groupingBy(h -> h.getWordOfHypotheses() == null ? "" : h.getWordOfHypotheses().toLowerCase()));
+		var grouped = hypotheses.stream().collect(Collectors.groupingBy(h -> h.getElementOfHypotheses() == null ? "" : h.getElementOfHypotheses().toLowerCase()));
 		List<IHypothesesSet> newHypotheses = new ArrayList<>();
 
 		for (var group : grouped.entrySet()) {
@@ -77,7 +77,7 @@ public class SameWordSameDecision extends DecoratorBase {
 
 	@Override
 	protected List<List<IHypothesesSelection>> mapToOriginalSets(List<IHypothesesSet> original, List<List<IHypothesesSelection>> selections) {
-		var grouped = original.stream().collect(Collectors.groupingBy(h -> h.getWordOfHypotheses() == null ? "" : h.getWordOfHypotheses().toLowerCase()));
+		var grouped = original.stream().collect(Collectors.groupingBy(h -> h.getElementOfHypotheses() == null ? "" : h.getElementOfHypotheses().toLowerCase()));
 		List<List<IHypothesesSelection>> result = new ArrayList<>();
 		for (List<IHypothesesSelection> selection : selections) {
 			var convertedSelection = this.createSelections(grouped, selection);
