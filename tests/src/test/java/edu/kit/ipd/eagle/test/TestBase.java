@@ -96,11 +96,21 @@ public class TestBase {
 		Assume.assumeTrue("Running in CI", System.getenv("CI_JOB_ID") == null);
 	}
 
+	/**
+	 * Load actor ontologies.
+	 *
+	 * @return the location string for actor ontologies
+	 */
 	protected final String loadActorOntologies() {
 		return OntologySelectorSpec.loadOntologies("src/test/resources/ontology-selector/", //
 				"robot.owl", "virtual_assistant.owl", "drone.owl", "lego_mindstorm.owl");
 	}
 
+	/**
+	 * Load env ontologies.
+	 *
+	 * @return the location string for env ontologies
+	 */
 	protected final String loadEnvOntologies() {
 		return OntologySelectorSpec.loadOntologies("src/test/resources/ontology-selector/", //
 				"kitchen.owl", "bedroom.owl", "bar.owl", "laundry.owl", "garden.owl", "childrens_room.owl", "heating.owl", "music.owl");

@@ -8,11 +8,12 @@ package edu.kit.ipd.eagle.port.hypothesis;
  */
 public enum HypothesisRange {
 	/**
-	 * Defines Hypotheses which belong to a single node.
+	 * Defines Hypotheses which belong to a single element and not to a whole input
+	 * (e.g. a word).
 	 */
-	NODE,
+	ELEMENT,
 	/**
-	 * Defines Hypotheses which belong to a whole sentence.
+	 * Defines Hypotheses which belong to a whole input (e.g. a section of a text).
 	 */
-	SENTENCE
+	INPUT
 }

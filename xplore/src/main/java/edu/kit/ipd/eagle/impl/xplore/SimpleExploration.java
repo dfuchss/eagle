@@ -60,8 +60,8 @@ public class SimpleExploration<A extends IAgent<DS>, DS extends IDataStructure<D
 			return null;
 		}
 		return switch (range) {
-		case SENTENCE -> new TopXSlidingWindow(this.maxHyps, this.maxHyps);
-		case NODE -> new SameWordSameDecision(new TopXConfidence(this.maxHyps));
+		case INPUT -> new TopXSlidingWindow(this.maxHyps, this.maxHyps);
+		case ELEMENT -> new SameWordSameDecision(new TopXConfidence(this.maxHyps));
 		default -> throw new UnsupportedOperationException("Unknown Range .. please add case for " + range);
 		};
 	}

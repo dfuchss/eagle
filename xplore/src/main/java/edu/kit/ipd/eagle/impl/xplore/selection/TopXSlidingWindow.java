@@ -12,7 +12,7 @@ import edu.kit.ipd.eagle.port.hypothesis.IHypothesis;
 import edu.kit.ipd.eagle.port.xplore.selection.ISelectionProvider;
 
 /**
- * A simple selection provider for {@link HypothesisRange#SENTENCE}. This
+ * A simple selection provider for {@link HypothesisRange#INPUT}. This
  * provider creates a sliding windows of a fixed size and creates selections by
  * using [Top1, Top2, .. Top W], [Top2, Top3, .. Top W-1], ... the confidence of
  * the hypotheses will be used as order (best first).

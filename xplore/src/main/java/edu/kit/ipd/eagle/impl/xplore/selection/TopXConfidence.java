@@ -10,7 +10,7 @@ import edu.kit.ipd.eagle.port.hypothesis.IHypothesesSet;
 import edu.kit.ipd.eagle.port.xplore.selection.ISelectionProvider;
 
 /**
- * A simple selection provider for {@link HypothesisRange#NODE}. The provider
+ * A simple selection provider for {@link HypothesisRange#ELEMENT}. The provider
  * generates selections by using the [Top1 for all hypotheses sets], [Top2 for
  * all hypotheses sets], ...
  *

@@ -41,12 +41,12 @@ public class SelectionProviderTests {
 
 		this.set1 = new HypothesesSetDTO();
 		this.set1.setHypotheses(List.of(this.hyp1));
-		this.set1.setHypothesesRange(HypothesisRange.NODE);
+		this.set1.setHypothesesRange(HypothesisRange.ELEMENT);
 		this.set1.setOnlyOneHypothesisValid(true);
 
 		this.set2 = new HypothesesSetDTO();
 		this.set2.setHypotheses(List.of(this.hyp1, this.hyp2));
-		this.set2.setHypothesesRange(HypothesisRange.NODE);
+		this.set2.setHypothesesRange(HypothesisRange.ELEMENT);
 		this.set2.setOnlyOneHypothesisValid(true);
 	}
 

@@ -129,7 +129,7 @@ public class WikiWSDHypothesisSpec extends WikiWSDSpec implements IAgentHypothes
 
 	@Override
 	public HypothesisRange getHypothesesRange() {
-		return HypothesisRange.NODE;
+		return HypothesisRange.ELEMENT;
 	}
 
 	private IHypothesesSet parseHyps(PARSEGraphWrapper graph, INode node, List<Pair<String, Double>> hypotheses) {

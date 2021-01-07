@@ -62,7 +62,7 @@ public class TopicExtractionHypothesisSpec extends TopicExtractionSpec implement
 		for (Topic t : topics) {
 			hyps.add(new TopicHypothesis(t));
 		}
-		return Arrays.asList(new BasicHypothesesSet("Topic Hypotheses", HypothesisRange.SENTENCE, hyps, false));
+		return Arrays.asList(new BasicHypothesesSet("Topic Hypotheses", HypothesisRange.INPUT, hyps, false));
 	}
 
 	@Override
@@ -83,7 +83,7 @@ public class TopicExtractionHypothesisSpec extends TopicExtractionSpec implement
 		if (hyps.isEmpty()) {
 			return List.of();
 		}
-		return Arrays.asList(new BasicHypothesesSet("Topic Hypotheses", HypothesisRange.SENTENCE, hyps, false));
+		return Arrays.asList(new BasicHypothesesSet("Topic Hypotheses", HypothesisRange.INPUT, hyps, false));
 	}
 
 	@Override
@@ -149,6 +149,6 @@ public class TopicExtractionHypothesisSpec extends TopicExtractionSpec implement
 
 	@Override
 	public HypothesisRange getHypothesesRange() {
-		return HypothesisRange.SENTENCE;
+		return HypothesisRange.INPUT;
 	}
 }

@@ -187,7 +187,7 @@ public class OntologySelectorHypothesisSpec extends OntologySelectorSpec impleme
 
 	@Override
 	public HypothesisRange getHypothesesRange() {
-		return HypothesisRange.SENTENCE;
+		return HypothesisRange.INPUT;
 	}
 
 	private static class OntologyHypothesesSet extends BasicHypothesesSet {
@@ -197,11 +197,11 @@ public class OntologySelectorHypothesisSpec extends OntologySelectorSpec impleme
 
 		// For deserialize
 		private OntologyHypothesesSet() {
-			super(null, HypothesisRange.SENTENCE, null, false);
+			super(null, HypothesisRange.INPUT, null, false);
 		}
 
 		OntologyHypothesesSet(List<OntologySelectionData> ontologies, OntologyType type) {
-			super("OntologyType: " + type, HypothesisRange.SENTENCE, ontologies, false);
+			super("OntologyType: " + type, HypothesisRange.INPUT, ontologies, false);
 			this.type = type;
 		}
 	}

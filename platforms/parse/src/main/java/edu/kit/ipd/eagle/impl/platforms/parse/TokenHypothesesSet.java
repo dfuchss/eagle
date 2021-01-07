@@ -97,11 +97,11 @@ public class TokenHypothesesSet implements IHypothesesSet {
 
 	@Override
 	public HypothesisRange getHypothesesRange() {
-		return HypothesisRange.NODE;
+		return HypothesisRange.ELEMENT;
 	}
 
 	@Override
 	public String toString() {
-		return "Hypotheses: {" + this.getWordOfHypotheses() + "}@" + HypothesisRange.NODE + " -- " + this.hypotheses;
+		return "Hypotheses: {" + this.getWordOfHypotheses() + "}@" + HypothesisRange.ELEMENT + " -- " + this.hypotheses;
 	}
 }

@@ -16,7 +16,7 @@ import edu.kit.ipd.eagle.port.xplore.selection.ISelectionProvider;
 
 /**
  * This decorator can be used to ensure that hypotheses with
- * {@link HypothesisRange#NODE} which belong to the same word get the same
+ * {@link HypothesisRange#ELEMENT} which belong to the same word get the same
  * selection in a {@link IHypothesesSelection}.
  *
  * @author Dominik Fuchss
