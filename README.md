@@ -145,12 +145,12 @@ This class may help you understanding how to use the project.
 ## Explorer
 In order to visualize the exploration, the [explorer project](../eagle-explorer) has been realized. This explorer provides an overview on an `IExplorationResult`.
 
-![Explorer](../eagle-explorer/.github/img/Explorer.png)
+![Explorer](https://github.com/kit-sdq/eagle-explorer/blob/main/.github/img/Explorer.png)
 
 ## Evaluator
 In order to evaluate the exploration, the [evaluator project](../eagle-evaluator) has been realized. This evaluator provides an graphical (or textual) interface to perform a manual classification of all found hypotheses. After classification, you can use the classification to evaluate the actual exploration in terms of precision, recall, f1 score, and/or other classification metrics.
 
-![Evaluator](../eagle-evaluator/.github/img/Evaluator.png)
+![Evaluator](https://github.com/kit-sdq/eagle-evaluator/.github/img/Evaluator.png)
 
 ## Example (PARSE)
 This repository implements the approach for the PARSE Platform and some PARSE agents.
