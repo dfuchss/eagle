@@ -143,12 +143,12 @@ Especially take a look at [SimpleHypothesesTest](tests/src/test/java/edu/kit/ipd
 This class may help you understanding how to use the project.
 
 ## Explorer
-In order to visualize the exploration, the [explorer project](../eagle-explorer) has been realized. This explorer provides an overview on an `IExplorationResult`.
+In order to visualize the exploration, the [explorer project](https://github.com/kit-sdq/eagle-explorer) has been realized. This explorer provides an overview on an `IExplorationResult`.
 
 ![Explorer](https://github.com/kit-sdq/eagle-explorer/blob/main/.github/img/Explorer.png)
 
 ## Evaluator
-In order to evaluate the exploration, the [evaluator project](../eagle-evaluator) has been realized. This evaluator provides an graphical (or textual) interface to perform a manual classification of all found hypotheses. After classification, you can use the classification to evaluate the actual exploration in terms of precision, recall, f1 score, and/or other classification metrics.
+In order to evaluate the exploration, the [evaluator project](https://github.com/kit-sdq/eagle-evaluator) has been realized. This evaluator provides an graphical (or textual) interface to perform a manual classification of all found hypotheses. After classification, you can use the classification to evaluate the actual exploration in terms of precision, recall, f1 score, and/or other classification metrics.
 
 ![Evaluator](https://github.com/kit-sdq/eagle-evaluator/.github/img/Evaluator.png)
 
