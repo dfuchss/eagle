@@ -3,8 +3,12 @@ package edu.kit.ipd.eagle.port.hypothesis;
 import java.io.Serializable;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 /**
- * This interface defines a set of {@link IHypothesis Hypotheses}.
+ * This interface defines a set of {@link IHypothesis Hypotheses}. <b>Annotate
+ * all your public getters that are not defined here with
+ * {@link JsonIgnore}!</b>
  *
  * @author Dominik Fuchss
  *

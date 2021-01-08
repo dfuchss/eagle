@@ -2,8 +2,11 @@ package edu.kit.ipd.eagle.port.hypothesis;
 
 import java.io.Serializable;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 /**
- * Defines a simple hypothesis.
+ * Defines a simple hypothesis. <b>Annotate all your public getters that are not
+ * defined here with {@link JsonIgnore}!</b>
  *
  * @author Dominik Fuchss
  *
