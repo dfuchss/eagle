@@ -150,7 +150,7 @@ In order to visualize the exploration, the [explorer project](https://github.com
 ## Evaluator
 In order to evaluate the exploration, the [evaluator project](https://github.com/kit-sdq/eagle-evaluator) has been realized. This evaluator provides an graphical (or textual) interface to perform a manual classification of all found hypotheses. After classification, you can use the classification to evaluate the actual exploration in terms of precision, recall, f1 score, and/or other classification metrics.
 
-![Evaluator](https://github.com/kit-sdq/eagle-evaluator/.github/img/Evaluator.png)
+![Evaluator](https://github.com/kit-sdq/eagle-evaluator/blob/main/.github/img/Evaluator.png)
 
 ## Example (PARSE)
 This repository implements the approach for the PARSE Platform and some PARSE agents.
