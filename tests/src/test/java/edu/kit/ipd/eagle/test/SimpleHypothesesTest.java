@@ -70,6 +70,7 @@ public class SimpleHypothesesTest extends TestBase {
 	 */
 	@Before
 	public void setup() throws IOException {
+		TestBase.skipIffCI();
 		this.analysis = new AgentExecution();
 		this.graph = this.getNewGraph(new PARSEPrePipeline());
 	}
@@ -104,7 +105,6 @@ public class SimpleHypothesesTest extends TestBase {
 	 */
 	@Test
 	public void testHypothesisOfTopicExtractor() {
-		TestBase.skipIffCI();
 		WikiWSDHypothesisSpec wwhs = new WikiWSDHypothesisSpec();
 		TopicExtractionHypothesisSpec tehs = new TopicExtractionHypothesisSpec();
 		this.analysis.loadAgents(List.of(wwhs, tehs));
@@ -126,7 +126,6 @@ public class SimpleHypothesesTest extends TestBase {
 	 */
 	@Test
 	public void testHypothesisCombinationSimpleExploration() throws Exception {
-		TestBase.skipIffCI();
 		WikiWSDHypothesisSpec wwhs = new WikiWSDHypothesisSpec();
 		TopicExtractionHypothesisSpec tehs = new TopicExtractionHypothesisSpec();
 		SimpleExploration<PARSEAgent, PARSEGraphWrapper> explorer = new SimpleExploration<>(this.graph, this.graph.getText(), 3);
@@ -157,7 +156,6 @@ public class SimpleHypothesesTest extends TestBase {
 	 */
 	@Test
 	public void testHypothesisCombinationSpecificExploration() throws Exception {
-		TestBase.skipIffCI();
 		WikiWSDHypothesisSpec wwhs = new WikiWSDHypothesisSpec();
 		TopicExtractionHypothesisSpec tehs = new TopicExtractionHypothesisSpec();
 
@@ -186,7 +184,6 @@ public class SimpleHypothesesTest extends TestBase {
 	 */
 	@Test
 	public void testPathGeneration() {
-		TestBase.skipIffCI();
 		WikiWSDHypothesisSpec wwhs = new WikiWSDHypothesisSpec();
 		TopicExtractionHypothesisSpec tehs = new TopicExtractionHypothesisSpec();
 		OntologySelectorHypothesisSpec oshs = new OntologySelectorHypothesisSpec(this.loadActorOntologies(), this.loadEnvOntologies());
@@ -212,7 +209,6 @@ public class SimpleHypothesesTest extends TestBase {
 	 */
 	@Test
 	public void testPathGenerationNoHypothesesSplit() {
-		TestBase.skipIffCI();
 		WikiWSDSpec wwhs = new WikiWSDSpec();
 		TopicExtractionHypothesisSpec tehs = new TopicExtractionHypothesisSpec();
 		OntologySelectorHypothesisSpec oshs = new OntologySelectorHypothesisSpec(this.loadActorOntologies(), this.loadEnvOntologies());
