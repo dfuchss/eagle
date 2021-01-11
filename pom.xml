@@ -11,9 +11,22 @@
 		<java.version>15</java.version>
 		<maven.compiler.source>${java.version}</maven.compiler.source>
 		<maven.compiler.target>${java.version}</maven.compiler.target>
+		<maven.compiler.release>${java.version}</maven.compiler.release>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
+	<distributionManagement>
+		<repository>
+			<id>github</id>
+			<name>GitHub EAGLE Apache Maven Packages</name>
+			<url>https://maven.pkg.github.com/kit-sdq/eagle</url>
+		</repository>
+		<snapshotRepository>
+			<id>github</id>
+			<name>GitHub EAGLE Apache Maven Packages</name>
+			<url>https://maven.pkg.github.com/kit-sdq/eagle</url>
+		</snapshotRepository>
+	</distributionManagement>
 
 	<build>
 		<plugins>
