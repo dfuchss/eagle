@@ -39,7 +39,36 @@ Let's assume the following scenario (cf. image):
 At the moment EAGLE does not contain a main class to run, but is a library that can be used.
 Therefore, a main project should be created first, which contains an executable main class.
 
-**TODO MAVEN DEPENDENCY INFORMATION**
+### Maven
+To use maven add the following repository:
+
+```xml
+<repositories>
+	<repository>
+		<id>github</id>
+		<name>GitHub EAGLE Explorer Apache Maven Packages</name>
+		<url>https://maven.pkg.github.com/kit-sdq/eagle/</url>
+	</repository>
+</repositories>
+```
+
+In addition add (at least) the following dependencies:
+
+```xml
+<dependencies>
+	<dependency>
+		<groupId>edu.kit.ipd.eagle</groupId>
+		<artifactId>port</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</dependency>
+	<dependency>
+		<groupId>edu.kit.ipd.eagle</groupId>
+		<artifactId>xplore</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</dependency>
+</dependencies>
+		
+```
 
 After you have added the dependencies you will need the following implementations:
 * The Agent Specification of your agents
