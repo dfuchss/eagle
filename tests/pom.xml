@@ -11,6 +11,19 @@
 
 	<name>EAGLE (Tests)</name>
 
+	<repositories>
+		<repository>
+			<id>ipdNexus-public-releases</id>
+			<name>IPD-Repository</name>
+			<url>http://bob.ipd.kit.edu/nexus/repository/maven-public-releases</url>
+		</repository>
+		<repository>
+			<id>ipdNexus-public-snapshots</id>
+			<name>IPD-Repository</name>
+			<url>http://bob.ipd.kit.edu/nexus/repository/maven-public-snapshots</url>
+		</repository>
+	</repositories>
+	
 	<build>
 		<plugins>
 			<plugin>

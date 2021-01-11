@@ -3,6 +3,7 @@ package edu.kit.ipd.eagle.test;
 import java.io.File;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.Objects;
 import java.util.Scanner;
 import java.util.SortedMap;
 
@@ -90,13 +91,6 @@ public class TestBase {
 	}
 
 	/**
-	 * Skips a test iff running in continuous integration.
-	 */
-	protected static final void skipIfCI() {
-		Assume.assumeTrue("Running in CI", System.getenv("CI_JOB_ID") == null);
-	}
-
-	/**
 	 * Load actor ontologies.
 	 *
 	 * @return the location string for actor ontologies
@@ -114,5 +108,12 @@ public class TestBase {
 	protected final String loadEnvOntologies() {
 		return OntologySelectorSpec.loadOntologies("src/test/resources/ontology-selector/", //
 				"kitchen.owl", "bedroom.owl", "bar.owl", "laundry.owl", "garden.owl", "childrens_room.owl", "heating.owl", "music.owl");
+	}
+
+	/**
+	 * Skip test because running in CI.
+	 */
+	public static void skipIffCI() {
+		Assume.assumeFalse("Running in CI", Objects.equals("true", System.getenv("CI")));
 	}
 }
