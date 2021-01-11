@@ -28,7 +28,7 @@
 		<dependency>
 			<groupId>edu.kit.ipd.parse</groupId>
 			<artifactId>luna</artifactId>
-			<version>0.5.10</version>
+			<version>0.6.3</version>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
@@ -46,13 +46,13 @@
 		<dependency>
 			<groupId>edu.kit.ipd.parse</groupId>
 			<artifactId>ontology_connection</artifactId>
-			<version>0.0.1</version>
+			<version>0.0.8</version>
 		</dependency>
 		<!-- PPL -->
 		<dependency>
 			<groupId>edu.kit.ipd.parse</groupId>
 			<artifactId>ShallowNLP</artifactId>
-			<version>0.0.4</version>
+			<version>0.0.14</version>
 		</dependency>
 		<dependency>
 			<groupId>edu.stanford.nlp</groupId>
@@ -68,17 +68,17 @@
 		<dependency>
 			<groupId>edu.kit.ipd.parse</groupId>
 			<artifactId>ner</artifactId>
-			<version>0.0.1</version>
-		</dependency>
-		<dependency>
-			<groupId>edu.kit.ipd.parse</groupId>
-			<artifactId>graphBuilder</artifactId>
 			<version>0.0.2</version>
 		</dependency>
 		<dependency>
 			<groupId>edu.kit.ipd.parse</groupId>
+			<artifactId>graphBuilder</artifactId>
+			<version>0.0.4-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>edu.kit.ipd.parse</groupId>
 			<artifactId>SRLabeler</artifactId>
-			<version>0.1.1</version>
+			<version>0.1.6</version>
 		</dependency>
 
 		<!-- INDIRECT -->
