@@ -1,6 +1,13 @@
 /target/
+tests/test-results
+
+# Eclipse
 .settings/
 *.project
 *.classpath
 *.pmd
-tests/test-results/SimpleHypothesesTest/output.json
+
+# IntelliJ
+**/.idea
+*.iml
+
