@@ -166,6 +166,10 @@ Important classes and/or packages are:
   * `SimpleExploration`: out of the box exploration
   * `SpecificExploration`: exploration that has to be configured to use a certain selection provider per layer.
 
+The following diagram shows an example exploration process of two agents (with hypotheses):
+
+![Exploration-Seq](Diagrams/Exploration-2Agents.svg)
+
 ### Tests
 The last module contains some integration tests.
 Especially take a look at [SimpleHypothesesTest](tests/src/test/java/edu/kit/ipd/eagle/test/SimpleHypothesesTest.java).
