@@ -13,63 +13,68 @@ import edu.kit.ipd.parse.luna.graph.IGraph;
  *
  */
 public class PARSEGraphWrapper implements IDataStructure<PARSEGraphWrapper> {
-	private final String text;
-	private final IGraph graph;
-	private final PrePipelineMode ppm;
+    private final String text;
+    private final IGraph graph;
+    private final PrePipelineMode ppm;
 
-	/**
-	 * Create a new PARSEGraphWrapper based on the {@link IGraph}, the text, and the
-	 * {@link PrePipelineMode}.
-	 *
-	 * @param graph the graph
-	 * @param text  the text
-	 * @param ppm   the {@link PrePipelineMode}
-	 */
-	public PARSEGraphWrapper(IGraph graph, String text, PrePipelineMode ppm) {
-		this.text = Objects.requireNonNull(text);
-		this.graph = Objects.requireNonNull(graph);
-		this.ppm = Objects.requireNonNull(ppm);
-	}
+    /**
+     * Create a new PARSEGraphWrapper based on the {@link IGraph}, the text, and the {@link PrePipelineMode}.
+     *
+     * @param graph the graph
+     * @param text  the text
+     * @param ppm   the {@link PrePipelineMode}
+     */
+    public PARSEGraphWrapper(IGraph graph, String text, PrePipelineMode ppm) {
+        this.text = Objects.requireNonNull(text);
+        this.graph = Objects.requireNonNull(graph);
+        this.ppm = Objects.requireNonNull(ppm);
+    }
 
-	/**
-	 * Get the Graph.
-	 *
-	 * @return the graph
-	 */
-	public IGraph getGraph() {
-		return this.graph;
-	}
+    /**
+     * Get the Graph.
+     *
+     * @return the graph
+     */
+    public IGraph getGraph() {
+        return this.graph;
+    }
 
-	/**
-	 * Create a new {@link PARSEGraphWrapper} based on a new graph.
-	 *
-	 * @param graph the graph
-	 * @return the new {@link PARSEGraphWrapper}
-	 */
-	public PARSEGraphWrapper newGraph(IGraph graph) {
-		return new PARSEGraphWrapper(graph, this.text, this.ppm);
-	}
+    /**
+     * Create a new {@link PARSEGraphWrapper} based on a new graph.
+     *
+     * @param graph the graph
+     * @return the new {@link PARSEGraphWrapper}
+     */
+    public PARSEGraphWrapper newGraph(IGraph graph) {
+        return new PARSEGraphWrapper(graph, this.text, this.ppm);
+    }
 
-	@Override
-	public PARSEGraphWrapper createCopy() {
-		return new PARSEGraphWrapper(this.graph.clone(), this.text, this.ppm);
-	}
+    @Override
+    public PARSEGraphWrapper createCopy() {
+        return new PARSEGraphWrapper(this.graph.clone(), this.text, this.ppm);
+    }
 
-	/**
-	 * Get the {@link PrePipelineMode}.
-	 *
-	 * @return the {@link PrePipelineMode}
-	 */
-	public PrePipelineMode getPrePipelineMode() {
-		return this.ppm;
-	}
+    /**
+     * Get the {@link PrePipelineMode}.
+     *
+     * @return the {@link PrePipelineMode}
+     */
+    public PrePipelineMode getPrePipelineMode() {
+        return this.ppm;
+    }
 
-	/**
-	 * Get the original input text.
-	 *
-	 * @return the input text
-	 */
-	public String getText() {
-		return this.text;
-	}
+    /**
+     * Get the original input text.
+     *
+     * @return the input text
+     */
+    public String getText() {
+        return this.text;
+    }
+
+    @Override
+    public String getStateRepresentation() {
+        // We won't extract the whole PARSE Graph!
+        return null;
+    }
 }
