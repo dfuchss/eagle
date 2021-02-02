@@ -14,28 +14,43 @@ import edu.kit.ipd.eagle.port.xplore.selection.ISelectionProvider;
 /**
  * Defines a simple layered exploration.
  *
- * @author Dominik Fuchss
- * @param <A>  the type of agent for exploration
- * @param <DS> the type of data structure to use
+ * @author      Dominik Fuchss
+ * @param  <A>  the type of agent for exploration
+ * @param  <DS> the type of data structure to use
  */
 public class SimpleExploration<A extends IAgent<DS>, DS extends IDataStructure<DS>> extends LayeredExploration<A, DS> {
 
 	private int maxHyps;
 
 	/**
-	 * Create a new exploration by an initial data structure and a maximum for the
-	 * generated hypotheses of the {@link IAgentHypothesisSpecification
-	 * IAgentHypothesisSpecifications}.
+	 * Create a new exploration by an initial data structure and a maximum for the generated hypotheses of the
+	 * {@link IAgentHypothesisSpecification IAgentHypothesisSpecifications}.
 	 *
 	 * @param initial the initial data
-	 * @param id    the value for {@link IExplorationResult#getId()}. May
-	 *                be an identifier for the current exploration.
-	 * @param maxHyps the maximum amount of hypotheses for the
-	 *                {@link IAgentHypothesisSpecification
+	 * @param id      the value for {@link IExplorationResult#getId()}. May be an identifier for the current
+	 *                exploration.
+	 * @param maxHyps the maximum amount of hypotheses for the {@link IAgentHypothesisSpecification
 	 *                IAgentHypothesisSpecifications}
 	 */
 	public SimpleExploration(DS initial, String id, int maxHyps) {
-		super(initial, id);
+		this(initial, id, maxHyps, false);
+	}
+
+	/**
+	 * Create a new exploration by an initial data structure and a maximum for the generated hypotheses of the
+	 * {@link IAgentHypothesisSpecification IAgentHypothesisSpecifications}.
+	 *
+	 * @param initial                   the initial data
+	 * @param id                        the value for {@link IExplorationResult#getId()}. May be an identifier for the
+	 *                                  current exploration.
+	 * @param maxHyps                   the maximum amount of hypotheses for the {@link IAgentHypothesisSpecification
+	 *                                  IAgentHypothesisSpecifications}
+	 *
+	 * @param initializeDummyAgentAtEnd indicates whether a dummy agent shall be initialised at the end to invoke the
+	 *                                  selection process for the last agent
+	 */
+	public SimpleExploration(DS initial, String id, int maxHyps, boolean initializeDummyAgentAtEnd) {
+		super(initial, id, initializeDummyAgentAtEnd);
 		this.maxHyps = maxHyps;
 	}
 
@@ -51,8 +66,8 @@ public class SimpleExploration<A extends IAgent<DS>, DS extends IDataStructure<D
 	/**
 	 * Get the selection provider associated with a layer.
 	 *
-	 * @param layer the layer
-	 * @return the selection provider to be used for this layer
+	 * @param  layer the layer
+	 * @return       the selection provider to be used for this layer
 	 */
 	protected ISelectionProvider getSelectionProvider(Layer<A, DS> layer) throws Error {
 		var range = layer.getHypothesesRange();

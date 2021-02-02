@@ -2,6 +2,7 @@ package edu.kit.ipd.eagle.impl.xplore;
 
 import java.lang.reflect.Array;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import org.slf4j.Logger;
@@ -12,6 +13,7 @@ import edu.kit.ipd.eagle.port.AgentHelper;
 import edu.kit.ipd.eagle.port.IAgent;
 import edu.kit.ipd.eagle.port.IAgentSpecification;
 import edu.kit.ipd.eagle.port.IDataStructure;
+import edu.kit.ipd.eagle.port.IInformationId;
 import edu.kit.ipd.eagle.port.hypothesis.IAgentHypothesisSpecification;
 import edu.kit.ipd.eagle.port.xplore.IExploration;
 import edu.kit.ipd.eagle.port.xplore.IExplorationResult;
@@ -21,9 +23,9 @@ import edu.kit.ipd.eagle.port.xplore.layer.ILayerEntry;
 /**
  * The base class for all explorators which use {@link ILayer Layers}
  *
- * @author Dominik Fuchss
- * @param <A>  the type of agent for exploration
- * @param <DS> the type of data structure to use
+ * @author      Dominik Fuchss
+ * @param  <A>  the type of agent for exploration
+ * @param  <DS> the type of data structure to use
  *
  */
 public abstract class LayeredExploration<A extends IAgent<DS>, DS extends IDataStructure<DS>> implements IExploration<DS> {
@@ -37,17 +39,32 @@ public abstract class LayeredExploration<A extends IAgent<DS>, DS extends IDataS
 
 	private String text;
 
+	private final boolean initializeDummyAgentAtEnd;
+
 	/**
 	 * Create the exploration by an initial data structure.
 	 *
-	 * @param initial         the initial data structure
-	 * @param id the value for
-	 *                        {@link IExplorationResult#getId()}. May be an
-	 *                        identifier for the current exploration.
+	 * @param initial the initial data structure
+	 * @param id      the value for {@link IExplorationResult#getId()}. May be an identifier for the current
+	 *                exploration.
 	 */
 	protected LayeredExploration(DS initial, String id) {
+		this(initial, id, false);
+	}
+
+	/**
+	 * Create the exploration by an initial data structure.
+	 *
+	 * @param initial                   the initial data structure
+	 * @param id                        the value for {@link IExplorationResult#getId()}. May be an identifier for the
+	 *                                  current exploration.
+	 * @param initializeDummyAgentAtEnd indicates whether a dummy agent shall be initialised at the end to invoke the
+	 *                                  selection process for the last agent
+	 */
+	protected LayeredExploration(DS initial, String id, boolean initializeDummyAgentAtEnd) {
 		this.agents = new HashSet<>();
 		this.hypothesesAgents = new HashSet<>();
+		this.initializeDummyAgentAtEnd = initializeDummyAgentAtEnd;
 		this.restart(initial, id);
 	}
 
@@ -96,12 +113,18 @@ public abstract class LayeredExploration<A extends IAgent<DS>, DS extends IDataS
 
 	@SuppressWarnings("unchecked")
 	private void createLayers() {
-		this.layers = (Layer<A, DS>[]) Array.newInstance(Layer.class, this.agents.size());
+		if (this.agents.isEmpty()) {
+			throw new IllegalStateException("At least one agent has to be configured!");
+		}
+
+		int size = this.agents.size() + (initializeDummyAgentAtEnd ? 1 : 0);
+
+		this.layers = (Layer<A, DS>[]) Array.newInstance(Layer.class, size);
 		var orderedAgents = AgentHelper.findAgentOrder(this.agents);
 		if (orderedAgents == null) {
 			throw new IllegalArgumentException("No valid order of agents possible");
 		}
-		for (int i = 0; i < this.layers.length; i++) {
+		for (int i = 0; i < this.agents.size(); i++) {
 			IAgentSpecification<? extends A, DS> agent = orderedAgents.get(i);
 			this.layers[i] = this.hypothesesAgents.contains(agent) //
 					? Layer.createLayerByHypAgent((IAgentHypothesisSpecification<? extends A, DS>) agent)
@@ -109,6 +132,11 @@ public abstract class LayeredExploration<A extends IAgent<DS>, DS extends IDataS
 			if (i != 0) {
 				this.layers[i - 1].setNext(this.layers[i]);
 			}
+		}
+
+		if (initializeDummyAgentAtEnd) {
+			this.layers[this.layers.length - 1] = Layer.createLayerByNoHypAgent(new DummySpec());
+			this.layers[this.layers.length - 2].setNext(this.layers[this.layers.length - 1]);
 		}
 	}
 
@@ -149,4 +177,40 @@ public abstract class LayeredExploration<A extends IAgent<DS>, DS extends IDataS
 		return new ExplorationResult(this.text, startNode);
 	}
 
+	private class DummySpec implements IAgentSpecification<A, DS> {
+
+		private DummyAgent dummyAgent = new DummyAgent();
+
+		// This cast has no effect in Java .. but handle with caution ..
+		@SuppressWarnings("unchecked")
+		@Override
+		public A getAgentInstance() {
+			return (A) dummyAgent;
+		}
+
+		@Override
+		public List<? extends IInformationId> getProvideIds() {
+			return List.of();
+		}
+
+		@Override
+		public List<? extends IInformationId> getRequiresIds() {
+			return List.of();
+		}
+
+	}
+
+	private class DummyAgent implements IAgent<DS> {
+
+		@Override
+		public DS execute(DS input) {
+			return input.createCopy();
+		}
+
+		@Override
+		public String getName() {
+			return "Dummy Agent";
+		}
+
+	}
 }

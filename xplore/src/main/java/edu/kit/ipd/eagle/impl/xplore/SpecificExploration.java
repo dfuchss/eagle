@@ -11,31 +11,48 @@ import edu.kit.ipd.eagle.port.xplore.IExplorationResult;
 import edu.kit.ipd.eagle.port.xplore.selection.ISelectionProvider;
 
 /**
- * A layered exploration with the possibility to override the default selection
- * provider of an {@link IAgentHypothesisSpecification}.
+ * A layered exploration with the possibility to override the default selection provider of an
+ * {@link IAgentHypothesisSpecification}.
  *
- * @author Dominik Fuchss
- * @param <A>  the type of agent for exploration
- * @param <DS> the type of data structure to use
+ * @author      Dominik Fuchss
+ * @param  <A>  the type of agent for exploration
+ * @param  <DS> the type of data structure to use
  */
 public class SpecificExploration<A extends IAgent<DS>, DS extends IDataStructure<DS>> extends SimpleExploration<A, DS> {
 
 	private Map<IAgentHypothesisSpecification<? extends A, DS>, ISelectionProvider> selectors;
 
 	/**
-	 * Create a new exploration by an initial data structure and a maximum for the
-	 * generated hypotheses of the {@link IAgentHypothesisSpecification
-	 * IAgentHypothesisSpecifications}.
+	 * Create a new exploration by an initial data structure and a maximum for the generated hypotheses of the
+	 * {@link IAgentHypothesisSpecification IAgentHypothesisSpecifications}.
+	 *
 	 *
 	 * @param initial the initial data
-	 * @param text    the value for {@link IExplorationResult#getId()}. May
-	 *                be an identifier for the current exploration.
-	 * @param maxHyps the maximum amount of hypotheses for the
-	 *                {@link IAgentHypothesisSpecification
+	 * @param id      the value for {@link IExplorationResult#getId()}. May be an identifier for the current
+	 *                exploration.
+	 * @param maxHyps the maximum amount of hypotheses for the {@link IAgentHypothesisSpecification
 	 *                IAgentHypothesisSpecifications}
 	 */
-	public SpecificExploration(DS initial, String text, int maxHyps) {
-		super(initial, text, maxHyps);
+	public SpecificExploration(DS initial, String id, int maxHyps) {
+		this(initial, id, maxHyps, false);
+	}
+
+	/**
+	 * Create a new exploration by an initial data structure and a maximum for the generated hypotheses of the
+	 * {@link IAgentHypothesisSpecification IAgentHypothesisSpecifications}.
+	 *
+	 *
+	 * @param initial                   the initial data
+	 * @param id                        the value for {@link IExplorationResult#getId()}. May be an identifier for the
+	 *                                  current exploration.
+	 * @param maxHyps                   the maximum amount of hypotheses for the {@link IAgentHypothesisSpecification
+	 *                                  IAgentHypothesisSpecifications}
+	 *
+	 * @param initializeDummyAgentAtEnd indicates whether a dummy agent shall be initialised at the end to invoke the
+	 *                                  selection process for the last agent
+	 */
+	public SpecificExploration(DS initial, String id, int maxHyps, boolean initializeDummyAgentAtEnd) {
+		super(initial, id, maxHyps, initializeDummyAgentAtEnd);
 		this.selectors = new HashMap<>();
 	}
 
@@ -48,8 +65,7 @@ public class SpecificExploration<A extends IAgent<DS>, DS extends IDataStructure
 	}
 
 	/**
-	 * Same as {@link #loadHypothesisAgent(IAgentHypothesisSpecification)} but
-	 * override the default selector.
+	 * Same as {@link #loadHypothesisAgent(IAgentHypothesisSpecification)} but override the default selector.
 	 *
 	 * @param agent    the agent
 	 * @param selector the selection provider

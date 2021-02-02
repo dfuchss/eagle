@@ -14,9 +14,8 @@ import edu.kit.ipd.eagle.port.xplore.layer.ILayerEntry;
 import edu.kit.ipd.eagle.port.xplore.rating.IRatingFunction;
 
 /**
- * A simple rating function. This rating function normalizes the values of each
- * layer to a [min,max] interval. After that this rating function calculates the
- * scores by using a {@link LayerCombination} and {@link LayerEntryEvaluation}.
+ * A simple rating function. This rating function normalizes the values of each layer to a [min,max] interval. After
+ * that this rating function calculates the scores by using a {@link LayerCombination} and {@link LayerEntryEvaluation}.
  *
  * @author Dominik Fuchss
  *
@@ -37,10 +36,9 @@ public class NormalizedAggregate implements IRatingFunction {
 	 *
 	 * @param layerEntryEvaluation the used layer evaluation
 	 * @param layerCombination     the used layer combination
-	 * @param min                  the min value of the normalization (if you are
-	 *                             using {@link LayerCombination#MUL} you maybe do
-	 *                             not want to use {@code 0}; instead you maybe want
-	 *                             to use some small value eps)
+	 * @param min                  the min value of the normalization (if you are using {@link LayerCombination#MUL} you
+	 *                             maybe do not want to use {@code 0}; instead you maybe want to use some small value
+	 *                             eps)
 	 * @param max                  the max value of the normalization
 	 */
 
@@ -54,10 +52,9 @@ public class NormalizedAggregate implements IRatingFunction {
 	 * @param selector             the selector for hypotheses to analyze
 	 * @param layerEntryEvaluation the used layer evaluation
 	 * @param layerCombination     the used layer combination
-	 * @param min                  the min value of the normalization (if you are
-	 *                             using {@link LayerCombination#MUL} you maybe do
-	 *                             not want to use {@code 0}; instead you maybe want
-	 *                             to use some small value eps)
+	 * @param min                  the min value of the normalization (if you are using {@link LayerCombination#MUL} you
+	 *                             maybe do not want to use {@code 0}; instead you maybe want to use some small value
+	 *                             eps)
 	 * @param max                  the max value of the normalization
 	 */
 	public NormalizedAggregate(HypothesesSelectionFunction selector, LayerEntryEvaluation layerEntryEvaluation, LayerCombination layerCombination, double min, double max) {
@@ -99,7 +96,7 @@ public class NormalizedAggregate implements IRatingFunction {
 				continue;
 			}
 
-			double[] normalizedEntry = this.calculateNormalizedEntry(path, mins, maxs);
+			Double[] normalizedEntry = this.calculateNormalizedEntry(path, mins, maxs);
 			double combined = this.layerCombination.applyAsDouble(Arrays.stream(normalizedEntry));
 			if (IRatingFunction.logger.isInfoEnabled()) {
 				IRatingFunction.logger.info("Evaluated Path " + Arrays.toString(path) + ": " + combined);
@@ -110,15 +107,19 @@ public class NormalizedAggregate implements IRatingFunction {
 		return normalizedValues;
 	}
 
-	private double[] calculateNormalizedEntry(ILayerEntry[] path, double[] mins, double[] maxs) {
-		double[] avgs = new double[path.length];
+	private Double[] calculateNormalizedEntry(ILayerEntry[] path, double[] mins, double[] maxs) {
+		Double[] avgs = new Double[path.length];
 		for (int i = 0; i < path.length; i++) {
 			double min = mins[i];
 			double max = maxs[i];
 			double dist = max - min;
 
 			List<IHypothesis> hypotheses = this.selector.select(path, i);
-			avgs[i] = this.findByFunc(hypotheses, d -> this.layerEntryEvaluation.applyAsDouble(d.map(v -> v - min).map(v -> v / dist).map(this::applyMinMax)));
+			if (hypotheses.isEmpty()) {
+				avgs[i] = null;
+			} else {
+				avgs[i] = this.findByFunc(hypotheses, d -> this.layerEntryEvaluation.applyAsDouble(d.map(v -> v - min).map(v -> v / dist).map(this::applyMinMax)));
+			}
 		}
 		return avgs;
 	}
