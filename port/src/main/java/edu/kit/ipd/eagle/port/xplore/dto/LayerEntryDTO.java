@@ -18,112 +18,116 @@ import edu.kit.ipd.eagle.port.xplore.layer.ILayerEntry;
  */
 public final class LayerEntryDTO implements ILayerEntry {
 
-    private static final long serialVersionUID = -619310410950224490L;
+	private static final long serialVersionUID = -619310410950224490L;
 
-    private List<IHypothesesSelection> selectionsFromBefore;
-    private List<ILayerEntry> children;
-    private List<IHypothesesSet> hypotheses;
-    private String agent;
-    private String id;
-    private String stateRepresentationBeforeExecution;
+	private List<IHypothesesSelection> selectionsFromBefore;
+	private List<ILayerEntry> children;
+	private List<IHypothesesSet> hypotheses;
+	private String agent;
+	private String id;
+	private String stateRepresentationBeforeExecution;
 
-    @Override
-    public List<IHypothesesSelection> getSelectionsFromBefore() {
-        return this.selectionsFromBefore;
-    }
+	@Override
+	public List<IHypothesesSelection> getSelectionsFromBefore() {
+		return this.selectionsFromBefore;
+	}
 
-    /**
-     * Setter for {@link #getSelectionsFromBefore()}.
-     *
-     * @param selectionsFromBefore the selections from the step before
-     */
-    @JsonDeserialize(contentAs = HypothesesSelectionDTO.class)
-    public void setSelectionsFromBefore(List<IHypothesesSelection> selectionsFromBefore) {
-        this.selectionsFromBefore = selectionsFromBefore;
-    }
+	/**
+	 * Setter for {@link #getSelectionsFromBefore()}.
+	 *
+	 * @param selectionsFromBefore the selections from the step before
+	 */
+	@JsonDeserialize(contentAs = HypothesesSelectionDTO.class)
+	public void setSelectionsFromBefore(List<IHypothesesSelection> selectionsFromBefore) {
+		this.selectionsFromBefore = selectionsFromBefore;
+	}
 
-    @Override
-    public List<ILayerEntry> getChildren() {
-        List<ILayerEntry> steps = new ArrayList<>(this.children);
-        Collections.sort(steps, (a, b) -> a.getId().compareTo(b.getId()));
-        return steps;
-    }
+	@Override
+	public List<ILayerEntry> getChildren() {
+		if (this.children == null) {
+			return null;
+		}
 
-    /**
-     * Setter for {@link #getChildren()}.
-     *
-     * @param children the children of this step
-     */
-    @JsonDeserialize(contentAs = LayerEntryDTO.class)
-    public void setChildren(List<ILayerEntry> children) {
-        this.children = children;
-    }
+		List<ILayerEntry> steps = new ArrayList<>(this.children);
+		Collections.sort(steps, (a, b) -> a.getId().compareTo(b.getId()));
+		return steps;
+	}
 
-    @Override
-    public List<IHypothesesSet> getHypotheses() {
-        return this.hypotheses;
-    }
+	/**
+	 * Setter for {@link #getChildren()}.
+	 *
+	 * @param children the children of this step
+	 */
+	@JsonDeserialize(contentAs = LayerEntryDTO.class)
+	public void setChildren(List<ILayerEntry> children) {
+		this.children = children;
+	}
 
-    /**
-     * Setter for {@link #getHypotheses()}.
-     *
-     * @param hypotheses the hypotheses of this step
-     */
-    @JsonDeserialize(contentAs = HypothesesSetDTO.class)
-    public void setHypotheses(List<IHypothesesSet> hypotheses) {
-        this.hypotheses = hypotheses;
-    }
+	@Override
+	public List<IHypothesesSet> getHypotheses() {
+		return this.hypotheses;
+	}
 
-    @Override
-    public String getAgent() {
-        return this.agent;
-    }
+	/**
+	 * Setter for {@link #getHypotheses()}.
+	 *
+	 * @param hypotheses the hypotheses of this step
+	 */
+	@JsonDeserialize(contentAs = HypothesesSetDTO.class)
+	public void setHypotheses(List<IHypothesesSet> hypotheses) {
+		this.hypotheses = hypotheses;
+	}
 
-    /**
-     * Setter for {@link #getAgent()}.
-     *
-     * @param agent the name of the agent of this step
-     */
-    public void setAgent(String agent) {
-        this.agent = agent;
-    }
+	@Override
+	public String getAgent() {
+		return this.agent;
+	}
 
-    @Override
-    public String getId() {
-        return this.id;
-    }
+	/**
+	 * Setter for {@link #getAgent()}.
+	 *
+	 * @param agent the name of the agent of this step
+	 */
+	public void setAgent(String agent) {
+		this.agent = agent;
+	}
 
-    /**
-     * Setter for {@link #getId()}.
-     *
-     * @param id the id of this step
-     */
-    public void setId(String id) {
-        this.id = id;
-    }
+	@Override
+	public String getId() {
+		return this.id;
+	}
 
-    /**
-     * Setter for {@link #getStateRepresentationBeforeExecution()}.
-     *
-     * @param stateRepresentationBeforeExecution the state representation before execution
-     */
-    public void setStateRepresentationBeforeExecution(String stateRepresentationBeforeExecution) {
-        this.stateRepresentationBeforeExecution = stateRepresentationBeforeExecution;
-    }
+	/**
+	 * Setter for {@link #getId()}.
+	 *
+	 * @param id the id of this step
+	 */
+	public void setId(String id) {
+		this.id = id;
+	}
 
-    @Override
-    public String getStateRepresentationBeforeExecution() {
-        return this.stateRepresentationBeforeExecution;
-    }
+	/**
+	 * Setter for {@link #getStateRepresentationBeforeExecution()}.
+	 *
+	 * @param stateRepresentationBeforeExecution the state representation before execution
+	 */
+	public void setStateRepresentationBeforeExecution(String stateRepresentationBeforeExecution) {
+		this.stateRepresentationBeforeExecution = stateRepresentationBeforeExecution;
+	}
 
-    @Override
-    public boolean isLeaf() {
-        throw new UnsupportedOperationException("Not supported by DTO");
-    }
+	@Override
+	public String getStateRepresentationBeforeExecution() {
+		return this.stateRepresentationBeforeExecution;
+	}
 
-    @Override
-    public ILayerEntry[] getPathToRoot() {
-        throw new UnsupportedOperationException("Not supported by DTO");
-    }
+	@Override
+	public boolean isLeaf() {
+		throw new UnsupportedOperationException("Not supported by DTO");
+	}
+
+	@Override
+	public ILayerEntry[] getPathToRoot() {
+		throw new UnsupportedOperationException("Not supported by DTO");
+	}
 
 }

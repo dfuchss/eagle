@@ -7,8 +7,7 @@ import edu.kit.ipd.eagle.port.xplore.dto.PathDTO;
 import edu.kit.ipd.eagle.port.xplore.layer.ILayerEntry;
 
 /**
- * Helper to generate {@link IPath Paths} from {@link ILayerEntry
- * ILayerEntries}.
+ * Helper to generate {@link IPath Paths} from {@link ILayerEntry ILayerEntries}.
  *
  * @author Dominik Fuchss
  *
@@ -21,10 +20,13 @@ public final class PathUtils {
 	/**
 	 * Get paths by root element.
 	 *
-	 * @param root the root entry
-	 * @return all paths
+	 * @param  root the root entry
+	 * @return      all paths
 	 */
 	public static List<IPath> getPaths(ILayerEntry root) {
+		if (root == null) {
+			return null;
+		}
 		List<IPath> paths = new ArrayList<>();
 		addPaths(paths, root, new ArrayList<>());
 		return paths;
@@ -34,7 +36,7 @@ public final class PathUtils {
 		List<ILayerEntry> newPredecessors = new ArrayList<>(predecessors);
 		newPredecessors.add(currentEntry);
 
-		if (currentEntry.getChildren().isEmpty()) {
+		if (currentEntry.getChildren() == null || currentEntry.getChildren().isEmpty()) {
 			// Found Leaf .. build path ..
 			PathDTO pathDTO = new PathDTO();
 			pathDTO.setPrettyString(newPredecessors.toString());
