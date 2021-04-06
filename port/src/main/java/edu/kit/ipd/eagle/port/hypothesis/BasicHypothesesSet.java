@@ -5,9 +5,8 @@ import java.util.List;
 import java.util.Objects;
 
 /**
- * A very basic implementation of a {@link IHypothesesSet HypothesesSet}. It
- * simply stores a list of hypotheses and the indicator whether only one of them
- * can be valid for a specific selection.
+ * A very basic implementation of a {@link IHypothesesSet HypothesesSet}. It simply stores a list of hypotheses and the
+ * indicator whether only one of them can be valid for a specific selection.
  *
  * @author Dominik Fuchss
  *
@@ -86,5 +85,10 @@ public class BasicHypothesesSet implements IHypothesesSet {
 	@Override
 	public String toString() {
 		return "Hypotheses: {" + this.shortInfo + "}@" + this.range + " -- [" + this.hypotheses + "]";
+	}
+
+	@Override
+	public IHypothesesSet withHypotheses(List<IHypothesis> hypotheses) {
+		return new BasicHypothesesSet(shortInfo, range, hypotheses, onlyOneValidHypothesis, word);
 	}
 }

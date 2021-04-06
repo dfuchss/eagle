@@ -47,8 +47,7 @@ public final class HypothesesSetDTO implements IHypothesesSet {
 	/**
 	 * Setter for {@link #isOnlyOneHypothesisValid()}.
 	 *
-	 * @param onlyOneHypothesisValid indicator whether only one hypothesis can be
-	 *                               valid
+	 * @param onlyOneHypothesisValid indicator whether only one hypothesis can be valid
 	 */
 	public void setOnlyOneHypothesisValid(boolean onlyOneHypothesisValid) {
 		this.onlyOneHypothesisValid = onlyOneHypothesisValid;
@@ -94,5 +93,10 @@ public final class HypothesesSetDTO implements IHypothesesSet {
 	 */
 	public void setHypothesesRange(HypothesisRange range) {
 		this.range = range;
+	}
+
+	@Override
+	public IHypothesesSet withHypotheses(List<IHypothesis> hypotheses) {
+		throw new UnsupportedOperationException("NIY");
 	}
 }

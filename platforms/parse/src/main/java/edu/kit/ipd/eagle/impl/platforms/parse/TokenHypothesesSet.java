@@ -12,8 +12,7 @@ import edu.kit.ipd.parse.luna.graph.IGraph;
 import edu.kit.ipd.parse.luna.graph.INode;
 
 /**
- * Represents a simple set of hypotheses. Thereby, the hypotheses are bound to
- * one specific {@link INode}.
+ * Represents a simple set of hypotheses. Thereby, the hypotheses are bound to one specific {@link INode}.
  *
  * @author Dominik Fuchss
  *
@@ -34,16 +33,16 @@ public class TokenHypothesesSet implements IHypothesesSet {
 	}
 
 	/**
-	 * Create a hypotheses group by graph, specific node, hypotheses and indicator
-	 * for {@link #isOnlyOneHypothesisValid()}.
+	 * Create a hypotheses group by graph, specific node, hypotheses and indicator for
+	 * {@link #isOnlyOneHypothesisValid()}.
 	 *
 	 * @param baseGraph  the graph of the baseNode
 	 * @param baseNode   the node interlinked with the hypotheses
 	 * @param hypotheses the hypotheses
 	 * @param onlyOne    the indicator for {@link #isOnlyOneHypothesisValid()}
 	 */
-	public TokenHypothesesSet(PARSEGraphWrapper baseGraph, INode baseNode, List<? extends IHypothesis> hypotheses, boolean onlyOne) {
-		this.baseGraph = baseGraph.getGraph();
+	public TokenHypothesesSet(IGraph baseGraph, INode baseNode, List<? extends IHypothesis> hypotheses, boolean onlyOne) {
+		this.baseGraph = baseGraph;
 		this.baseNode = baseNode;
 		if (baseNode != null && this.baseNode.getType() != this.baseGraph.getNodeType("token")) {
 			throw new IllegalArgumentException("Node is no TOKEN-Node.");
@@ -103,5 +102,10 @@ public class TokenHypothesesSet implements IHypothesesSet {
 	@Override
 	public String toString() {
 		return "Hypotheses: {" + this.getElementOfHypotheses() + "}@" + HypothesisRange.ELEMENT + " -- " + this.hypotheses;
+	}
+
+	@Override
+	public IHypothesesSet withHypotheses(List<IHypothesis> hypotheses) {
+		return new TokenHypothesesSet(baseGraph, baseNode, hypotheses, onlyOneHypothesisValid);
 	}
 }

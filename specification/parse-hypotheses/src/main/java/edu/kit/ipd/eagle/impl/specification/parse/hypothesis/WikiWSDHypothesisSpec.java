@@ -23,8 +23,8 @@ import edu.kit.ipd.parse.luna.tools.ConfigManager;
 import edu.kit.ipd.parse.wikiWSD.WordSenseDisambiguation;
 
 /**
- * Defines the agent specification for the {@link WordSenseDisambiguation
- * WikiWSD}. This is the hypotheses realization for {@link WikiWSDSpec}.
+ * Defines the agent specification for the {@link WordSenseDisambiguation WikiWSD}. This is the hypotheses realization
+ * for {@link WikiWSDSpec}.
  *
  * @author Dominik Fuchss
  *
@@ -44,11 +44,9 @@ public class WikiWSDHypothesisSpec extends WikiWSDSpec implements IAgentHypothes
 	/**
 	 * Create the specification by using a specific amount of hypotheses.
 	 *
-	 * @param maxHypotheses the specific maximum of generated hypotheses per
-	 *                      {@link IHypothesesSet}
+	 * @param maxHypotheses the specific maximum of generated hypotheses per {@link IHypothesesSet}
 	 */
 	public WikiWSDHypothesisSpec(int maxHypotheses) {
-		super();
 		// Set Max Hypotheses in Agent's configuration.
 		Properties props = ConfigManager.getConfiguration(WordSenseDisambiguation.class);
 		props.setProperty("STORE_TOP_X", String.valueOf(maxHypotheses));
@@ -63,7 +61,7 @@ public class WikiWSDHypothesisSpec extends WikiWSDSpec implements IAgentHypothes
 			if (hypothesis == null) {
 				continue;
 			}
-			hyps.add(new TokenHypothesesSet(graph, node, List.of(new WSDHypothesis(hypothesis, Double.NaN)), true));
+			hyps.add(new TokenHypothesesSet(graph.getGraph(), node, List.of(new WSDHypothesis(hypothesis, Double.NaN)), true));
 		}
 
 		return hyps;
@@ -134,7 +132,7 @@ public class WikiWSDHypothesisSpec extends WikiWSDSpec implements IAgentHypothes
 
 	private IHypothesesSet parseHyps(PARSEGraphWrapper graph, INode node, List<Pair<String, Double>> hypotheses) {
 		List<WSDHypothesis> hyps = hypotheses.stream().map(h -> new WSDHypothesis(h.getLeft(), h.getRight())).collect(Collectors.toList());
-		return new TokenHypothesesSet(graph, node, hyps, true);
+		return new TokenHypothesesSet(graph.getGraph(), node, hyps, true);
 	}
 
 	private static List<INode> getNodesInOrderFast(IGraph graph) {

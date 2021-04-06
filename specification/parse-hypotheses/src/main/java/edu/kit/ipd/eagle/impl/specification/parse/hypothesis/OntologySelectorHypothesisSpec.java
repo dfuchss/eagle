@@ -23,8 +23,8 @@ import edu.kit.ipd.parse.luna.tools.ConfigManager;
 import edu.kit.ipd.parse.ontology_selector.OntologySelector;
 
 /**
- * Defines the agent specification for the {@link OntologySelector}. This is the
- * hypotheses realization for {@link OntologySelectorSpec}.
+ * Defines the agent specification for the {@link OntologySelector}. This is the hypotheses realization for
+ * {@link OntologySelectorSpec}.
  *
  * @author Dominik Fuchss
  *
@@ -47,8 +47,7 @@ public class OntologySelectorHypothesisSpec extends OntologySelectorSpec impleme
 	/**
 	 * Create the specification by using a specific amount of hypotheses.
 	 *
-	 * @param maxHypotheses   the specific maximum of generated hypotheses per
-	 *                        {@link IHypothesesSet}
+	 * @param maxHypotheses   the specific maximum of generated hypotheses per {@link IHypothesesSet}
 	 * @param actorOntologies the actor ontologies see
 	 *                        {@link OntologySelectorSpec#loadOntologies(String, String, String...)}
 	 * @param envOntologies   the environment ontologies see

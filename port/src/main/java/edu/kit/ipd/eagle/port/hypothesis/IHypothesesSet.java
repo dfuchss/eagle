@@ -6,17 +6,15 @@ import java.util.List;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
- * This interface defines a set of {@link IHypothesis Hypotheses}. <b>Annotate
- * all your public getters that are not defined here with
- * {@link JsonIgnore}!</b>
+ * This interface defines a set of {@link IHypothesis Hypotheses}. <b>Annotate all your public getters that are not
+ * defined here with {@link JsonIgnore}!</b>
  *
  * @author Dominik Fuchss
  *
  */
 public interface IHypothesesSet extends Serializable {
 	/**
-	 * Get all hypotheses of the group ordered by {@link IHypothesis#getConfidence()
-	 * confidence} descending.
+	 * Get all hypotheses of the group ordered by {@link IHypothesis#getConfidence() confidence} descending.
 	 *
 	 * @return a sorted list of hypotheses
 	 */
@@ -37,11 +35,11 @@ public interface IHypothesesSet extends Serializable {
 	String getShortInfo();
 
 	/**
-	 * Identify the word (iff existing) which is related to theses hypotheses. May
-	 * be {@code null} iff no such word exists.
+	 * Identify the word (iff existing) which is related to theses hypotheses. May be {@code null} iff no such word
+	 * exists.
 	 *
 	 * @return the word which belong to the hypotheses
-	 * @see #getHypothesesRange()
+	 * @see    #getHypothesesRange()
 	 */
 	String getElementOfHypotheses();
 
@@ -51,5 +49,13 @@ public interface IHypothesesSet extends Serializable {
 	 * @return the range
 	 */
 	HypothesisRange getHypothesesRange();
+
+	/**
+	 * Create a copy of this hypotheses set with a new set of hypotheses.
+	 *
+	 * @param  hypotheses the new hypotheses
+	 * @return            the new hypotheses set
+	 */
+	IHypothesesSet withHypotheses(List<IHypothesis> hypotheses);
 
 }
