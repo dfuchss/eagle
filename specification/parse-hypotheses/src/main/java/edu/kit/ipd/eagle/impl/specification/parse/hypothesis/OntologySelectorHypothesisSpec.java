@@ -163,7 +163,7 @@ public class OntologySelectorHypothesisSpec extends OntologySelectorSpec impleme
 				alreadySelected[type.ordinal()] = true;
 			}
 
-			List<OntologySelectionData> datas = ((OntologyHypothesesSet) s).getHypotheses().stream().map(h -> (OntologySelectionData) h).collect(Collectors.toList());
+			List<OntologySelectionData> datas = ((OntologyHypothesesSet) s).getSortedHypotheses().stream().map(h -> (OntologySelectionData) h).collect(Collectors.toList());
 			allData.addAll(datas);
 		}
 
@@ -175,7 +175,7 @@ public class OntologySelectorHypothesisSpec extends OntologySelectorSpec impleme
 				throw new IllegalArgumentException("Not a valid HypothesesGroup: " + s.getAllHypotheses());
 			}
 			OntologyHypothesesSet g = (OntologyHypothesesSet) s.getAllHypotheses();
-			List<IHypothesis> all = g.getHypotheses();
+			List<IHypothesis> all = g.getSortedHypotheses();
 			for (IHypothesis h : s.getSelectedHypotheses()) {
 				if (!all.contains(h) || !(h instanceof OntologySelectionData)) {
 					throw new IllegalArgumentException("Not a valid OntologySelectionData: " + h);

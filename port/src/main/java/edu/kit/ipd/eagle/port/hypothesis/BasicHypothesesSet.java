@@ -62,9 +62,7 @@ public class BasicHypothesesSet implements IHypothesesSet {
 
 	@Override
 	public List<IHypothesis> getHypotheses() {
-		var res = new ArrayList<>(this.hypotheses);
-		res.sort((a, b) -> -Double.compare(a.getConfidence(), b.getConfidence()));
-		return res;
+		return new ArrayList<>(this.hypotheses);
 	}
 
 	@Override

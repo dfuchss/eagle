@@ -38,10 +38,10 @@ public class TopXConfidence implements ISelectionProvider {
 		for (int topX = 0; topX < this.maxXRanking; topX++) {
 			List<IHypothesesSelection> topXSelection = new ArrayList<>();
 			for (IHypothesesSet group : hypotheses) {
-				if (group.getHypotheses().size() <= topX) {
+				if (group.getSortedHypotheses().size() <= topX) {
 					return result;
 				}
-				topXSelection.add(new HypothesesSelection(group, List.of(group.getHypotheses().get(topX))));
+				topXSelection.add(new HypothesesSelection(group, List.of(group.getSortedHypotheses().get(topX))));
 			}
 			if (topXSelection.isEmpty()) {
 				return result;

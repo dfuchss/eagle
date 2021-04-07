@@ -25,7 +25,7 @@ abstract class AbstractCombinatoricExploration implements ISelectionProvider {
 	 */
 	protected List<List<IHypothesesSelection>> generateSelections(List<IHypothesesSet> hypotheses) {
 		this.checkHypothesesOnlyOneValid(hypotheses);
-		List<Integer> sizes = hypotheses.stream().map(h -> h.getHypotheses().size()).collect(Collectors.toList());
+		List<Integer> sizes = hypotheses.stream().map(h -> h.getSortedHypotheses().size()).collect(Collectors.toList());
 		List<List<IHypothesesSelection>> result = new ArrayList<>();
 		// Current Indices
 		int[] idx = new int[sizes.size()];
@@ -46,7 +46,7 @@ abstract class AbstractCombinatoricExploration implements ISelectionProvider {
 	private List<IHypothesesSelection> generate(List<IHypothesesSet> hypotheses, int[] idx) {
 		List<IHypothesesSelection> result = new ArrayList<>();
 		for (int i = 0; i < idx.length; i++) {
-			IHypothesis selectedHypothesis = hypotheses.get(i).getHypotheses().get(idx[i]);
+			IHypothesis selectedHypothesis = hypotheses.get(i).getSortedHypotheses().get(idx[i]);
 			HypothesesSelection selection = new HypothesesSelection(hypotheses.get(i), List.of(selectedHypothesis));
 			result.add(selection);
 		}

@@ -21,7 +21,7 @@ public interface IHypothesesSelection extends Serializable {
 
 	/**
 	 * Get the selected hypotheses from the group. Each hypothesis which has been
-	 * selected is retrieved from {@link IHypothesesSet#getHypotheses()}.
+	 * selected is retrieved from {@link IHypothesesSet#getSortedHypotheses()}.
 	 *
 	 * @return a list of selected hypotheses from the group
 	 */

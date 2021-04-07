@@ -55,7 +55,7 @@ public class SameWordSameDecision extends DecoratorBase {
 		HypothesisRange range = groupHypothesesSets.get(0).getHypothesesRange();
 		List<IHypothesis> hypotheses = new ArrayList<>();
 		for (IHypothesesSet set : groupHypothesesSets) {
-			for (IHypothesis hyp : set.getHypotheses()) {
+			for (IHypothesis hyp : set.getSortedHypotheses()) {
 				this.addHypothesis(hypotheses, hyp);
 			}
 		}
@@ -91,8 +91,8 @@ public class SameWordSameDecision extends DecoratorBase {
 		List<IHypothesesSelection> result = new ArrayList<>();
 
 		for (IHypothesesSelection selection : selections) {
-			IHypothesis someHypothesis = selection.getAllHypotheses().getHypotheses().get(0);
-			var groupEntry = grouped.entrySet().stream().filter(e -> e.getValue().stream().anyMatch(hs -> hs.getHypotheses().contains(someHypothesis))).findFirst().orElse(null);
+			IHypothesis someHypothesis = selection.getAllHypotheses().getSortedHypotheses().get(0);
+			var groupEntry = grouped.entrySet().stream().filter(e -> e.getValue().stream().anyMatch(hs -> hs.getSortedHypotheses().contains(someHypothesis))).findFirst().orElse(null);
 			if (groupEntry == null) {
 				continue;
 			}

@@ -53,7 +53,7 @@ public enum HypothesesSelectionFunction {
 
 		List<IHypothesis> hypotheses = null;
 		if (path[idx].getHypotheses() != null) {
-			hypotheses = path[idx].getHypotheses().stream().flatMap(hs -> hs.getHypotheses().stream()).collect(Collectors.toList());
+			hypotheses = path[idx].getHypotheses().stream().flatMap(hs -> hs.getSortedHypotheses().stream()).collect(Collectors.toList());
 		}
 		return hypotheses;
 	}
@@ -66,7 +66,7 @@ public enum HypothesesSelectionFunction {
 			}
 		} else {
 			if (path[idx].getHypotheses() != null) {
-				hypotheses = path[idx].getHypotheses().stream().flatMap(hs -> hs.getHypotheses().stream()).collect(Collectors.toList());
+				hypotheses = path[idx].getHypotheses().stream().flatMap(hs -> hs.getSortedHypotheses().stream()).collect(Collectors.toList());
 			}
 		}
 		return hypotheses;

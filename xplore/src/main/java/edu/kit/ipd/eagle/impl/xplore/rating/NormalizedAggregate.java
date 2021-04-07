@@ -131,7 +131,7 @@ public class NormalizedAggregate implements IRatingFunction {
 	private void findMinMaxPerEntryPerPath(ILayerEntry[] path, double[] mins, double[] maxs) {
 		for (int i = 0; i < path.length; i++) {
 			var hypotheses = path[i].getHypotheses();
-			List<IHypothesis> h = hypotheses.stream().flatMap(hs -> hs.getHypotheses().stream()).collect(Collectors.toList());
+			List<IHypothesis> h = hypotheses.stream().flatMap(hs -> hs.getSortedHypotheses().stream()).collect(Collectors.toList());
 
 			if (h.isEmpty()) {
 				continue;

@@ -46,7 +46,7 @@ public class TopXSlidingWindow implements ISelectionProvider {
 		for (IHypothesesSet group : hypotheses) {
 			int n = group.isOnlyOneHypothesisValid() ? 1 : this.maxHypothesesPerSet;
 
-			List<IHypothesis> options = new ArrayList<>(group.getHypotheses());
+			List<IHypothesis> options = new ArrayList<>(group.getSortedHypotheses());
 			Collections.sort(options);
 
 			for (int skip = 0; skip < this.maxGenerations; skip++) {

@@ -30,7 +30,7 @@ public final class HypothesesSetDTO implements IHypothesesSet {
 	}
 
 	/**
-	 * Setter for {@link #getHypotheses()}.
+	 * Setter for {@link #getSortedHypotheses()}.
 	 *
 	 * @param hypotheses the hypotheses of this set
 	 */

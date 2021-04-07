@@ -47,7 +47,7 @@ public class TopXCombinations extends AbstractCombinatoricExploration implements
 	}
 
 	private IHypothesesSet filterSet(IHypothesesSet hypothesesSet) {
-		List<IHypothesis> hypotheses = hypothesesSet.getHypotheses().stream().limit(maxXRanking).collect(Collectors.toList());
+		List<IHypothesis> hypotheses = hypothesesSet.getSortedHypotheses().stream().limit(maxXRanking).collect(Collectors.toList());
 		logger.debug("new hypotheses: " + hypotheses);
 		IHypothesesSet newSet = hypothesesSet.withHypotheses(hypotheses);
 		logger.debug("filtered hypotheses set: " + hypothesesSet);

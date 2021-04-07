@@ -1,6 +1,7 @@
 package edu.kit.ipd.eagle.port.hypothesis;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -13,8 +14,21 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
  *
  */
 public interface IHypothesesSet extends Serializable {
+
 	/**
 	 * Get all hypotheses of the group ordered by {@link IHypothesis#getConfidence() confidence} descending.
+	 *
+	 * @return a sorted list of hypotheses
+	 */
+	@JsonIgnore
+	default List<IHypothesis> getSortedHypotheses() {
+		var res = new ArrayList<>(this.getHypotheses());
+		res.sort((a, b) -> -Double.compare(a.getConfidence(), b.getConfidence()));
+		return res;
+	}
+
+	/**
+	 * Get all hypotheses of the group.
 	 *
 	 * @return a sorted list of hypotheses
 	 */
