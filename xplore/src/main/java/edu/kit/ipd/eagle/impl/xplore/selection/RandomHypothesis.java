@@ -1,15 +1,21 @@
 package edu.kit.ipd.eagle.impl.xplore.selection;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Random;
+import java.util.Set;
+import java.util.stream.Collectors;
 
+import edu.kit.ipd.eagle.port.hypothesis.HypothesesSelection;
 import edu.kit.ipd.eagle.port.hypothesis.IHypothesesSelection;
 import edu.kit.ipd.eagle.port.hypothesis.IHypothesesSet;
+import edu.kit.ipd.eagle.port.hypothesis.IHypothesis;
 
 /**
- * Randomly selects a certain amount from {@link FullExploration}.
- * <b>Randomness is fixed by default! Use {@link #realPseudoRandom()} to unlock
- * real pseudo randomness!</b>
+ * Randomly selects a certain amount from {@link FullExploration}. <b>Randomness is fixed by default! Use
+ * {@link #realPseudoRandom()} to unlock real pseudo randomness!</b>
  *
  * @author Dominik Fuchss
  *
@@ -20,36 +26,37 @@ public class RandomHypothesis extends FullExploration {
 	private int maxHypothesesSelections;
 	private double maxRatioOfSelectedHypotheses;
 
+	private boolean useFirst;
+
 	/**
 	 * Specify explicit max amount of hypotheses selections.
 	 *
-	 * @param maxHypothesesSelections the max amount (all values less than 1
-	 *                                indicate no limit)
+	 * @param maxHypothesesSelections the max amount (all values less than 1 indicate no limit)
+	 * @param useFirst                indicates whether the all-best hypotheses shall be included forcefully
 	 */
-	public RandomHypothesis(int maxHypothesesSelections) {
-		this(maxHypothesesSelections, -1);
+	public RandomHypothesis(int maxHypothesesSelections, boolean useFirst) {
+		this(maxHypothesesSelections, -1, useFirst);
 	}
 
 	/**
 	 * Specify a explicit ratio of hypotheses selections to be chosen.
 	 *
-	 * @param maxRatioOfSelectedHypotheses the ratio within (0,1] (all values less
-	 *                                     equal 0 indicates no limit)
+	 * @param maxRatioOfSelectedHypotheses the ratio within (0,1] (all values less equal 0 indicates no limit)
+	 * @param useFirst                     indicates whether the all-best hypotheses shall be included forcefully
 	 */
-	public RandomHypothesis(double maxRatioOfSelectedHypotheses) {
-		this(-1, maxRatioOfSelectedHypotheses);
+	public RandomHypothesis(double maxRatioOfSelectedHypotheses, boolean useFirst) {
+		this(-1, maxRatioOfSelectedHypotheses, useFirst);
 	}
 
 	/**
-	 * Specify explicit max amount of hypotheses selections and a explicit ratio of
-	 * hypotheses selections to be chosen
+	 * Specify explicit max amount of hypotheses selections and a explicit ratio of hypotheses selections to be chosen
 	 *
-	 * @param maxHypothesesSelections      the max amount (all values less than 1
-	 *                                     indicate no limit for max amount check)
-	 * @param maxRatioOfSelectedHypotheses the ratio within (0,1] (all values less
-	 *                                     equal 0 indicates no limit for ratio)
+	 * @param maxHypothesesSelections     the max amount (all values less than 1 indicate no limit for max amount check)
+	 * @param maxRatioOfSelectedHypothess the ratio within (0,1] (all values less equal 0 indicates no limit for ratio)
+	 * @param useFirst                    indicates whether the all-best hypotheses shall be included forcefully
 	 */
-	public RandomHypothesis(int maxHypothesesSelections, double maxRatioOfSelectedHypotheses) {
+	public RandomHypothesis(int maxHypothesesSelections, double maxRatioOfSelectedHypotheses, boolean useFirst) {
+		this.useFirst = useFirst;
 		if (maxHypothesesSelections < 1) {
 			this.maxHypothesesSelections = -1;
 		} else {
@@ -68,21 +75,89 @@ public class RandomHypothesis extends FullExploration {
 
 	@Override
 	public List<List<IHypothesesSelection>> findSelection(List<IHypothesesSet> hypotheses) {
-		List<List<IHypothesesSelection>> selections = super.findSelection(hypotheses);
-		int max = selections.size();
+		long max = Integer.MAX_VALUE / 8;
+		boolean useSuper = true;
+
+		long size = 1;
+		for (IHypothesesSet set : hypotheses) {
+			size *= set.getHypotheses().size();
+			if (size >= max) {
+				useSuper = false;
+				break;
+			}
+		}
+
+		if (size < max) {
+			max = size;
+		}
+
 		if (this.maxHypothesesSelections > 0) {
 			max = Math.min(max, this.maxHypothesesSelections);
 		}
 
 		if (this.maxRatioOfSelectedHypotheses > 0) {
-			int amountByRatio = (int) Math.ceil(this.maxRatioOfSelectedHypotheses * selections.size());
+			int amountByRatio = (int) Math.ceil(this.maxRatioOfSelectedHypotheses * size);
 			max = Math.min(max, amountByRatio);
 		}
 
-		while (selections.size() > max) {
-			selections.remove(this.random.nextInt(selections.size()));
-		}
+		List<List<IHypothesesSelection>> selections = createSelection(hypotheses, (int) max, useSuper);
 		return selections;
+	}
+
+	private List<List<IHypothesesSelection>> createSelection(List<IHypothesesSet> hypotheses, int max, boolean useSuper) {
+		if (useSuper) {
+			List<List<IHypothesesSelection>> selections = super.findSelection(hypotheses);
+			while (selections.size() > max) {
+				int idx = this.random.nextInt(selections.size());
+				if (useFirst && idx == 0) {
+					continue;
+				}
+				selections.remove(idx);
+			}
+			return selections;
+		}
+
+		List<Integer> sizes = hypotheses.stream().map(h -> h.getSortedHypotheses().size()).collect(Collectors.toList());
+		List<List<IHypothesesSelection>> result = new ArrayList<>();
+		Set<String> taken = new HashSet<>();
+
+		// Current Indices
+		int[] idx = new int[sizes.size()];
+
+		while (result.size() < max) {
+			if (!(useFirst && result.isEmpty())) {
+				randomIdx(idx, sizes);
+			}
+			if (!taken.add(Arrays.toString(idx))) {
+				logger.debug("Confict .. skip ..");
+				continue;
+			}
+			List<IHypothesesSelection> selection = this.generate(hypotheses, idx);
+			result.add(selection);
+		}
+
+		// Last Iteration
+		List<IHypothesesSelection> selection = this.generate(hypotheses, idx);
+		result.add(selection);
+
+		return result;
+	}
+
+	private void randomIdx(int[] idx, List<Integer> sizes) {
+		for (int i = 0; i < idx.length; i++) {
+			idx[i] = random.nextInt(sizes.get(i));
+		}
+
+	}
+
+	private List<IHypothesesSelection> generate(List<IHypothesesSet> hypotheses, int[] idx) {
+		List<IHypothesesSelection> result = new ArrayList<>();
+		for (int i = 0; i < idx.length; i++) {
+			IHypothesis selectedHypothesis = hypotheses.get(i).getSortedHypotheses().get(idx[i]);
+			HypothesesSelection selection = new HypothesesSelection(hypotheses.get(i), List.of(selectedHypothesis));
+			result.add(selection);
+		}
+		return result;
 	}
 
 	/**

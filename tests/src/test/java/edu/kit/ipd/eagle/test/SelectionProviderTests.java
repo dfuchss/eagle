@@ -74,17 +74,17 @@ public class SelectionProviderTests {
 	 */
 	@Test
 	public void checkRandomSelectionIfOnlyOneValid() {
-		RandomHypothesis rsioov = new RandomHypothesis(-1); // Default full exploration ..
+		RandomHypothesis rsioov = new RandomHypothesis(-1, false); // Default full exploration ..
 		var selections = rsioov.findSelection(List.of(this.set2, this.set2, this.set2));
 		this.checkSelectionValid(selections);
 		Assert.assertEquals(8, selections.size());
 
-		rsioov = new RandomHypothesis(0.5); // 50 % of paths
+		rsioov = new RandomHypothesis(0.5, false); // 50 % of paths
 		selections = rsioov.findSelection(List.of(this.set2, this.set2, this.set2));
 		this.checkSelectionValid(selections);
 		Assert.assertEquals(4, selections.size());
 
-		rsioov = new RandomHypothesis(3); // 3 max
+		rsioov = new RandomHypothesis(3, false); // 3 max
 		selections = rsioov.findSelection(List.of(this.set2, this.set2, this.set2));
 		this.checkSelectionValid(selections);
 		Assert.assertEquals(3, selections.size());
