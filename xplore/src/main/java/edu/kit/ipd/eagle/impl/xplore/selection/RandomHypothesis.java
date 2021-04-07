@@ -51,9 +51,10 @@ public class RandomHypothesis extends FullExploration {
 	/**
 	 * Specify explicit max amount of hypotheses selections and a explicit ratio of hypotheses selections to be chosen
 	 *
-	 * @param maxHypothesesSelections     the max amount (all values less than 1 indicate no limit for max amount check)
-	 * @param maxRatioOfSelectedHypothess the ratio within (0,1] (all values less equal 0 indicates no limit for ratio)
-	 * @param useFirst                    indicates whether the all-best hypotheses shall be included forcefully
+	 * @param maxHypothesesSelections      the max amount (all values less than 1 indicate no limit for max amount
+	 *                                     check)
+	 * @param maxRatioOfSelectedHypotheses the ratio within (0,1] (all values less equal 0 indicates no limit for ratio)
+	 * @param useFirst                     indicates whether the all-best hypotheses shall be included forcefully
 	 */
 	public RandomHypothesis(int maxHypothesesSelections, double maxRatioOfSelectedHypotheses, boolean useFirst) {
 		this.useFirst = useFirst;
@@ -75,14 +76,17 @@ public class RandomHypothesis extends FullExploration {
 
 	@Override
 	public List<List<IHypothesesSelection>> findSelection(List<IHypothesesSet> hypotheses) {
-		long max = Integer.MAX_VALUE / 8;
-		boolean useSuper = true;
+		// Define a "large" max value.
+		long max = (long) 1E8;
+		// Indicates whether we can create all combinations to delete randomly
+		boolean useDeleteStrategy = true;
 
 		long size = 1;
 		for (IHypothesesSet set : hypotheses) {
 			size *= set.getHypotheses().size();
 			if (size >= max) {
-				useSuper = false;
+				useDeleteStrategy = false;
+				size = max;
 				break;
 			}
 		}
@@ -100,12 +104,12 @@ public class RandomHypothesis extends FullExploration {
 			max = Math.min(max, amountByRatio);
 		}
 
-		List<List<IHypothesesSelection>> selections = createSelection(hypotheses, (int) max, useSuper);
+		List<List<IHypothesesSelection>> selections = createSelection(hypotheses, (int) max, useDeleteStrategy);
 		return selections;
 	}
 
-	private List<List<IHypothesesSelection>> createSelection(List<IHypothesesSet> hypotheses, int max, boolean useSuper) {
-		if (useSuper) {
+	private List<List<IHypothesesSelection>> createSelection(List<IHypothesesSet> hypotheses, int max, boolean useDeleteStrategy) {
+		if (useDeleteStrategy) {
 			List<List<IHypothesesSelection>> selections = super.findSelection(hypotheses);
 			while (selections.size() > max) {
 				int idx = this.random.nextInt(selections.size());
@@ -129,16 +133,12 @@ public class RandomHypothesis extends FullExploration {
 				randomIdx(idx, sizes);
 			}
 			if (!taken.add(Arrays.toString(idx))) {
-				logger.debug("Confict .. skip ..");
+				logger.debug("Collision in randomness .. skip ..");
 				continue;
 			}
 			List<IHypothesesSelection> selection = this.generate(hypotheses, idx);
 			result.add(selection);
 		}
-
-		// Last Iteration
-		List<IHypothesesSelection> selection = this.generate(hypotheses, idx);
-		result.add(selection);
 
 		return result;
 	}
