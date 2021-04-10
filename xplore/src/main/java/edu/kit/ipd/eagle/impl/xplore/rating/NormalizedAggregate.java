@@ -115,7 +115,7 @@ public class NormalizedAggregate implements IRatingFunction {
 			double dist = max - min;
 
 			if (dist == 0) {
-				avgs[i] = min;
+				avgs[i] = (this.maxMax - this.minMin) / 2;
 				continue;
 			}
 
