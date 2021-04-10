@@ -114,6 +114,11 @@ public class NormalizedAggregate implements IRatingFunction {
 			double max = maxs[i];
 			double dist = max - min;
 
+			if (dist == 0) {
+				avgs[i] = min;
+				continue;
+			}
+
 			List<IHypothesis> hypotheses = this.selector.select(path, i);
 			if (hypotheses.isEmpty()) {
 				avgs[i] = null;
