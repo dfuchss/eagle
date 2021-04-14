@@ -20,7 +20,7 @@ import edu.kit.ipd.eagle.port.hypothesis.IHypothesesSet;
 import edu.kit.ipd.eagle.port.hypothesis.IHypothesis;
 import edu.kit.ipd.parse.luna.graph.Pair;
 import edu.kit.ipd.parse.luna.tools.ConfigManager;
-import edu.kit.ipd.parse.ontology_selector.OntologySelector;
+import edu.kit.ipd.pronat.ontology_selector.OntologySelector;
 
 /**
  * Defines the agent specification for the {@link OntologySelector}. This is the hypotheses realization for

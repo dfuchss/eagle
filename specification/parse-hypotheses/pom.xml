@@ -13,12 +13,7 @@
 		<repository>
 			<id>ipdNexus-public-releases</id>
 			<name>IPD-Repository</name>
-			<url>http://bob.ipd.kit.edu/nexus/repository/maven-public-releases</url>
-		</repository>
-		<repository>
-			<id>ipdNexus-public-snapshots</id>
-			<name>IPD-Repository</name>
-			<url>http://bob.ipd.kit.edu/nexus/repository/maven-public-snapshots</url>
+			<url>http://bob.ipd.kit.edu/nexus/repository/maven-public-all/</url>
 		</repository>
 	</repositories>
 
@@ -29,17 +24,17 @@
 		</dependency>
 
 		<dependency>
-			<groupId>edu.kit.ipd.parse</groupId>
-			<artifactId>wikiWSD</artifactId>
+			<groupId>edu.kit.ipd.pronat</groupId>
+			<artifactId>wiki_wsd</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 		<dependency>
-			<groupId>edu.kit.ipd.parse</groupId>
+			<groupId>edu.kit.ipd.pronat</groupId>
 			<artifactId>topic_extraction</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 		<dependency>
-			<groupId>edu.kit.ipd.parse</groupId>
+			<groupId>edu.kit.ipd.pronat</groupId>
 			<artifactId>ontology_selection</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>

@@ -4,7 +4,8 @@ import java.util.List;
 
 import edu.kit.ipd.eagle.impl.platforms.parse.PARSEInformationId;
 import edu.kit.ipd.eagle.impl.platforms.parse.specification.parse.ParseAgentSpecification;
-import edu.kit.ipd.parse.actionRecognizer.ActionRecognizer;
+import edu.kit.ipd.pronat.action_analyzer.ActionAnalyzer;
+import edu.kit.ipd.pronat.context.ActionRecognizer;
 
 /**
  * Defines the agent specification for the {@link ActionRecognizer}.
@@ -12,12 +13,12 @@ import edu.kit.ipd.parse.actionRecognizer.ActionRecognizer;
  * @author Dominik Fuchss
  *
  */
-public class ActionRecognizerSpec extends ParseAgentSpecification<ActionRecognizer> {
+public class ActionAnalyzerSpec extends ParseAgentSpecification<ActionAnalyzer> {
 	/**
 	 * Create the specification.
 	 */
-	public ActionRecognizerSpec() {
-		super(new ActionRecognizer());
+	public ActionAnalyzerSpec() {
+		super(new ActionAnalyzer());
 	}
 
 	@Override

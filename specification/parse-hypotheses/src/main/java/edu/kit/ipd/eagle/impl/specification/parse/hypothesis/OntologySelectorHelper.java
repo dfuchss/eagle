@@ -19,7 +19,7 @@ import edu.kit.ipd.parse.luna.graph.IGraph;
 import edu.kit.ipd.parse.luna.graph.INode;
 import edu.kit.ipd.parse.luna.graph.INodeType;
 import edu.kit.ipd.parse.luna.graph.Pair;
-import edu.kit.ipd.parse.ontology_selector.OntologySelector;
+import edu.kit.ipd.pronat.ontology_selector.OntologySelector;
 
 /**
  * Helper methods copied (and adopted) from {@link OntologySelector}.

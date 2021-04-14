@@ -4,11 +4,10 @@ import java.util.List;
 
 import edu.kit.ipd.eagle.impl.platforms.parse.PARSEInformationId;
 import edu.kit.ipd.eagle.impl.platforms.parse.specification.parse.ParseAgentSpecification;
-import edu.kit.ipd.parse.wikiWSD.WordSenseDisambiguation;
+import edu.kit.ipd.pronat.wiki_wsd.WordSenseDisambiguation;
 
 /**
- * Defines the agent specification for the {@link WordSenseDisambiguation
- * WikiWSD}.
+ * Defines the agent specification for the {@link WordSenseDisambiguation WikiWSD}.
  *
  * @author Dominik Fuchss
  *

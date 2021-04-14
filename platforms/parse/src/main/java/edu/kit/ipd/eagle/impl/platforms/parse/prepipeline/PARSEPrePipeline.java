@@ -2,14 +2,12 @@ package edu.kit.ipd.eagle.impl.platforms.parse.prepipeline;
 
 import edu.kit.ipd.eagle.impl.platforms.parse.GraphUtils;
 import edu.kit.ipd.eagle.impl.platforms.parse.PARSEGraphWrapper;
-import edu.kit.ipd.parse.graphBuilder.GraphBuilder;
-import edu.kit.ipd.parse.luna.data.PrePipelineData;
-import edu.kit.ipd.parse.luna.tools.ConfigManager;
-import edu.kit.ipd.parse.luna.tools.StringToHypothesis;
-import edu.kit.ipd.parse.ner.NERTagger;
-import edu.kit.ipd.parse.ontology_connection.Domain;
-import edu.kit.ipd.parse.shallownlp.ShallowNLP;
-import edu.kit.ipd.parse.srlabeler.SRLabeler;
+import edu.kit.ipd.pronat.graph_builder.GraphBuilder;
+import edu.kit.ipd.pronat.ner.NERTagger;
+import edu.kit.ipd.pronat.prepipedatamodel.PrePipelineData;
+import edu.kit.ipd.pronat.prepipedatamodel.tools.StringToHypothesis;
+import edu.kit.ipd.pronat.shallow_nlp.ShallowNLP;
+import edu.kit.ipd.pronat.srl.SRLabeler;
 
 /**
  * Defines the default pipline for the PARSE Project.
@@ -22,27 +20,6 @@ public final class PARSEPrePipeline implements IPrePipeline {
 	 * Create the pipeline for PARSE.
 	 */
 	public PARSEPrePipeline() {
-		var props = ConfigManager.getConfiguration(Domain.class);
-		props.setProperty("ONTOLOGY_PATH", "/ontology.owl");
-		props.setProperty("SYSTEM", "System");
-		props.setProperty("METHOD", "Method");
-		props.setProperty("PARAMETER", "Parameter");
-		props.setProperty("DATATYPE", "DataType");
-		props.setProperty("VALUE", "Value");
-		props.setProperty("STATE", "State");
-		props.setProperty("OBJECT", "Object");
-		props.setProperty("SYSTEM_HAS_METHOD", "hasMethod");
-		props.setProperty("STATE_ASSOCIATED_STATE", "associatedState");
-		props.setProperty("STATE_ASSOCIATED_OBJECT", "associatedObject");
-		props.setProperty("STATE_CHANGING_METHOD", "changingMethod");
-		props.setProperty("METHOD_CHANGES_STATE", "changesStateTo");
-		props.setProperty("METHOD_HAS_PARAMETER", "hasParameter");
-		props.setProperty("OBJECT_HAS_STATE", "hasState");
-		props.setProperty("OBJECT_SUB_OBJECT", "subObject");
-		props.setProperty("OBJECT_SUPER_OBJECT", "superObject");
-		props.setProperty("PARAMETER_OF_DATA_TYPE", "ofDataType");
-		props.setProperty("DATATYPE_HAS_VALUE", "hasValue");
-		props.setProperty("PRIMITIVE_TYPES", "String,int,double,float,short,char,boolean,long");
 	}
 
 	@Override

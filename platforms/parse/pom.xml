@@ -12,14 +12,9 @@
 
 	<repositories>
 		<repository>
-			<id>ipdNexus-releases</id>
+			<id>ipdNexus-public-releases</id>
 			<name>IPD-Repository</name>
-			<url>http://bob.ipd.kit.edu/nexus/repository/maven-releases</url>
-		</repository>
-		<repository>
-			<id>ipdNexus-snapshots</id>
-			<name>IPD-Repository</name>
-			<url>http://bob.ipd.kit.edu/nexus/repository/maven-snapshots</url>
+			<url>http://bob.ipd.kit.edu/nexus/repository/maven-public-all/</url>
 		</repository>
 	</repositories>
 
@@ -28,7 +23,12 @@
 		<dependency>
 			<groupId>edu.kit.ipd.parse</groupId>
 			<artifactId>luna</artifactId>
-			<version>0.6.6</version>
+			<version>0.7.2</version>
+		</dependency>
+		<dependency>
+			<groupId>edu.kit.ipd.pronat</groupId>
+			<artifactId>pre_pipeline_data_model</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
@@ -42,17 +42,11 @@
 		</dependency>
 
 		<!-- PrePipelines -->
-		<!-- PARSE -->
+		<!-- PARSE / ProNat -->
 		<dependency>
-			<groupId>edu.kit.ipd.parse</groupId>
-			<artifactId>ontology_connection</artifactId>
-			<version>0.0.9</version>
-		</dependency>
-		<!-- PPL -->
-		<dependency>
-			<groupId>edu.kit.ipd.parse</groupId>
-			<artifactId>ShallowNLP</artifactId>
-			<version>0.0.14</version>
+			<groupId>edu.kit.ipd.pronat</groupId>
+			<artifactId>shallow_nlp</artifactId>
+			<version>0.1.0-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>edu.stanford.nlp</groupId>
@@ -66,19 +60,19 @@
 			<classifier>models</classifier>
 		</dependency>
 		<dependency>
-			<groupId>edu.kit.ipd.parse</groupId>
+			<groupId>edu.kit.ipd.pronat</groupId>
 			<artifactId>ner</artifactId>
-			<version>0.0.2</version>
+			<version>0.0.3-SNAPSHOT</version>
 		</dependency>
 		<dependency>
-			<groupId>edu.kit.ipd.parse</groupId>
+			<groupId>edu.kit.ipd.pronat</groupId>
 			<artifactId>graphBuilder</artifactId>
-			<version>0.0.4-SNAPSHOT</version>
+			<version>0.0.5-SNAPSHOT</version>
 		</dependency>
 		<dependency>
-			<groupId>edu.kit.ipd.parse</groupId>
-			<artifactId>SRLabeler</artifactId>
-			<version>0.1.6</version>
+			<groupId>edu.kit.ipd.pronat</groupId>
+			<artifactId>srl</artifactId>
+			<version>0.1.7-SNAPSHOT</version>
 		</dependency>
 
 		<!-- INDIRECT -->

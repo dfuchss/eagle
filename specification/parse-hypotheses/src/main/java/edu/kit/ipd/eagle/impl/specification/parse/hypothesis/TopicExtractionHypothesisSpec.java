@@ -18,13 +18,13 @@ import edu.kit.ipd.eagle.port.hypothesis.IHypothesis;
 import edu.kit.ipd.parse.luna.graph.IGraph;
 import edu.kit.ipd.parse.luna.graph.INode;
 import edu.kit.ipd.parse.luna.tools.ConfigManager;
-import edu.kit.ipd.parse.topic_extraction.TopicExtraction;
-import edu.kit.ipd.parse.topic_extraction_common.Topic;
-import edu.kit.ipd.parse.topic_extraction_common.TopicExtractionCore;
+import edu.kit.ipd.pronat.topic_extraction.TopicExtraction;
+import edu.kit.ipd.pronat.topic_extraction_common.Topic;
+import edu.kit.ipd.pronat.topic_extraction_common.TopicExtractionCore;
 
 /**
- * Defines the agent specification for the {@link TopicExtraction}. This is the
- * hypotheses realization for {@link TopicExtractionSpec}.
+ * Defines the agent specification for the {@link TopicExtraction}. This is the hypotheses realization for
+ * {@link TopicExtractionSpec}.
  *
  * @author Dominik Fuchss
  *
@@ -43,11 +43,9 @@ public class TopicExtractionHypothesisSpec extends TopicExtractionSpec implement
 	/**
 	 * Create the specification by using a specific amount of hypotheses.
 	 *
-	 * @param maxHypotheses the specific maximum of generated hypotheses per
-	 *                      {@link IHypothesesSet}
+	 * @param maxHypotheses the specific maximum of generated hypotheses per {@link IHypothesesSet}
 	 */
 	public TopicExtractionHypothesisSpec(int maxHypotheses) {
-		super();
 		// Set Max Hypotheses in Agent's configuration.
 		Properties props = ConfigManager.getConfiguration(TopicExtraction.class);
 		props.setProperty("TOPICS", String.valueOf(Math.max(maxHypotheses, -1)));

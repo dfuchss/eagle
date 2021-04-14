@@ -4,7 +4,7 @@ import java.util.List;
 
 import edu.kit.ipd.eagle.impl.platforms.parse.PARSEInformationId;
 import edu.kit.ipd.eagle.impl.platforms.parse.specification.parse.ParseAgentSpecification;
-import edu.kit.ipd.parse.conditionDetection.ConditionDetector;
+import edu.kit.ipd.pronat.condition_detection.ConditionDetector;
 
 /**
  * Defines the agent specification for the {@link ConditionDetector}.

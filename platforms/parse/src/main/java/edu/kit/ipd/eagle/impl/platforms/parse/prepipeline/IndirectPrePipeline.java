@@ -7,8 +7,8 @@ import edu.kit.ipd.indirect.graphBuilder.GraphBuilder;
 import edu.kit.ipd.indirect.textSNLP.Stanford;
 import edu.kit.ipd.indirect.textSNLP.TextSNLP;
 import edu.kit.ipd.indirect.tokenizer.Tokenizer;
-import edu.kit.ipd.parse.luna.data.PrePipelineData;
 import edu.kit.ipd.parse.luna.tools.ConfigManager;
+import edu.kit.ipd.pronat.prepipedatamodel.PrePipelineData;
 
 /**
  * Defines the default pipline for the INDIRECT Project.
@@ -41,7 +41,7 @@ public final class IndirectPrePipeline implements IPrePipeline {
 		graphBuilder.init();
 
 		PrePipelineData ppd = new PrePipelineData();
-//		ppd.setMainHypothesis(StringToHypothesis.stringToMainHypothesis(text, true));
+		// ppd.setMainHypothesis(StringToHypothesis.stringToMainHypothesis(text, true));
 		ppd.setTranscription(text);
 
 		try {

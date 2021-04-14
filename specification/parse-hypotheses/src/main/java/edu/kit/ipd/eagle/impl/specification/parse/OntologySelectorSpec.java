@@ -10,7 +10,7 @@ import java.util.Objects;
 import edu.kit.ipd.eagle.impl.platforms.parse.PARSEInformationId;
 import edu.kit.ipd.eagle.impl.platforms.parse.specification.parse.ParseAgentSpecification;
 import edu.kit.ipd.parse.luna.tools.ConfigManager;
-import edu.kit.ipd.parse.ontology_selector.OntologySelector;
+import edu.kit.ipd.pronat.ontology_selector.OntologySelector;
 
 /**
  * Defines the agent specification for the {@link OntologySelector}.
@@ -22,10 +22,8 @@ public class OntologySelectorSpec extends ParseAgentSpecification<OntologySelect
 	/**
 	 * Create the specification.
 	 *
-	 * @param actorOntologies the actor ontologies see
-	 *                        {@link #loadOntologies(String, String, String...)}
-	 * @param envOntologies   the environment ontologies see
-	 *                        {@link #loadOntologies(String, String, String...)}
+	 * @param actorOntologies the actor ontologies see {@link #loadOntologies(String, String, String...)}
+	 * @param envOntologies   the environment ontologies see {@link #loadOntologies(String, String, String...)}
 	 */
 	public OntologySelectorSpec(String actorOntologies, String envOntologies) {
 		super(OntologySelectorSpec.loadOntologySelector(actorOntologies, envOntologies));
@@ -42,10 +40,10 @@ public class OntologySelectorSpec extends ParseAgentSpecification<OntologySelect
 	/**
 	 * Generate an ontology string for multiple ontologies.
 	 *
-	 * @param base           the base directory with tailing '/'
-	 * @param ontology       the first ontology
-	 * @param moreOntologies further ontologies
-	 * @return a string that defines the loaded ontologies
+	 * @param  base           the base directory with tailing '/'
+	 * @param  ontology       the first ontology
+	 * @param  moreOntologies further ontologies
+	 * @return                a string that defines the loaded ontologies
 	 */
 	public static String loadOntologies(String base, String ontology, String... moreOntologies) {
 		List<String> ontologies = new ArrayList<>(Arrays.asList(moreOntologies));

@@ -4,7 +4,7 @@ import java.util.List;
 
 import edu.kit.ipd.eagle.impl.platforms.parse.PARSEInformationId;
 import edu.kit.ipd.eagle.impl.platforms.parse.specification.parse.ParseAgentSpecification;
-import edu.kit.ipd.parse.topic_extraction.TopicExtraction;
+import edu.kit.ipd.pronat.topic_extraction.TopicExtraction;
 
 /**
  * Defines the agent specification for the {@link TopicExtraction}.
