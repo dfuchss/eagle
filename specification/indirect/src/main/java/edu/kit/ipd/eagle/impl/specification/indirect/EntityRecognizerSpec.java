@@ -13,20 +13,20 @@ import edu.kit.ipd.indirect.entityrecog.EntityRecognizer;
  *
  */
 public class EntityRecognizerSpec extends IndirectAgentSpecification<EntityRecognizer> {
-	/**
-	 * Create the specification.
-	 */
-	public EntityRecognizerSpec() {
-		super(new EntityRecognizer());
-	}
+    /**
+     * Create the specification.
+     */
+    public EntityRecognizerSpec() {
+        super(EntityRecognizer::new);
+    }
 
-	@Override
-	public List<PARSEInformationId> getProvideIds() {
-		return List.of(PARSEInformationId.ENTITIES);
-	}
+    @Override
+    public List<PARSEInformationId> getProvideIds() {
+        return List.of(PARSEInformationId.ENTITIES);
+    }
 
-	@Override
-	public List<PARSEInformationId> getRequiresIds() {
-		return List.of(PARSEInformationId.DEPENDENCIES, PARSEInformationId.WORD_SENSE_DISAMBIGUATION);
-	}
+    @Override
+    public List<PARSEInformationId> getRequiresIds() {
+        return List.of(PARSEInformationId.DEPENDENCIES, PARSEInformationId.WORD_SENSE_DISAMBIGUATION);
+    }
 }

@@ -13,20 +13,20 @@ import edu.kit.ipd.indirect.textner.TextNERTagger;
  *
  */
 public class TextNERSpec extends IndirectAgentSpecification<TextNERTagger> {
-	/**
-	 * Create the specification.
-	 */
-	public TextNERSpec() {
-		super(new TextNERTagger());
-	}
+    /**
+     * Create the specification.
+     */
+    public TextNERSpec() {
+        super(TextNERTagger::new);
+    }
 
-	@Override
-	public List<PARSEInformationId> getProvideIds() {
-		return List.of(PARSEInformationId.NER);
-	}
+    @Override
+    public List<PARSEInformationId> getProvideIds() {
+        return List.of(PARSEInformationId.NER);
+    }
 
-	@Override
-	public List<PARSEInformationId> getRequiresIds() {
-		return List.of();
-	}
+    @Override
+    public List<PARSEInformationId> getRequiresIds() {
+        return List.of();
+    }
 }

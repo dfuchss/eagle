@@ -22,60 +22,60 @@ import edu.kit.ipd.parse.luna.agent.AbstractAgent;
  */
 public class AgentExecution implements IAgentExecution<PARSEAgent, PARSEGraphWrapper, AbstractAgentSpecification<? extends AbstractAgent>> {
 
-	private Set<AbstractAgentSpecification<? extends AbstractAgent>> agents = new HashSet<>();
+    private Set<AbstractAgentSpecification<? extends AbstractAgent>> agents = new HashSet<>();
 
-	@Override
-	public void loadAgent(AbstractAgentSpecification<? extends AbstractAgent> agentSpec) {
-		this.agents.add(agentSpec);
-	}
+    @Override
+    public void loadAgent(AbstractAgentSpecification<? extends AbstractAgent> agentSpec) {
+        this.agents.add(agentSpec);
+    }
 
-	@Override
-	public void unloadAgents() {
-		this.agents.clear();
-	}
+    @Override
+    public void unloadAgents() {
+        this.agents.clear();
+    }
 
-	@Override
-	public PARSEGraphWrapper execute(PARSEGraphWrapper inputGraph) {
+    @Override
+    public PARSEGraphWrapper execute(PARSEGraphWrapper inputGraph) {
 
-		PrePipelineMode ppm = inputGraph.getPrePipelineMode();
+        PrePipelineMode ppm = inputGraph.getPrePipelineMode();
 
-		// Check PPM
-		List<AbstractAgentSpecification<? extends AbstractAgent>> invalidAgents = PARSEAgentHelper.findInvalidAgents(this.agents, ppm);
-		if (!invalidAgents.isEmpty()) {
-			if (IAgentExecution.logger.isErrorEnabled()) {
-				IAgentExecution.logger.error("Agent(s) " + invalidAgents + " are no valid agents for PrePipeline " + ppm);
-			}
-			return null;
-		}
+        // Check PPM
+        List<AbstractAgentSpecification<? extends AbstractAgent>> invalidAgents = PARSEAgentHelper.findInvalidAgents(this.agents, ppm);
+        if (!invalidAgents.isEmpty()) {
+            if (IAgentExecution.logger.isErrorEnabled()) {
+                IAgentExecution.logger.error("Agent(s) " + invalidAgents + " are no valid agents for PrePipeline " + ppm);
+            }
+            return null;
+        }
 
-		// Execute Agents ..
-		List<AbstractAgentSpecification<? extends AbstractAgent>> specsToRun = AgentHelper.findAgentOrder(this.agents);
-		if (specsToRun == null) {
-			return null;
-		}
+        // Execute Agents ..
+        List<AbstractAgentSpecification<? extends AbstractAgent>> specsToRun = AgentHelper.findAgentOrder(this.agents);
+        if (specsToRun == null) {
+            return null;
+        }
 
-		PARSEGraphWrapper graph = inputGraph;
+        PARSEGraphWrapper graph = inputGraph;
 
-		for (AbstractAgentSpecification<? extends AbstractAgent> next : specsToRun) {
-			if (IAgentExecution.logger.isDebugEnabled()) {
-				IAgentExecution.logger.debug("Executing " + next);
-			}
+        for (AbstractAgentSpecification<? extends AbstractAgent> next : specsToRun) {
+            if (IAgentExecution.logger.isDebugEnabled()) {
+                IAgentExecution.logger.debug("Executing " + next);
+            }
 
-			var nextGraph = next.getAgentInstance().execute(graph);
-			if (nextGraph == null) {
-				if (IAgentExecution.logger.isErrorEnabled()) {
-					IAgentExecution.logger.error("Failed to execute " + next);
-				}
-				return null;
-			}
-			graph = nextGraph;
+            var nextGraph = next.createAgentInstance().execute(graph);
+            if (nextGraph == null) {
+                if (IAgentExecution.logger.isErrorEnabled()) {
+                    IAgentExecution.logger.error("Failed to execute " + next);
+                }
+                return null;
+            }
+            graph = nextGraph;
 
-			if (IAgentExecution.logger.isDebugEnabled()) {
-				IAgentExecution.logger.debug("After " + next.getAgentInstance().getClass().getSimpleName() + " " + GraphUtils.getStats(graph.getGraph()));
-			}
-		}
+            if (IAgentExecution.logger.isDebugEnabled()) {
+                IAgentExecution.logger.debug("After " + next.createAgentInstance().getClass().getSimpleName() + " " + GraphUtils.getStats(graph.getGraph()));
+            }
+        }
 
-		return graph;
-	}
+        return graph;
+    }
 
 }

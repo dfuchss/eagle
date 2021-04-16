@@ -13,20 +13,20 @@ import edu.kit.ipd.indirect.constparser.ConstParser;
  *
  */
 public class ConstParserSpec extends IndirectAgentSpecification<ConstParser> {
-	/**
-	 * Create the specification.
-	 */
-	public ConstParserSpec() {
-		super(new ConstParser());
-	}
+    /**
+     * Create the specification.
+     */
+    public ConstParserSpec() {
+        super(ConstParser::new);
+    }
 
-	@Override
-	public List<PARSEInformationId> getProvideIds() {
-		return List.of(PARSEInformationId.CONSTITUENCY);
-	}
+    @Override
+    public List<PARSEInformationId> getProvideIds() {
+        return List.of(PARSEInformationId.CONSTITUENCY);
+    }
 
-	@Override
-	public List<PARSEInformationId> getRequiresIds() {
-		return List.of();
-	}
+    @Override
+    public List<PARSEInformationId> getRequiresIds() {
+        return List.of();
+    }
 }

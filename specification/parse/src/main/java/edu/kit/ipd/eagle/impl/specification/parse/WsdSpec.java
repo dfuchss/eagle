@@ -13,20 +13,20 @@ import edu.kit.ipd.parse.wsd.Wsd;
  *
  */
 public class WsdSpec extends ParseAgentSpecification<Wsd> {
-	/**
-	 * Create the specification.
-	 */
-	public WsdSpec() {
-		super(new Wsd());
-	}
+    /**
+     * Create the specification.
+     */
+    public WsdSpec() {
+        super(Wsd::new);
+    }
 
-	@Override
-	public List<PARSEInformationId> getProvideIds() {
-		return List.of(PARSEInformationId.WORD_SENSE_DISAMBIGUATION);
-	}
+    @Override
+    public List<PARSEInformationId> getProvideIds() {
+        return List.of(PARSEInformationId.WORD_SENSE_DISAMBIGUATION);
+    }
 
-	@Override
-	public List<PARSEInformationId> getRequiresIds() {
-		return List.of();
-	}
+    @Override
+    public List<PARSEInformationId> getRequiresIds() {
+        return List.of();
+    }
 }

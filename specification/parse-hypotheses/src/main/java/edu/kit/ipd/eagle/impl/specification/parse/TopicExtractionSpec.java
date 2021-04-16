@@ -13,20 +13,20 @@ import edu.kit.ipd.parse.topic_extraction.TopicExtraction;
  *
  */
 public class TopicExtractionSpec extends ParseAgentSpecification<TopicExtraction> {
-	/**
-	 * Create the specification.
-	 */
-	public TopicExtractionSpec() {
-		super(new TopicExtraction());
-	}
+    /**
+     * Create the specification.
+     */
+    public TopicExtractionSpec() {
+        super(TopicExtraction::new);
+    }
 
-	@Override
-	public List<PARSEInformationId> getProvideIds() {
-		return List.of(PARSEInformationId.TOPICS);
-	}
+    @Override
+    public List<PARSEInformationId> getProvideIds() {
+        return List.of(PARSEInformationId.TOPICS);
+    }
 
-	@Override
-	public List<PARSEInformationId> getRequiresIds() {
-		return List.of(PARSEInformationId.WIKI_WSD);
-	}
+    @Override
+    public List<PARSEInformationId> getRequiresIds() {
+        return List.of(PARSEInformationId.WIKI_WSD);
+    }
 }

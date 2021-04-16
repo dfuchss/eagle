@@ -14,22 +14,22 @@ import edu.kit.ipd.parse.luna.tools.ConfigManager;
  *
  */
 public class DepParserSpec extends IndirectAgentSpecification<DepParser> {
-	/**
-	 * Create the specification.
-	 */
-	public DepParserSpec() {
-		super(new DepParser());
-		var props = ConfigManager.getConfiguration(DepParser.class);
-		props.setProperty("depparse.model", "edu/stanford/nlp/models/parser/nndep/english_UD.gz");
-	}
+    /**
+     * Create the specification.
+     */
+    public DepParserSpec() {
+        super(DepParser::new);
+        var props = ConfigManager.getConfiguration(DepParser.class);
+        props.setProperty("depparse.model", "edu/stanford/nlp/models/parser/nndep/english_UD.gz");
+    }
 
-	@Override
-	public List<PARSEInformationId> getProvideIds() {
-		return List.of(PARSEInformationId.DEPENDENCIES);
-	}
+    @Override
+    public List<PARSEInformationId> getProvideIds() {
+        return List.of(PARSEInformationId.DEPENDENCIES);
+    }
 
-	@Override
-	public List<PARSEInformationId> getRequiresIds() {
-		return List.of();
-	}
+    @Override
+    public List<PARSEInformationId> getRequiresIds() {
+        return List.of();
+    }
 }

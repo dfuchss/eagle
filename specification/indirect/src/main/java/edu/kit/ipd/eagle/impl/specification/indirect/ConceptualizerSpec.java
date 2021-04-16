@@ -13,20 +13,20 @@ import edu.kit.ipd.indirect.conceptualizer.Conceptualizer;
  *
  */
 public class ConceptualizerSpec extends IndirectAgentSpecification<Conceptualizer> {
-	/**
-	 * Create the specification.
-	 */
-	public ConceptualizerSpec() {
-		super(new Conceptualizer());
-	}
+    /**
+     * Create the specification.
+     */
+    public ConceptualizerSpec() {
+        super(Conceptualizer::new);
+    }
 
-	@Override
-	public List<PARSEInformationId> getProvideIds() {
-		return List.of(PARSEInformationId.CONCEPTS);
-	}
+    @Override
+    public List<PARSEInformationId> getProvideIds() {
+        return List.of(PARSEInformationId.CONCEPTS);
+    }
 
-	@Override
-	public List<PARSEInformationId> getRequiresIds() {
-		return List.of(PARSEInformationId.ENTITIES);
-	}
+    @Override
+    public List<PARSEInformationId> getRequiresIds() {
+        return List.of(PARSEInformationId.ENTITIES);
+    }
 }

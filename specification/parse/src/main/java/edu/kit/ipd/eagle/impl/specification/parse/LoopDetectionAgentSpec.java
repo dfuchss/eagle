@@ -13,20 +13,20 @@ import edu.kit.ipd.parse.loop.LoopDetectionAgent;
  *
  */
 public class LoopDetectionAgentSpec extends ParseAgentSpecification<LoopDetectionAgent> {
-	/**
-	 * Create the specification.
-	 */
-	public LoopDetectionAgentSpec() {
-		super(new LoopDetectionAgent());
-	}
+    /**
+     * Create the specification.
+     */
+    public LoopDetectionAgentSpec() {
+        super(LoopDetectionAgent::new);
+    }
 
-	@Override
-	public List<PARSEInformationId> getProvideIds() {
-		return List.of(PARSEInformationId.LOOP);
-	}
+    @Override
+    public List<PARSEInformationId> getProvideIds() {
+        return List.of(PARSEInformationId.LOOP);
+    }
 
-	@Override
-	public List<PARSEInformationId> getRequiresIds() {
-		return List.of(PARSEInformationId.ACTIONS);
-	}
+    @Override
+    public List<PARSEInformationId> getRequiresIds() {
+        return List.of(PARSEInformationId.ACTIONS);
+    }
 }

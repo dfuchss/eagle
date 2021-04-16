@@ -13,20 +13,20 @@ import edu.kit.ipd.parse.conditionDetection.ConditionDetector;
  *
  */
 public class ConditionDetectorSpec extends ParseAgentSpecification<ConditionDetector> {
-	/**
-	 * Create the specification.
-	 */
-	public ConditionDetectorSpec() {
-		super(new ConditionDetector());
-	}
+    /**
+     * Create the specification.
+     */
+    public ConditionDetectorSpec() {
+        super(ConditionDetector::new);
+    }
 
-	@Override
-	public List<PARSEInformationId> getProvideIds() {
-		return List.of(PARSEInformationId.CONDITIONS);
-	}
+    @Override
+    public List<PARSEInformationId> getProvideIds() {
+        return List.of(PARSEInformationId.CONDITIONS);
+    }
 
-	@Override
-	public List<PARSEInformationId> getRequiresIds() {
-		return List.of();
-	}
+    @Override
+    public List<PARSEInformationId> getRequiresIds() {
+        return List.of();
+    }
 }

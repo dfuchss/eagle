@@ -13,20 +13,20 @@ import edu.kit.ipd.parse.corefanalyzer.CorefAnalyzer;
  *
  */
 public class CorefAnalyzerSpec extends ParseAgentSpecification<CorefAnalyzer> {
-	/**
-	 * Create the specification.
-	 */
-	public CorefAnalyzerSpec() {
-		super(new CorefAnalyzer());
-	}
+    /**
+     * Create the specification.
+     */
+    public CorefAnalyzerSpec() {
+        super(CorefAnalyzer::new);
+    }
 
-	@Override
-	public List<PARSEInformationId> getProvideIds() {
-		return List.of(PARSEInformationId.COREF);
-	}
+    @Override
+    public List<PARSEInformationId> getProvideIds() {
+        return List.of(PARSEInformationId.COREF);
+    }
 
-	@Override
-	public List<PARSEInformationId> getRequiresIds() {
-		return List.of(PARSEInformationId.CONTEXT);
-	}
+    @Override
+    public List<PARSEInformationId> getRequiresIds() {
+        return List.of(PARSEInformationId.CONTEXT);
+    }
 }

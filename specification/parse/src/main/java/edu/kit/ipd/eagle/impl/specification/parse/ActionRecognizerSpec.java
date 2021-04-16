@@ -13,20 +13,20 @@ import edu.kit.ipd.parse.actionRecognizer.ActionRecognizer;
  *
  */
 public class ActionRecognizerSpec extends ParseAgentSpecification<ActionRecognizer> {
-	/**
-	 * Create the specification.
-	 */
-	public ActionRecognizerSpec() {
-		super(new ActionRecognizer());
-	}
+    /**
+     * Create the specification.
+     */
+    public ActionRecognizerSpec() {
+        super(ActionRecognizer::new);
+    }
 
-	@Override
-	public List<PARSEInformationId> getProvideIds() {
-		return List.of(PARSEInformationId.ACTIONS);
-	}
+    @Override
+    public List<PARSEInformationId> getProvideIds() {
+        return List.of(PARSEInformationId.ACTIONS);
+    }
 
-	@Override
-	public List<PARSEInformationId> getRequiresIds() {
-		return List.of();
-	}
+    @Override
+    public List<PARSEInformationId> getRequiresIds() {
+        return List.of();
+    }
 }

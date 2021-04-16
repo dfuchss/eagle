@@ -13,20 +13,20 @@ import edu.kit.ipd.parse.contextanalyzer.ContextAnalyzer;
  *
  */
 public class ContextAnalyzerSpec extends ParseAgentSpecification<ContextAnalyzer> {
-	/**
-	 * Create the specification.
-	 */
-	public ContextAnalyzerSpec() {
-		super(new ContextAnalyzer());
-	}
+    /**
+     * Create the specification.
+     */
+    public ContextAnalyzerSpec() {
+        super(ContextAnalyzer::new);
+    }
 
-	@Override
-	public List<PARSEInformationId> getProvideIds() {
-		return List.of(PARSEInformationId.CONTEXT);
-	}
+    @Override
+    public List<PARSEInformationId> getProvideIds() {
+        return List.of(PARSEInformationId.CONTEXT);
+    }
 
-	@Override
-	public List<PARSEInformationId> getRequiresIds() {
-		return List.of();
-	}
+    @Override
+    public List<PARSEInformationId> getRequiresIds() {
+        return List.of();
+    }
 }
