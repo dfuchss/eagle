@@ -23,7 +23,7 @@
 		<dependency>
 			<groupId>edu.kit.ipd.parse</groupId>
 			<artifactId>luna</artifactId>
-			<version>0.7.2</version>
+			<version>0.7.5</version>
 		</dependency>
 		<dependency>
 			<groupId>edu.kit.ipd.pronat</groupId>
