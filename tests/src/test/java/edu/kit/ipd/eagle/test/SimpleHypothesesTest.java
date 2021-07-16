@@ -1,8 +1,6 @@
 package edu.kit.ipd.eagle.test;
 
-import java.io.FileWriter;
 import java.io.IOException;
-import java.util.List;
 import java.util.Properties;
 
 import org.junit.Assert;
@@ -11,22 +9,11 @@ import org.junit.BeforeClass;
 import org.junit.Ignore;
 import org.junit.Test;
 
-import edu.kit.ipd.eagle.impl.platforms.parse.PARSEAgent;
 import edu.kit.ipd.eagle.impl.platforms.parse.PARSEGraphWrapper;
 import edu.kit.ipd.eagle.impl.platforms.parse.execution.AgentExecution;
 import edu.kit.ipd.eagle.impl.platforms.parse.prepipeline.IPrePipeline;
 import edu.kit.ipd.eagle.impl.platforms.parse.prepipeline.PARSEPrePipeline;
-import edu.kit.ipd.eagle.impl.specification.parse.WikiWSDSpec;
-import edu.kit.ipd.eagle.impl.specification.parse.hypothesis.OntologySelectorHypothesisSpec;
-import edu.kit.ipd.eagle.impl.specification.parse.hypothesis.TopicExtractionHypothesisSpec;
 import edu.kit.ipd.eagle.impl.specification.parse.hypothesis.WikiWSDHypothesisSpec;
-import edu.kit.ipd.eagle.impl.xplore.LayeredExploration;
-import edu.kit.ipd.eagle.impl.xplore.SimpleExploration;
-import edu.kit.ipd.eagle.impl.xplore.SpecificExploration;
-import edu.kit.ipd.eagle.impl.xplore.selection.SameWordSameDecision;
-import edu.kit.ipd.eagle.impl.xplore.selection.TopXConfidence;
-import edu.kit.ipd.eagle.port.util.Serialize;
-import edu.kit.ipd.eagle.port.xplore.IExplorationResult;
 import edu.kit.ipd.indirect.constparser.ConstParser;
 import edu.kit.ipd.indirect.depparser.DepParser;
 import edu.kit.ipd.indirect.textSNLP.Stanford;
@@ -100,132 +87,143 @@ public class SimpleHypothesesTest extends TestBase {
         Assert.assertFalse(hyps.isEmpty());
     }
 
-    /**
-     * Check whether the {@link TopicExtractionHypothesisSpec} generates hypotheses. based on the
-     * {@link WikiWSDHypothesisSpec}.
-     */
-    @Test
-    @Ignore("TD is broken")
-    public void testHypothesisOfTopicExtractor() {
-        WikiWSDHypothesisSpec wwhs = new WikiWSDHypothesisSpec();
-        TopicExtractionHypothesisSpec tehs = new TopicExtractionHypothesisSpec();
-        this.analysis.loadAgents(List.of(wwhs, tehs));
+    // Disabled since Topic Extraction (Upstream) has a Bug
 
-        PARSEGraphWrapper topicAnalyzed = this.analysis.execute(this.graph);
-        Assert.assertNotNull(topicAnalyzed);
-        Assert.assertNotSame(this.graph, topicAnalyzed);
+    // /**
+    // * Check whether the {@link TopicExtractionHypothesisSpec} generates hypotheses. based on the
+    // * {@link WikiWSDHypothesisSpec}.
+    // */
+    // @Test
+    // @Ignore("TD is broken")
+    // public void testHypothesisOfTopicExtractor() {
+    // WikiWSDHypothesisSpec wwhs = new WikiWSDHypothesisSpec();
+    // TopicExtractionHypothesisSpec tehs = new TopicExtractionHypothesisSpec();
+    // this.analysis.loadAgents(List.of(wwhs, tehs));
+    //
+    // PARSEGraphWrapper topicAnalyzed = this.analysis.execute(this.graph);
+    // Assert.assertNotNull(topicAnalyzed);
+    // Assert.assertNotSame(this.graph, topicAnalyzed);
+    //
+    // var hyps = tehs.getHypothesesFromDataStructure(topicAnalyzed);
+    // Assert.assertNotNull(hyps);
+    // Assert.assertFalse(hyps.isEmpty());
+    // }
 
-        var hyps = tehs.getHypothesesFromDataStructure(topicAnalyzed);
-        Assert.assertNotNull(hyps);
-        Assert.assertFalse(hyps.isEmpty());
-    }
+    // /**
+    // * Check whether the serialisation of {@link IExplorationResult IExplorationResults} of {@link SimpleExploration}
+    // is
+    // * operational.
+    // *
+    // * @throws Exception iff something went wrong
+    // */
+    // @Test
+    // @Ignore("TD is broken")
+    // public void testHypothesisCombinationSimpleExploration() throws Exception {
+    // WikiWSDHypothesisSpec wwhs = new WikiWSDHypothesisSpec();
+    // TopicExtractionHypothesisSpec tehs = new TopicExtractionHypothesisSpec();
+    // SimpleExploration<PARSEAgent, PARSEGraphWrapper> explorer = new SimpleExploration<>(this.graph,
+    // this.graph.getText(), 3);
+    //
+    // explorer.loadHypothesisAgent(wwhs);
+    // explorer.loadHypothesisAgent(tehs);
+    //
+    // var result = explorer.explore();
+    // var jsonGetter = Serialize.getObjectMapperForGetters(true).writeValueAsString(result);
+    // var jsonInherit = Serialize.getObjectMapperForInheritance(true).writeValueAsString(result);
+    //
+    // Assert.assertTrue(jsonGetter.contains("\"explorationRoot\""));
+    // Assert.assertFalse(jsonInherit.contains("\"explorationRoot\""));
+    //
+    // Assert.assertFalse(jsonGetter.contains("\"startNode\""));
+    // Assert.assertTrue(jsonInherit.contains("\"startNode\""));
+    //
+    // FileWriter fw = new FileWriter(this.getTargetFile("output.json"));
+    // fw.write(jsonGetter);
+    // fw.close();
+    // }
 
-    /**
-     * Check whether the serialisation of {@link IExplorationResult IExplorationResults} of {@link SimpleExploration} is
-     * operational.
-     *
-     * @throws Exception iff something went wrong
-     */
-    @Test
-    @Ignore("TD is broken")
-    public void testHypothesisCombinationSimpleExploration() throws Exception {
-        WikiWSDHypothesisSpec wwhs = new WikiWSDHypothesisSpec();
-        TopicExtractionHypothesisSpec tehs = new TopicExtractionHypothesisSpec();
-        SimpleExploration<PARSEAgent, PARSEGraphWrapper> explorer = new SimpleExploration<>(this.graph, this.graph.getText(), 3);
+    // /**
+    // * Check whether the serialisation of {@link IExplorationResult IExplorationResults} of {@link
+    // SpecificExploration}
+    // * is operational.
+    // *
+    // * @throws Exception iff something went wrong
+    // */
+    // @Test
+    // @Ignore("TD is broken")
+    // public void testHypothesisCombinationSpecificExploration() throws Exception {
+    // WikiWSDHypothesisSpec wwhs = new WikiWSDHypothesisSpec();
+    // TopicExtractionHypothesisSpec tehs = new TopicExtractionHypothesisSpec();
+    //
+    // SpecificExploration<PARSEAgent, PARSEGraphWrapper> explorer = new SpecificExploration<>(this.graph,
+    // this.graph.getText(), 3);
+    // explorer.loadHypothesisAgent(wwhs, new SameWordSameDecision(new TopXConfidence(3)));
+    // explorer.loadHypothesisAgent(tehs);
+    //
+    // var result = explorer.explore();
+    // var jsonGetter = Serialize.getObjectMapperForGetters(true).writeValueAsString(result);
+    // var jsonInherit = Serialize.getObjectMapperForInheritance(true).writeValueAsString(result);
+    //
+    // Assert.assertTrue(jsonGetter.contains("\"explorationRoot\""));
+    // Assert.assertFalse(jsonInherit.contains("\"explorationRoot\""));
+    //
+    // Assert.assertFalse(jsonGetter.contains("\"startNode\""));
+    // Assert.assertTrue(jsonInherit.contains("\"startNode\""));
+    //
+    // FileWriter fw = new FileWriter(this.getTargetFile("output.json"));
+    // fw.write(jsonGetter);
+    // fw.close();
+    // }
 
-        explorer.loadHypothesisAgent(wwhs);
-        explorer.loadHypothesisAgent(tehs);
-
-        var result = explorer.explore();
-        var jsonGetter = Serialize.getObjectMapperForGetters(true).writeValueAsString(result);
-        var jsonInherit = Serialize.getObjectMapperForInheritance(true).writeValueAsString(result);
-
-        Assert.assertTrue(jsonGetter.contains("\"explorationRoot\""));
-        Assert.assertFalse(jsonInherit.contains("\"explorationRoot\""));
-
-        Assert.assertFalse(jsonGetter.contains("\"startNode\""));
-        Assert.assertTrue(jsonInherit.contains("\"startNode\""));
-
-        FileWriter fw = new FileWriter(this.getTargetFile("output.json"));
-        fw.write(jsonGetter);
-        fw.close();
-    }
-
-    /**
-     * Check whether the serialisation of {@link IExplorationResult IExplorationResults} of {@link SpecificExploration}
-     * is operational.
-     *
-     * @throws Exception iff something went wrong
-     */
-    @Test
-    @Ignore("TD is broken")
-    public void testHypothesisCombinationSpecificExploration() throws Exception {
-        WikiWSDHypothesisSpec wwhs = new WikiWSDHypothesisSpec();
-        TopicExtractionHypothesisSpec tehs = new TopicExtractionHypothesisSpec();
-
-        SpecificExploration<PARSEAgent, PARSEGraphWrapper> explorer = new SpecificExploration<>(this.graph, this.graph.getText(), 3);
-        explorer.loadHypothesisAgent(wwhs, new SameWordSameDecision(new TopXConfidence(3)));
-        explorer.loadHypothesisAgent(tehs);
-
-        var result = explorer.explore();
-        var jsonGetter = Serialize.getObjectMapperForGetters(true).writeValueAsString(result);
-        var jsonInherit = Serialize.getObjectMapperForInheritance(true).writeValueAsString(result);
-
-        Assert.assertTrue(jsonGetter.contains("\"explorationRoot\""));
-        Assert.assertFalse(jsonInherit.contains("\"explorationRoot\""));
-
-        Assert.assertFalse(jsonGetter.contains("\"startNode\""));
-        Assert.assertTrue(jsonInherit.contains("\"startNode\""));
-
-        FileWriter fw = new FileWriter(this.getTargetFile("output.json"));
-        fw.write(jsonGetter);
-        fw.close();
-    }
-
-    /**
-     * Check whether the path extraction of {@link LayeredExploration} is operational.
-     */
-    @Test
-    @Ignore("TD is broken")
-    public void testPathGeneration() {
-        WikiWSDHypothesisSpec wwhs = new WikiWSDHypothesisSpec();
-        TopicExtractionHypothesisSpec tehs = new TopicExtractionHypothesisSpec();
-        OntologySelectorHypothesisSpec oshs = new OntologySelectorHypothesisSpec(this.loadActorOntologies(), this.loadEnvOntologies());
-        SimpleExploration<PARSEAgent, PARSEGraphWrapper> explorer = new SimpleExploration<>(this.graph, this.graph.getText(), 3);
-
-        explorer.loadHypothesisAgent(wwhs);
-        explorer.loadHypothesisAgent(tehs);
-        explorer.loadHypothesisAgent(oshs);
-
-        var result = explorer.explore();
-        var paths = result.getPaths();
-        // No of paths should be 9 (split exploration at WSD & Topics)
-        Assert.assertEquals(3 * 3, paths.size());
-
-    }
-
-    /**
-     * Check whether the path extraction of {@link LayeredExploration} is operational, by using
-     * {@link SimpleExploration#loadAgent(org.fuchss.agentanalysis.port.IAgentSpecification)} instead of
-     * {@link SimpleExploration#loadHypothesisAgent(org.fuchss.agentanalysis.port.hypothesis.IAgentHypothesisSpecification)}.
-     */
-    @Test
-    @Ignore("TD is broken")
-    public void testPathGenerationNoHypothesesSplit() {
-        WikiWSDSpec wwhs = new WikiWSDSpec();
-        TopicExtractionHypothesisSpec tehs = new TopicExtractionHypothesisSpec();
-        OntologySelectorHypothesisSpec oshs = new OntologySelectorHypothesisSpec(this.loadActorOntologies(), this.loadEnvOntologies());
-        SimpleExploration<PARSEAgent, PARSEGraphWrapper> explorer = new SimpleExploration<>(this.graph, this.graph.getText(), 3);
-
-        explorer.loadAgent(wwhs);
-        explorer.loadHypothesisAgent(tehs);
-        explorer.loadHypothesisAgent(oshs);
-
-        var result = explorer.explore();
-        var paths = result.getPaths();
-        // No of paths should be 3 (split exploration at Topics)
-        Assert.assertEquals(3, paths.size());
-
-    }
+    // /**
+    // * Check whether the path extraction of {@link LayeredExploration} is operational.
+    // */
+    // @Test
+    // @Ignore("TD is broken")
+    // public void testPathGeneration() {
+    // WikiWSDHypothesisSpec wwhs = new WikiWSDHypothesisSpec();
+    // TopicExtractionHypothesisSpec tehs = new TopicExtractionHypothesisSpec();
+    // OntologySelectorHypothesisSpec oshs = new OntologySelectorHypothesisSpec(this.loadActorOntologies(),
+    // this.loadEnvOntologies());
+    // SimpleExploration<PARSEAgent, PARSEGraphWrapper> explorer = new SimpleExploration<>(this.graph,
+    // this.graph.getText(), 3);
+    //
+    // explorer.loadHypothesisAgent(wwhs);
+    // explorer.loadHypothesisAgent(tehs);
+    // explorer.loadHypothesisAgent(oshs);
+    //
+    // var result = explorer.explore();
+    // var paths = result.getPaths();
+    // // No of paths should be 9 (split exploration at WSD & Topics)
+    // Assert.assertEquals(3 * 3, paths.size());
+    //
+    // }
+    //
+    // /**
+    // * Check whether the path extraction of {@link LayeredExploration} is operational, by using
+    // * {@link SimpleExploration#loadAgent(org.fuchss.agentanalysis.port.IAgentSpecification)} instead of
+    // * {@link
+    // SimpleExploration#loadHypothesisAgent(org.fuchss.agentanalysis.port.hypothesis.IAgentHypothesisSpecification)}.
+    // */
+    // @Test
+    // @Ignore("TD is broken")
+    // public void testPathGenerationNoHypothesesSplit() {
+    // WikiWSDSpec wwhs = new WikiWSDSpec();
+    // TopicExtractionHypothesisSpec tehs = new TopicExtractionHypothesisSpec();
+    // OntologySelectorHypothesisSpec oshs = new OntologySelectorHypothesisSpec(this.loadActorOntologies(),
+    // this.loadEnvOntologies());
+    // SimpleExploration<PARSEAgent, PARSEGraphWrapper> explorer = new SimpleExploration<>(this.graph,
+    // this.graph.getText(), 3);
+    //
+    // explorer.loadAgent(wwhs);
+    // explorer.loadHypothesisAgent(tehs);
+    // explorer.loadHypothesisAgent(oshs);
+    //
+    // var result = explorer.explore();
+    // var paths = result.getPaths();
+    // // No of paths should be 3 (split exploration at Topics)
+    // Assert.assertEquals(3, paths.size());
+    //
+    // }
 
 }
