@@ -5,12 +5,11 @@ import edu.kit.ipd.eagle.port.IAgentSpecification;
 import edu.kit.ipd.eagle.port.IInformationId;
 
 /**
- * This enum defines the different information that are needed or provided by
- * {@link IAgent Agents}.
+ * This enum defines the different information that are needed or provided by {@link IAgent Agents}.
  *
  * @author Dominik Fuchss
- * @see IAgentSpecification#getRequiresIds()
- * @see IAgentSpecification#getProvideIds()
+ * @see    IAgentSpecification#getRequiresIds()
+ * @see    IAgentSpecification#getProvideIds()
  */
 public enum PARSEInformationId implements IInformationId {
 
@@ -36,8 +35,7 @@ public enum PARSEInformationId implements IInformationId {
 	 */
 	WORD_SENSE_DISAMBIGUATION,
 	/**
-	 * Information on Locations, Entities, Actions, ... e.g. results of
-	 * ContextAnalyzer.
+	 * Information on Locations, Entities, Actions, ... e.g. results of ContextAnalyzer.
 	 */
 	CONTEXT,
 	/**
@@ -46,15 +44,13 @@ public enum PARSEInformationId implements IInformationId {
 	COREF,
 
 	/**
-	 * Information on Methods and Method calls. e.g. the results of
-	 * MethodSynthesizer.
+	 * Information on Methods and Method calls. e.g. the results of MethodSynthesizer.
 	 */
 	METHODS,
 
 	/////////////// JAN ///////////////////
 	/**
-	 * Information on Wordsenses with concepts from Wikipedia. e.g. the results of
-	 * WordSenseDisambiguation.
+	 * Information on Wordsenses with concepts from Wikipedia. e.g. the results of WordSenseDisambiguation.
 	 */
 	WIKI_WSD,
 	/**
@@ -62,8 +58,7 @@ public enum PARSEInformationId implements IInformationId {
 	 */
 	TOPICS,
 	/**
-	 * Information on matching ontologies for a text. e.g. the results of
-	 * OntologySelector.
+	 * Information on matching ontologies for a text. e.g. the results of OntologySelector.
 	 */
 	ONTOLOGY,
 
@@ -73,8 +68,7 @@ public enum PARSEInformationId implements IInformationId {
 	 */
 	NER,
 	/**
-	 * Information on Dependencies between words for a text. e.g. the results of
-	 * DepParser.
+	 * Information on Dependencies between words for a text. e.g. the results of DepParser.
 	 */
 	DEPENDENCIES,
 	/**
@@ -91,8 +85,7 @@ public enum PARSEInformationId implements IInformationId {
 	CONSTITUENCY,
 
 	/**
-	 * Information on mappings between model an text. e.g. the results of
-	 * WsdLinkAgent.
+	 * Information on mappings between model an text. e.g. the results of WsdLinkAgent.
 	 */
 	MODEL_MAPPING
 

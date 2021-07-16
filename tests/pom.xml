@@ -8,29 +8,23 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<artifactId>tests</artifactId>
-
 	<name>EAGLE (Tests)</name>
 
 	<repositories>
 		<repository>
 			<id>ipdNexus-public-releases</id>
 			<name>IPD-Repository</name>
-			<url>http://bob.ipd.kit.edu/nexus/repository/maven-public-releases</url>
-		</repository>
-		<repository>
-			<id>ipdNexus-public-snapshots</id>
-			<name>IPD-Repository</name>
-			<url>http://bob.ipd.kit.edu/nexus/repository/maven-public-snapshots</url>
+			<url>http://bob.ipd.kit.edu/nexus/repository/maven-public-all/</url>
 		</repository>
 	</repositories>
-	
+
 	<build>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
 				<configuration>
-					<argLine>-Xmx8g -Xms2g</argLine>
+					<argLine>-Xmx8g -Xms2g --illegal-access=permit</argLine>
 					<forkCount>0</forkCount>
 				</configuration>
 			</plugin>
@@ -44,9 +38,8 @@
 		</plugins>
 	</build>
 	<dependencies>
-
 		<dependency>
-			<groupId>edu.kit.ipd.parse</groupId>
+			<groupId>edu.kit.ipd.pronat</groupId>
 			<artifactId>wiki_wsd_models</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 			<scope>test</scope>

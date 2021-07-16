@@ -4,7 +4,7 @@ import java.util.List;
 
 import edu.kit.ipd.eagle.impl.platforms.parse.PARSEInformationId;
 import edu.kit.ipd.eagle.impl.platforms.parse.specification.parse.ParseAgentSpecification;
-import edu.kit.ipd.parse.loop.LoopDetectionAgent;
+import edu.kit.ipd.pronat.loop.LoopDetectionAgent;
 
 /**
  * Defines the agent specification for the {@link LoopDetectionAgent}.

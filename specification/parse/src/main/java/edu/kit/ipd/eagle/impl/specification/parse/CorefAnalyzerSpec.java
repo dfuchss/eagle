@@ -4,7 +4,7 @@ import java.util.List;
 
 import edu.kit.ipd.eagle.impl.platforms.parse.PARSEInformationId;
 import edu.kit.ipd.eagle.impl.platforms.parse.specification.parse.ParseAgentSpecification;
-import edu.kit.ipd.parse.corefanalyzer.CorefAnalyzer;
+import edu.kit.ipd.pronat.coref.CorefAnalyzer;
 
 /**
  * Defines the agent specification for the {@link CorefAnalyzer}.

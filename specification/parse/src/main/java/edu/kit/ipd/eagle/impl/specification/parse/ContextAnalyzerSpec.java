@@ -4,7 +4,7 @@ import java.util.List;
 
 import edu.kit.ipd.eagle.impl.platforms.parse.PARSEInformationId;
 import edu.kit.ipd.eagle.impl.platforms.parse.specification.parse.ParseAgentSpecification;
-import edu.kit.ipd.parse.contextanalyzer.ContextAnalyzer;
+import edu.kit.ipd.pronat.context.ContextAnalyzer;
 
 /**
  * Defines the agent specification for the {@link ContextAnalyzer}.

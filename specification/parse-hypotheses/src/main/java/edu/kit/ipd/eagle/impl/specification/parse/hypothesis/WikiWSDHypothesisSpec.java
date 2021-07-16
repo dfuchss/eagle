@@ -20,7 +20,7 @@ import edu.kit.ipd.parse.luna.graph.INode;
 import edu.kit.ipd.parse.luna.graph.INodeType;
 import edu.kit.ipd.parse.luna.graph.Pair;
 import edu.kit.ipd.parse.luna.tools.ConfigManager;
-import edu.kit.ipd.parse.wikiWSD.WordSenseDisambiguation;
+import edu.kit.ipd.pronat.wiki_wsd.WordSenseDisambiguation;
 
 /**
  * Defines the agent specification for the {@link WordSenseDisambiguation WikiWSD}. This is the hypotheses realization

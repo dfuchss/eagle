@@ -13,12 +13,7 @@
 		<repository>
 			<id>ipdNexus-public-releases</id>
 			<name>IPD-Repository</name>
-			<url>http://bob.ipd.kit.edu/nexus/repository/maven-public-releases</url>
-		</repository>
-		<repository>
-			<id>ipdNexus-public-snapshots</id>
-			<name>IPD-Repository</name>
-			<url>http://bob.ipd.kit.edu/nexus/repository/maven-public-snapshots</url>
+			<url>https://bob.ipd.kit.edu/nexus/repository/maven-public-all/</url>
 		</repository>
 	</repositories>
 
@@ -30,41 +25,41 @@
 
 		<!-- Agents -->
 		<dependency>
-			<groupId>edu.kit.ipd.parse</groupId>
-			<artifactId>wsd</artifactId>
-			<version>0.0.3-SNAPSHOT</version>
+			<groupId>edu.kit.ipd.pronat</groupId>
+			<artifactId>babelfy_wsd</artifactId>
+			<version>0.0.4-SNAPSHOT</version>
 		</dependency>
 
 		<dependency>
-			<groupId>edu.kit.ipd.parse</groupId>
-			<artifactId>actionRecognizer</artifactId>
-			<version>0.0.3</version>
-		</dependency>
-		<dependency>
-			<groupId>edu.kit.ipd.parse</groupId>
-			<artifactId>concurrency_detection</artifactId>
-			<version>0.0.2</version>
-		</dependency>
-		<dependency>
-			<groupId>edu.kit.ipd.parse</groupId>
-			<artifactId>condition_detection</artifactId>
+			<groupId>edu.kit.ipd.pronat</groupId>
+			<artifactId>action_analyzer</artifactId>
 			<version>0.0.4-SNAPSHOT</version>
 		</dependency>
 		<dependency>
-			<groupId>edu.kit.ipd.parse</groupId>
+			<groupId>edu.kit.ipd.pronat</groupId>
+			<artifactId>concurrency_detection</artifactId>
+			<version>0.0.4-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>edu.kit.ipd.pronat</groupId>
+			<artifactId>condition_detection</artifactId>
+			<version>0.0.5-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>edu.kit.ipd.pronat</groupId>
 			<artifactId>loop_detection</artifactId>
-			<version>0.0.3-SNAPSHOT</version>
+			<version>0.0.4-SNAPSHOT</version>
 		</dependency>
 
 		<dependency>
-			<groupId>edu.kit.ipd.parse</groupId>
+			<groupId>edu.kit.ipd.pronat</groupId>
 			<artifactId>context</artifactId>
-			<version>0.0.3</version>
+			<version>0.0.5-eval-SNAPSHOT</version>
 		</dependency>
 		<dependency>
-			<groupId>edu.kit.ipd.parse</groupId>
+			<groupId>edu.kit.ipd.pronat</groupId>
 			<artifactId>coref</artifactId>
-			<version>0.0.3</version>
+			<version>0.0.5-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
 	<name>EAGLE (PARSE Specifications)</name>

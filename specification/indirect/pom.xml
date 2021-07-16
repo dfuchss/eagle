@@ -8,17 +8,12 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<artifactId>specification-indirect</artifactId>
-	
+
 	<repositories>
 		<repository>
 			<id>ipdNexus-public-releases</id>
 			<name>IPD-Repository</name>
-			<url>http://bob.ipd.kit.edu/nexus/repository/maven-public-releases</url>
-		</repository>
-		<repository>
-			<id>ipdNexus-public-snapshots</id>
-			<name>IPD-Repository</name>
-			<url>http://bob.ipd.kit.edu/nexus/repository/maven-public-snapshots</url>
+			<url>https://bob.ipd.kit.edu/nexus/repository/maven-public-all/</url>
 		</repository>
 	</repositories>
 
@@ -32,27 +27,27 @@
 		<dependency>
 			<groupId>edu.kit.ipd.indirect</groupId>
 			<artifactId>textNER</artifactId>
-			<version>0.0.5-SNAPSHOT</version>
-		</dependency>
-		<dependency>
-			<groupId>edu.kit.ipd.indirect</groupId>
-			<artifactId>constParser</artifactId>
-			<version>0.0.5-SNAPSHOT</version>
-		</dependency>
-		<dependency>
-			<groupId>edu.kit.ipd.indirect</groupId>
-			<artifactId>depParser</artifactId>
-			<version>0.0.5-SNAPSHOT</version>
-		</dependency>
-		<dependency>
-			<groupId>edu.kit.ipd.indirect</groupId>
-			<artifactId>entityRecognizer</artifactId>
 			<version>0.0.6-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>edu.kit.ipd.indirect</groupId>
+			<artifactId>constParser</artifactId>
+			<version>0.0.6-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>edu.kit.ipd.indirect</groupId>
+			<artifactId>depParser</artifactId>
+			<version>0.0.6-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>edu.kit.ipd.indirect</groupId>
+			<artifactId>entityRecognizer</artifactId>
+			<version>0.0.7-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>edu.kit.ipd.indirect</groupId>
 			<artifactId>conceptualizer</artifactId>
-			<version>0.0.5-SNAPSHOT</version>
+			<version>0.0.6-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
 	<name>EAGLE (INDIRECT Specifications)</name>
