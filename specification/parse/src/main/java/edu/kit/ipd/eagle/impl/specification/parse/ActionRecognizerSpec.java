@@ -1,34 +1,33 @@
 package edu.kit.ipd.eagle.impl.specification.parse;
 
-//Disabled since Topic Extraction (Upstream) has a Bug
-
 //import java.util.List;
 //
 //import edu.kit.ipd.eagle.impl.platforms.parse.PARSEInformationId;
 //import edu.kit.ipd.eagle.impl.platforms.parse.specification.parse.ParseAgentSpecification;
-//import edu.kit.ipd.parse.topic_extraction.TopicExtraction;
-//
+//import edu.kit.ipd.pronat.context.ActionRecognizer;
+
+//Disabled because of upstream changes
 ///**
-// * Defines the agent specification for the {@link TopicExtraction}.
+// * Defines the agent specification for the {@link ActionRecognizer}.
 // *
 // * @author Dominik Fuchss
 // *
 // */
-//public class TopicExtractionSpec extends ParseAgentSpecification<TopicExtraction> {
+//public class ActionRecognizerSpec extends ParseAgentSpecification<ActionRecognizer> {
 //    /**
 //     * Create the specification.
 //     */
-//    public TopicExtractionSpec() {
-//        super(TopicExtraction::new);
+//    public ActionRecognizerSpec() {
+//        super(ActionRecognizer::new);
 //    }
 //
 //    @Override
 //    public List<PARSEInformationId> getProvideIds() {
-//        return List.of(PARSEInformationId.TOPICS);
+//        return List.of(PARSEInformationId.ACTIONS);
 //    }
 //
 //    @Override
 //    public List<PARSEInformationId> getRequiresIds() {
-//        return List.of(PARSEInformationId.WIKI_WSD);
+//        return List.of();
 //    }
 //}
