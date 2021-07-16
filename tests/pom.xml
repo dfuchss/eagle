@@ -38,12 +38,13 @@
 		</plugins>
 	</build>
 	<dependencies>
-		<dependency>
-			<groupId>edu.kit.ipd.pronat</groupId>
-			<artifactId>wiki_wsd_models</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-			<scope>test</scope>
-		</dependency>
+<!-- 	// Disabled since Topic Extraction (Upstream) has a Bug -->
+<!-- 		<dependency> -->
+<!-- 			<groupId>edu.kit.ipd.pronat</groupId> -->
+<!-- 			<artifactId>wiki_wsd_models</artifactId> -->
+<!-- 			<version>0.0.1-SNAPSHOT</version> -->
+<!-- 			<scope>test</scope> -->
+<!-- 		</dependency> -->
 
 		<!-- Analysis Specifications -->
 		<dependency>
