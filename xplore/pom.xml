@@ -13,7 +13,7 @@
 	<repositories>
 		<repository>
 			<id>gh-fuchss</id>
-			<url>https://nexus.fuchss.org/repository/github/</url>
+			<url>https://packages.fuchss.org/github/releases/raw/branch/releases/</url>
 		</repository>
 	</repositories>
 	
@@ -47,7 +47,7 @@
 		<dependency>
 			<groupId>org.fuchss</groupId>
 			<artifactId>java-tools</artifactId>
-			<version>0.2</version>
+			<version>0.3</version>
 		</dependency>
 	</dependencies>
 	<description>This project is the main project of the agent analysis. It contains the execution and exploration algorithms for the agents.</description>
